@@ -45,7 +45,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-5 col-md-4">
+            <!-- <div class="col-lg-5 col-md-4">
               <div class="header-login-register">
                 <ul class="login">
                   <li>
@@ -119,23 +119,24 @@
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
-      <style>
-  
-</style>
+      <style></style>
 
       <!--Logo Mainmenu Start-->
-      <div class="header-logo-menu sticker";>
+      <div class="header-logo-menu sticker" ;>
         <div class="container">
           <div class="logo-menu-bg">
             <div class="row">
               <div class="col-lg-3 col-md-12">
-                <div class="logo" style="margin-top: 18px;">
+                <div class="logo" style="margin-top: 18px">
                   <a href="index.html"
-                    ><img style="width: 125px; height: 50px;margin-top: 10px;" src="img/logo/logo.png" alt="Palette Edu"
+                    ><img
+                      style="width: 154px; height: 78px; margin-top: -2px"
+                      src="img/logo/logo.png"
+                      alt="Palette Edu"
                   /></a>
                 </div>
               </div>
@@ -176,17 +177,16 @@
                             </li>
                           </ul>
                         </li>
-                         <li>
-                          <a href="teacher.html"
-                            >Teachers</a>
+                        <li>
+                          <a href="teacher.html">Teachers</a>
                           <!-- <ul class="sub-menu">
                             <li>
                               <a href="teacher-info.html">Teachers Info</a>
                             </li>
                           </ul> -->
-                        </li> 
+                        </li>
                         <li><a href="gallery.html">Gallery</a></li>
-                         <!-- <li>
+                        <!-- <li>
                           <a href="index.html"
                             >Pages <i class="fa fa-angle-down"></i
                           ></a>
@@ -210,8 +210,7 @@
                           </ul>
                         </li>  -->
                         <li>
-                          <a href="blog-details.html"
-                            >Blog</a>
+                          <a href="blog-details.html">Blog</a>
                           <!-- <ul class="sub-menu">
                             <li>
                               <a href="blog-details.html">Blog Details</a>
@@ -222,13 +221,13 @@
                       </ul>
                     </nav>
                   </div>
-                  <ul class="header-search">
+                  <!-- <ul class="header-search">
                     <li class="search-menu">
                       <i id="toggle-search" class="fa fa-search"></i>
                     </li>
-                  </ul>
+                  </ul> -->
                   <!--Search Form-->
-                  <div class="search">
+                  <!-- <div class="search">
                     <div class="search-form">
                       <form id="search-form" action="#">
                         <input
@@ -241,7 +240,7 @@
                         </button>
                       </form>
                     </div>
-                  </div>
+                  </div> -->
                   <!--End of Search Form-->
                 </div>
               </div>
@@ -423,132 +422,158 @@
     </div>
     <!--End of Advertise Area-->
 
+    <style>
+      /* Pulse animation for images */
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
 
-   <style>
-  /* Pulse animation for images */
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-  }
+      .single-class-image img {
+        animation: pulse 2s infinite; /* Continuous pulse */
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+      }
 
-  .single-class-image img {
-    animation: pulse 2s infinite; /* Continuous pulse */
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
-  }
+      /* Arrow hover effect */
+      .class-schedule .arrow a {
+        display: inline-block;
+        transition: transform 0.3s ease, color 0.3s ease;
+        color: #333; /* default arrow color */
+      }
 
-  /* Arrow hover effect */
-  .class-schedule .arrow a {
-    display: inline-block;
-    transition: transform 0.3s ease, color 0.3s ease;
-    color: #333; /* default arrow color */
-  }
+      .class-schedule .arrow a:hover {
+        transform: translateX(5px); /* arrow moves slightly right */
+        color: #ff6600; /* color change on hover */
+      }
+    </style>
 
-  .class-schedule .arrow a:hover {
-    transform: translateX(5px); /* arrow moves slightly right */
-    color: #ff6600; /* color change on hover */
-  }
-</style>
+    <div class="class-area section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-title-wrapper">
+              <div class="section-title">
+                <h3>Our Classes</h3>
+                <p>Our preschool program has six dedicated classes</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<div class="class-area section-padding">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="section-title-wrapper">
-          <div class="section-title">
-            <h3>Our Classes</h3>
-            <p>Our preschool program has six dedicated classes</p>
+        <div class="class-carousel carousel-style-one owl-carousel">
+          <div class="single-class">
+            <div class="single-class-image">
+              <a href="#">
+                <img src="img/class/10.jpg" alt="" />
+                <span class="class-date">Apr 21 <span>2016</span></span>
+              </a>
+            </div>
+            <div class="single-class-text">
+              <div class="class-des">
+                <h4><a href="#">Letter Match Class</a></h4>
+                <p>
+                  The concept of the activity room is about 'Learning', through
+                  play, in a totally different environment. The perfect class
+                  for your child with the best.
+                </p>
+              </div>
+              <div class="class-schedule">
+                <span>AGE: 5 - 6 years</span>
+                <span>CLASS SIZE: 25</span>
+                <span class="arrow"
+                  ><a href="#"><i class="fa fa-angle-right"></i></a
+                ></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="single-class">
+            <div class="single-class-image">
+              <a href="#">
+                <img src="img/class/11.jpg" alt="" />
+                <span class="class-date">OCT 10 <span>2016</span></span>
+              </a>
+            </div>
+            <div class="single-class-text">
+              <div class="class-des">
+                <h4><a href="#">Cool Math Class</a></h4>
+                <p>
+                  The students learn different skills like rhythm, flexibility,
+                  and coordination. Lorem ipsum dolor sit amet. The perfect
+                  class for your child with the best.
+                </p>
+              </div>
+              <div class="class-schedule">
+                <span>AGE: 4 - 5 years</span>
+                <span>CLASS SIZE: 38</span>
+                <span class="arrow"
+                  ><a href="#"><i class="fa fa-angle-right"></i></a
+                ></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="single-class">
+            <div class="single-class-image">
+              <a href="#">
+                <img src="img/class/12.jpg" alt="" />
+                <span class="class-date">FEB 19 <span>2016</span></span>
+              </a>
+            </div>
+            <div class="single-class-text">
+              <div class="class-des">
+                <h4><a href="#">Alphabet Matching Class</a></h4>
+                <p>
+                  Orem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Facilis fugit perferendis adipisicing quam quis. Ab alias amet
+                  animir explica.
+                </p>
+              </div>
+              <div class="class-schedule">
+                <span>AGE: 3 - 4 years</span>
+                <span>CLASS SIZE: 50</span>
+                <span class="arrow"
+                  ><a href="#"><i class="fa fa-angle-right"></i></a
+                ></span>
+              </div>
+            </div>
+          </div>
+          <div class="single-class">
+            <div class="single-class-image">
+              <a href="#">
+                <img src="img/class/10.jpg" alt="" />
+                <span class="class-date">Apr 21 <span>2016</span></span>
+              </a>
+            </div>
+            <div class="single-class-text">
+              <div class="class-des">
+                <h4><a href="#">Letter Match Class</a></h4>
+                <p>
+                  The concept of the activity room is about 'Learning', through
+                  play, in a totally different environment. The perfect class
+                  for your child with the best.
+                </p>
+              </div>
+              <div class="class-schedule">
+                <span>AGE: 5 - 6 years</span>
+                <span>CLASS SIZE: 25</span>
+                <span class="arrow"
+                  ><a href="#"><i class="fa fa-angle-right"></i></a
+                ></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="class-carousel carousel-style-one owl-carousel">
-      <div class="single-class">
-        <div class="single-class-image">
-          <a href="#">
-            <img src="img/class/10.jpg" alt="" />
-            <span class="class-date">Apr 21 <span>2016</span></span>
-          </a>
-        </div>
-        <div class="single-class-text">
-          <div class="class-des">
-            <h4><a href="#">Letter Match Class</a></h4>
-            <p>The concept of the activity room is about 'Learning', through play, in a totally different environment. The perfect class for your child with the best.</p>
-          </div>
-          <div class="class-schedule">
-            <span>AGE: 5 - 6 years</span>
-            <span>CLASS SIZE: 25</span>
-            <span class="arrow"><a href="#"><i class="fa fa-angle-right"></i></a></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="single-class">
-        <div class="single-class-image">
-          <a href="#">
-            <img src="img/class/11.jpg" alt="" />
-            <span class="class-date">OCT 10 <span>2016</span></span>
-          </a>
-        </div>
-        <div class="single-class-text">
-          <div class="class-des">
-            <h4><a href="#">Cool Math Class</a></h4>
-            <p>The students learn different skills like rhythm, flexibility, and coordination. Lorem ipsum dolor sit amet. The perfect class for your child with the best.</p>
-          </div>
-          <div class="class-schedule">
-            <span>AGE: 4 - 5 years</span>
-            <span>CLASS SIZE: 38</span>
-            <span class="arrow"><a href="#"><i class="fa fa-angle-right"></i></a></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="single-class">
-        <div class="single-class-image">
-          <a href="#">
-            <img src="img/class/12.jpg" alt="" />
-            <span class="class-date">FEB 19 <span>2016</span></span>
-          </a>
-        </div>
-        <div class="single-class-text">
-          <div class="class-des">
-            <h4><a href="#">Alphabet Matching Class</a></h4>
-            <p>Orem ipsum dolor sit amet, consectetur adipisicing elit. Facilis fugit perferendis adipisicing quam quis. Ab alias amet animir explica.</p>
-          </div>
-          <div class="class-schedule">
-            <span>AGE: 3 - 4 years</span>
-            <span>CLASS SIZE: 50</span>
-            <span class="arrow"><a href="#"><i class="fa fa-angle-right"></i></a></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="single-class">
-        <div class="single-class-image">
-          <a href="#">
-            <img src="img/class/10.jpg" alt="" />
-            <span class="class-date">Apr 21 <span>2016</span></span>
-          </a>
-        </div>
-        <div class="single-class-text">
-          <div class="class-des">
-            <h4><a href="#">Letter Match Class</a></h4>
-            <p>The concept of the activity room is about 'Learning', through play, in a totally different environment. The perfect class for your child with the best.</p>
-          </div>
-          <div class="class-schedule">
-            <span>AGE: 5 - 6 years</span>
-            <span>CLASS SIZE: 25</span>
-            <span class="arrow"><a href="#"><i class="fa fa-angle-right"></i></a></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
     <!--Register Area Start-->
     <div class="register-area">
       <div class="container">
@@ -1356,19 +1381,17 @@
     <div class="google-map-area">
       <!--  Map Section -->
       <div id="contacts" class="map-area">
-        <div id="googleMap" style="width: 100%; height: 451px;"></div>
+        <div id="googleMap" style="width: 100%; height: 451px"></div>
       </div>
     </div>
     <!--End of Google Map Area-->
     <!--Footer Area Start-->
     <div class="footer-area">
-  <div class="container">
-
-    <!-- Footer Widgets Row (Logo + Links + Subscribe) -->
-    <div class="footer-widget-container section-padding">
-      <div class="row">
-
-        <!-- Logo Column
+      <div class="container">
+        <!-- Footer Widgets Row (Logo + Links + Subscribe) -->
+        <div class="footer-widget-container section-padding">
+          <div class="row">
+            <!-- Logo Column
         <div class="col-lg-2 col-md-2 col-sm-4 text-center">
           <div class="footer-logo">
   <a href="#"><img src="img/logo/footer-logo.png" alt="Footer Logo" style="max-width:150px; height:50px; display:block; margin:0 auto;" /></a>
@@ -1386,111 +1409,127 @@
   </span>
 </div> -->
 
+            <!-- </div> -->
 
-        <!-- </div> -->
-        
-        <!-- logo -->
+            <!-- logo -->
 
-        <div class="col-lg-3 col-md-3 col-sm-4" style="color: white;">
-          <div class="single-footer-widget">
-            <img src="./img/logo/footer-logo.png" class="single-footer-widget-img" style="max-width:120px; height:50px;">
-            <ul class="footer-widget-list" style="padding-top:20px;">
-              <li style="margin-bottom: 15px;"><span>
-               <i class="fa fa-map-marker" style="margin-right: 5px;"></i>1st Floor New World Tower Miami
-               </span><br></li>
-              <li style="margin-bottom: 15px;"><span>
-              <i class="fa fa-envelope" style="margin-right: 5px;"></i>admin@power-boosts.com
-              </span><br></li>
-              <li><span>
-              <i class="fa fa-phone" style="margin-right: 5px;"></i>(801) 2345 - 6789
-               </span></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Our School Links -->
-        <div class="col-lg-2 col-md-2 col-sm-4">
-          <div class="single-footer-widget">
-            <h4>Our School</h4>
-            <ul class="footer-widget-list">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Become a Teacher</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Links -->
-        <div class="col-lg-2 col-md-2 col-sm-4">
-          <div class="single-footer-widget">
-            <h4>Links</h4>
-            <ul class="footer-widget-list">
-              <li><a href="#">Courses</a></li>
-              <li><a href="#">Events</a></li>
-              <li><a href="#">Gallery</a></li>
-              <li><a href="#">FAQs</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Support -->
-        <div class="col-lg-2 col-md-2 col-sm-4">
-          <div class="single-footer-widget">
-            <h4>Support</h4>
-            <ul class="footer-widget-list">
-              <li><a href="#">Documentation</a></li>
-              <li><a href="#">Forums</a></li>
-              <li><a href="#">Language Packs</a></li>
-              <li><a href="#">Release Status</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Subscribe Form -->
-        <div class="col-lg-3 col-md-3 col-sm-12">
-          <div class="subscribe-container">
-            <p>
-              Subscribe now and receive weekly newsletter with educational
-              materials, new courses, interesting posts, popular books and
-              much more!
-            </p>
-            <form action="#">
-              <div class="subscribe-form">
-                <input type="email" name="email" placeholder="Your email here" />
-                <button type="submit"><i class="fa fa-send"></i></button>
+            <div class="col-lg-3 col-md-3 col-sm-4" style="color: white">
+              <div class="single-footer-widget">
+                <img
+                  src="./img/logo/footer-logo.png"
+                  class="single-footer-widget-img"
+                  style="max-width: 120px; height: 50px"
+                />
+                <ul class="footer-widget-list" style="padding-top: 20px">
+                  <li style="margin-bottom: 15px">
+                    <span>
+                      <i class="fa fa-map-marker" style="margin-right: 5px"></i
+                      >1/260 Arasamara Thottam, Arumuthampalayam, Tirupur 641664 </span
+                    ><br />
+                  </li>
+                  <li style="margin-bottom: 15px">
+                    <span>
+                      <i class="fa fa-envelope" style="margin-right: 5px"></i
+                      >mountwally21@gmail.com</span
+                    ><br />
+                  </li>
+                  <li>
+                    <span>
+                      <i class="fa fa-phone" style="margin-right: 5px"></i>+91
+                      99947 82792
+                    </span>
+                  </li>
+                </ul>
               </div>
-            </form>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Footer Bottom -->
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="footer-container">
-          <div class="row">
-            <div class="col-lg-6">
-              <span>&copy; 2025 Palette Production. All rights reserved</span>
             </div>
-            <div class="col-lg-6">
-              <div class="social-links">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
+
+            <!-- Our School Links -->
+            <div class="col-lg-2 col-md-2 col-sm-4">
+              <div class="single-footer-widget">
+                <h4>Our School</h4>
+                <ul class="footer-widget-list">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Become a Teacher</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Links -->
+            <div class="col-lg-2 col-md-2 col-sm-4">
+              <div class="single-footer-widget">
+                <h4>Links</h4>
+                <ul class="footer-widget-list">
+                  <li><a href="#">Courses</a></li>
+                  <li><a href="#">Events</a></li>
+                  <li><a href="#">Gallery</a></li>
+                  <li><a href="#">FAQs</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Support -->
+            <div class="col-lg-2 col-md-2 col-sm-4">
+              <div class="single-footer-widget">
+                <h4>Support</h4>
+                <ul class="footer-widget-list">
+                  <li><a href="#">Documentation</a></li>
+                  <li><a href="#">Forums</a></li>
+                  <li><a href="#">Language Packs</a></li>
+                  <li><a href="#">Release Status</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Subscribe Form -->
+            <div class="col-lg-3 col-md-3 col-sm-12">
+              <div class="subscribe-container">
+                <p>
+                  Subscribe now and receive weekly newsletter with educational
+                  materials, new courses, interesting posts, popular books and
+                  much more!
+                </p>
+                <form action="#">
+                  <div class="subscribe-form">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Your email here"
+                    />
+                    <button type="submit"><i class="fa fa-send"></i></button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Footer Bottom -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="footer-container">
+              <div class="row">
+                <div class="col-lg-6">
+                  <span
+                    >&copy; 2025 Palette Production. All rights reserved</span
+                  >
+                </div>
+                <div class="col-lg-6">
+                  <div class="social-links">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-  </div>
-</div>
 
     <!--End of Footer Area-->
 
