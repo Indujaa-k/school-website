@@ -200,7 +200,7 @@ ul {
 body {
   color: #666;
   font-family: "Poppins", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 24px;
   text-align: left;
   font-weight: 300;
@@ -304,7 +304,58 @@ body {
   background: #EEAC00;
 }
 .button-default.button-yellow:hover {
+  background: #1bb4b9;
+}  
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 90%;
+}
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 4px;
   background: #00A3B0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+.timeline-item {
+  padding: 20px 30px;
+  position: relative;
+  width: 50%;
+}
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; }
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #00A3B0;
+  border: 3px solid white;
+  z-index: 1;
+}
+.timeline-item.left::before { right: -10px; }
+.timeline-item.right::before { left: -10px; }
+.timeline-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.timeline h5 { color: #EEAC00; }
+@media screen and (max-width: 768px) {
+  .timeline::after { left: 20px; }
+  .timeline-item { width: 100%; padding-left: 60px; padding-right: 25px; }
+  .timeline-item.right { left: 0; }
+  .timeline-item.left::before, .timeline-item.right::before { left: 10px; }
+
 }
 /*----------------------------------------*/
 /*  2. Header CSS
@@ -830,6 +881,9 @@ nav#dropdown {
 .activity-area {
   padding: 60px 0 56px;
   text-align: center;
+} 
+.activity-area h3{
+  color: #444444;
 }
 .single-activity-icon {
   border: 1px solid #00A3B0;
@@ -3339,7 +3393,7 @@ header.header-five {
 /*  20. Class Grid Page
 /*----------------------------------------*/
 .breadcrumb-banner-area {
-  background: url("../img/banner/9.jpg");
+  background: url("../img/schoolimages/school-2-crop.jpg");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -4132,13 +4186,33 @@ span.schedule-time {
   font-weight: 500;
   line-height: 24px;
 }
+.highlight {
+  color: #333333; 
+  font-weight: 500;
+}
 .about-us > span {
   display: block;
   padding-left: 19px;
   position: relative;
+  margin-bottom: 10px;
+}
+.about-us .fa-book {
+  color: #2a7de1; /* blue */
+}
+
+.about-us .fa-lightbulb {
+  color: #f1c40f; /* yellow */
+}
+
+.about-us .fa-futbol {
+  color: #27ae60; /* green */
+}
+
+.about-us .fa-user-graduate {
+  color: #e67e22; /* orange */
 }
 .about-us > span:after {
-  background: #999999 none repeat scroll 0 0;
+  /* background: #999999 none repeat scroll 0 0; */
   border-radius: 50%;
   content: "";
   height: 6px;
