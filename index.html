@@ -23,7 +23,11 @@
       rel="stylesheet"
       type="text/css"
     />
-
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <!-- Style CSS
 		============================================ -->
     <link rel="stylesheet" href="style.css" />
@@ -296,7 +300,12 @@
     <div class="slider-area slider-style-1">
       <div class="preview-2">
         <div id="nivoslider" class="slides">
-          <img src="img/slider/1.jpg" alt="" title="#slider-1-caption1" />
+          <img
+            style="filter: brightness(75%)"
+            src="img/slider/1.jpg"
+            alt=""
+            title="#slider-1-caption1"
+          />
           <img src="img/slider/2.jpg" alt="" title="#slider-1-caption2" />
         </div>
         <div id="slider-1-caption1" class="nivo-html-caption nivo-caption">
@@ -305,22 +314,11 @@
               <div class="row">
                 <div class="col-lg-7 col-md-7">
                   <div class="text-content">
-                    <h1 style="text-align: center">
-                      Strong Roots, Bright Futures
-                    </h1>
-
-                    <p
-                      style="
-                        font-size: 18px;
-                        text-align: center;
-                        line-height: 1.6;
-                        margin: 10px auto;
-                        max-width: 700px;
-                      "
-                    >
-                      Surrounded by nature’s beauty, we nurture curiosity, build
-                      resilience, and prepare every child for a lifetime of
-                      success.
+                    <h1 class="title1">Education for Kids</h1>
+                    <p class="sub-title">
+                      Donec sollicitudin lacus in felis luctus blandit. Ut
+                      hendrerit mattis justo<br />
+                      at susp, vivamus orci urna.
                     </p>
 
                     <div class="banner-readmore">
@@ -338,7 +336,7 @@
               <div class="row">
                 <div class="col-lg-7 col-md-7">
                   <div class="text-content slide-2 hidden-xs">
-                    <h1 class="title1">Learning Beyond Limits</h1>
+                    <h1 class="title1">Education for Kids</h1>
                     <p class="sub-title">
                       we blend academic excellence with holistic growth,
                       inspiring students to climb higher and dream bigger.
@@ -1084,146 +1082,64 @@
     </div>
     <!--End of Teachers Area-->
     <!--Gallery Area Start-->
-    <div class="gallery-area section-padding-bottom">
+    <!-- Gallery Slideshow Area -->
+    <div class="gallery-slideshow section-padding-bottom">
       <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-title-wrapper">
-              <div class="section-title">
-                <h3>Our Gallery</h3>
-                <p>Discove Our Kindergarten Photo Gallery</p>
-              </div>
+        <div class="swiper myGallery">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="img/gallery/1.jpg" alt="Annual Day" /><span
+                class="gallery-caption"
+                >Annual Day Celebration</span
+              >
+            </div>
+            <div class="swiper-slide">
+              <img src="img/gallery/2.jpg" alt="Annual Day" /><span
+                class="gallery-caption"
+                >Annual Day Celebration</span
+              >
+            </div>
+            <div class="swiper-slide">
+              <img src="img/gallery/3.jpg" alt="Annual Day" /><span
+                class="gallery-caption"
+                >Annual Day Celebration</span
+              >
+            </div>
+            <div class="swiper-slide">
+              <img src="img/gallery/6.webp" alt="Excursions" /><span
+                class="gallery-caption"
+                >Excursions</span
+              >
+            </div>
+            <div class="swiper-slide">
+              <img src="img/gallery/10.webp" alt="Excursions" /><span
+                class="gallery-caption"
+                >Excursions</span
+              >
+            </div>
+            <div class="swiper-slide">
+              <img src="img/gallery/14.webp" alt="Play Time" /><span
+                class="gallery-caption"
+                >Play Time</span
+              >
+            </div>
+            <div class="swiper-slide">
+              <img src="img/gallery/21.webp" alt="Celebrating Together" /><span
+                class="gallery-caption"
+                >Celebrating Together</span
+              >
+            </div>
+            <div class="swiper-slide">
+              <img src="img/gallery/20.webp" alt="Play Time" /><span
+                class="gallery-caption"
+                >Play Time</span
+              >
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="filter-menu">
-              <ul>
-                <li class="filter" data-filter="all">All</li>
-                <li class="filter" data-filter=".drawing">Drawing</li>
-                <li class="filter" data-filter=".excursions">Excursions</li>
-                <li class="filter" data-filter=".courses">Courses</li>
-                <li class="filter" data-filter=".play">Play time</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-row">
-          <div class="filter-items row">
-            <div
-              class="col-lg-3 col-md-6 col-sm-6 col-12 mb-18 mix single-items drawing overlay-hover"
-            >
-              <div class="overlay-effect">
-                <a href="#"><img src="img/gallery/1.jpg" alt="" /></a>
-                <div class="gallery-hover-effect">
-                  <a class="gallery-icon venobox" href="img/gallery/1.jpg"
-                    ><i class="fa fa-image"></i
-                  ></a>
-                  <span class="gallery-text">Annual Day Celebration</span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-lg-3 col-md-6 col-sm-6 col-12 mb-18 mix single-items play courses overlay-hover"
-            >
-              <div class="overlay-effect">
-                <a href="#"><img src="img/gallery/2.jpg" alt="" /></a>
-                <div class="gallery-hover-effect">
-                  <a class="gallery-icon venobox" href="img/gallery/2.jpg"
-                    ><i class="fa fa-image"></i
-                  ></a>
-                  <span class="gallery-text">Annual Day Celebrations</span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-lg-3 col-md-6 col-sm-6 col-12 mb-18 mix single-items play overlay-hover"
-            >
-              <div class="overlay-effect">
-                <a href="#"><img src="img/gallery/3.jpg" alt="" /></a>
-                <div class="gallery-hover-effect">
-                  <a class="gallery-icon venobox" href="img/gallery/3.jpg"
-                    ><i class="fa fa-image"></i
-                  ></a>
-                  <span class="gallery-text">Annual Day Celebration</span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-lg-3 col-md-6 col-sm-6 col-12 mb-18 mix single-items play excursions overlay-hover"
-            >
-              <div class="overlay-effect">
-                <a href="#"><img src="img/gallery/4.jpg" alt="" /></a>
-                <div class="gallery-hover-effect">
-                  <a class="gallery-icon venobox" href="img/gallery/4.jpg"
-                    ><i class="fa fa-image"></i
-                  ></a>
-                  <span class="gallery-text">Excursions, Play</span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-lg-3 col-md-6 col-sm-6 col-12 mb-18 mix single-items courses excursions overlay-hover"
-            >
-              <div class="overlay-effect">
-                <a href="#"><img src="img/gallery/5.jpg" alt="" /></a>
-                <div class="gallery-hover-effect">
-                  <a class="gallery-icon venobox" href="img/gallery/5.jpg"
-                    ><i class="fa fa-image"></i
-                  ></a>
-                  <span class="gallery-text">Courses, Exursions</span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-lg-3 col-md-6 col-sm-6 col-12 mb-18 mix single-items drawing overlay-hover"
-            >
-              <div class="overlay-effect">
-                <a href="#"><img src="img/gallery/12.jpg" alt="" /></a>
-                <div class="gallery-hover-effect">
-                  <a class="gallery-icon venobox" href="img/gallery/12.jpg"
-                    ><i class="fa fa-image"></i
-                  ></a>
-                  <span class="gallery-text">Drawing</span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-lg-3 col-md-6 col-sm-6 col-12 mb-18 mix single-items courses excursions overlay-hover"
-            >
-              <div class="overlay-effect">
-                <a href="#"><img src="img/gallery/6.jpg" alt="" /></a>
-                <div class="gallery-hover-effect">
-                  <a class="gallery-icon venobox" href="img/gallery/6.jpg"
-                    ><i class="fa fa-image"></i
-                  ></a>
-                  <span class="gallery-text">Excursions, Courses</span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-lg-3 col-md-6 col-sm-6 col-12 mb-18 mix single-items drawing excursions overlay-hover"
-            >
-              <div class="overlay-effect">
-                <a href="#"><img src="img/gallery/10.jpg" alt="" /></a>
-                <div class="gallery-hover-effect">
-                  <a class="gallery-icon venobox" href="img/gallery/10.jpg"
-                    ><i class="fa fa-image"></i
-                  ></a>
-                  <span class="gallery-text">Drawing, Exursions</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="view-gallery text-center">
-              <h4>See Our Kindergarten <span>Photo Gallery!</span></h4>
-              <a href="#" class="button-default">View Now</a>
-            </div>
-          </div>
+
+          <!-- Navigation -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
       </div>
     </div>
@@ -1621,7 +1537,111 @@
     <!-- plugins JS
 		============================================ -->
     <script src="js/plugins.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <script>
+      /* Continuous marquee + clickable arrows */
+      const swiper = new Swiper(".myGallery", {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        loop: true,
+        loopAdditionalSlides: 8,
+        speed: 6000, // higher = slower continuous scroll
+        autoplay: {
+          delay: 0, // no pause at all
+          disableOnInteraction: false, // keep auto after arrow click
+          pauseOnMouseEnter: false,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        grabCursor: true,
+        breakpoints: {
+          0: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1200: { slidesPerView: 3 },
+        },
+      });
+    </script>
+
+    <style>
+      .gallery-slideshow .swiper {
+        position: relative;
+      }
+
+      /* Uniform images */
+      .gallery-slideshow img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 12px;
+        display: block;
+      }
+
+      .gallery-caption {
+        display: block;
+        text-align: center;
+        margin-top: 8px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      /* Make arrows visible, on top, and clickable */
+      .gallery-slideshow .swiper-button-next,
+      .gallery-slideshow .swiper-button-prev {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 56px !important;
+        height: 56px !important;
+        border-radius: 50% !important;
+        background: rgba(0, 0, 0, 0.15) !important;
+        color: #fff !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.25s ease, transform 0.2s ease;
+        z-index: 50;
+        pointer-events: auto;
+      }
+      .gallery-slideshow .swiper-button-next {
+        right: 12px;
+      }
+      .gallery-slideshow .swiper-button-prev {
+        left: 12px;
+      }
+
+      .gallery-slideshow .swiper-button-next::after,
+      .gallery-slideshow .swiper-button-prev::after {
+        font-size: 20px !important;
+        font-weight: 700;
+      }
+
+      /* Hover color you asked */
+      .gallery-slideshow .swiper-button-next:hover,
+      .gallery-slideshow .swiper-button-prev:hover {
+        background: #00a3b0 !important;
+        transform: translateY(-50%) scale(1.02);
+      }
+
+      /* Make the motion perfectly linear (no ease-in/out) */
+      .gallery-slideshow .swiper-wrapper {
+        transition-timing-function: linear !important;
+      }
+
+      /* If anything overlaps arrows, ignore its pointer events */
+      .gallery-slideshow .swiper-slide img,
+      .gallery-slideshow .swiper-slide .gallery-caption {
+        pointer-events: none;
+      }
+
+      .gallery-slideshow .swiper-button-next,
+      .gallery-slideshow .swiper-button-prev {
+        pointer-events: auto;
+      }
+    </style>
     <!-- Google Map js
 		============================================ -->
 
