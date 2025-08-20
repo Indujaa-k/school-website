@@ -1966,6 +1966,7 @@ span.gallery-text {
 .header-two .header-top {
   background: #ffffff none repeat scroll 0 0;
   border-bottom: 1px solid #f0f0f0;
+  align-items: center;
 }
 .header-two .header-top-info span {
   background: #ffffff none repeat scroll 0 0;
