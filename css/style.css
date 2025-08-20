@@ -603,6 +603,7 @@ ul.login li:hover .login-form {
 .mobile-menu-area {
   overflow: hidden;
 }
+
 /*-------------------------*/
 /*  Dropdown Menu
 /*-------------------------*/
@@ -864,16 +865,16 @@ nav#dropdown {
   background: #00A3B0;
 }
 .banner-content .slide-2 h1 {
-  -webkit-animation: 1000ms ease-in-out 0s normal none 1 running flipInX;
-  animation: 1000ms ease-in-out 0s normal none 1 running flipInX;
+  /* -webkit-animation: 1000ms ease-in-out 0s normal none 1 running flipInX;
+  animation: 1000ms ease-in-out 0s normal none 1 running flipInX; */
 }
 .banner-content .slide-2 p {
-  -webkit-animation: 2500ms ease-in-out 0s normal none 1 running flipInY;
-  animation: 2500ms ease-in-out 0s normal none 1 running flipInY;
+  /* -webkit-animation: 2500ms ease-in-out 0s normal none 1 running flipInY;
+  animation: 2500ms ease-in-out 0s normal none 1 running flipInY; */
 }
 .banner-content .slide-2 .banner-readmore {
-  -webkit-animation: 4000ms ease-in-out 0s normal none 1 running flipInX;
-  animation: 4000ms ease-in-out 0s normal none 1 running flipInX;
+  /* -webkit-animation: 4000ms ease-in-out 0s normal none 1 running flipInX;
+  animation: 4000ms ease-in-out 0s normal none 1 running flipInX; */
 }
 /*----------------------------------------*/
 /*  4. Activity Area
@@ -934,6 +935,7 @@ nav#dropdown {
   color: #00A3B0;
   font-size: 18px;
   font-weight: 500;
+
   margin-bottom: 17px;
 }
 .activity:nth-child(2) .single-activity h4 {
