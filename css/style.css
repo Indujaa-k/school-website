@@ -824,8 +824,8 @@ nav#dropdown {
   width: 100%;
 }
 .banner-content h1 {
-  -webkit-animation: 1500ms ease-in-out 0s normal none 1 running zoomInUp;
-  animation: 1500ms ease-in-out 0s normal none 1 running zoomInUp;
+  /* -webkit-animation: 1500ms ease-in-out 0s normal none 1 running zoomInUp;
+  animation: 1500ms ease-in-out 0s normal none 1 running zoomInUp; */
   color: #454545;
   font-size: 55px;
   font-weight: 600;
@@ -833,8 +833,8 @@ nav#dropdown {
   text-transform: uppercase;
 }
 .banner-content p {
-  -webkit-animation: 2000ms ease-in-out 0s normal none 1 running zoomInUp;
-  animation: 2000ms ease-in-out 0s normal none 1 running zoomInUp;
+  /* -webkit-animation: 2000ms ease-in-out 0s normal none 1 running zoomInUp;
+  animation: 2000ms ease-in-out 0s normal none 1 running zoomInUp; */
   color: #333333;
   font-size: 18px;
   font-weight: 300;
@@ -842,8 +842,8 @@ nav#dropdown {
   margin-bottom: 20px;
 }
 .banner-content .banner-readmore {
-  -webkit-animation: 2500ms ease-in-out 0s normal none 1 running zoomInUp;
-  animation: 2500ms ease-in-out 0s normal none 1 running zoomInUp;
+  /* -webkit-animation: 2500ms ease-in-out 0s normal none 1 running zoomInUp;
+  animation: 2500ms ease-in-out 0s normal none 1 running zoomInUp; */
   clear: both;
   display: inline-block;
 }
@@ -2716,9 +2716,9 @@ header.header-five {
   color: #ffffff;
   font-size: 30px;
   margin-bottom: 12px;
-  text-transform: uppercase;
+  /* text-transform: uppercase;
   -webkit-animation: 1000ms ease-in-out 0s normal none 1 running flipInY;
-  animation: 1000ms ease-in-out 0s normal none 1 running flipInY;
+  animation: 1000ms ease-in-out 0s normal none 1 running flipInY; */
 }
 .slider-four-area .banner-content h1 {
   color: #fefefe;
@@ -4306,7 +4306,7 @@ span.schedule-time {
   font-size: 13px;
   font-weight: 500;
   line-height: 36px;
-  margin-top: 10px;
+  margin-top: -6px;
   padding: 0 16px;
 }
 .contact-form-container .button-default i {
