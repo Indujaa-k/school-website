@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>PaletteEdu</title>
+    <title>About Mount Valley School</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -311,6 +311,40 @@
           grid-template-columns: 1fr;
         }
       }
+      @media (max-width: 768px) {
+  .pill {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 0; /* hide text */
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Tooltip effect */
+  .pill::after {
+    content: attr(data-name); /* event name */
+    position: absolute;
+    bottom: 120%; /* above dot */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 10;
+  }
+
+  .pill:hover::after {
+    opacity: 1;
+  }
+}
     </style>
   </head>
   <body>
@@ -321,10 +355,13 @@
           <div class="row">
             <div class="col-lg-7 col-md-8">
               <div class="header-top-info">
-                <span>Open hours: 8.00-18.00 Mon-Sat</span>
+                <span>Open hours: 09.00 AM-04.00 PM Mon-Sat</span>
                 <div class="social-links">
-                  <a href="https://www.facebook.com/p/Mount-Valley-public-School-100090996410532/">
-                  <i class="fab fa-facebook-f"></i></a>
+                  <a
+                    href="https://www.facebook.com/p/Mount-Valley-public-School-100090996410532/"
+                  >
+                    <i class="fab fa-facebook-f"></i
+                  ></a>
                   <a href="#"><i class="fab fa-google"></i></a>
                   <!-- <a href="#"><i class="fab fa-twitter"></i></a>
                   <a href="#"><i class="fab fa-pinterest-p"></i></a> -->
@@ -423,9 +460,8 @@
                 <div class="logo">
                   <a href="index.html"
                     ><img
-                      style="width: 154px; height: 78px; margin-top: 16px"
-                      src="img/logo/logo.png"
-                      alt="Palette Edu"
+                      src="img/logo/logo-main.png"
+                      alt="mountvalley"
                   /></a>
                 </div>
               </div>
@@ -436,27 +472,19 @@
                       <ul id="nav">
                         <li class="current">
                           <a href="index.html"
-                            >Home <i class="fa fa-angle-down"></i
+                            >Home</a>
+                        </li>
+                        <li>
+                          <a href="about.html"
+                            >About us<i class="fa fa-angle-down"></i
                           ></a>
                           <ul class="sub-menu">
                             <li>
-                              <a href="index-2.html">Homepage Version 2</a>
-                            </li>
-                            <li>
-                              <a href="index-3.html">Homepage Version 3</a>
-                            </li>
-                            <li>
-                              <a href="index-4.html">Homepage Version 4</a>
-                            </li>
-                            <li>
-                              <a href="index-5.html">Homepage Version 5</a>
+                              <a href="about.html#calendarrow"
+                                >Academic Calendar
+                              </a>
                             </li>
                           </ul>
-                        </li>
-                        <li >
-                          <a href="about.html">About us<i class="fa fa-angle-down"></i></a>
-                          <ul class="sub-menu">
-                            <li><a href="./cal.html">ACADEMIC CALENDAR </a></li></ul>
                         </li>
                         <li><a href="admission.html">Admission</a></li>
                         <li>
@@ -515,18 +543,24 @@
                   <ul>
                     <li>
                       <a href="index.html">HOME</a>
-                      <ul>
+                      <!-- <ul>
                         <li><a href="index-2.html">Homepage Version 2</a></li>
                         <li><a href="index-3.html">Homepage Version 3</a></li>
                         <li><a href="index-4.html">Homepage Version 4</a></li>
                         <li><a href="index-5.html">Homepage Version 5</a></li>
+                      </ul> -->
+                    </li>
+                    <li>
+                      <a href="about.html"
+                        >About us</a>
+                      <ul class="sub-menu">
+                        <li>
+                          <a href="about.html#calendarrow"
+                            >Academic Calender
+                          </a>
+                        </li>
                       </ul>
                     </li>
-                    <li >
-                          <a href="about.html">About us<i class="fa fa-angle-down"></i></a>
-                          <ul class="sub-menu">
-                            <li><a href="./cal.html">ACADEMIC CALENDAR </a></li></ul>
-                        </li>
                     <li><a href="admission.html">Admission</a></li>
                     <li>
                       <a href="class-list.html">Classes</a>
@@ -814,6 +848,111 @@
         </div>
       </section>
     </div>
+
+    <!-- calender section -->
+
+    <div class="section-padding-bottom text-center">
+      <div class="section-title-wrapper">
+        <div class="section-title">
+          <h3 class="mb-4 mt-1">Calender</h3>
+        </div>
+      </div>
+      <div class="wrap" id="calendarrow">
+        <div class="header">
+          <div>
+            <div class="title" id="headTitle">Academic Calendar</div>
+            <div class="sub">
+              Navigate months • Tap colors to filter • Items appear inside date
+              cells
+            </div>
+          </div>
+          <div class="controls">
+            <button class="btn icon" id="prevBtn" aria-label="Previous month">
+              &#8249;
+            </button>
+            <div id="monthLabel" class="year">January 2025</div>
+            <button class="btn icon" id="nextBtn" aria-label="Next month">
+              &#8250;
+            </button>
+            <select id="yearSelect" class="year" title="Change year">
+              <option>2025</option>
+              <option>2026</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="app">
+          <!-- Calendar -->
+          <div class="card">
+            <div class="calendar-grid" id="weekdays"></div>
+            <div class="calendar-grid" id="calendar"></div>
+          </div>
+
+          <!-- Right panel -->
+          <div class="side">
+            <div class="card">
+              <strong>Legend</strong>
+              <div class="legend" style="margin-top: 8px">
+                <div class="item">
+                  <span class="swatch" style="background: var(--holiday)"></span
+                  >Holiday
+                </div>
+                <div class="item">
+                  <span class="swatch" style="background: var(--event)"></span
+                  >Event / Function
+                </div>
+                <div class="item">
+                  <span class="swatch" style="background: var(--exam)"></span
+                  >Exam
+                </div>
+                <div class="item">
+                  <span class="swatch" style="background: var(--special)"></span
+                  >Special Day
+                </div>
+                <div class="item">
+                  <span
+                    class="swatch"
+                    style="background: var(--festival)"
+                  ></span
+                  >Festival
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <strong>Filters</strong>
+              <div class="filters" style="margin-top: 8px">
+                <label class="filter"
+                  ><input type="checkbox" data-type="holiday" checked />
+                  Holiday</label
+                >
+                <label class="filter"
+                  ><input type="checkbox" data-type="event" checked />
+                  Event</label
+                >
+                <label class="filter"
+                  ><input type="checkbox" data-type="exam" checked />
+                  Exam</label
+                >
+                <label class="filter"
+                  ><input type="checkbox" data-type="special" checked />
+                  Special</label
+                >
+                <label class="filter"
+                  ><input type="checkbox" data-type="festival" checked />
+                  Festival</label
+                >
+              </div>
+            </div>
+
+            <div class="card month-list">
+              <h3 id="listTitle">January 2025</h3>
+              <div id="monthList"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- ICSE Curriculum Overview -->
     <div class="section-padding-bottom text-center">
       <div class="section-title-wrapper">
@@ -909,7 +1048,7 @@
     </div>
 
     <!-- End of ICSE Curriculum Overview -->
-
+    <!--TimeLine area -->
     <section class="timeline-section section-padding-bottom">
       <div class="container">
         <div class="section-title-wrapper">
@@ -917,6 +1056,7 @@
             <h3 class="text-center mb-5 mt-1">Subjects Offered</h3>
           </div>
         </div>
+
         <div class="timeline">
           <!-- Classes I – VIII -->
           <div class="timeline-item left" data-aos="fade-right">
@@ -929,13 +1069,19 @@
                 <li>Second Language (Hindi/regional/foreign)</li>
                 <li>Mathematics</li>
                 <li>
-                  Science (General Science → Class VI; Physics, Chemistry,
-                  Biology → Class VII+)
+                  Science (General Science up to Class VI; Physics, Chemistry,
+                  Biology from Class VII)
                 </li>
                 <li>Social Studies (History, Civics, Geography)</li>
                 <li>Computer Applications / Environmental Studies</li>
                 <li>Art, Craft, Moral Science, Physical Education</li>
               </ul>
+            </div>
+            <div class="timeline-img">
+              <img
+                src="img/schoolimages/student-9.png"
+                alt="Classes I – VIII"
+              />
             </div>
           </div>
 
@@ -943,33 +1089,43 @@
           <div class="timeline-item right" data-aos="fade-left">
             <div class="timeline-content">
               <h5>Classes IX – X (ICSE Board Exam)</h5>
-              <p><strong>Group I (Compulsory):</strong></p>
+              <p>Students must study 6–7 subjects in 3 groups:</p>
+              <p>
+                <strong
+                  >Group I (Compulsory – Internal & External Exams):</strong
+                >
+              </p>
               <ul>
                 <li>English (Language + Literature)</li>
-                <li>Second Language</li>
+                <li>Second Language (Hindi/other approved)</li>
                 <li>History, Civics & Geography</li>
               </ul>
               <p><strong>Group II (Choose any 2):</strong></p>
               <ul>
                 <li>Mathematics</li>
                 <li>Science (Physics, Chemistry, Biology)</li>
-                <li>Economics / Environmental Science / Commercial Studies</li>
-                <li>Foreign/ Classical Language</li>
+                <li>Economics,Commercial Studies, Environmental Science</li>
+                <li>Modern Foreign Language, Classical Language</li>
               </ul>
               <p><strong>Group III (Choose 1):</strong></p>
               <ul>
-                <li>Computer Applications / Economic Applications</li>
-                <li>Art / Performing Arts (Music, Dance, Drama)</li>
-                <li>Physical Education / Environmental Applications</li>
+                <li>Computer Applications, Economic Applications</li>
                 <li>
-                  Home Science / Technical Drawing / Fashion Designing / Yoga /
+                  Commercial Applications,Performing Arts (Music, Dance, Drama)
+                </li>
+                <li>Physical Education ,Environmental Applications</li>
+                <li>
+                  Home Science ,Technical Drawing , Fashion Designing ,Yoga ,
                   Cookery
                 </li>
               </ul>
             </div>
+            <div class="timeline-img">
+              <img src="img/gallery/exhi-7.png" alt="Classes IX – X" />
+            </div>
           </div>
 
-          <!-- Assessment System -->
+          <!-- Assessment -->
           <div class="timeline-item left" data-aos="fade-right">
             <div class="timeline-content">
               <h5>🏆 Assessment System</h5>
@@ -981,377 +1137,98 @@
                 <li>20% Internal Assessment / Project Work</li>
               </ul>
             </div>
-          </div>
-
-          <!-- Campus & Facilities -->
-          <!-- <div class="timeline-item right" data-aos="fade-left">
-            <div class="timeline-content">
-              <h4>🏗️ Campus & Facilities</h4>
-              <ul>
-                <li>Safe, permanent building with stability certificate.</li>
-                <li>
-                  Well-ventilated classrooms with proper lighting & seating.
-                </li>
-                <li>
-                  Staff room, Principal’s office, and administrative office.
-                </li>
-                <li>Spacious playground for sports & physical education.</li>
-                <li>Secure boundary wall / fencing for student safety.</li>
-              </ul>
+            <div class="timeline-img">
+              <img src="img/gallery/exhi7.png" alt="Assessment System" />
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </section>
 
-    <div class="wrap">
-      <div class="header">
-        <div>
-          <div class="title" id="headTitle">Academic Calendar</div>
-          <div class="sub">
-            Navigate months • Tap colors to filter • Items appear inside date
-            cells
-          </div>
-        </div>
-        <div class="controls">
-          <button class="btn icon" id="prevBtn" aria-label="Previous month">
-            &#8249;
-          </button>
-          <div id="monthLabel" class="year">January 2025</div>
-          <button class="btn icon" id="nextBtn" aria-label="Next month">
-            &#8250;
-          </button>
-          <select id="yearSelect" class="year" title="Change year">
-            <option>2025</option>
-            <option>2026</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="app">
-        <!-- Calendar -->
-        <div class="card">
-          <div class="calendar-grid" id="weekdays"></div>
-          <div class="calendar-grid" id="calendar"></div>
-        </div>
-
-        <!-- Right panel -->
-        <div class="side">
-          <div class="card">
-            <strong>Legend</strong>
-            <div class="legend" style="margin-top: 8px">
-              <div class="item">
-                <span class="swatch" style="background: var(--holiday)"></span
-                >Holiday
-              </div>
-              <div class="item">
-                <span class="swatch" style="background: var(--event)"></span
-                >Event / Function
-              </div>
-              <div class="item">
-                <span class="swatch" style="background: var(--exam)"></span>Exam
-              </div>
-              <div class="item">
-                <span class="swatch" style="background: var(--special)"></span
-                >Special Day
-              </div>
-              <div class="item">
-                <span class="swatch" style="background: var(--festival)"></span
-                >Festival
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <strong>Filters</strong>
-            <div class="filters" style="margin-top: 8px">
-              <label class="filter"
-                ><input type="checkbox" data-type="holiday" checked />
-                Holiday</label
-              >
-              <label class="filter"
-                ><input type="checkbox" data-type="event" checked />
-                Event</label
-              >
-              <label class="filter"
-                ><input type="checkbox" data-type="exam" checked /> Exam</label
-              >
-              <label class="filter"
-                ><input type="checkbox" data-type="special" checked />
-                Special</label
-              >
-              <label class="filter"
-                ><input type="checkbox" data-type="festival" checked />
-                Festival</label
-              >
-            </div>
-          </div>
-
-          <div class="card month-list">
-            <h3 id="listTitle">January 2025</h3>
-            <div id="monthList"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--Skill And Experience Area Start-->
-    <!-- <div class="skill-and-experience-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-title-wrapper">
-              <div class="section-title">
-                <h3>Skills and Experience</h3>
-                <p>Fable daycare, preschool, and kindergarten</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="experience-skill-wrapper">
-              <div class="skill-bars orange">
-                <div class="skill-bar-item">
-                  <span>Playing Science</span>
-                  <div class="progress">
-                    <div
-                      class="progress-bar wow fadeInLeft"
-                      data-progress="80%"
-                      style="width: 80%"
-                      data-wow-duration="1.5s"
-                      data-wow-delay="1.2s"
-                    >
-                      <span class="text-top">80%</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="skill-bar-item">
-                  <span>Arts And Craft</span>
-                  <div class="progress">
-                    <div
-                      class="progress-bar wow fadeInLeft"
-                      data-progress="75%"
-                      style="width: 75%"
-                      data-wow-duration="1.5s"
-                      data-wow-delay="1.2s"
-                    >
-                      <span class="text-top">75%</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="skill-bar-item">
-                  <span>Creative Writing</span>
-                  <div class="progress">
-                    <div
-                      class="progress-bar wow fadeInLeft"
-                      data-progress="90%"
-                      style="width: 90%"
-                      data-wow-duration="1.5s"
-                      data-wow-delay="1.2s"
-                    >
-                      <span class="text-top">90%</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="skill-bar-item">
-                  <span>English Lessons</span>
-                  <div class="progress">
-                    <div
-                      class="progress-bar wow fadeInLeft"
-                      data-progress="70%"
-                      style="width: 70%"
-                      data-wow-duration="1.5s"
-                      data-wow-delay="1.2s"
-                    >
-                      <span class="text-top">70%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="experience-skill-wrapper">
-              <div class="skill-bars orange">
-                <div class="skill-bar-item">
-                  <span>Arts And Craft</span>
-                  <div class="progress">
-                    <div
-                      class="progress-bar wow fadeInLeft"
-                      data-progress="75%"
-                      style="width: 75%"
-                      data-wow-duration="1.5s"
-                      data-wow-delay="1.2s"
-                    >
-                      <span class="text-top">75%</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="skill-bar-item">
-                  <span>Creative Writing</span>
-                  <div class="progress">
-                    <div
-                      class="progress-bar wow fadeInLeft"
-                      data-progress="90%"
-                      style="width: 90%"
-                      data-wow-duration="1.5s"
-                      data-wow-delay="1.2s"
-                    >
-                      <span class="text-top">90%</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="skill-bar-item">
-                  <span>Playing Science</span>
-                  <div class="progress">
-                    <div
-                      class="progress-bar wow fadeInLeft"
-                      data-progress="80%"
-                      style="width: 80%"
-                      data-wow-duration="1.5s"
-                      data-wow-delay="1.2s"
-                    >
-                      <span class="text-top">80%</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="skill-bar-item">
-                  <span>English Lessons</span>
-                  <div class="progress">
-                    <div
-                      class="progress-bar wow fadeInLeft"
-                      data-progress="100%"
-                      style="width: 100%"
-                      data-wow-duration="1.5s"
-                      data-wow-delay="1.2s"
-                    >
-                      <span class="text-top">100%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!--End of Skill And Experience Area-->
+    <!-- End of Timeline -->
     <!--Footer Area Start-->
     <div class="footer-area">
       <div class="container">
         <!-- Footer Widgets Row (Logo + Links + Subscribe) -->
         <div class="footer-widget-container section-padding">
           <div class="row">
-            <!-- Logo Column
-        <div class="col-lg-2 col-md-2 col-sm-4 text-center">
-          <div class="footer-logo">
-  <a href="#"><img src="img/logo/footer-logo.png" alt="Footer Logo" style="max-width:150px; height:50px; display:block; margin:0 auto;" /></a>
-</div>
-
-        <div class="footer-info" style="font-size:10px; white-space:nowrap; text-align:center;">
-  <span style="display:inline-block; ">
-    <i class="fa fa-map-marker" style="margin-right:5px;"></i>1st Floor New World Tower Miami
-  </span><br>
-  <span style="display:inline-block; ">
-    <i class="fa fa-envelope" style="margin-right:5px;"></i>admin@power-boosts.com
-  </span><br>
-  <span style="display:inline-block; ">
-    <i class="fa fa-phone" style="margin-right:5px;"></i>(801) 2345 - 6789
-  </span>
-</div> -->
-
-            <!-- </div> -->
-
             <!-- logo -->
-
-            <div class="col-lg-3 col-md-3 col-sm-4" style="color: white">
+            <div class="col-lg-4 col-md-6 col-sm-4" style="color: white">
               <div class="single-footer-widget">
                 <img
-                  src="./img/logo/footer-logo.png"
+                  src="./img/logo/logo-main-white.png"
                   class="single-footer-widget-img"
-                  style="max-width: 120px; height: 50px"
+                  style="max-width: 250px; height: 70px;margin-bottom: 10px;"
                 />
-                <ul class="footer-widget-list" style="padding-top: 20px">
-                  <li style="margin-bottom: 15px">
-                    <span>
-                      <i class="fa fa-map-marker" style="margin-right: 5px"></i
-                      >1/260 Arasamara Thottam, Arumuthampalayam, Tirupur 641664 </span
-                    ><br />
-                  </li>
-                  <li style="margin-bottom: 15px">
-                    <span>
-                      <i class="fa fa-envelope" style="margin-right: 5px"></i
-                      >mountwally21@gmail.com </span
-                    ><br />
-                  </li>
-                  <li>
-                    <span>
-                      <i class="fa fa-phone" style="margin-right: 5px"></i>+91
-                      99947 82792
-                    </span>
-                  </li>
-                </ul>
+                <p>
+                  To create a dynamic learning environment that inspires
+                  innovation, cultivates leadership, and equips students to
+                  thrive in a rapidly changing world.
+                </p>
               </div>
             </div>
 
             <!-- Our School Links -->
-            <div class="col-lg-2 col-md-2 col-sm-4">
+            <div class="col-lg-3 col-md-6 col-sm-4">
               <div class="single-footer-widget">
-                <h4>Our School</h4>
+                <h4>Address</h4>
                 <ul class="footer-widget-list">
-                  <li><a href="#">About Us</a></li>
-                  <!-- <li><a href="#">Blog</a></li> -->
-                  <li><a href="#">Contact</a></li>
-                  <li><a href="#">Become a Teacher</a></li>
+                  <li>
+                    <i class="fa fa-map-marker" style="margin-right: 5px"></i
+                    >1/260 Arasamara Thottam, Arumuthampalayam, Tirupur 641664
+                  </li>
+                  <li>
+                    <i class="fa fa-envelope" style="margin-right: 5px"></i
+                    >mountwally21@gmail.com
+                  </li>
+                  <li>
+                    <i class="fa fa-phone" style="margin-right: 5px"></i>+91
+                    99947 82792
+                  </li>
                 </ul>
               </div>
             </div>
 
             <!-- Links -->
-            <div class="col-lg-2 col-md-2 col-sm-4">
+            <div class="col-lg-2 col-md-6 col-sm-4 marginclass">
               <div class="single-footer-widget">
-                <h4>Links</h4>
+                <h4>Quick Links</h4>
                 <ul class="footer-widget-list">
-                  <li><a href="#">Courses</a></li>
-                  <li><a href="#">Events</a></li>
-                  <li><a href="#">Gallery</a></li>
-                  <li><a href="#">FAQs</a></li>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="admission.html">Admission</a></li>
+                  <li><a href="contact.html">contact</a></li>
                 </ul>
               </div>
             </div>
 
             <!-- Support -->
-            <div class="col-lg-2 col-md-2 col-sm-4">
+            <div class="col-lg-3 col-md-6 col-sm-4 marginclass">
               <div class="single-footer-widget">
-                <h4>Support</h4>
+                <h4>Social Media</h4>
                 <ul class="footer-widget-list">
-                  <li><a href="#">Documentation</a></li>
-                  <li><a href="#">Forums</a></li>
-                  <li><a href="#">Language Packs</a></li>
-                  <li><a href="#">Release Status</a></li>
+                  <li>
+                    <a href="https://www.facebook.com/" target="_blank">
+                      Facebook
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/mount_valley_public_school?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                      target="_blank"
+                    >
+                      Instagram
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.youtube.com/channel/UCUjLBYeAGPOA8iTKuCMmBsw"
+                      target="_blank"
+                    >
+                      YouTube
+                    </a>
+                  </li>
                 </ul>
-              </div>
-            </div>
-
-            <!-- Subscribe Form -->
-            <div class="col-lg-3 col-md-3 col-sm-12">
-              <div class="subscribe-container">
-                <p>
-                  Subscribe now and receive weekly newsletter with educational
-                  materials, new courses, interesting posts, popular books and
-                  much more!
-                </p>
-                <form action="#">
-                  <div class="subscribe-form">
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Your email here"
-                    />
-                    <button type="submit"><i class="fa fa-send"></i></button>
-                  </div>
-                </form>
               </div>
             </div>
           </div>
@@ -1360,30 +1237,8 @@
         <!-- Footer Bottom -->
         <div class="row">
           <div class="col-lg-12">
-            <div class="footer-container">
-              <div class="row">
-                <div class="col-lg-6">
-                  <span
-                    >&copy; 2025 Palette Production. All rights reserved</span
-                  >
-                </div>
-                <div class="col-lg-6">
-                  <div class="social-links" style="display:flex; gap:12px; font-size:20px;">
-    <a href="https://www.facebook.com/p/Mount-Valley-public-School-100090996410532/" target="_blank">
-      <i class="fa-brands fa-facebook-f"></i>
-    </a>
-    <a href="#" target="_blank">
-      <i class="fa-brands fa-google-plus-g"></i>
-    </a>
-    <!-- Uncomment if you need more -->
-    <!-- <a href="#"><i class="fa-brands fa-twitter"></i></a> -->
-    <!-- <a href="#"><i class="fa-brands fa-pinterest-p"></i></a> -->
-    <a href="https://www.instagram.com/mount_valley_public_school?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-  </div>
-                </div>
-              </div>
+            <div class="footer-container text-align">
+              <span>&copy; 2025 Palette Production. All rights reserved</span>
             </div>
           </div>
         </div>
@@ -1470,240 +1325,252 @@
 
     <!-- calender -->
     <script>
-      const DEFAULT_YEAR = 2025;
+  const DEFAULT_YEAR = 2025;
 
-      const EVENTS = {
-        "2025-01-01": [{ name: "New Year Holiday", type: "holiday" }],
-        "2025-01-14": [{ name: "Pongal", type: "festival" }],
-        "2025-01-26": [{ name: "Republic Day Celebration", type: "special" }],
-        "2025-02-10": [{ name: "Unit Test 1 (Starts)", type: "exam" }],
-        "2025-02-14": [{ name: "Cultural Day", type: "event" }],
-        "2025-03-08": [{ name: "Science Exhibition", type: "event" }],
-        "2025-03-21": [{ name: "Annual Day", type: "special" }],
-        "2025-04-05": [{ name: "Parent–Teacher Meet", type: "event" }],
-        "2025-04-14": [{ name: "Ambedkar Jayanti", type: "special" }],
-        "2025-04-18": [{ name: "Good Friday", type: "holiday" }],
-        "2025-05-01": [{ name: "May Day", type: "holiday" }],
-        "2025-05-05": [{ name: "Summer Exams Begin", type: "exam" }],
-        "2025-05-20": [{ name: "Results & Open House", type: "event" }],
-        "2025-06-10": [{ name: "School Reopens", type: "special" }],
-        "2025-06-15": [{ name: "Father’s Day", type: "event" }],
-        "2025-06-27": [{ name: "Pink Day (KG)", type: "event" }],
-        "2025-07-07": [{ name: "Unit Test 2 (Starts)", type: "exam" }],
-        "2025-07-18": [{ name: "Blue Day (KG)", type: "event" }],
-        "2025-08-15": [{ name: "Independence Day", type: "special" }],
-        "2025-08-25": [{ name: "Onam Celebration", type: "festival" }],
-        "2025-09-05": [{ name: "Teachers’ Day", type: "special" }],
-        "2025-09-12": [{ name: "Half-Yearly Exams Begin", type: "exam" }],
-        "2025-10-02": [{ name: "Gandhi Jayanti", type: "holiday" }],
-        "2025-10-20": [
-          { name: "Navratri / Dussehra Break Begins", type: "festival" },
-        ],
-        "2025-11-01": [{ name: "School Sports Heats", type: "event" }],
-        "2025-11-14": [{ name: "Children’s Day", type: "special" }],
-        "2025-11-24": [{ name: "Diwali Holiday", type: "festival" }],
-        "2025-12-15": [{ name: "Preboard Exams Begin", type: "exam" }],
-        "2025-12-24": [{ name: "Christmas Eve Program", type: "event" }],
-        "2025-12-25": [{ name: "Christmas", type: "holiday" }],
-      };
+  const EVENTS = {
+    "2025-01-01": [{ name: "New Year", type: "holiday" }],
+    "2025-01-14": [{ name: "Pongal", type: "festival" }],
+    "2025-01-26": [{ name: "Republic Day Celebration", type: "special" }],
+    "2025-02-10": [{ name: "Unit Test 1 (Starts)", type: "exam" }],
+    "2025-02-14": [{ name: "Cultural Day", type: "event" }],
+    "2025-03-08": [{ name: "Science Exhibition", type: "event" }],
+    "2025-03-21": [{ name: "Annual Day", type: "special" }],
+    "2025-04-05": [{ name: "Parent–Teacher Meet", type: "event" }],
+    "2025-04-14": [{ name: "Ambedkar Jayanti", type: "special" }],
+    "2025-04-18": [{ name: "Good Friday", type: "holiday" }],
+    "2025-05-01": [{ name: "May Day", type: "holiday" }],
+    "2025-05-05": [{ name: "Summer Exams Begin", type: "exam" }],
+    "2025-05-20": [{ name: "Results & Open House", type: "event" }],
+    "2025-06-10": [{ name: "School Reopens", type: "special" }],
+    "2025-06-15": [{ name: "Father’s Day", type: "event" }],
+    "2025-06-27": [{ name: "Pink Day (KG)", type: "event" }],
+    "2025-07-06": [{ name: "Muharram ", type: "holiday" }],
+    "2025-08-02": [{ name: "Friendship Day Celebration", type: "event" }],
+    "2025-08-15": [{ name: "Independence Day", type: "special" }],
+    "2025-08-16": [{ name: "Krishna Jayanthi ", type: "holiday" }],
+    "2025-08-18": [{ name: "Red Day Celebration", type: "event" }],
+    "2025-08-20": [{ name: "Internal-I Exams Begin", type: "exam" }],
+    "2025-08-25": [{ name: "Onam Celebration", type: "festival" }],
+    "2025-08-27": [{ name: "Vinayagar Chaturthi", type: "holiday" }],
+    "2025-09-05": [
+      { name: "Teachers’ Day", type: "special" },
+      { name: "Onam Celebration", type: "festival" }
+    ],
+    "2025-09-12": [{ name: "Half-Yearly Exams Begin", type: "exam" }],
+    "2025-09-15": [{ name: "Semester-I Exams Begin", type: "exam" }],
+    "2025-10-02": [{ name: "Gandhi Jayanti", type: "holiday" }],
+    "2025-10-02": [{ name: "Dussehra Begins", type: "holiday" }],
+    "2025-10-03": [{ name: "Dussehra", type: "holiday" }],
+    "2025-10-04": [{ name: "Dussehra", type: "holiday" }],
+    "2025-10-05": [{ name: "Dussehra", type: "holiday" }],
+    "2025-10-06": [{ name: "Dussehra", type: "holiday" }],
+    "2025-10-07": [{ name: "Dussehra", type: "holiday" }],
+    "2025-10-08": [{ name: "Dussehra", type: "holiday" }],
+    "2025-10-09": [{ name: "School Reopens After Dussehra", type: "special" }],
+    "2025-10-10": [{ name: "National Post Day", type: "event" }],
+    "2025-10-18": [{ name: "Diwali ", type: "holiday" }],
+    "2025-10-19": [{ name: "Diwali ", type: "holiday" }],
+    "2025-10-20": [
+      { name: "Diwali", type: "holiday" },
+      { name: "Diwali Celebration", type: "festival" }
+    ],
+    "2025-10-21": [{ name: "Diwali ", type: "holiday" }],
+    "2025-10-22": [{ name: "School Reopens After Diwali", type: "special" }],
+    "2025-10-24": [{ name: "Yellow Day Celebration", type: "event" }],
+    "2025-11-01": [{ name: "School Sports Heats", type: "event" }],
+    "2025-11-03": [{ name: "Orange Day Celebration", type: "event" }],
+    "2025-11-14": [{ name: "Children’s Day Celebration", type: "special" }],
+    "2025-11-24": [{ name: "Internal-II Exams Begin", type: "exam" }],
+    "2025-12-15": [{ name: "Preboard Exams Begin", type: "exam" }],
+    "2025-12-24": [{ name: "Christmas Eve Program", type: "event" }],
+    "2025-12-25": [{ name: "Christmas ", type: "holiday" }],
+    "2026-01-11": [{ name: "Annual Day", type: "special" }],
+    "2026-01-12": [{ name: "Pongal Holidays Begin", type: "festival" }],
+    "2026-01-18": [{ name: "Pongal Holidays End", type: "festival" }],
+    "2026-01-26": [{ name: "Republic Day", type: "special" }],
+    "2026-02-01": [{ name: "Thai Poosam ", type: "holiday" }],
+    "2026-02-02": [{ name: "Internal-III Exams Begin", type: "exam" }],
+    "2026-02-19": [{ name: "E-DAC Day", type: "event" }],
+    "2026-03-18": [{ name: "E-DAC Day", type: "event" }],
+    "2026-04-02": [{ name: "Last Working Day for KG’s", type: "special" }],
+    "2026-04-03": [{ name: "Good Friday ", type: "holiday" }],
+    "2026-04-05": [{ name: "Easter", type: "holiday" }],
+    "2026-04-14": [{ name: "Tamil New Year", type: "festival" }]
+  };
 
-      const monthLabel = document.getElementById("monthLabel");
-      const yearSelect = document.getElementById("yearSelect");
-      const calendarEl = document.getElementById("calendar");
-      const weekdaysEl = document.getElementById("weekdays");
-      const listTitle = document.getElementById("listTitle");
-      const monthList = document.getElementById("monthList");
+  const monthLabel = document.getElementById("monthLabel");
+  const yearSelect = document.getElementById("yearSelect");
+  const calendarEl = document.getElementById("calendar");
+  const weekdaysEl = document.getElementById("weekdays");
+  const listTitle = document.getElementById("listTitle");
+  const monthList = document.getElementById("monthList");
 
-      const filtersState = {
-        holiday: true,
-        event: true,
-        exam: true,
-        special: true,
-        festival: true,
-      };
+  const filtersState = {
+    holiday: true,
+    event: true,
+    exam: true,
+    special: true,
+    festival: true,
+  };
 
-      const MONTHS = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-      ];
-      const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-      WEEKDAYS.forEach((d) => {
-        const w = document.createElement("div");
-        w.className = "weekday";
-        w.textContent = d;
-        weekdaysEl.appendChild(w);
-      });
+  const MONTHS = [
+    "January","February","March","April","May","June",
+    "July","August","September","October","November","December",
+  ];
+  const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  WEEKDAYS.forEach((d) => {
+    const w = document.createElement("div");
+    w.className = "weekday";
+    w.textContent = d;
+    weekdaysEl.appendChild(w);
+  });
 
-      let today = new Date();
-      let current = new Date(DEFAULT_YEAR, today.getMonth(), 1);
-      yearSelect.value = String(DEFAULT_YEAR);
+  let today = new Date();
+  let current = new Date(DEFAULT_YEAR, today.getMonth(), 1);
+  yearSelect.value = String(DEFAULT_YEAR);
 
-      function fmt(y, m, d) {
-        return `${y}-${String(m + 1).padStart(2, "0")}-${String(d).padStart(
-          2,
-          "0"
-        )}`;
-      }
-      function sameDay(a, b) {
-        return (
-          a.getFullYear() == b.getFullYear() &&
-          a.getMonth() == b.getMonth() &&
-          a.getDate() == b.getDate()
-        );
-      }
+  function fmt(y, m, d) {
+    return `${y}-${String(m + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+  }
+  function sameDay(a, b) {
+    return (
+      a.getFullYear() == b.getFullYear() &&
+      a.getMonth() == b.getMonth() &&
+      a.getDate() == b.getDate()
+    );
+  }
 
-      function render() {
-        const year = parseInt(yearSelect.value, 10);
-        const month = current.getMonth();
-        const firstDay = new Date(year, month, 1);
-        const startWeekday = firstDay.getDay();
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
+  function render() {
+    const year = parseInt(yearSelect.value, 10);
+    const month = current.getMonth();
+    const firstDay = new Date(year, month, 1);
+    const startWeekday = firstDay.getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-        monthLabel.textContent = `${MONTHS[month]} ${year}`;
-        listTitle.textContent = `${MONTHS[month]} ${year}`;
-        calendarEl.innerHTML = "";
-        monthList.innerHTML = "";
+    monthLabel.textContent = `${MONTHS[month]} ${year}`;
+    listTitle.textContent = `${MONTHS[month]} ${year}`;
+    calendarEl.innerHTML = "";
+    monthList.innerHTML = "";
 
-        const today = new Date();
+    const today = new Date();
 
-        // Leading blanks
-        const prevDays = startWeekday;
-        const prevMonthDays = new Date(year, month, 0).getDate();
-        for (let i = prevDays; i > 0; i--) {
-          const d = document.createElement("div");
-          d.className = "day muted";
-          d.innerHTML = `<div class="date">${prevMonthDays - i + 1}</div>`;
-          calendarEl.appendChild(d);
-        }
+    // Leading blanks
+    const prevDays = startWeekday;
+    const prevMonthDays = new Date(year, month, 0).getDate();
+    for (let i = prevDays; i > 0; i--) {
+      const d = document.createElement("div");
+      d.className = "day muted";
+      d.innerHTML = `<div class="date">${prevMonthDays - i + 1}</div>`;
+      calendarEl.appendChild(d);
+    }
 
-        // Current month
-        for (let d = 1; d <= daysInMonth; d++) {
-          const cell = document.createElement("div");
-          cell.className = "day";
-          const dateStr = fmt(year, month, d);
-          const header = document.createElement("div");
-          header.className = "date";
-          header.textContent = d;
-          cell.appendChild(header);
+    // Current month
+    for (let d = 1; d <= daysInMonth; d++) {
+      const cell = document.createElement("div");
+      cell.className = "day";
+      const dateStr = fmt(year, month, d);
+      const header = document.createElement("div");
+      header.className = "date";
+      header.textContent = d;
+      cell.appendChild(header);
 
-          // ✅ Highlight today
-          if (sameDay(today, new Date(year, month, d))) {
-            cell.classList.add("today");
-          }
-
-          const items = (EVENTS[dateStr] || []).filter(
-            (ev) => filtersState[ev.type]
-          );
-          items.forEach((ev) => {
-            const pill = document.createElement("div");
-            pill.className = `pill ${ev.type}`;
-            pill.textContent = ev.name;
-            cell.appendChild(pill);
-
-            // Side list
-            const li = document.createElement("div");
-            li.className = "ml-item";
-            const dot = document.createElement("span");
-            dot.className = "dot";
-            dot.style.background = getColor(ev.type);
-            const body = document.createElement("div");
-            body.innerHTML = `<div><strong>${ev.name}</strong></div><div class="when">${MONTHS[month]} ${d}, ${year}</div>`;
-            li.appendChild(dot);
-            li.appendChild(body);
-            monthList.appendChild(li);
-          });
-
-          calendarEl.appendChild(cell);
-        }
-
-        // Trailing blanks
-        const totalCells = prevDays + daysInMonth;
-        const trailing = (7 - (totalCells % 7)) % 7;
-        for (let i = 0; i < trailing; i++) {
-          const d = document.createElement("div");
-          d.className = "day muted";
-          d.innerHTML = `<div class="date">${i + 1}</div>`;
-          calendarEl.appendChild(d);
-        }
+      // ✅ Highlight today
+      if (sameDay(today, new Date(year, month, d))) {
+        cell.classList.add("today");
       }
 
-      function getColor(type) {
-        switch (type) {
-          case "holiday":
-            return getComputedStyle(document.documentElement).getPropertyValue(
-              "--holiday"
-            );
-          case "event":
-            return getComputedStyle(document.documentElement).getPropertyValue(
-              "--event"
-            );
-          case "exam":
-            return getComputedStyle(document.documentElement).getPropertyValue(
-              "--exam"
-            );
-          case "special":
-            return getComputedStyle(document.documentElement).getPropertyValue(
-              "--special"
-            );
-          case "festival":
-            return getComputedStyle(document.documentElement).getPropertyValue(
-              "--festival"
-            );
-          default:
-            return "#e5e7eb";
-        }
-      }
+      const items = (EVENTS[dateStr] || []).filter(
+        (ev) => filtersState[ev.type]
+      );
+      items.forEach((ev) => {
+        const pill = document.createElement("div");
+        pill.className = `pill ${ev.type}`;
+        pill.textContent = ev.name;
+        pill.setAttribute("data-name", ev.name); // ✅ Added for tooltip
 
-      // Navigation
-      document.getElementById("prevBtn").addEventListener("click", () => {
-        const y = parseInt(yearSelect.value, 10);
-        if (current.getMonth() === 0) {
-          yearSelect.value = String(y - 1);
-          current = new Date(y - 1, 11, 1);
-        } else {
-          current = new Date(y, current.getMonth() - 1, 1);
-        }
-        render();
-      });
-      document.getElementById("nextBtn").addEventListener("click", () => {
-        const y = parseInt(yearSelect.value, 10);
-        if (current.getMonth() === 11) {
-          yearSelect.value = String(y + 1);
-          current = new Date(y + 1, 0, 1);
-        } else {
-          current = new Date(y, current.getMonth() + 1, 1);
-        }
-        render();
-      });
-      yearSelect.addEventListener("change", () => {
-        current = new Date(
-          parseInt(yearSelect.value, 10),
-          current.getMonth(),
-          1
-        );
-        render();
+        cell.appendChild(pill);
+
+        // Side list
+        const li = document.createElement("div");
+        li.className = "ml-item";
+        const dot = document.createElement("span");
+        dot.className = "dot";
+        dot.style.background = getColor(ev.type);
+        const body = document.createElement("div");
+        body.innerHTML = `<div><strong>${ev.name}</strong></div><div class="when">${MONTHS[month]} ${d}, ${year}</div>`;
+        li.appendChild(dot);
+        li.appendChild(body);
+        monthList.appendChild(li);
       });
 
-      // Filters
-      document.querySelectorAll(".filter input").forEach((cb) => {
-        cb.addEventListener("change", (e) => {
-          filtersState[e.target.dataset.type] = e.target.checked;
-          render();
-        });
-      });
+      calendarEl.appendChild(cell);
+    }
 
+    // Trailing blanks
+    const totalCells = prevDays + daysInMonth;
+    const trailing = (7 - (totalCells % 7)) % 7;
+    for (let i = 0; i < trailing; i++) {
+      const d = document.createElement("div");
+      d.className = "day muted";
+      d.innerHTML = `<div class="date">${i + 1}</div>`;
+      calendarEl.appendChild(d);
+    }
+  }
+
+  function getColor(type) {
+    switch (type) {
+      case "holiday":
+        return getComputedStyle(document.documentElement).getPropertyValue("--holiday");
+      case "event":
+        return getComputedStyle(document.documentElement).getPropertyValue("--event");
+      case "exam":
+        return getComputedStyle(document.documentElement).getPropertyValue("--exam");
+      case "special":
+        return getComputedStyle(document.documentElement).getPropertyValue("--special");
+      case "festival":
+        return getComputedStyle(document.documentElement).getPropertyValue("--festival");
+      default:
+        return "#e5e7eb";
+    }
+  }
+
+  // Navigation
+  document.getElementById("prevBtn").addEventListener("click", () => {
+    const y = parseInt(yearSelect.value, 10);
+    if (current.getMonth() === 0) {
+      yearSelect.value = String(y - 1);
+      current = new Date(y - 1, 11, 1);
+    } else {
+      current = new Date(y, current.getMonth() - 1, 1);
+    }
+    render();
+  });
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    const y = parseInt(yearSelect.value, 10);
+    if (current.getMonth() === 11) {
+      yearSelect.value = String(y + 1);
+      current = new Date(y + 1, 0, 1);
+    } else {
+      current = new Date(y, current.getMonth() + 1, 1);
+    }
+    render();
+  });
+  yearSelect.addEventListener("change", () => {
+    current = new Date(parseInt(yearSelect.value, 10), current.getMonth(), 1);
+    render();
+  });
+
+  // Filters
+  document.querySelectorAll(".filter input").forEach((cb) => {
+    cb.addEventListener("change", (e) => {
+      filtersState[e.target.dataset.type] = e.target.checked;
       render();
-    </script>
+    });
+  });
+
+  render();
+</script>
+
 
     <!-- main JS
 		============================================ -->
