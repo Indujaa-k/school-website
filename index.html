@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>PaletteEdu</title>
+    <title>Mount Valley School</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -38,17 +38,185 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
 
+    <!-- AOS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      /* Gallery Container */
+      .continuous-gallery {
+        padding: 40px 0;
+        overflow: hidden;
+        position: relative;
+        background: #f9f9f9;
+      }
+
+      .gallery-track {
+        display: flex;
+        width: max-content;
+        animation: scroll 20s linear infinite;
+      }
+
+      .gallery-track:hover {
+        animation-play-state: paused;
+      }
+
+      .gallery-slide {
+        position: relative;
+        margin-right: 20px;
+        flex: 0 0 auto;
+      }
+
+      .gallery-slide img {
+        width: 300px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 12px;
+        display: block;
+      }
+
+      .gallery-caption-text {
+        display: block;
+        text-align: center;
+        margin-top: 8px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      /* Eye icon overlay */
+      .eye-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 28px;
+        color: white;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 10px;
+        border-radius: 50%;
+        opacity: 0;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+      }
+
+      .gallery-slide:hover .eye-icon {
+        opacity: 1;
+      }
+
+      /* Left & Right arrows */
+      .gallery-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 163, 176, 0.8);
+        color: white;
+        border: none;
+        font-size: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background 0.2s;
+      }
+
+      .gallery-arrow:hover {
+        background: rgba(0, 163, 176, 1);
+      }
+
+      .gallery-arrow.left {
+        left: 10px;
+      }
+      .gallery-arrow.right {
+        right: 10px;
+      }
+
+      /* Modal */
+      .image-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 999999;
+      }
+
+      .image-modal img {
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 12px;
+        animation: zoomIn 0.3s ease;
+      }
+
+      .image-modal .close-btn {
+        position: fixed;
+        top: 20px;
+        right: 30px;
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        transition: background 0.2s;
+      }
+
+      .image-modal .close-btn:hover {
+        background: rgba(0, 0, 0, 0.8);
+      }
+      /* 
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      @keyframes zoomIn {
+        0% {
+          transform: scale(0.7);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      } */
+
+      body.modal-open {
+        overflow: hidden; /* disable scroll when modal open */
+      }
+    </style>
     <!-- Modernizr JS
 		============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -61,14 +229,16 @@
           <div class="row">
             <div class="col-lg-7 col-md-8">
               <div class="header-top-info">
-                <span>Open hours: 8.00-18.00 Mon-Sat</span>
+                <span>Open hours: 09.00 AM-04.00 PM Mon-Sat</span>
                 <div class="social-links">
-                  <a href="https://www.facebook.com/p/Mount-Valley-public-School-100090996410532/">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
+                  <a
+                    href="https://www.facebook.com/p/Mount-Valley-public-School-100090996410532/"
+                  >
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
                   <a href="#"><i class="fab fa-google"></i></a>
-                 
-                <a
+
+                  <a
                     href="https://www.instagram.com/mount_valley_public_school?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                   >
                     <i class="fab fa-instagram"></i>
@@ -76,81 +246,6 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="col-lg-5 col-md-4">
-              <div class="header-login-register">
-                <ul class="login">
-                  <li>
-                    <a href="#"><i class="fa fa-key"></i>Login</a>
-                    <div class="login-form">
-                      <h4>Login</h4>
-                      <form action="#" method="post">
-                        <div class="form-box">
-                          <i class="fa fa-user"></i>
-                          <input
-                            type="text"
-                            name="user-name"
-                            placeholder="Username"
-                          />
-                        </div>
-                        <div class="form-box">
-                          <i class="fa fa-lock"></i>
-                          <input
-                            type="password"
-                            name="user-password"
-                            placeholder="Password"
-                          />
-                        </div>
-                        <div class="button-box">
-                          <button type="submit" class="login-btn">Login</button>
-                        </div>
-                      </form>
-                    </div>
-                  </li>
-                </ul>
-                <ul class="register">
-                  <li>
-                    <a href="#"><i class="fa fa-lock"></i>Sign Up</a>
-                    <div class="register-form">
-                      <h4>Sign Up</h4>
-                      <span>Please sign up using account detail bellow.</span>
-                      <form action="#" method="post">
-                        <div class="form-box">
-                          <i class="fa fa-user"></i>
-                          <input
-                            type="text"
-                            name="user-name"
-                            placeholder="Username"
-                          />
-                        </div>
-                        <div class="form-box">
-                          <i class="fa fa-lock"></i>
-                          <input
-                            type="password"
-                            name="user-password"
-                            placeholder="Password"
-                          />
-                        </div>
-                        <div class="form-box">
-                          <i class="fa fa-envelope"></i>
-                          <input
-                            type="email"
-                            name="user-email"
-                            placeholder="Email"
-                          />
-                        </div>
-                        <div class="button-box">
-                          <input checked data-toggle="toggle" type="checkbox" />
-                          <span>Remember me</span>
-                          <button type="submit" class="register-btn">
-                            Register
-                          </button>
-                        </div>
-                      </form>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div> -->
           </div>
         </div>
       </div>
@@ -162,10 +257,7 @@
               <div class="col-lg-3 col-md-12">
                 <div class="logo">
                   <a href="index.html"
-                    ><img
-                      style="width: 154px; height: 78px; margin-top: 16px"
-                      src="img/logo/logo.png"
-                      alt="Palette Edu"
+                    ><img src="img/logo/logo-main.png" alt="mountvalley"
                   /></a>
                 </div>
               </div>
@@ -175,30 +267,18 @@
                     <nav>
                       <ul id="nav">
                         <li class="current">
-                          <a href="index.html"
-                            >Home <i class="fa fa-angle-down"></i
-                          ></a>
-                          <ul class="sub-menu">
-                            <li>
-                              <a href="index-2.html">Homepage Version 2</a>
-                            </li>
-                            <li>
-                              <a href="index-3.html">Homepage Version 3</a>
-                            </li>
-                            <li>
-                              <a href="index-4.html">Homepage Version 4</a>
-                            </li>
-                            <li>
-                              <a href="index-5.html">Homepage Version 5</a>
-                            </li>
-                          </ul>
+                          <a href="index.html">Home </a>
                         </li>
                         <li>
                           <a href="about.html"
                             >About us<i class="fa fa-angle-down"></i
                           ></a>
                           <ul class="sub-menu">
-                            <li><a href="./cal.html">ACADEMIC CALENDAR </a></li>
+                            <li>
+                              <a href="about.html#calendarrow"
+                                >Academic Calendar
+                              </a>
+                            </li>
                           </ul>
                         </li>
                         <li><a href="admission.html">Admission</a></li>
@@ -220,27 +300,6 @@
                       </ul>
                     </nav>
                   </div>
-                  <!-- <ul class="header-search">
-                    <li class="search-menu">
-                      <i id="toggle-search" class="fa fa-search"></i>
-                    </li>
-                  </ul> -->
-                  <!--Search Form-->
-                  <!-- <div class="search">
-                    <div class="search-form">
-                      <form id="search-form" action="#">
-                        <input
-                          type="search"
-                          placeholder="Search here..."
-                          name="search"
-                        />
-                        <button type="submit">
-                          <span><i class="fa fa-search"></i></span>
-                        </button>
-                      </form>
-                    </div>
-                  </div> -->
-                  <!--End of Search Form-->
                 </div>
               </div>
             </div>
@@ -258,21 +317,21 @@
                   <ul>
                     <li>
                       <a href="index.html">HOME</a>
-                      <ul>
+                      <!-- <ul>
                         <li><a href="index-2.html">Homepage Version 2</a></li>
                         <li><a href="index-3.html">Homepage Version 3</a></li>
                         <li><a href="index-4.html">Homepage Version 4</a></li>
                         <li><a href="index-5.html">Homepage Version 5</a></li>
-                      </ul>
+                      </ul> -->
                     </li>
                     <li>
-                          <a href="about.html"
-                            >About us<i class="fa fa-angle-down"></i
-                          ></a>
-                          <ul class="sub-menu">
-                            <li><a href="./cal.html">ACADEMIC CALENDAR </a></li>
-                          </ul>
+                      <a href="about.html">About us</a>
+                      <ul class="sub-menu">
+                        <li>
+                          <a href="about.html#calendarrow">Academic Calendar</a>
                         </li>
+                      </ul>
+                    </li>
                     <li><a href="admission.html">Admission</a></li>
                     <li>
                       <a href="class-list.html">Classes</a>
@@ -306,7 +365,11 @@
             alt=""
             title="#slider-1-caption1"
           />
-          <img src="img/slider/2.jpg" alt="" title="#slider-1-caption2" />
+          <img
+            src="img/banner/banner-2 (1).jpg"
+            alt=""
+            title="#slider-1-caption2"
+          />
         </div>
         <div id="slider-1-caption1" class="nivo-html-caption nivo-caption">
           <div class="banner-content slider-1">
@@ -316,9 +379,8 @@
                   <div class="text-content">
                     <h1 class="title1">Education for Kids</h1>
                     <p class="sub-title">
-                      Donec sollicitudin lacus in felis luctus blandit. Ut
-                      hendrerit mattis justo<br />
-                      at susp, vivamus orci urna.
+                      Education is the most powerful weapon which you can use to
+                      change the world
                     </p>
 
                     <div class="banner-readmore">
@@ -361,7 +423,7 @@
           <div class="col-lg-3 col-md-6 col-sm-6 activity">
             <div class="single-activity">
               <div class="single-activity-icon">
-                <i class="fas fa-hand-holding-heart"></i>
+                <i class="fas fa-hands-holding"></i>
               </div>
               <h4>Infrastructure</h4>
               <p>Building safe, modern, and supportive learning spaces.</p>
@@ -415,6 +477,103 @@
       </div>
     </div>
     <!--End of Advertise Area-->
+
+    <!-- about us -->
+    <div class="col-md-12 mt-4">
+      <div class="section-title-wrapper">
+        <div class="section-title">
+          <h3>About US</h3>
+          <p>A journey of growth and discovery</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- why this school -->
+    <section class="features-zigzag">
+      <div class="container">
+        <!-- Section Heading -->
+        <h4 class="main-title">Why Mount Valley Public School?</h4>
+
+        <!-- Feature 1 -->
+        <div class="feature-row">
+          <div class="feature-image" data-aos="zoom-in">
+            <img
+              src="img/schoolimages/classroom.webp"
+              alt="Campus & Buildings"
+            />
+          </div>
+          <div class="feature-text">
+            <h5>Campus & Buildings</h5>
+            <p>
+              Safe and modern campus with well-ventilated classrooms, proper
+              lighting, and comfortable seating. The school features separate
+              administrative and staff offices along with a principal’s office
+              to ensure smooth functioning. A secure boundary wall, eco-friendly
+              green spaces, and first-aid facilities make it a safe and
+              inspiring environment for learning and growth.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-row reverse">
+          <div class="feature-image" data-aos="zoom-in">
+            <img src="img/schoolimages/sports.webp" alt="Playground & Sports" />
+          </div>
+          <div class="feature-text">
+            <h5>Playground & Sports</h5>
+            <p>
+              The spacious playground supports a variety of sports and physical
+              education activities, encouraging teamwork, fitness, and healthy
+              competition. Students have opportunities to participate in
+              inter-school and intra-school tournaments, while additional
+              activities like yoga, aerobics, and mindfulness help develop
+              overall well-being and concentration. Regular fitness monitoring
+              ensures students maintain a healthy lifestyle.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-row">
+          <div class="feature-image" data-aos="zoom-in">
+            <img src="img/schoolimages/lab.webp" alt="Academic Excellence" />
+          </div>
+          <div class="feature-text">
+            <h5>Academic Excellence</h5>
+            <p>
+              Following the ICSE curriculum, the school emphasizes critical
+              thinking, creativity, and holistic learning. Students engage in
+              robotics, STEM projects, arts, music, and spoken English programs
+              to enhance their skills. Project-based learning, practical
+              experiments, and regular assessments ensure academic growth while
+              nurturing confidence, curiosity, and problem-solving abilities in
+              every student.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-row reverse">
+          <div class="feature-image" data-aos="zoom-in">
+            <img src="img/schoolimages/faculty.webp" alt="Dedicated Faculty" />
+          </div>
+          <div class="feature-text">
+            <h5>Dedicated Faculty</h5>
+            <p>
+              Our team of experienced and passionate teachers is committed to
+              the holistic development of every child. They provide personalized
+              attention, mentorship, and guidance while encouraging innovative
+              teaching methods. Continuous training and professional development
+              enable the faculty to stay updated with the latest educational
+              practices, fostering a nurturing and engaging learning
+              environment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  end of why this school -->
 
     <style>
       /* Pulse animation for images */
@@ -570,37 +729,6 @@
       </div>
     </div>
 
-    <!--Register Area Start-->
-    <div class="register-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-7 col-md-7 col-12">
-            <div class="register-info">
-              <h4>GET 100s OF ONLINE <span>COURSES FOR FREE</span></h4>
-              <h1>REGISTER NOW</h1>
-              <div class="timer">
-                <div data-countdown="2025/07/01" class="timer-grid"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-5 col-md-5 col-12">
-            <div class="account-form">
-              <div class="register-title">
-                <i class="fa fa-lock"></i>
-                <h4>Create Your Free Account Now !</h4>
-              </div>
-              <form action="#" method="post">
-                <input type="text" placeholder="Your Name *" name="name" />
-                <input type="email" placeholder="Email*" name="email" />
-                <input type="text" placeholder="Phone *" name="phone" />
-                <button type="submit" class="button-default">Get it now</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--End of Register Area-->
     <!--Service Area Start-->
     <div class="service-area section-padding">
       <div class="container">
@@ -621,8 +749,7 @@
                 <div class="single-service-text">
                   <h4>School Infrastructure</h4>
                   <p>
-                    Our school building is equipped with modern classrooms,
-                    labs, and facilities for holistic student development.
+                    Modern classrooms and labs for holistic student development.
                   </p>
                 </div>
                 <div class="single-service-icon">
@@ -646,8 +773,7 @@
                   <h4>Transportation</h4>
                   <p>
                     Our school provides safe and reliable transportation
-                    facilities for students. Well-maintained buses cover all
-                    major routes to ensure comfortable travel.
+                    facilities for students.
                   </p>
                 </div>
                 <div class="single-service-icon">
@@ -670,8 +796,8 @@
                 <div class="single-service-text">
                   <h4>Full Day Session</h4>
                   <p>
-                    We provide full-day academic and activity-based sessions
-                    ensuring overall growth and learning for every child.
+                    Full-day academic and activity sessions for overall child
+                    growth.
                   </p>
                 </div>
               </div>
@@ -683,8 +809,8 @@
                 <div class="single-service-text">
                   <h4>Custom Programs</h4>
                   <p>
-                    Tailored programs designed for children with unique learning
-                    needs, ensuring inclusive and supportive education.
+                    Programs for children with unique learning needs, promoting
+                    inclusive education
                   </p>
                 </div>
               </div>
@@ -695,8 +821,8 @@
                 <div class="single-service-text">
                   <h4>Special Education</h4>
                   <p>
-                    Focused academic support and life skills training to help
-                    children achieve academic success and personal confidence.
+                    Academic support and life skills training to boost
+                    children's success and confidence.
                   </p>
                 </div>
               </div>
@@ -705,11 +831,21 @@
         </div>
       </div>
     </div>
+
     <!--End of Service Area-->
     <!--Fun Factor Area Start-->
     <div class="fun-factor-area">
       <div class="container">
         <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+            <div class="single-fun-factor">
+              <div class="fun-factor-icon">
+                <i class="fa fa-bank"></i>
+              </div>
+              <h2><span class="counter">5</span></h2>
+              <span>Lab</span>
+            </div>
+          </div>
           <div class="col-lg-3 col-md-3 col-sm-6 col-6">
             <div class="single-fun-factor">
               <div class="fun-factor-icon">
@@ -722,18 +858,9 @@
           <div class="col-lg-3 col-md-3 col-sm-6 col-6">
             <div class="single-fun-factor">
               <div class="fun-factor-icon">
-                <i class="fa fa-bank"></i>
-              </div>
-              <h2><span class="counter">45</span></h2>
-              <span>Campus</span>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-            <div class="single-fun-factor">
-              <div class="fun-factor-icon">
                 <i class="fa fa-user"></i>
               </div>
-              <h2><span class="counter">55</span></h2>
+              <h2><span class="counter">200</span></h2>
               <span>Students</span>
             </div>
           </div>
@@ -749,9 +876,10 @@
         </div>
       </div>
     </div>
+
     <!--End of Fun Factor Area-->
     <!--Teachers Area Start-->
-    <div class="teachers-area section-margin">
+    <!-- <div class="teachers-area section-margin">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -1079,187 +1207,203 @@
           </div>
         </div>
       </div>
-    </div>
-    <!--End of Teachers Area-->
-    <!--Gallery Area Start-->
-    <!-- Gallery Slideshow Area -->
-    <div class="gallery-slideshow section-padding-bottom">
-      <div class="container">
-        <div class="swiper myGallery">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="img/gallery/1.jpg" alt="Annual Day" /><span
-                class="gallery-caption"
-                >Annual Day Celebration</span
-              >
-            </div>
-            <div class="swiper-slide">
-              <img src="img/gallery/2.jpg" alt="Annual Day" /><span
-                class="gallery-caption"
-                >Annual Day Celebration</span
-              >
-            </div>
-            <div class="swiper-slide">
-              <img src="img/gallery/3.jpg" alt="Annual Day" /><span
-                class="gallery-caption"
-                >Annual Day Celebration</span
-              >
-            </div>
-            <div class="swiper-slide">
-              <img src="img/gallery/6.webp" alt="Excursions" /><span
-                class="gallery-caption"
-                >Excursions</span
-              >
-            </div>
-            <div class="swiper-slide">
-              <img src="img/gallery/10.webp" alt="Excursions" /><span
-                class="gallery-caption"
-                >Excursions</span
-              >
-            </div>
-            <div class="swiper-slide">
-              <img src="img/gallery/14.webp" alt="Play Time" /><span
-                class="gallery-caption"
-                >Play Time</span
-              >
-            </div>
-            <div class="swiper-slide">
-              <img src="img/gallery/21.webp" alt="Celebrating Together" /><span
-                class="gallery-caption"
-                >Celebrating Together</span
-              >
-            </div>
-            <div class="swiper-slide">
-              <img src="img/gallery/20.webp" alt="Play Time" /><span
-                class="gallery-caption"
-                >Play Time</span
-              >
-            </div>
-          </div>
+    </div> -->
 
-          <!-- Navigation -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-      </div>
-    </div>
-    <!--End of Gallery Area-->
-    <!--Blog Area Start-->
-    <!-- <div class="blog-area section-padding section-gray">
+    <!-- Teachers Section -->
+    <section class="teachers-area section-margin">
       <div class="container">
         <div class="row">
+          <!-- Section Title -->
           <div class="col-md-12">
             <div class="section-title-wrapper">
               <div class="section-title">
-                <h3>Our Blog</h3>
-                <p>Latest news &amp; event of our schools</p>
+                <h3>Our Teachers</h3>
+                <p>We are glad to introduce our professional staff</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="blog-carousel carousel-style-one owl-carousel">
-          <div class="single-blog-item overlay-hover">
-            <div class="single-blog-image">
-              <div class="overlay-effect">
-                <a href="#">
-                  <img src="img/blog/1.jpg" alt="" />
-                  <span class="class-date">Apr 21 <span>2016</span></span>
-                </a>
+
+        <div class="row">
+          <!-- Teacher Images Sidebar -->
+          <div class="col-lg-4">
+            <div class="teacher-list-sidebar-wrapper">
+              <button class="scroll-up">
+                <i class="fa fa-chevron-up"></i>
+              </button>
+              <div class="teacher-list-sidebar">
+                <div class="teacher-image-item active" data-index="0">
+                  <img src="img/teacher/1.jpg" alt="Teacher 1" />
+                </div>
+                <div class="teacher-image-item" data-index="1">
+                  <img src="img/teacher/2.jpg" alt="Teacher 2" />
+                </div>
+                <div class="teacher-image-item" data-index="2">
+                  <img src="img/teacher/3.jpg" alt="Teacher 3" />
+                </div>
+                <div class="teacher-image-item" data-index="3">
+                  <img src="img/teacher/4.jpg" alt="Teacher 4" />
+                </div>
+                <!-- <div class="teacher-image-item" data-index="4">
+                  <img src="img/teacher/5.jpg" alt="Teacher 5" />
+                </div>
+                <div class="teacher-image-item" data-index="5">
+                  <img src="img/teacher/6.jpg" alt="Teacher 6" />
+                </div> -->
               </div>
-            </div>
-            <div class="single-blog-text">
-              <h4>
-                <a href="blog-details.html">New Friends Everyday at Kiddie</a>
-              </h4>
-              <div class="blog-date">
-                <span><i class="fa fa-calendar"></i>08 Apr, 2016</span>
-              </div>
-              <p>
-                The concept of the activity room is about 'Learning', through
-                play, in a totally different environment. The perfect class for
-                your child with the best.
-              </p>
-              <a href="blog-details.html">Read more.</a>
-            </div>
-          </div>
-          <div class="single-blog-item overlay-hover">
-            <div class="single-blog-image">
-              <div class="overlay-effect">
-                <a href="#">
-                  <img src="img/blog/2.jpg" alt="" />
-                  <span class="class-date">Oct 21 <span>2016</span></span>
-                </a>
-              </div>
-            </div>
-            <div class="single-blog-text">
-              <h4>
-                <a href="blog-details.html">Swimming Lessons at New Pool</a>
-              </h4>
-              <div class="blog-date">
-                <span><i class="fa fa-calendar"></i>27 Jan, 2014</span>
-              </div>
-              <p>
-                The concept of the activity room is about 'Learning', through
-                play, in a totally different environment. The perfect class for
-                your child with the best.
-              </p>
-              <a href="blog-details.html">Read more.</a>
+              <button class="scroll-down">
+                <i class="fa fa-chevron-down"></i>
+              </button>
             </div>
           </div>
-          <div class="single-blog-item overlay-hover">
-            <div class="single-blog-image">
-              <div class="overlay-effect">
-                <a href="#">
-                  <img src="img/blog/3.jpg" alt="" />
-                  <span class="class-date">Nov 21 <span>2016</span></span>
-                </a>
+
+          <!-- Teacher Details -->
+          <div class="col-lg-8">
+            <div
+              class="teacher-wrapper d-flex flex-column flex-lg-row justify-content-center align-items-center"
+            >
+              <!-- Teacher Image -->
+              <div class="teacher-active-image mb-3 mb-lg-0">
+                <img
+                  src="img/teacher/1.jpg"
+                  alt="Teacher 1"
+                  class="img-fluid"
+                />
               </div>
-            </div>
-            <div class="single-blog-text">
-              <h4>
-                <a href="blog-details.html"
-                  >Play is Our Brain’s Favorite Way of</a
-                >
-              </h4>
-              <div class="blog-date">
-                <span><i class="fa fa-calendar"></i>30 Feb, 2015</span>
+
+              <!-- Teacher Details -->
+              <div class="teacher-details ms-lg-4">
+                <div class="teacher-detail-item active" data-index="0">
+                  <h2>Chowchilla Madera</h2>
+                  <span class="language">Spanish Teacher</span>
+                  <p>
+                    Degree: Spanish Literature Master<br />
+                    Experience: 2 Years in Preschool Education<br />
+                    Courses: Paint Kiddie, Mini Kiddie
+                  </p>
+                </div>
+                <div class="teacher-detail-item" data-index="1">
+                  <h2>Kattie Luis</h2>
+                  <span class="language">English Teacher</span>
+                  <p>
+                    Degree: English Literature Master<br />
+                    Experience: 5 Years in High Education<br />
+                    Courses: Paint Kiddie, Mini Kiddie
+                  </p>
+                </div>
+                <div class="teacher-detail-item" data-index="2">
+                  <h2>James Slock</h2>
+                  <span class="language">Japanese Teacher</span>
+                  <p>
+                    Degree: Japanese Literature Master<br />Experience: 6 Years
+                    in School Education<br />Courses: Language Kiddie, Learn
+                    Kiddie
+                  </p>
+                </div>
+                <div class="teacher-detail-item" data-index="3">
+                  <h2>Julia Thomson</h2>
+                  <span class="language">Chinese Teacher</span>
+                  <p>
+                    Degree: Chinese Literature Master<br />Experience: 1 Year in
+                    Preschool Education<br />Courses: Activities Kiddie
+                  </p>
+                </div>
+                <div class="teacher-detail-item" data-index="4">
+                  <h2>Teacher 5</h2>
+                  <span class="language">Math Teacher</span>
+                  <p>
+                    Degree: Math Master<br />Experience: 3 Years<br />Courses:
+                    Numbers 101, Logic
+                  </p>
+                </div>
+                <div class="teacher-detail-item" data-index="5">
+                  <h2>Teacher 6</h2>
+                  <span class="language">Science Teacher</span>
+                  <p>
+                    Degree: Science Master<br />Experience: 4 Years<br />Courses:
+                    Physics, Chemistry
+                  </p>
+                </div>
               </div>
-              <p>
-                The concept of the activity room is about 'Learning', through
-                play, in a totally different environment. The perfect class for
-                your child with the best.
-              </p>
-              <a href="blog-details.html">Read more.</a>
-            </div>
-          </div>
-          <div class="single-blog-item overlay-hover">
-            <div class="single-blog-image">
-              <div class="overlay-effect">
-                <a href="#">
-                  <img src="img/blog/1.jpg" alt="" />
-                  <span class="class-date">Dec 21 <span>2016</span></span>
-                </a>
-              </div>
-            </div>
-            <div class="single-blog-text">
-              <h4>
-                <a href="blog-details.html">New Friends Everyday at Kiddie</a>
-              </h4>
-              <div class="blog-date">
-                <span><i class="fa fa-calendar"></i>08 Apr, 2016</span>
-              </div>
-              <p>
-                The concept of the activity room is about 'Learning', through
-                play, in a totally different environment. The perfect class for
-                your child with the best.
-              </p>
-              <a href="blog-details.html">Read more.</a>
             </div>
           </div>
         </div>
       </div>
-    </div> -->
-    <!--End of Blog Area-->
+    </section>
+
+    <!--End of Teachers Area-->
+
+    <!--Gallery Area Start-->
+    <!-- Gallery Slideshow Area -->
+
+    <div class="section-title-wrapper">
+      <div class="section-title">
+        <h3>Gallery</h3>
+        <p>Moments captured, memories cherished</p>
+      </div>
+    </div>
+
+    <div class="continuous-gallery">
+      <div class="gallery-track">
+        <!-- Slides -->
+        <div class="gallery-slide">
+          <img src="img/gallery/1.jpg" alt="Annual Day" />
+          <span class="gallery-caption-text">Annual Day Celebration</span>
+          <span class="eye-icon" data-img="img/gallery/1.jpg"
+            ><i class="fa fa-eye"></i
+          ></span>
+        </div>
+        <div class="gallery-slide">
+          <img src="img/gallery/2.jpg" alt="Annual Day" />
+          <span class="gallery-caption-text">Annual Day Celebration</span>
+          <span class="eye-icon" data-img="img/gallery/2.jpg"
+            ><i class="fa fa-eye"></i
+          ></span>
+        </div>
+        <div class="gallery-slide">
+          <img src="img/gallery/3.jpg" alt="Annual Day" />
+          <span class="gallery-caption-text">Annual Day Celebration</span>
+          <span class="eye-icon" data-img="img/gallery/3.jpg"
+            ><i class="fa fa-eye"></i
+          ></span>
+        </div>
+        <div class="gallery-slide">
+          <img src="img/gallery/6.webp" alt="Excursions" />
+          <span class="gallery-caption-text">Excursions</span>
+          <span class="eye-icon" data-img="img/gallery/6.webp"
+            ><i class="fa fa-eye"></i
+          ></span>
+        </div>
+
+        <!-- Duplicate slides for seamless scroll -->
+        <div class="gallery-slide">
+          <img src="img/gallery/1.jpg" alt="Annual Day" />
+          <span class="gallery-caption-text">Annual Day Celebration</span>
+          <span class="eye-icon" data-img="img/gallery/1.jpg"
+            ><i class="fa fa-eye"></i
+          ></span>
+        </div>
+        <div class="gallery-slide">
+          <img src="img/gallery/2.jpg" alt="Annual Day" />
+          <span class="gallery-caption-text">Annual Day Celebration</span>
+          <span class="eye-icon" data-img="img/gallery/2.jpg"
+            ><i class="fa fa-eye"></i
+          ></span>
+        </div>
+      </div>
+
+      <!-- Side arrows -->
+      <button class="gallery-arrow left">‹</button>
+      <button class="gallery-arrow right">›</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="image-modal" id="imageModal">
+      <span class="close-btn">&times;</span>
+      <img id="modalImage" src="" alt="Large View" />
+    </div>
+
+    <!--End of Gallery Area-->
     <!--Newsletter Area Start-->
     <div class="newsletter-area">
       <div class="container">
@@ -1309,128 +1453,98 @@
         </iframe>
       </div>
 
-      <div class="breadcrumb-bar">
+      <!-- <div class="breadcrumb-bar">
         <ul class="breadcrumb">
           <li><a href="index.html">Home</a></li>
           <li>About Us</li>
         </ul>
-      </div>
+      </div> -->
     </div>
     <!--End of Google Map Area-->
-    <!--Footer Area Start-->
+
+    <!-- footer area -->
     <div class="footer-area">
       <div class="container">
         <!-- Footer Widgets Row (Logo + Links + Subscribe) -->
         <div class="footer-widget-container section-padding">
           <div class="row">
-            <!-- Logo Column
-        <div class="col-lg-2 col-md-2 col-sm-4 text-center">
-          <div class="footer-logo">
-  <a href="#"><img src="img/logo/footer-logo.png" alt="Footer Logo" style="max-width:150px; height:50px; display:block; margin:0 auto;" /></a>
-</div>
-
-        <div class="footer-info" style="font-size:10px; white-space:nowrap; text-align:center;">
-  <span style="display:inline-block; ">
-    <i class="fa fa-map-marker" style="margin-right:5px;"></i>1st Floor New World Tower Miami
-  </span><br>
-  <span style="display:inline-block; ">
-    <i class="fa fa-envelope" style="margin-right:5px;"></i>admin@power-boosts.com
-  </span><br>
-  <span style="display:inline-block; ">
-    <i class="fa fa-phone" style="margin-right:5px;"></i>(801) 2345 - 6789
-  </span>
-</div> -->
-
-            <!-- </div> -->
-
             <!-- logo -->
-
-            <div class="col-lg-3 col-md-3 col-sm-4" style="color: white">
+            <div class="col-lg-4 col-md-6 col-sm-4" style="color: white">
               <div class="single-footer-widget">
                 <img
-                  src="./img/logo/footer-logo.png"
+                  src="./img/logo/logo-main-white.png"
                   class="single-footer-widget-img"
-                  style="max-width: 120px; height: 50px"
+                  style="max-width: 250px; height: 70px; margin-bottom: 10px"
                 />
-                <ul class="footer-widget-list" style="padding-top: 20px">
-                  <li style="margin-bottom: 15px">
-                    <span>
-                      <i class="fa fa-map-marker" style="margin-right: 5px"></i
-                      >1/260 Arasamara Thottam, Arumuthampalayam,Tirupur 641664 </span
-                    ><br />
-                  </li>
-                  <li style="margin-bottom: 15px">
-                    <span>
-                      <i class="fa fa-envelope" style="margin-right: 5px"></i
-                      >mountwally21@gmail.com</span
-                    ><br />
-                  </li>
-                  <li>
-                    <span>
-                      <i class="fa fa-phone" style="margin-right: 5px"></i>+91 99947 82792
-                    </span>
-                  </li>
-                </ul>
+                <p>
+                  To create a dynamic learning environment that inspires
+                  innovation, cultivates leadership, and equips students to
+                  thrive in a rapidly changing world.
+                </p>
               </div>
             </div>
 
             <!-- Our School Links -->
-            <div class="col-lg-2 col-md-2 col-sm-4">
+            <div class="col-lg-3 col-md-6 col-sm-4">
               <div class="single-footer-widget">
-                <h4>Our School</h4>
+                <h4>Address</h4>
                 <ul class="footer-widget-list">
-                  <li><a href="#">About Us</a></li>
-                  <!-- <li><a href="#">Blog</a></li> -->
-                  <li><a href="#">Contact</a></li>
-                  <li><a href="#">Become a Teacher</a></li>
+                  <li>
+                    <i class="fa fa-map-marker" style="margin-right: 5px"></i
+                    >1/260 Arasamara Thottam, Arumuthampalayam, Tirupur 641664
+                  </li>
+                  <li>
+                    <i class="fa fa-envelope" style="margin-right: 5px"></i
+                    >mountwally21@gmail.com
+                  </li>
+                  <li>
+                    <i class="fa fa-phone" style="margin-right: 5px"></i>+91
+                    99947 82792
+                  </li>
                 </ul>
               </div>
             </div>
 
             <!-- Links -->
-            <div class="col-lg-2 col-md-2 col-sm-4">
+            <div class="col-lg-2 col-md-6 col-sm-4 marginclass">
               <div class="single-footer-widget">
-                <h4>Links</h4>
+                <h4>Quick Links</h4>
                 <ul class="footer-widget-list">
-                  <li><a href="#">Courses</a></li>
-                  <li><a href="#">Events</a></li>
-                  <li><a href="#">Gallery</a></li>
-                  <li><a href="#">FAQs</a></li>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="admission.html">Admission</a></li>
+                  <li><a href="contact.html">contact</a></li>
                 </ul>
               </div>
             </div>
 
             <!-- Support -->
-            <div class="col-lg-2 col-md-2 col-sm-4">
+            <div class="col-lg-3 col-md-6 col-sm-4 marginclass">
               <div class="single-footer-widget">
-                <h4>Support</h4>
+                <h4>Social Media</h4>
                 <ul class="footer-widget-list">
-                  <li><a href="#">Documentation</a></li>
-                  <li><a href="#">Forums</a></li>
-                  <li><a href="#">Language Packs</a></li>
-                  <li><a href="#">Release Status</a></li>
+                  <li>
+                    <a href="https://www.facebook.com/" target="_blank">
+                      Facebook
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/mount_valley_public_school?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                      target="_blank"
+                    >
+                      Instagram
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.youtube.com/channel/UCUjLBYeAGPOA8iTKuCMmBsw"
+                      target="_blank"
+                    >
+                      YouTube
+                    </a>
+                  </li>
                 </ul>
-              </div>
-            </div>
-
-            <!-- Subscribe Form -->
-            <div class="col-lg-3 col-md-3 col-sm-12">
-              <div class="subscribe-container">
-                <p>
-                  Subscribe now and receive weekly newsletter with educational
-                  materials, new courses, interesting posts, popular books and
-                  much more!
-                </p>
-                <form action="#">
-                  <div class="subscribe-form">
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Your email here"
-                    />
-                    <button type="submit"><i class="fa fa-send"></i></button>
-                  </div>
-                </form>
               </div>
             </div>
           </div>
@@ -1439,39 +1553,15 @@
         <!-- Footer Bottom -->
         <div class="row">
           <div class="col-lg-12">
-            <div class="footer-container">
-              <div class="row">
-                <div class="col-lg-6">
-                  <span
-                    >&copy; 2025 Palette Production. All rights reserved</span
-                  >
-                </div>
-               <div class="col-lg-6">
-  <div class="social-links" style="display:flex; gap:12px; font-size:20px;">
-    <a href="https://www.facebook.com/p/Mount-Valley-public-School-100090996410532/" target="_blank">
-      <i class="fa-brands fa-facebook-f"></i>
-    </a>
-    <a href="#" target="_blank">
-      <i class="fa-brands fa-google-plus-g"></i>
-    </a>
-    <!-- Uncomment if you need more -->
-    <!-- <a href="#"><i class="fa-brands fa-twitter"></i></a> -->
-    <!-- <a href="#"><i class="fa-brands fa-pinterest-p"></i></a> -->
-    <a href="https://www.instagram.com/mount_valley_public_school?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-  </div>
-</div>
-
-                </div>
-              </div>
+            <div class="footer-container text-align">
+              <span>&copy; 2025 Palette Production. All rights reserved</span>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!--End of Footer Area-->
+    <!-- end of footer area -->
 
     <!-- jquery
 		============================================ -->
@@ -1540,108 +1630,124 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <!-- Make sure Swiper CSS/JS are included once somewhere on the page -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script> -->
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
     <script>
-      /* Continuous marquee + clickable arrows */
-      const swiper = new Swiper(".myGallery", {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        loop: true,
-        loopAdditionalSlides: 8,
-        speed: 6000, // higher = slower continuous scroll
-        autoplay: {
-          delay: 0, // no pause at all
-          disableOnInteraction: false, // keep auto after arrow click
-          pauseOnMouseEnter: false,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        grabCursor: true,
-        breakpoints: {
-          0: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1200: { slidesPerView: 3 },
-        },
+      // Modal
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      const closeBtn = document.querySelector(".image-modal .close-btn");
+
+      document.querySelectorAll(".eye-icon").forEach((icon) => {
+        icon.addEventListener("click", (e) => {
+          const imgSrc = e.currentTarget.getAttribute("data-img");
+          modalImg.src = imgSrc;
+          modal.style.display = "flex";
+          document.body.classList.add("modal-open");
+        });
+      });
+
+      function closeModal() {
+        modal.style.display = "none";
+        document.body.classList.remove("modal-open");
+      }
+      closeBtn.addEventListener("click", closeModal);
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      // Gallery scroll
+      const track = document.querySelector(".gallery-track");
+      const slideWidth = 320; // width + margin of one slide
+      let scrollAmount = 0;
+      let scrollSpeed = 1; // pixels per frame
+      let isPaused = false;
+
+      // Continuous scroll loop
+      function continuousScroll() {
+        if (!isPaused) {
+          scrollAmount += scrollSpeed;
+          if (scrollAmount >= track.scrollWidth / 2) {
+            scrollAmount = 0; // loop back
+          }
+          track.style.transform = `translateX(-${scrollAmount}px)`;
+        }
+        requestAnimationFrame(continuousScroll);
+      }
+      continuousScroll();
+
+      // Pause on hover
+      track.addEventListener("mouseenter", () => (isPaused = true));
+      track.addEventListener("mouseleave", () => (isPaused = false));
+
+      // Left/right arrow buttons
+      document
+        .querySelector(".gallery-arrow.left")
+        .addEventListener("click", () => {
+          scrollAmount -= slideWidth;
+        });
+      document
+        .querySelector(".gallery-arrow.right")
+        .addEventListener("click", () => {
+          scrollAmount += slideWidth;
+        });
+    </script>
+    <script>
+      const teacherImages = document.querySelectorAll(".teacher-image-item");
+      const teacherDetails = document.querySelectorAll(".teacher-detail-item");
+      const sidebar = document.querySelector(".teacher-list-sidebar");
+      const teacherScrollAmount = 115; // image height + gap (100+15)
+
+      // Click teacher image → show details
+      teacherImages.forEach((img) => {
+        img.addEventListener("click", () => {
+          teacherImages.forEach((i) => i.classList.remove("active"));
+          teacherDetails.forEach((d) => d.classList.remove("active"));
+
+          img.classList.add("active");
+          const index = img.dataset.index;
+          teacherDetails[index].classList.add("active");
+
+          // Scroll the clicked teacher into view
+          img.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        });
+      });
+
+      // Scroll up button
+      document.querySelector(".scroll-up").addEventListener("click", () => {
+        // Scroll up smoothly
+        sidebar.scrollBy({ top: -teacherScrollAmount, behavior: "smooth" });
+      });
+
+      // Scroll down button
+      document.querySelector(".scroll-down").addEventListener("click", () => {
+        // Scroll down smoothly
+        sidebar.scrollBy({ top: teacherScrollAmount, behavior: "smooth" });
+      });
+
+      const scrollUpBtn = document.querySelector(".scroll-up");
+      const scrollDownBtn = document.querySelector(".scroll-down");
+
+      const teacherHeight = 90; // image height
+      const gap = 15; // gap between images
+
+      scrollUpBtn.addEventListener("click", () => {
+        sidebar.scrollBy({ top: -scrollAmount, behavior: "smooth" });
+      });
+
+      scrollDownBtn.addEventListener("click", () => {
+        sidebar.scrollBy({ top: scrollAmount, behavior: "smooth" });
       });
     </script>
 
-    <style>
-      .gallery-slideshow .swiper {
-        position: relative;
-      }
-
-      /* Uniform images */
-      .gallery-slideshow img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 12px;
-        display: block;
-      }
-
-      .gallery-caption {
-        display: block;
-        text-align: center;
-        margin-top: 8px;
-        font-size: 14px;
-        color: #333;
-      }
-
-      /* Make arrows visible, on top, and clickable */
-      .gallery-slideshow .swiper-button-next,
-      .gallery-slideshow .swiper-button-prev {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 56px !important;
-        height: 56px !important;
-        border-radius: 50% !important;
-        background: rgba(0, 0, 0, 0.15) !important;
-        color: #fff !important;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background 0.25s ease, transform 0.2s ease;
-        z-index: 50;
-        pointer-events: auto;
-      }
-      .gallery-slideshow .swiper-button-next {
-        right: 12px;
-      }
-      .gallery-slideshow .swiper-button-prev {
-        left: 12px;
-      }
-
-      .gallery-slideshow .swiper-button-next::after,
-      .gallery-slideshow .swiper-button-prev::after {
-        font-size: 20px !important;
-        font-weight: 700;
-      }
-
-      /* Hover color you asked */
-      .gallery-slideshow .swiper-button-next:hover,
-      .gallery-slideshow .swiper-button-prev:hover {
-        background: #00a3b0 !important;
-        transform: translateY(-50%) scale(1.02);
-      }
-
-      /* Make the motion perfectly linear (no ease-in/out) */
-      .gallery-slideshow .swiper-wrapper {
-        transition-timing-function: linear !important;
-      }
-
-      /* If anything overlaps arrows, ignore its pointer events */
-      .gallery-slideshow .swiper-slide img,
-      .gallery-slideshow .swiper-slide .gallery-caption {
-        pointer-events: none;
-      }
-
-      .gallery-slideshow .swiper-button-next,
-      .gallery-slideshow .swiper-button-prev {
-        pointer-events: auto;
-      }
-    </style>
     <!-- Google Map js
 		============================================ -->
 
@@ -1669,6 +1775,15 @@
       }
 
       google.maps.event.addDomListener(window, "load", initialize);
+    </script>
+
+    <!-- aos -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, // animation duration in ms
+        once: true, // whether animation should happen only once - while scrolling down
+      });
     </script>
 
     <!-- main JS
