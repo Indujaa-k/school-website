@@ -76,7 +76,6 @@
     background:var(--bg);
     color:var(--text);
   } */
-
       .wrap {
         max-width: 1100px;
         margin: 24px auto;
@@ -87,6 +86,8 @@
         display: grid;
         grid-template-columns: 1.4fr 0.8fr;
         gap: 16px;
+        width: 100%;
+        max-width: 100%;
       }
 
       /* Header */
@@ -1044,7 +1045,7 @@
     </div>
 
     <!-- End of ICSE Curriculum Overview -->
-    <!--TimeLine area -->
+    <!-- Timeline Section -->
     <section class="timeline-section section-padding-bottom">
       <div class="container">
         <div class="section-title-wrapper">
@@ -1054,6 +1055,9 @@
         </div>
 
         <div class="timeline">
+          <!-- Animated vertical line -->
+          <div class="timeline-line"></div>
+
           <!-- Classes I – VIII -->
           <div class="timeline-item left">
             <div class="timeline-content" data-aos="fade-down-right">
@@ -1100,18 +1104,18 @@
               <ul>
                 <li>Mathematics</li>
                 <li>Science (Physics, Chemistry, Biology)</li>
-                <li>Economics,Commercial Studies, Environmental Science</li>
+                <li>Economics, Commercial Studies, Environmental Science</li>
                 <li>Modern Foreign Language, Classical Language</li>
               </ul>
               <p><strong>Group III (Choose 1):</strong></p>
               <ul>
                 <li>Computer Applications, Economic Applications</li>
                 <li>
-                  Commercial Applications,Performing Arts (Music, Dance, Drama)
+                  Commercial Applications, Performing Arts (Music, Dance, Drama)
                 </li>
-                <li>Physical Education ,Environmental Applications</li>
+                <li>Physical Education, Environmental Applications</li>
                 <li>
-                  Home Science ,Technical Drawing , Fashion Designing ,Yoga ,
+                  Home Science, Technical Drawing, Fashion Designing, Yoga,
                   Cookery
                 </li>
               </ul>
@@ -1140,8 +1144,6 @@
         </div>
       </div>
     </section>
-
-    <!-- End of Timeline -->
     <!-- whatsapp contact -->
     <a
       href="https://wa.me/9952258987"
@@ -1325,6 +1327,22 @@
     <!-- plugins JS
 		============================================ -->
     <script src="js/plugins.js"></script>
+    <script>
+      window.addEventListener("scroll", () => {
+        const timeline = document.querySelector(".timeline");
+        const line = document.querySelector(".timeline-line");
+
+        const timelineTop = timeline.offsetTop;
+        const scrollBottom = window.scrollY + window.innerHeight;
+        const maxHeight = timeline.scrollHeight;
+
+        if (scrollBottom > timelineTop) {
+          let newHeight = scrollBottom - timelineTop;
+          if (newHeight > maxHeight) newHeight = maxHeight;
+          line.style.height = newHeight + "px";
+        }
+      });
+    </script>
 
     <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
