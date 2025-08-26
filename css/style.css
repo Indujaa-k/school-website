@@ -213,7 +213,7 @@ body {
   margin: 60px 0 60px 0;
 }
 .section-padding {
-  padding: 60px 0 60px 0;
+  padding: 0px 0 60px 0;
 }
 .section-padding-bottom {
   padding-bottom: 65px;
@@ -2065,8 +2065,58 @@ span.gallery-text {
 /*----------------------------------------*/
 /*  15. Footer Area
 /*----------------------------------------*/
+/* Footer base */
+/* === Wavy TOP border for .footer-area (CSS-only) === */
+/* Footer with animated wavy top */
+/* Footer with animated wavy top */
+/* Footer with animated wavy top */
 .footer-area {
-  background: #0a1931 none repeat scroll 0 0;
+  position: relative;
+  background: #0a1931;
+  padding: 80px 20px;
+  color: white;
+  overflow: visible; /* allow wave to overflow */
+}
+
+/* Wave 1 (front) */
+.footer-area::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: radial-gradient(circle at 50% 100%, #0a1931 75%, transparent 76%) repeat-x;
+  background-size: 89px 172px; /* tighter circle size */
+  opacity: 0.9;
+  animation: waveMove1 8s linear infinite;
+  z-index: 2;
+}
+
+/* Wave 2 (behind) */
+.footer-area::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: radial-gradient(circle at 50% 100%, #0a1931 75%, transparent 76%) repeat-x;
+  background-size: 89px 172px; /* slightly bigger */
+  opacity: 0.6;
+  animation: waveMove2 12s linear infinite reverse;
+  z-index: 1;
+}
+
+/* Wave Animations */
+@keyframes waveMove1 {
+  0% { background-position: 0 0; }
+  100% { background-position: -150px 0; }
+}
+
+@keyframes waveMove2 {
+  0% { background-position: 0 0; }
+  100% { background-position: -180px 0; }
 }
 .footer-info {
   line-height: 15px;
@@ -5077,7 +5127,7 @@ span.schedule-time {
   background: #eeac00 none repeat scroll 0 0 padding-box;
   border: 3px solid rgba(245, 177, 32, 0.85);
   border-radius: 50%;
-  bottom: 45px;
+  bottom: 100px;
   color: #ffffff;
   cursor: pointer;
   display: none;
@@ -5094,4 +5144,121 @@ span.schedule-time {
   background-color: #fff;
   color: #00a3b0;
   border-color: rgba(27, 180, 185, 0.7);
+}
+/*----------------------------------------*/
+/*  31. fixed contact  area
+/*----------------------------------------*/
+.whatsapp-fixed-button {
+  position: fixed; /* This is the key property */
+  bottom: 45px; /* Adjust the distance from the bottom */
+  right: 16px; /* Adjust the distance from the right */
+  z-index: 9999; /* Ensures the button is on top of other content */
+}
+
+/* Optional: style the button image/icon */
+.whatsapp-fixed-button img {
+  width: 50px; /* Adjust the size of the icon */
+  height: auto;
+  border-radius: 50%; /* Makes the icon circular */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+/* Styling for the fixed call button */
+.call-icon {
+  width: 24px;   /* reduced size like mail */
+  height: 24px;
+}
+
+.call-us-container {
+  position: fixed;
+  bottom: 45px;
+  right: 50%;
+  display: flex;
+  align-items: center;
+  gap: 8px;  /* smaller spacing */
+  background: #007bff;
+  padding: 6px 12px; /* smaller padding */
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.call-text {
+  color: white;
+  font-size: 14px;  /* reduced text size */
+  font-weight: 600;
+  white-space: nowrap;
+}
+/* Styling for the fixed email button */
+.email-fixed-button {
+  position: fixed;
+  bottom: 45px; /* Position it above the call button */
+  left: 16px;
+  z-index: 9999;
+}
+
+/* Common styles for all fixed buttons for consistent appearance */
+
+
+.email-fixed-button img {
+  width: 48px; /* Set a consistent size for all icons */
+  height: auto;
+  border-radius: 26%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.call-fixed-button:hover img,
+.email-fixed-button:hover img {
+  transform: scale(1.1); /* Hover effect */
+}
+
+/* RESPONSIVE FOR DISPLAY CONTACT ITEMS */
+/* Responsive Styles */
+
+/* Medium Devices (Tablets, up to 991px wide) */
+@media (max-width: 991px) {
+  .whatsapp-fixed-button img,
+  .email-fixed-button img {
+    width: 42px; /* slightly smaller */
+  }
+
+  .call-us-container {
+    bottom: 90px; /* push it up so it won’t overlap */
+    padding: 5px 10px;
+  }
+
+  .call-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .call-text {
+    font-size: 13px;
+  }
+}
+
+/* Small Devices (Mobiles, up to 576px wide) */
+@media (max-width: 576px) {
+  .whatsapp-fixed-button img,
+  .email-fixed-button img {
+    width: 38px; /* smaller icons for phones */
+  }
+
+  .call-us-container {
+    bottom: 100px; /* higher to avoid keyboard overlap */
+    right: 50%;
+    transform: translateX(50%); /* keep it centered */
+    padding: 4px 8px;
+  }
+
+  .call-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .call-text {
+    font-size: 12px; /* smaller text */
+    font-weight: 500;
+  }
 }
