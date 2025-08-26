@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+content<!DOCTYPE html>
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -241,10 +241,18 @@
       }
 
       .text-wave .content {
-        padding: 150px 100px; /* tall section */
+        padding: 150px 100px 200px 30px;
+        /* tall section */
         position: relative;
         z-index: 2;
         text-align: center;
+      }
+      .content h2 {
+        margin-bottom: 20px;
+      }
+
+      .content p {
+        font-size: 20px;
       }
 
       /* Container for animated boxes */
@@ -292,6 +300,21 @@
       .wave4 {
         z-index: 1;
         opacity: 0.3;
+      }
+
+
+      /* Mobile screens (768px and below) */
+      @media (max-width: 768px) {
+       .text-wave .content{
+          padding: 100px 40px 180px 15px;
+        }
+      }
+
+      /* Extra small mobile (480px and below) */
+      @media (max-width: 480px) {
+        .my-section {
+          padding: 60px 20px 20px 10px;
+        }
       }
     </style>
 
@@ -613,20 +636,74 @@
       </div>
     </div>
     <!--End of Activity Area-->
-    <!--Advertise Area Start-->
-    <div class="advertise-area text-center section-gray">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2>Enroll Your Child <span>for a Successful Future</span></h2>
-            <a href="./img/form/form.pdf" download="form.pdf">Download Form</a>
+
+    <!--Enquiry form-->
+
+    <section class="enquiry-section">
+      <div class="enquiry-container">
+        <!-- Left Form -->
+        <div class="enquiry-form">
+          <h2>Enquiry Form</h2>
+          <form>
+            <input type="text" name="name" placeholder="Full Name" required />
+            <input
+              type="tel"
+              name="mobile"
+              placeholder="Mobile Number"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              required
+            />
+            <select name="className" required>
+              <option value="" disabled selected>Select Class</option>
+              <option>Class I</option>
+              <option>Class II</option>
+              <option>Class III</option>
+              <option>Class IV</option>
+              <option>Class IV</option>
+              <option>Class V</option>
+              <option>Class VI</option>
+              <option>Class VII</option>
+              <option>Class VIII</option>
+              <option>Class VIII</option>
+              <option>Class IX</option>
+            </select>
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows="4"
+              required
+            ></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+
+        <!-- Right Images -->
+        <div class="enquiry-images">
+          <div class="image-box image1">
+            <img src="img/schoolimages/student-3.jpg" alt="School Image 1" />
+            <div class="shape circle"></div>
+            <div class="shape arrow">➔</div>
           </div>
+
+          <div class="image-box image2">
+            <img src="img/schoolimages/student-4.webp" alt="School Image 2" />
+            <div class="shape curve"></div>
+            <div class="shape arrow">➔</div>
+          </div>
+          <!-- NEW Rotating Shapes -->
+          <div class="shape rotate-shape shape1-form"></div>
+          <div class="shape rotate-shape shape2-form"></div>
         </div>
       </div>
-    </div>
-    <!--End of Advertise Area-->
+    </section>
 
-    <!-- About Us Section -->
+    <!-- End of Enquiry Form -->
+
     <section class="about-us">
       <div class="container">
         <!-- Section Title -->
@@ -1023,7 +1100,7 @@
               <div class="fun-factor-icon">
                 <i class="fa fa-users"></i>
               </div>
-              <h2><span class="counter">25</span></h2>
+              <h2><span class="counter">30</span></h2>
               <span>Teacher</span>
             </div>
           </div>
@@ -1577,7 +1654,7 @@
 
     <!--End of Gallery Area-->
     <!--Newsletter Area Start-->
-    <div class="newsletter-area">
+    <!-- <div class="newsletter-area">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -1607,7 +1684,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--End of Newsletter Area-->
     <!--Google Map Area Start -->
     <div class="google-map-area">
@@ -1994,6 +2071,8 @@
     <!-- Gsap animations
 		============================================ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+    <script src="gsap.js"></script>
 
     <script>
       gsap.registerPlugin(ScrollTrigger);
@@ -2028,6 +2107,9 @@
         });
       });
     </script>
+
+    <!-- Bannners
+      		============================================ -->
 
     <script>
       // 1️⃣ Create floating pattern boxes
@@ -2084,6 +2166,101 @@
         attr: { d: "M0,220 C400,140 800,300 1440,220 L1440,320 L0,320 Z" },
         ease: "sine.inOut",
       });
+    </script>
+    <!-- Enquiry form
+      		============================================ -->
+
+    <script>
+      // Entrance animations
+      gsap.from(".enquiry-form", {
+        x: -100,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+      });
+      gsap.from(".image1 img", {
+        y: -80,
+        opacity: 0,
+        duration: 1.2,
+        ease: "bounce.out",
+      });
+      gsap.from(".image2 img", {
+        y: 80,
+        opacity: 0,
+        duration: 1.2,
+        delay: 0.3,
+        ease: "bounce.out",
+      });
+
+      // Floating & rotation
+      gsap.to(".circle", {
+        rotation: 360,
+        duration: 6,
+        repeat: -1,
+        ease: "linear",
+      });
+      gsap.to(".curve", {
+        y: -15,
+        duration: 2,
+        yoyo: true,
+        repeat: -1,
+        ease: "sine.inOut",
+      });
+      gsap.to(".arrow", {
+        x: 10,
+        duration: 1.5,
+        yoyo: true,
+        repeat: -1,
+        ease: "power1.inOut",
+      });
+      // NEW rotating shapes
+      gsap.to(".shape1-form", {
+        rotation: 360,
+        duration: 8,
+        repeat: -1,
+        ease: "linear",
+      });
+      gsap.to(".shape2-form", {
+        rotation: -360,
+        duration: 10,
+        repeat: -1,
+        ease: "linear",
+      });
+    </script>
+    <!-- enquiry form api connection -->
+
+    <script>
+      document
+        .querySelector("form")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const formData = {
+            name: e.target[0].value,
+            mobile: e.target[1].value,
+            email: e.target[2].value,
+            className: e.target[3].value,
+            message: e.target[4].value,
+          };
+
+          try {
+            const res = await fetch("send-enquiry.php", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: new URLSearchParams(formData),
+            });
+
+            const data = await res.json();
+            alert(data.message);
+
+            if (data.success) {
+              e.target.reset();
+            }
+          } catch (err) {
+            console.error(err);
+            alert("Error sending message.");
+          }
+        });
     </script>
 
     <!-- main JS
