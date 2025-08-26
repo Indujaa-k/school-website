@@ -18,11 +18,16 @@
     />
     <!-- Google Fonts
 		============================================ -->
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700"
       rel="stylesheet"
       type="text/css"
+    /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap"
+      rel="stylesheet"
     />
+
     <!-- Swiper CSS -->
     <link
       rel="stylesheet"
@@ -217,6 +222,79 @@
         overflow: hidden; /* disable scroll when modal open */
       }
     </style>
+
+    <style>
+      .school-section {
+        text-align: center;
+      }
+
+      .image-container img {
+        width: 100%;
+        display: block;
+      }
+
+      .text-wave {
+        position: relative;
+        background: #f5b642;
+        color: #fff;
+        overflow: hidden;
+      }
+
+      .text-wave .content {
+        padding: 150px 100px; /* tall section */
+        position: relative;
+        z-index: 2;
+        text-align: center;
+      }
+
+      /* Container for animated boxes */
+      .pattern-boxes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 3;
+      }
+
+      /* Each box */
+      .pattern-boxes .box {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: rgba(168, 30, 30, 0.15); /* subtle white boxes */
+        border-radius: 4px;
+        opacity: 0.6;
+      }
+
+      /* Smooth Wave SVG at bottom */
+      .wave {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 300px; /* taller wave for more visible movement */
+      }
+
+      /* Layering and opacity for overlapping waves */
+      .wave1 {
+        z-index: 4;
+      }
+      .wave2 {
+        z-index: 3;
+        opacity: 0.7;
+      }
+      .wave3 {
+        z-index: 2;
+        opacity: 0.5;
+      }
+      .wave4 {
+        z-index: 1;
+        opacity: 0.3;
+      }
+    </style>
+
     <!-- Modernizr JS
 		============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -355,8 +433,78 @@
       <!-- Mobile Menu Area end -->
     </header>
     <!--End of Header Area-->
+    <section class="school-section">
+      <!-- Top Image -->
+      <div class="image-container">
+        <img src="img/banner/1.jpg" alt="School Image" />
+      </div>
+
+      <!-- Text Section WITH waves at its bottom -->
+      <div class="text-wave">
+        <div class="content">
+          <h2>Welcome to Mount Valley Public School</h2>
+          <p>Where learning meets creativity</p>
+          <p>Shaping the leaders of tomorrow</p>
+        </div>
+
+        <!-- Pattern boxes container -->
+        <div class="pattern-boxes"></div>
+
+        <!-- Waves bottom: 4 overlapping waves -->
+        <svg
+          class="wave wave1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="#ffffff"
+            d="M0,160 C360,280 1080,60 1440,160 L1440,320 L0,320 Z"
+          ></path>
+        </svg>
+
+        <svg
+          class="wave wave2"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="#f7e1a1"
+            d="M0,180 C400,100 800,260 1440,180 L1440,320 L0,320 Z"
+          ></path>
+        </svg>
+
+        <svg
+          class="wave wave3"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="#f5d16a"
+            d="M0,200 C360,120 1080,280 1440,200 L1440,320 L0,320 Z"
+          ></path>
+        </svg>
+
+        <svg
+          class="wave wave4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="#f5b642"
+            d="M0,220 C400,140 800,300 1440,220 L1440,320 L0,320 Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <br />
+
     <!--Slider Area Start-->
-    <div class="slider-area slider-style-1">
+    <!-- <div class="slider-area slider-style-1">
       <div class="preview-2">
         <div id="nivoslider" class="slides">
           <img
@@ -413,7 +561,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--End of Slider Area-->
     <!--Activity Area Start-->
     <div class="activity-area">
@@ -478,102 +626,126 @@
     </div>
     <!--End of Advertise Area-->
 
-    <!-- about us -->
-    <div class="col-md-12 mt-4">
-      <div class="section-title-wrapper">
-        <div class="section-title">
-          <h3>About US</h3>
-          <p>A journey of growth and discovery</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- why this school -->
-    <section class="features-zigzag">
+    <!-- About Us Section -->
+    <section class="about-us">
       <div class="container">
-        <!-- Section Heading -->
-        <h4 class="main-title">Why Mount Valley Public School?</h4>
+        <!-- Section Title -->
+        <div class="section-title-wrapper">
+          <div class="section-title">
+            <h3>About US</h3>
+            <p>A journey of growth and discovery</p>
+          </div>
+        </div>
 
-        <!-- Feature 1 -->
-        <div class="feature-row">
-          <div class="feature-image" data-aos="zoom-in">
+        <!-- Why This School -->
+        <div class="features-zigzag">
+          <h4 class="main-title">Why Mount Valley Public School?</h4>
+
+          <!-- Floating Shapes -->
+          <div class="feature-shapes">
+            <img src="img/shapes/book.svg" alt="book" class="shape shape1" />
             <img
-              src="img/schoolimages/classroom.webp"
-              alt="Campus & Buildings"
+              src="img/shapes/pencil.svg"
+              alt="pencil"
+              class="shape shape2"
             />
+            <img src="img/shapes/star.svg" alt="star" class="shape shape3" />
           </div>
-          <div class="feature-text">
-            <h5>Campus & Buildings</h5>
-            <p>
-              Safe and modern campus with well-ventilated classrooms, proper
-              lighting, and comfortable seating. The school features separate
-              administrative and staff offices along with a principal’s office
-              to ensure smooth functioning. A secure boundary wall, eco-friendly
-              green spaces, and first-aid facilities make it a safe and
-              inspiring environment for learning and growth.
-            </p>
-          </div>
-        </div>
 
-        <!-- Feature 2 -->
-        <div class="feature-row reverse">
-          <div class="feature-image" data-aos="zoom-in">
-            <img src="img/schoolimages/sports.webp" alt="Playground & Sports" />
-          </div>
-          <div class="feature-text">
-            <h5>Playground & Sports</h5>
-            <p>
-              The spacious playground supports a variety of sports and physical
-              education activities, encouraging teamwork, fitness, and healthy
-              competition. Students have opportunities to participate in
-              inter-school and intra-school tournaments, while additional
-              activities like yoga, aerobics, and mindfulness help develop
-              overall well-being and concentration. Regular fitness monitoring
-              ensures students maintain a healthy lifestyle.
-            </p>
-          </div>
-        </div>
+          <!-- SVG for connecting lines -->
+          <svg
+            class="feature-lines"
+            width="100%"
+            height="100%"
+            style="position: absolute; top: 0; left: 0; pointer-events: none"
+          ></svg>
 
-        <!-- Feature 3 -->
-        <div class="feature-row">
-          <div class="feature-image" data-aos="zoom-in">
-            <img src="img/schoolimages/lab.webp" alt="Academic Excellence" />
+          <!-- Feature 1 -->
+          <div class="feature-row">
+            <div class="feature-image">
+              <img
+                src="img/schoolimages/classroom.webp"
+                alt="Campus & Buildings"
+              />
+            </div>
+            <div class="feature-text">
+              <h5>Campus & Buildings</h5>
+              <p>
+                Safe and modern campus with well-ventilated classrooms, proper
+                lighting, and comfortable seating. The school features separate
+                administrative and staff offices along with a principal’s office
+                to ensure smooth functioning. A secure boundary wall,
+                eco-friendly green spaces, and first-aid facilities make it a
+                safe and inspiring environment for learning and growth.
+              </p>
+            </div>
           </div>
-          <div class="feature-text">
-            <h5>Academic Excellence</h5>
-            <p>
-              Following the ICSE curriculum, the school emphasizes critical
-              thinking, creativity, and holistic learning. Students engage in
-              robotics, STEM projects, arts, music, and spoken English programs
-              to enhance their skills. Project-based learning, practical
-              experiments, and regular assessments ensure academic growth while
-              nurturing confidence, curiosity, and problem-solving abilities in
-              every student.
-            </p>
-          </div>
-        </div>
 
-        <!-- Feature 4 -->
-        <div class="feature-row reverse">
-          <div class="feature-image" data-aos="zoom-in">
-            <img src="img/schoolimages/faculty.webp" alt="Dedicated Faculty" />
+          <!-- Feature 2 -->
+          <div class="feature-row reverse">
+            <div class="feature-image">
+              <img
+                src="img/schoolimages/sports.webp"
+                alt="Playground & Sports"
+              />
+            </div>
+            <div class="feature-text">
+              <h5>Playground & Sports</h5>
+              <p>
+                The spacious playground supports a variety of sports and
+                physical education activities, encouraging teamwork, fitness,
+                and healthy competition. Students have opportunities to
+                participate in inter-school and intra-school tournaments, while
+                additional activities like yoga, aerobics, and mindfulness help
+                develop overall well-being and concentration. Regular fitness
+                monitoring ensures students maintain a healthy lifestyle.
+              </p>
+            </div>
           </div>
-          <div class="feature-text">
-            <h5>Dedicated Faculty</h5>
-            <p>
-              Our team of experienced and passionate teachers is committed to
-              the holistic development of every child. They provide personalized
-              attention, mentorship, and guidance while encouraging innovative
-              teaching methods. Continuous training and professional development
-              enable the faculty to stay updated with the latest educational
-              practices, fostering a nurturing and engaging learning
-              environment.
-            </p>
+
+          <!-- Feature 3 -->
+          <div class="feature-row">
+            <div class="feature-image">
+              <img src="img/schoolimages/lab.webp" alt="Academic Excellence" />
+            </div>
+            <div class="feature-text">
+              <h5>Academic Excellence</h5>
+              <p>
+                Following the ICSE curriculum, the school emphasizes critical
+                thinking, creativity, and holistic learning. Students engage in
+                robotics, STEM projects, arts, music, and spoken English
+                programs to enhance their skills. Project-based learning,
+                practical experiments, and regular assessments ensure academic
+                growth while nurturing confidence, curiosity, and
+                problem-solving abilities in every student.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-row reverse">
+            <div class="feature-image">
+              <img
+                src="img/schoolimages/faculty.webp"
+                alt="Dedicated Faculty"
+              />
+            </div>
+            <div class="feature-text">
+              <h5>Dedicated Faculty</h5>
+              <p>
+                Our team of experienced and passionate teachers is committed to
+                the holistic development of every child. They provide
+                personalized attention, mentorship, and guidance while
+                encouraging innovative teaching methods. Continuous training and
+                professional development enable the faculty to stay updated with
+                the latest educational practices, fostering a nurturing and
+                engaging learning environment.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <!--  end of why this school -->
 
     <style>
       /* Pulse animation for images */
@@ -1660,9 +1832,8 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Make sure Swiper CSS/JS are included once somewhere on the page -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css">
-    <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script> -->
+    <!-- gallery
+		============================================ -->
 
     <link
       rel="stylesheet"
@@ -1730,6 +1901,9 @@
           scrollAmount += slideWidth;
         });
     </script>
+
+    <!-- teacher
+		============================================ -->
     <script>
       const teacherImages = document.querySelectorAll(".teacher-image-item");
       const teacherDetails = document.querySelectorAll(".teacher-detail-item");
@@ -1807,7 +1981,8 @@
       google.maps.event.addDomListener(window, "load", initialize);
     </script>
 
-    <!-- aos -->
+    <!-- AOS
+		============================================ -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init({
@@ -1816,8 +1991,103 @@
       });
     </script>
 
-    <!-- main JS
+    <!-- Gsap animations
 		============================================ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Animate feature rows on scroll
+      gsap.utils.toArray(".feature-row").forEach((row, i) => {
+        gsap.from(row.querySelector(".feature-text"), {
+          x: i % 2 === 0 ? -100 : 100,
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: { trigger: row, start: "top 80%" },
+        });
+
+        gsap.from(row.querySelector(".feature-image img"), {
+          scale: 0.8,
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: { trigger: row, start: "top 80%" },
+        });
+      });
+
+      // Animate floating shapes
+      gsap.utils.toArray(".feature-shapes .shape").forEach((shape) => {
+        gsap.to(shape, {
+          y: "+=20",
+          repeat: -1,
+          yoyo: true,
+          duration: 3 + Math.random() * 2,
+          ease: "sine.inOut",
+        });
+      });
+    </script>
+
+    <script>
+      // 1️⃣ Create floating pattern boxes
+      const container = document.querySelector(".pattern-boxes");
+      const numberOfBoxes = 15;
+
+      for (let i = 0; i < numberOfBoxes; i++) {
+        const box = document.createElement("div");
+        box.classList.add("box");
+
+        // Random initial positions
+        box.style.left = `${Math.random() * 95}%`;
+        box.style.top = `${Math.random() * 80}%`;
+
+        container.appendChild(box);
+
+        // Animate in sync with waves
+        gsap.to(box, {
+          y: "+=20", // vertical float like wave
+          duration: 8, // same as wave1
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          delay: i * 0.2, // stagger for natural effect
+        });
+      }
+
+      // Animate waves
+      gsap.to(".wave1 path", {
+        duration: 8,
+        repeat: -1,
+        yoyo: true,
+        attr: { d: "M0,160 C360,280 1080,60 1440,160 L1440,320 L0,320 Z" },
+        ease: "sine.inOut",
+      });
+      gsap.to(".wave2 path", {
+        duration: 10,
+        repeat: -1,
+        yoyo: true,
+        attr: { d: "M0,180 C400,100 800,260 1440,180 L1440,320 L0,320 Z" },
+        ease: "sine.inOut",
+      });
+      gsap.to(".wave3 path", {
+        duration: 12,
+        repeat: -1,
+        yoyo: true,
+        attr: { d: "M0,200 C360,120 1080,280 1440,200 L1440,320 L0,320 Z" },
+        ease: "sine.inOut",
+      });
+      gsap.to(".wave4 path", {
+        duration: 14,
+        repeat: -1,
+        yoyo: true,
+        attr: { d: "M0,220 C400,140 800,300 1440,220 L1440,320 L0,320 Z" },
+        ease: "sine.inOut",
+      });
+    </script>
+
+    <!-- main JS
+      		============================================ -->
     <script src="js/main.js"></script>
   </body>
 </html>

@@ -83,6 +83,7 @@ html,
 body {
   height: 100%;
 }
+
 .floatleft {
   float: left !important;
 }
@@ -199,7 +200,8 @@ ul {
 }
 body {
   color: #666;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+    font-family: "Merienda", cursive;
   font-size: 14px;
   line-height: 24px;
   text-align: left;
@@ -965,7 +967,7 @@ nav#dropdown {
 /*  4. Activity Area
 /*----------------------------------------*/
 .activity-area {
-  padding: 60px 0 56px;
+  padding: 0 0 56px;
   text-align: center;
 }
 .activity-area h3 {
@@ -4427,7 +4429,7 @@ textarea {
   background: rgba(0, 0, 0, 0) url("../img/schoolimages/adimission-3.jpg")
     no-repeat scroll center top / cover;
 }
-/* General Section Styles */
+/* General Section Styles
 .features-zigzag {
   padding: 20px;
 }
@@ -4439,7 +4441,6 @@ textarea {
   color: #444444;
 }
 
-/* Feature Row */
 .feature-row {
   display: flex;
   align-items: center;
@@ -4451,7 +4452,6 @@ textarea {
   flex-direction: row-reverse;
 }
 
-/* Feature Image */
 .feature-image img {
   width: 100%;
   max-width: 500px;
@@ -4460,12 +4460,15 @@ textarea {
   object-fit: cover;
 }
 
-/* Feature Text */
 .feature-text {
   flex: 1;
+  background-color: #EEAC00;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
 }
 
-.feature-text h3 {
+.feature-text h5 {
   margin-bottom: 15px;
 }
 
@@ -4473,7 +4476,7 @@ textarea {
   line-height: 1.8;
 }
 .feature-image {
-  overflow: hidden; /* Ensures image doesn't overflow during zoom */
+  overflow: hidden; 
 }
 
 .feature-image img {
@@ -4482,15 +4485,14 @@ textarea {
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   object-fit: cover;
-  transition: transform 0.6s ease; /* Smooth zoom transition */
+  transition: transform 0.6s ease; 
 }
 
-/* Zoom on hover */
+
 .feature-image img:hover {
   transform: scale(1.1);
 }
 
-/* Optional: Zoom on scroll using animate class */
 @keyframes zoomIn {
   0% {
     transform: scale(0.8);
@@ -4505,9 +4507,6 @@ textarea {
 .feature-image.animate img {
   animation: zoomIn 1s ease forwards;
 }
-/* Responsive Styles */
-
-/* Tablets */
 @media (max-width: 992px) {
   .feature-row {
     flex-direction: column;
@@ -4527,7 +4526,6 @@ textarea {
   }
 }
 
-/* Mobile */
 @media (max-width: 576px) {
   .features-zigzag {
     padding: 50px 15px;
@@ -4545,8 +4543,130 @@ textarea {
   .feature-text p {
     font-size: 0.95rem;
   }
+} */
+
+/* General About Us Styles */
+.about-us {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  position: relative;
 }
-/*  */
+
+.section-title-wrapper {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h3 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Features Zigzag */
+.features-zigzag {
+  position: relative;
+  padding: 20px 0;
+}
+
+.features-zigzag .main-title {
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: 500;
+  color: #444;
+}
+
+.feature-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+  gap: 40px;
+  position: relative;
+}
+
+.feature-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.feature-image {
+  flex: 1;
+  overflow: hidden;
+}
+
+.feature-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-image img:hover {
+  transform: scale(1.1);
+}
+
+.feature-text {
+  flex: 1;
+  background-color: #EEAC00;
+  color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.feature-text h5 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.feature-text p {
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* Floating Shapes */
+.feature-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.feature-shapes .shape {
+  position: absolute;
+  width: 50px;
+  opacity: 0.6;
+}
+
+.shape1 { top: 20%; left: 10%; }
+.shape2 { top: 50%; right: 15%; }
+.shape3 { bottom: 20%; left: 30%; }
+
+/* Responsive */
+@media (max-width: 992px) {
+  .feature-row { flex-direction: column; text-align: center; }
+  .feature-row.reverse { flex-direction: column; }
+  .feature-text { margin-top: 20px; }
+  .feature-image img { max-width: 100%; }
+}
+
+@media (max-width: 576px) {
+  .section-title h3 { font-size: 2rem; }
+  .section-title p { font-size: 1rem; }
+  .feature-text h5 { font-size: 1.3rem; }
+  .feature-text p { font-size: 0.95rem; }
+  .features-zigzag { padding: 50px 15px; }
+}
+
+
+/* -admission section */
 
 .admission-process .container {
   width: 100%;
