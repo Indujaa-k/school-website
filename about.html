@@ -312,39 +312,39 @@
         }
       }
       @media (max-width: 768px) {
-  .pill {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    padding: 0;
-    font-size: 0; /* hide text */
-    position: relative;
-    display: inline-block;
-  }
+        .pill {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          padding: 0;
+          font-size: 0; /* hide text */
+          position: relative;
+          display: inline-block;
+        }
 
-  /* Tooltip effect */
-  .pill::after {
-    content: attr(data-name); /* event name */
-    position: absolute;
-    bottom: 120%; /* above dot */
-    left: 50%;
-    transform: translateX(-50%);
-    background: #333;
-    color: #fff;
-    font-size: 12px;
-    padding: 4px 8px;
-    border-radius: 6px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
-    z-index: 10;
-  }
+        /* Tooltip effect */
+        .pill::after {
+          content: attr(data-name); /* event name */
+          position: absolute;
+          bottom: 120%; /* above dot */
+          left: 50%;
+          transform: translateX(-50%);
+          background: #333;
+          color: #fff;
+          font-size: 12px;
+          padding: 4px 8px;
+          border-radius: 6px;
+          white-space: nowrap;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.2s ease;
+          z-index: 10;
+        }
 
-  .pill:hover::after {
-    opacity: 1;
-  }
-}
+        .pill:hover::after {
+          opacity: 1;
+        }
+      }
     </style>
   </head>
   <body>
@@ -459,9 +459,7 @@
               <div class="col-lg-3 col-md-12">
                 <div class="logo">
                   <a href="index.html"
-                    ><img
-                      src="img/logo/logo-main.png"
-                      alt="mountvalley"
+                    ><img src="img/logo/logo-main.png" alt="mountvalley"
                   /></a>
                 </div>
               </div>
@@ -471,8 +469,7 @@
                     <nav>
                       <ul id="nav">
                         <li class="current">
-                          <a href="index.html"
-                            >Home</a>
+                          <a href="index.html">Home</a>
                         </li>
                         <li>
                           <a href="about.html"
@@ -551,8 +548,7 @@
                       </ul> -->
                     </li>
                     <li>
-                      <a href="about.html"
-                        >About us</a>
+                      <a href="about.html">About us</a>
                       <ul class="sub-menu">
                         <li>
                           <a href="about.html#calendarrow"
@@ -1059,8 +1055,8 @@
 
         <div class="timeline">
           <!-- Classes I – VIII -->
-          <div class="timeline-item left" data-aos="fade-right">
-            <div class="timeline-content">
+          <div class="timeline-item left">
+            <div class="timeline-content" data-aos="fade-down-right">
               <h5>
                 Classes I – VIII (School-based curriculum aligned to ICSE)
               </h5>
@@ -1077,7 +1073,7 @@
                 <li>Art, Craft, Moral Science, Physical Education</li>
               </ul>
             </div>
-            <div class="timeline-img">
+            <div class="timeline-img" data-aos="fade-up-left">
               <img
                 src="img/schoolimages/student-9.png"
                 alt="Classes I – VIII"
@@ -1086,8 +1082,8 @@
           </div>
 
           <!-- Classes IX – X -->
-          <div class="timeline-item right" data-aos="fade-left">
-            <div class="timeline-content">
+          <div class="timeline-item right">
+            <div class="timeline-content" data-aos="fade-down-left">
               <h5>Classes IX – X (ICSE Board Exam)</h5>
               <p>Students must study 6–7 subjects in 3 groups:</p>
               <p>
@@ -1120,14 +1116,14 @@
                 </li>
               </ul>
             </div>
-            <div class="timeline-img">
+            <div class="timeline-img" data-aos="fade-up-right">
               <img src="img/gallery/exhi-7.png" alt="Classes IX – X" />
             </div>
           </div>
 
           <!-- Assessment -->
-          <div class="timeline-item left" data-aos="fade-right">
-            <div class="timeline-content">
+          <div class="timeline-item left">
+            <div class="timeline-content" data-aos="fade-down-right">
               <h5>🏆 Assessment System</h5>
               <p><strong>Class IX →</strong> School exams (CISCE pattern).</p>
               <p><strong>Class X →</strong> ICSE Board Exam (CISCE).</p>
@@ -1137,7 +1133,7 @@
                 <li>20% Internal Assessment / Project Work</li>
               </ul>
             </div>
-            <div class="timeline-img">
+            <div class="timeline-img" data-aos="fade-up-left">
               <img src="img/gallery/exhi7.png" alt="Assessment System" />
             </div>
           </div>
@@ -1146,6 +1142,25 @@
     </section>
 
     <!-- End of Timeline -->
+    <!-- whatsapp contact -->
+    <a
+      href="https://wa.me/9952258987"
+      class="whatsapp-fixed-button"
+      target="_blank"
+    >
+      <img src="./img/whatsapp-icon-logo-svgrepo-com.svg" alt="WhatsApp" />
+    </a>
+    <!-- for call -->
+    <a href="tel:+91 99947 82792" class="call-fixed-button">
+      <div class="call-us-container">
+        <img src="./img/call-button.svg" alt="Call Us" class="call-icon" />
+        <span class="call-text">Call Us</span>
+      </div>
+    </a>
+    <!-- for mail -->
+    <a href="mailto:mountwally21@gmail.com" class="email-fixed-button">
+      <img src="./img/pngwing.com (1).svg" alt="Email Us" />
+    </a>
     <!--Footer Area Start-->
     <div class="footer-area">
       <div class="container">
@@ -1158,7 +1173,7 @@
                 <img
                   src="./img/logo/logo-main-white.png"
                   class="single-footer-widget-img"
-                  style="max-width: 250px; height: 70px;margin-bottom: 10px;"
+                  style="max-width: 250px; height: 70px; margin-bottom: 10px"
                 />
                 <p>
                   To create a dynamic learning environment that inspires
@@ -1325,252 +1340,282 @@
 
     <!-- calender -->
     <script>
-  const DEFAULT_YEAR = 2025;
+      const DEFAULT_YEAR = 2025;
 
-  const EVENTS = {
-    "2025-01-01": [{ name: "New Year", type: "holiday" }],
-    "2025-01-14": [{ name: "Pongal", type: "festival" }],
-    "2025-01-26": [{ name: "Republic Day Celebration", type: "special" }],
-    "2025-02-10": [{ name: "Unit Test 1 (Starts)", type: "exam" }],
-    "2025-02-14": [{ name: "Cultural Day", type: "event" }],
-    "2025-03-08": [{ name: "Science Exhibition", type: "event" }],
-    "2025-03-21": [{ name: "Annual Day", type: "special" }],
-    "2025-04-05": [{ name: "Parent–Teacher Meet", type: "event" }],
-    "2025-04-14": [{ name: "Ambedkar Jayanti", type: "special" }],
-    "2025-04-18": [{ name: "Good Friday", type: "holiday" }],
-    "2025-05-01": [{ name: "May Day", type: "holiday" }],
-    "2025-05-05": [{ name: "Summer Exams Begin", type: "exam" }],
-    "2025-05-20": [{ name: "Results & Open House", type: "event" }],
-    "2025-06-10": [{ name: "School Reopens", type: "special" }],
-    "2025-06-15": [{ name: "Father’s Day", type: "event" }],
-    "2025-06-27": [{ name: "Pink Day (KG)", type: "event" }],
-    "2025-07-06": [{ name: "Muharram ", type: "holiday" }],
-    "2025-08-02": [{ name: "Friendship Day Celebration", type: "event" }],
-    "2025-08-15": [{ name: "Independence Day", type: "special" }],
-    "2025-08-16": [{ name: "Krishna Jayanthi ", type: "holiday" }],
-    "2025-08-18": [{ name: "Red Day Celebration", type: "event" }],
-    "2025-08-20": [{ name: "Internal-I Exams Begin", type: "exam" }],
-    "2025-08-25": [{ name: "Onam Celebration", type: "festival" }],
-    "2025-08-27": [{ name: "Vinayagar Chaturthi", type: "holiday" }],
-    "2025-09-05": [
-      { name: "Teachers’ Day", type: "special" },
-      { name: "Onam Celebration", type: "festival" }
-    ],
-    "2025-09-12": [{ name: "Half-Yearly Exams Begin", type: "exam" }],
-    "2025-09-15": [{ name: "Semester-I Exams Begin", type: "exam" }],
-    "2025-10-02": [{ name: "Gandhi Jayanti", type: "holiday" }],
-    "2025-10-02": [{ name: "Dussehra Begins", type: "holiday" }],
-    "2025-10-03": [{ name: "Dussehra", type: "holiday" }],
-    "2025-10-04": [{ name: "Dussehra", type: "holiday" }],
-    "2025-10-05": [{ name: "Dussehra", type: "holiday" }],
-    "2025-10-06": [{ name: "Dussehra", type: "holiday" }],
-    "2025-10-07": [{ name: "Dussehra", type: "holiday" }],
-    "2025-10-08": [{ name: "Dussehra", type: "holiday" }],
-    "2025-10-09": [{ name: "School Reopens After Dussehra", type: "special" }],
-    "2025-10-10": [{ name: "National Post Day", type: "event" }],
-    "2025-10-18": [{ name: "Diwali ", type: "holiday" }],
-    "2025-10-19": [{ name: "Diwali ", type: "holiday" }],
-    "2025-10-20": [
-      { name: "Diwali", type: "holiday" },
-      { name: "Diwali Celebration", type: "festival" }
-    ],
-    "2025-10-21": [{ name: "Diwali ", type: "holiday" }],
-    "2025-10-22": [{ name: "School Reopens After Diwali", type: "special" }],
-    "2025-10-24": [{ name: "Yellow Day Celebration", type: "event" }],
-    "2025-11-01": [{ name: "School Sports Heats", type: "event" }],
-    "2025-11-03": [{ name: "Orange Day Celebration", type: "event" }],
-    "2025-11-14": [{ name: "Children’s Day Celebration", type: "special" }],
-    "2025-11-24": [{ name: "Internal-II Exams Begin", type: "exam" }],
-    "2025-12-15": [{ name: "Preboard Exams Begin", type: "exam" }],
-    "2025-12-24": [{ name: "Christmas Eve Program", type: "event" }],
-    "2025-12-25": [{ name: "Christmas ", type: "holiday" }],
-    "2026-01-11": [{ name: "Annual Day", type: "special" }],
-    "2026-01-12": [{ name: "Pongal Holidays Begin", type: "festival" }],
-    "2026-01-18": [{ name: "Pongal Holidays End", type: "festival" }],
-    "2026-01-26": [{ name: "Republic Day", type: "special" }],
-    "2026-02-01": [{ name: "Thai Poosam ", type: "holiday" }],
-    "2026-02-02": [{ name: "Internal-III Exams Begin", type: "exam" }],
-    "2026-02-19": [{ name: "E-DAC Day", type: "event" }],
-    "2026-03-18": [{ name: "E-DAC Day", type: "event" }],
-    "2026-04-02": [{ name: "Last Working Day for KG’s", type: "special" }],
-    "2026-04-03": [{ name: "Good Friday ", type: "holiday" }],
-    "2026-04-05": [{ name: "Easter", type: "holiday" }],
-    "2026-04-14": [{ name: "Tamil New Year", type: "festival" }]
-  };
+      const EVENTS = {
+        "2025-01-01": [{ name: "New Year", type: "holiday" }],
+        "2025-01-14": [{ name: "Pongal", type: "festival" }],
+        "2025-01-26": [{ name: "Republic Day Celebration", type: "special" }],
+        "2025-02-10": [{ name: "Unit Test 1 (Starts)", type: "exam" }],
+        "2025-02-14": [{ name: "Cultural Day", type: "event" }],
+        "2025-03-08": [{ name: "Science Exhibition", type: "event" }],
+        "2025-03-21": [{ name: "Annual Day", type: "special" }],
+        "2025-04-05": [{ name: "Parent–Teacher Meet", type: "event" }],
+        "2025-04-14": [{ name: "Ambedkar Jayanti", type: "special" }],
+        "2025-04-18": [{ name: "Good Friday", type: "holiday" }],
+        "2025-05-01": [{ name: "May Day", type: "holiday" }],
+        "2025-05-05": [{ name: "Summer Exams Begin", type: "exam" }],
+        "2025-05-20": [{ name: "Results & Open House", type: "event" }],
+        "2025-06-10": [{ name: "School Reopens", type: "special" }],
+        "2025-06-15": [{ name: "Father’s Day", type: "event" }],
+        "2025-06-27": [{ name: "Pink Day (KG)", type: "event" }],
+        "2025-07-06": [{ name: "Muharram ", type: "holiday" }],
+        "2025-08-02": [{ name: "Friendship Day Celebration", type: "event" }],
+        "2025-08-15": [{ name: "Independence Day", type: "special" }],
+        "2025-08-16": [{ name: "Krishna Jayanthi ", type: "holiday" }],
+        "2025-08-18": [{ name: "Red Day Celebration", type: "event" }],
+        "2025-08-20": [{ name: "Internal-I Exams Begin", type: "exam" }],
+        "2025-08-25": [{ name: "Onam Celebration", type: "festival" }],
+        "2025-08-27": [{ name: "Vinayagar Chaturthi", type: "holiday" }],
+        "2025-09-05": [
+          { name: "Teachers’ Day", type: "special" },
+          { name: "Onam Celebration", type: "festival" },
+        ],
+        "2025-09-12": [{ name: "Half-Yearly Exams Begin", type: "exam" }],
+        "2025-09-15": [{ name: "Semester-I Exams Begin", type: "exam" }],
+        "2025-10-02": [{ name: "Gandhi Jayanti", type: "holiday" }],
+        "2025-10-02": [{ name: "Dussehra Begins", type: "holiday" }],
+        "2025-10-03": [{ name: "Dussehra", type: "holiday" }],
+        "2025-10-04": [{ name: "Dussehra", type: "holiday" }],
+        "2025-10-05": [{ name: "Dussehra", type: "holiday" }],
+        "2025-10-06": [{ name: "Dussehra", type: "holiday" }],
+        "2025-10-07": [{ name: "Dussehra", type: "holiday" }],
+        "2025-10-08": [{ name: "Dussehra", type: "holiday" }],
+        "2025-10-09": [
+          { name: "School Reopens After Dussehra", type: "special" },
+        ],
+        "2025-10-10": [{ name: "National Post Day", type: "event" }],
+        "2025-10-18": [{ name: "Diwali ", type: "holiday" }],
+        "2025-10-19": [{ name: "Diwali ", type: "holiday" }],
+        "2025-10-20": [
+          { name: "Diwali", type: "holiday" },
+          { name: "Diwali Celebration", type: "festival" },
+        ],
+        "2025-10-21": [{ name: "Diwali ", type: "holiday" }],
+        "2025-10-22": [
+          { name: "School Reopens After Diwali", type: "special" },
+        ],
+        "2025-10-24": [{ name: "Yellow Day Celebration", type: "event" }],
+        "2025-11-01": [{ name: "School Sports Heats", type: "event" }],
+        "2025-11-03": [{ name: "Orange Day Celebration", type: "event" }],
+        "2025-11-14": [{ name: "Children’s Day Celebration", type: "special" }],
+        "2025-11-24": [{ name: "Internal-II Exams Begin", type: "exam" }],
+        "2025-12-15": [{ name: "Preboard Exams Begin", type: "exam" }],
+        "2025-12-24": [{ name: "Christmas Eve Program", type: "event" }],
+        "2025-12-25": [{ name: "Christmas ", type: "holiday" }],
+        "2026-01-11": [{ name: "Annual Day", type: "special" }],
+        "2026-01-12": [{ name: "Pongal Holidays Begin", type: "festival" }],
+        "2026-01-18": [{ name: "Pongal Holidays End", type: "festival" }],
+        "2026-01-26": [{ name: "Republic Day", type: "special" }],
+        "2026-02-01": [{ name: "Thai Poosam ", type: "holiday" }],
+        "2026-02-02": [{ name: "Internal-III Exams Begin", type: "exam" }],
+        "2026-02-19": [{ name: "E-DAC Day", type: "event" }],
+        "2026-03-18": [{ name: "E-DAC Day", type: "event" }],
+        "2026-04-02": [{ name: "Last Working Day for KG’s", type: "special" }],
+        "2026-04-03": [{ name: "Good Friday ", type: "holiday" }],
+        "2026-04-05": [{ name: "Easter", type: "holiday" }],
+        "2026-04-14": [{ name: "Tamil New Year", type: "festival" }],
+      };
 
-  const monthLabel = document.getElementById("monthLabel");
-  const yearSelect = document.getElementById("yearSelect");
-  const calendarEl = document.getElementById("calendar");
-  const weekdaysEl = document.getElementById("weekdays");
-  const listTitle = document.getElementById("listTitle");
-  const monthList = document.getElementById("monthList");
+      const monthLabel = document.getElementById("monthLabel");
+      const yearSelect = document.getElementById("yearSelect");
+      const calendarEl = document.getElementById("calendar");
+      const weekdaysEl = document.getElementById("weekdays");
+      const listTitle = document.getElementById("listTitle");
+      const monthList = document.getElementById("monthList");
 
-  const filtersState = {
-    holiday: true,
-    event: true,
-    exam: true,
-    special: true,
-    festival: true,
-  };
+      const filtersState = {
+        holiday: true,
+        event: true,
+        exam: true,
+        special: true,
+        festival: true,
+      };
 
-  const MONTHS = [
-    "January","February","March","April","May","June",
-    "July","August","September","October","November","December",
-  ];
-  const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  WEEKDAYS.forEach((d) => {
-    const w = document.createElement("div");
-    w.className = "weekday";
-    w.textContent = d;
-    weekdaysEl.appendChild(w);
-  });
-
-  let today = new Date();
-  let current = new Date(DEFAULT_YEAR, today.getMonth(), 1);
-  yearSelect.value = String(DEFAULT_YEAR);
-
-  function fmt(y, m, d) {
-    return `${y}-${String(m + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
-  }
-  function sameDay(a, b) {
-    return (
-      a.getFullYear() == b.getFullYear() &&
-      a.getMonth() == b.getMonth() &&
-      a.getDate() == b.getDate()
-    );
-  }
-
-  function render() {
-    const year = parseInt(yearSelect.value, 10);
-    const month = current.getMonth();
-    const firstDay = new Date(year, month, 1);
-    const startWeekday = firstDay.getDay();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-    monthLabel.textContent = `${MONTHS[month]} ${year}`;
-    listTitle.textContent = `${MONTHS[month]} ${year}`;
-    calendarEl.innerHTML = "";
-    monthList.innerHTML = "";
-
-    const today = new Date();
-
-    // Leading blanks
-    const prevDays = startWeekday;
-    const prevMonthDays = new Date(year, month, 0).getDate();
-    for (let i = prevDays; i > 0; i--) {
-      const d = document.createElement("div");
-      d.className = "day muted";
-      d.innerHTML = `<div class="date">${prevMonthDays - i + 1}</div>`;
-      calendarEl.appendChild(d);
-    }
-
-    // Current month
-    for (let d = 1; d <= daysInMonth; d++) {
-      const cell = document.createElement("div");
-      cell.className = "day";
-      const dateStr = fmt(year, month, d);
-      const header = document.createElement("div");
-      header.className = "date";
-      header.textContent = d;
-      cell.appendChild(header);
-
-      // ✅ Highlight today
-      if (sameDay(today, new Date(year, month, d))) {
-        cell.classList.add("today");
-      }
-
-      const items = (EVENTS[dateStr] || []).filter(
-        (ev) => filtersState[ev.type]
-      );
-      items.forEach((ev) => {
-        const pill = document.createElement("div");
-        pill.className = `pill ${ev.type}`;
-        pill.textContent = ev.name;
-        pill.setAttribute("data-name", ev.name); // ✅ Added for tooltip
-
-        cell.appendChild(pill);
-
-        // Side list
-        const li = document.createElement("div");
-        li.className = "ml-item";
-        const dot = document.createElement("span");
-        dot.className = "dot";
-        dot.style.background = getColor(ev.type);
-        const body = document.createElement("div");
-        body.innerHTML = `<div><strong>${ev.name}</strong></div><div class="when">${MONTHS[month]} ${d}, ${year}</div>`;
-        li.appendChild(dot);
-        li.appendChild(body);
-        monthList.appendChild(li);
+      const MONTHS = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      WEEKDAYS.forEach((d) => {
+        const w = document.createElement("div");
+        w.className = "weekday";
+        w.textContent = d;
+        weekdaysEl.appendChild(w);
       });
 
-      calendarEl.appendChild(cell);
-    }
+      let today = new Date();
+      let current = new Date(DEFAULT_YEAR, today.getMonth(), 1);
+      yearSelect.value = String(DEFAULT_YEAR);
 
-    // Trailing blanks
-    const totalCells = prevDays + daysInMonth;
-    const trailing = (7 - (totalCells % 7)) % 7;
-    for (let i = 0; i < trailing; i++) {
-      const d = document.createElement("div");
-      d.className = "day muted";
-      d.innerHTML = `<div class="date">${i + 1}</div>`;
-      calendarEl.appendChild(d);
-    }
-  }
+      function fmt(y, m, d) {
+        return `${y}-${String(m + 1).padStart(2, "0")}-${String(d).padStart(
+          2,
+          "0"
+        )}`;
+      }
+      function sameDay(a, b) {
+        return (
+          a.getFullYear() == b.getFullYear() &&
+          a.getMonth() == b.getMonth() &&
+          a.getDate() == b.getDate()
+        );
+      }
 
-  function getColor(type) {
-    switch (type) {
-      case "holiday":
-        return getComputedStyle(document.documentElement).getPropertyValue("--holiday");
-      case "event":
-        return getComputedStyle(document.documentElement).getPropertyValue("--event");
-      case "exam":
-        return getComputedStyle(document.documentElement).getPropertyValue("--exam");
-      case "special":
-        return getComputedStyle(document.documentElement).getPropertyValue("--special");
-      case "festival":
-        return getComputedStyle(document.documentElement).getPropertyValue("--festival");
-      default:
-        return "#e5e7eb";
-    }
-  }
+      function render() {
+        const year = parseInt(yearSelect.value, 10);
+        const month = current.getMonth();
+        const firstDay = new Date(year, month, 1);
+        const startWeekday = firstDay.getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-  // Navigation
-  document.getElementById("prevBtn").addEventListener("click", () => {
-    const y = parseInt(yearSelect.value, 10);
-    if (current.getMonth() === 0) {
-      yearSelect.value = String(y - 1);
-      current = new Date(y - 1, 11, 1);
-    } else {
-      current = new Date(y, current.getMonth() - 1, 1);
-    }
-    render();
-  });
-  document.getElementById("nextBtn").addEventListener("click", () => {
-    const y = parseInt(yearSelect.value, 10);
-    if (current.getMonth() === 11) {
-      yearSelect.value = String(y + 1);
-      current = new Date(y + 1, 0, 1);
-    } else {
-      current = new Date(y, current.getMonth() + 1, 1);
-    }
-    render();
-  });
-  yearSelect.addEventListener("change", () => {
-    current = new Date(parseInt(yearSelect.value, 10), current.getMonth(), 1);
-    render();
-  });
+        monthLabel.textContent = `${MONTHS[month]} ${year}`;
+        listTitle.textContent = `${MONTHS[month]} ${year}`;
+        calendarEl.innerHTML = "";
+        monthList.innerHTML = "";
 
-  // Filters
-  document.querySelectorAll(".filter input").forEach((cb) => {
-    cb.addEventListener("change", (e) => {
-      filtersState[e.target.dataset.type] = e.target.checked;
+        const today = new Date();
+
+        // Leading blanks
+        const prevDays = startWeekday;
+        const prevMonthDays = new Date(year, month, 0).getDate();
+        for (let i = prevDays; i > 0; i--) {
+          const d = document.createElement("div");
+          d.className = "day muted";
+          d.innerHTML = `<div class="date">${prevMonthDays - i + 1}</div>`;
+          calendarEl.appendChild(d);
+        }
+
+        // Current month
+        for (let d = 1; d <= daysInMonth; d++) {
+          const cell = document.createElement("div");
+          cell.className = "day";
+          const dateStr = fmt(year, month, d);
+          const header = document.createElement("div");
+          header.className = "date";
+          header.textContent = d;
+          cell.appendChild(header);
+
+          // ✅ Highlight today
+          if (sameDay(today, new Date(year, month, d))) {
+            cell.classList.add("today");
+          }
+
+          const items = (EVENTS[dateStr] || []).filter(
+            (ev) => filtersState[ev.type]
+          );
+          items.forEach((ev) => {
+            const pill = document.createElement("div");
+            pill.className = `pill ${ev.type}`;
+            pill.textContent = ev.name;
+            pill.setAttribute("data-name", ev.name); // ✅ Added for tooltip
+
+            cell.appendChild(pill);
+
+            // Side list
+            const li = document.createElement("div");
+            li.className = "ml-item";
+            const dot = document.createElement("span");
+            dot.className = "dot";
+            dot.style.background = getColor(ev.type);
+            const body = document.createElement("div");
+            body.innerHTML = `<div><strong>${ev.name}</strong></div><div class="when">${MONTHS[month]} ${d}, ${year}</div>`;
+            li.appendChild(dot);
+            li.appendChild(body);
+            monthList.appendChild(li);
+          });
+
+          calendarEl.appendChild(cell);
+        }
+
+        // Trailing blanks
+        const totalCells = prevDays + daysInMonth;
+        const trailing = (7 - (totalCells % 7)) % 7;
+        for (let i = 0; i < trailing; i++) {
+          const d = document.createElement("div");
+          d.className = "day muted";
+          d.innerHTML = `<div class="date">${i + 1}</div>`;
+          calendarEl.appendChild(d);
+        }
+      }
+
+      function getColor(type) {
+        switch (type) {
+          case "holiday":
+            return getComputedStyle(document.documentElement).getPropertyValue(
+              "--holiday"
+            );
+          case "event":
+            return getComputedStyle(document.documentElement).getPropertyValue(
+              "--event"
+            );
+          case "exam":
+            return getComputedStyle(document.documentElement).getPropertyValue(
+              "--exam"
+            );
+          case "special":
+            return getComputedStyle(document.documentElement).getPropertyValue(
+              "--special"
+            );
+          case "festival":
+            return getComputedStyle(document.documentElement).getPropertyValue(
+              "--festival"
+            );
+          default:
+            return "#e5e7eb";
+        }
+      }
+
+      // Navigation
+      document.getElementById("prevBtn").addEventListener("click", () => {
+        const y = parseInt(yearSelect.value, 10);
+        if (current.getMonth() === 0) {
+          yearSelect.value = String(y - 1);
+          current = new Date(y - 1, 11, 1);
+        } else {
+          current = new Date(y, current.getMonth() - 1, 1);
+        }
+        render();
+      });
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        const y = parseInt(yearSelect.value, 10);
+        if (current.getMonth() === 11) {
+          yearSelect.value = String(y + 1);
+          current = new Date(y + 1, 0, 1);
+        } else {
+          current = new Date(y, current.getMonth() + 1, 1);
+        }
+        render();
+      });
+      yearSelect.addEventListener("change", () => {
+        current = new Date(
+          parseInt(yearSelect.value, 10),
+          current.getMonth(),
+          1
+        );
+        render();
+      });
+
+      // Filters
+      document.querySelectorAll(".filter input").forEach((cb) => {
+        cb.addEventListener("change", (e) => {
+          filtersState[e.target.dataset.type] = e.target.checked;
+          render();
+        });
+      });
+
       render();
-    });
-  });
-
-  render();
-</script>
-
+    </script>
 
     <!-- main JS
 		============================================ -->
