@@ -1070,65 +1070,211 @@ nav#dropdown {
 .single-activity > p {
   margin-bottom: 0;
 }
+
 /*----------------------------------------*/
-/*  5. Advertise Area
+/*  5. Enquiry form
 /*----------------------------------------*/
-.advertise-area {
-  padding: 63px 0;
-}
-.advertise-area h2 {
-  color: #444444;
-  display: inline-block;
-  font-size: 30px;
-  font-weight: 300;
-  margin-right: 21px;
-  position: relative;
-  top: 3px;
-}
-.advertise-area h2 span {
-  font-weight: 500;
-}
-.advertise-area a {
-  background: #00a3b0;
-  border-radius: 30px;
-  color: #ffffff;
-  display: inline-block;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 38px;
-  padding: 0 20px;
-  text-align: center;
-  vertical-align: middle;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  transition: all 0.3s ease;
-  margin-top: 0px;
+.enquiry-section {
+  padding: 60px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e5eff0;
 }
 
-.advertise-area a::before {
-  content: "";
+.enquiry-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  width: 100%;
+}
+
+/* Form */
+.enquiry-form {
+  flex: 1;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.enquiry-form h2 {
+  margin-bottom: 20px;
+}
+.enquiry-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.enquiry-form input, .enquiry-form select, .enquiry-form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.enquiry-form button {
+  padding: 12px;
+  border: none;
+  background: #00A3B0; /* changed */
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.enquiry-form button:hover {
+  background: #008C99; /* darker hover */
+}
+
+/* Images */
+.enquiry-images {
+  flex: 1;
+  position: relative;
+  min-height: 620px; /* ensures space for positioning */
+}
+.image-box {
+  position: relative;
+  display: inline-block;
+}
+.image1 {
   position: absolute;
-  width: 300%;
-  height: 300%;
-  top: 50%;
-  left: 50%;
-  background: #eeac00;
-  transition: all 0.5s ease;
+  top: 0;
+  left: 0;
+}
+.image2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.image-box img {
+  width: 250px;
+  border-radius: 20px;
+  border: 4px solid #00A3B0; /* changed */
+  position: relative;
+  z-index: 2;
+}
+
+/* Shapes */
+.shape {
+  position: absolute;
+  z-index: 1;
+}
+.circle {
+  width: 80px;
+  height: 80px;
+  border: 3px dashed #00A3B0; /* changed */
   border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  z-index: -1;
+  top: -20px;
+  left: -20px;
+}
+.curve {
+  width: 100px;
+  height: 50px;
+  border: 3px solid #27ae60;
+  border-radius: 50px 50px 0 0;
+  bottom: -20px;
+  right: -20px;
+}
+.arrow {
+  font-size: 30px;
+  color: #2980b9;
+  font-weight: bold;
 }
 
-.advertise-area a:hover::before {
-  transform: translate(-50%, -50%) scale(1);
+/* Rotating shapes */
+.rotate-shape {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: rgba(231, 76, 60, 0.3);
+  border: 3px solid #e74c3c;
+}
+.shape1-form {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  transform: translate(50%, -50%);
+}
+.shape2-form {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  transform: translate(-50%, 50%);
 }
 
-.advertise-area a:hover {
-  color: #fff;
-  line-height: 38px; /* ✅ Decreased by 1px */
-  padding: 0 24px; /* ✅ Reduced padding by 1px */
+
+/* ====== Responsive ====== */
+
+/* Tablet (up to 992px) */
+@media (max-width: 992px) {
+  .enquiry-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .enquiry-form {
+    width: 100%;
+  }
+
+  .enquiry-images {
+    width: 100%;
+    min-height: 400px; /* adjust smaller for tablets */
+    margin-top: 30px;
+  }
+
+  .image-box img {
+    width: 260px;
+    object-fit: contain; /* smaller images for tablet */
+  }
+
+  .shape1-form,
+  .shape2-form {
+    transform: none; /* reset so they don’t overflow weirdly */
+  }   
+
+    .shape1-form {
+    bottom: 0%;
+    left: 10%;
+  }
+  .shape2-form {
+    top: 0%;
+    right: 10%;
+  }
+  
 }
+
+/* Mobile (up to 600px) */
+@media (max-width: 600px) {
+  .enquiry-form {
+    padding: 20px;
+  }
+
+  .enquiry-form input,
+  .enquiry-form select,
+  .enquiry-form textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .image-box img {
+    width: 160px; /* even smaller images */
+  }
+
+  .enquiry-images {
+    min-height: 300px;
+  }
+
+  /* Position shapes better for mobile */
+  .shape1-form {
+    bottom: 5%;
+    left: 10%;
+  }
+  .shape2-form {
+    top: 0%;
+    right: 10%;
+  }
+}
+
 
 /*----------------------------------------*/
 /*  6. Class Area
