@@ -224,6 +224,53 @@
     </style>
 
     <style>
+      .slider-container {
+        position: relative;
+        width: 100%;
+        /* max-width: 1000px; */
+        margin: auto;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      /* Slides */
+      .slide {
+        display: none;
+      }
+      .slide.active {
+        display: block;
+      }
+      .slide img {
+        width: 100%;
+        display: block;
+        height: 500px;
+        object-fit: cover;
+      }
+
+      /* Arrows */
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #00a3b0;
+        color: white;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 10px 15px;
+        border-radius: 50%;
+      }
+      .prev {
+        left: 15px;
+      }
+      .next {
+        right: 15px;
+      }
+      .prev:hover,
+      .next:hover {
+        background: #b8b8b8;
+      }
       .school-section {
         text-align: center;
       }
@@ -231,6 +278,8 @@
       .image-container img {
         width: 100%;
         display: block;
+        height: 500px;
+        object-fit: cover;
       }
 
       .text-wave {
@@ -241,10 +290,18 @@
       }
 
       .text-wave .content {
-        padding: 150px 100px; /* tall section */
+        padding: 50px 100px 200px 30px;
+        /* tall section */
         position: relative;
         z-index: 2;
         text-align: center;
+      }
+      .content h2 {
+        margin-bottom: 20px;
+      }
+
+      .content p {
+        font-size: 20px;
       }
 
       /* Container for animated boxes */
@@ -293,6 +350,24 @@
         z-index: 1;
         opacity: 0.3;
       }
+
+      /* Mobile screens (768px and below) */
+      @media (max-width: 768px) {
+        .text-wave .content {
+          padding: 100px 40px 180px 15px;
+        }
+
+        .slide img {
+          height: 400px;
+        }
+      }
+
+      /* Extra small mobile (480px and below) */
+      @media (max-width: 480px) {
+        .my-section {
+          padding: 60px 20px 20px 10px;
+        }
+      }
     </style>
 
     <!-- Modernizr JS
@@ -307,7 +382,7 @@
           <div class="row">
             <div class="col-lg-7 col-md-8">
               <div class="header-top-info">
-                <span>Open hours: 09.00 AM-04.00 PM Mon-Sat</span>
+                <span>Office hours: 08.30 AM-5.00 PM Mon-Sat</span>
                 <div class="social-links">
                   <a
                     href="https://www.facebook.com/p/Mount-Valley-public-School-100090996410532/"
@@ -435,8 +510,18 @@
     <!--End of Header Area-->
     <section class="school-section">
       <!-- Top Image -->
-      <div class="image-container">
-        <img src="img/banner/1.jpg" alt="School Image" />
+      <!-- Banner Slider -->
+      <div class="slider-container">
+        <!-- Images -->
+        <div class="slide active">
+          <img src="img/banner/1.jpg" alt="School Image 1" />
+        </div>
+        <div class="slide">
+          <img src="img/banner/5.jpg" alt="School Image 2" />
+        </div>
+        <!-- Navigation Arrows -->
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
       </div>
 
       <!-- Text Section WITH waves at its bottom -->
@@ -613,18 +698,75 @@
       </div>
     </div>
     <!--End of Activity Area-->
-    <!--Advertise Area Start-->
-    <div class="advertise-area text-center section-gray">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2>Enroll Your Child <span>for a Successful Future</span></h2>
-            <a href="./img/form/form.pdf" download="form.pdf">Download Form</a>
+
+    <!--Enquiry form-->
+
+    <section class="enquiry-section">
+      <div class="enquiry-container">
+        <!-- Left Form -->
+        <div class="enquiry-form">
+          <h2>Enquiry Form</h2>
+          <form>
+            <input type="text" name="name" placeholder="Full Name" required />
+            <input
+              type="tel"
+              name="mobile"
+              placeholder="Mobile Number"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              required
+            />
+            <select name="className" required>
+              <option value="" disabled selected>Select Class</option>
+              <option>Class I</option>
+              <option>Class II</option>
+              <option>Class III</option>
+              <option>Class IV</option>
+              <option>Class IV</option>
+              <option>Class V</option>
+              <option>Class VI</option>
+              <option>Class VII</option>
+              <option>Class VIII</option>
+              <option>Class VIII</option>
+              <option>Class IX</option>
+            </select>
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows="4"
+              required
+            ></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+
+        <!-- Right Images -->
+        <div class="enquiry-images">
+          <div class="image-box image1">
+            <img src="img/schoolimages/student-3.jpg" alt="School Image 1" />
+            <div class="shape circle"></div>
+            <div class="shape arrow">➔</div>
           </div>
+
+          <div class="image-box image2">
+            <img src="img/schoolimages/student-4.webp" alt="School Image 2" />
+            <div class="shape curve"></div>
+            <div class="shape arrow">➔</div>
+          </div>
+          <!-- NEW Rotating Shapes -->
+          <div class="shape rotate-shape shape1-form"></div>
+          <div class="shape rotate-shape shape2-form"></div>
         </div>
       </div>
-    </div>
-    <!--End of Advertise Area-->
+    </section>
+
+    <!-- End of Enquiry Form -->
+
+    <!-- End of Enquiry Form -->
 
     <!-- about us -->
     <div class="col-md-12 mt-4">
@@ -637,78 +779,307 @@
     </div>
 
     <!-- About Us Area Start -->
-<!-- Parent Flex: Top Row + Circle -->
-<div style="display:flex; justify-content:center; align-items:center; gap:40px; flex-wrap:wrap; max-width:1200px; margin:40px auto;">
-  
-  <!-- Top Row: 2 Shapes -->
-  <div style="display:flex; flex-direction:column; gap:40px; flex-wrap:wrap;">
-    
-    <!-- Box 1 -->
-    <div style="background:#fff3e0; border-radius:20px; padding:25px; text-align:center; 
-                box-shadow:0 6px 15px rgba(0,0,0,0.15); width:280px;">
-      <h3 style="color:#0f766e; margin-bottom:15px;">Why Mount Valley?</h3>
-      <p style="background:#ea580c; color:#fff; padding:10px; border-radius:10px; margin:8px 0;">🏫 Safe & Modern Campus</p>
-      <p style="background:#ea580c; color:#fff; padding:10px; border-radius:10px; margin:8px 0;">🎓 Academic Excellence</p>
-      <p style="background:#ea580c; color:#fff; padding:10px; border-radius:10px; margin:8px 0;">⚽ Sports & Activities</p>
-      <p style="background:#ea580c; color:#fff; padding:10px; border-radius:10px; margin:8px 0;">👩‍🏫 Dedicated Faculty</p>
+    <!-- Parent Flex: Top Row + Circle -->
+    <!-- Top Row: 2 Shapes -->
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 40px auto;
+      "
+    >
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+          flex-wrap: wrap;
+        "
+      >
+        <!-- Box 1 -->
+        <div
+          data-aos="fade-up"
+          style="
+            background: #fff3e0;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            width: 280px;
+          "
+        >
+          <h4 style="color: #0f766e; margin-bottom: 15px">Why Mount Valley?</h4>
+          <p
+            style="
+              background: #ea580c;
+              color: #fff;
+              padding: 10px;
+              border-radius: 10px;
+              margin: 8px 0;
+            "
+          >
+            🏫 Safe & Modern Campus
+          </p>
+          <p
+            style="
+              background: #ea580c;
+              color: #fff;
+              padding: 10px;
+              border-radius: 10px;
+              margin: 8px 0;
+            "
+          >
+            🎓 Academic Excellence
+          </p>
+          <p
+            style="
+              background: #ea580c;
+              color: #fff;
+              padding: 10px;
+              border-radius: 10px;
+              margin: 8px 0;
+            "
+          >
+            ⚽ Sports & Activities
+          </p>
+          <p
+            style="
+              background: #ea580c;
+              color: #fff;
+              padding: 10px;
+              border-radius: 10px;
+              margin: 8px 0;
+            "
+          >
+            👩‍🏫 Dedicated Faculty
+          </p>
+        </div>
+
+        <!-- Box 2 -->
+        <div
+          data-aos="fade-up"
+          data-aos-delay="100"
+          style="
+            background: #fef9c3;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            width: 280px;
+          "
+        >
+          <h4 style="color: #0f766e; margin-bottom: 15px">Why ICSE?</h4>
+          <p
+            style="
+              background: #ca8a04;
+              color: #fff;
+              padding: 12px;
+              border-radius: 12px;
+              margin: 10px 0;
+            "
+          >
+            📘 Strong Language Skills<br />Focus on English fluency &
+            communication
+          </p>
+          <p
+            style="
+              background: #ca8a04;
+              color: #fff;
+              padding: 12px;
+              border-radius: 12px;
+              margin: 10px 0;
+            "
+          >
+            🔬 Science & Research Focus<br />Hands-on experiments & projects
+          </p>
+          <p
+            style="
+              background: #ca8a04;
+              color: #fff;
+              padding: 12px;
+              border-radius: 12px;
+              margin: 10px 0;
+            "
+          >
+            🌍 Global Recognition<br />Accepted worldwide for higher studies
+          </p>
+        </div>
+      </div>
+
+      <!-- Circle -->
+      <div
+        data-aos="zoom-in"
+        data-aos-delay="200"
+        style="
+          width: 360px;
+          height: 360px;
+          background: #e0f2fe;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding: 30px;
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        "
+      >
+        <div>
+          <h4 style="color: #0f766e; margin-bottom: 15px">Our Approach</h4>
+          <p
+            style="
+              background: #0369a1;
+              color: #fff;
+              padding: 10px;
+              border-radius: 12px;
+              margin: 8px 0;
+            "
+          >
+            🚀 Inquiry-Based Learning
+          </p>
+          <p
+            style="
+              background: #0369a1;
+              color: #fff;
+              padding: 10px;
+              border-radius: 12px;
+              margin: 8px 0;
+            "
+          >
+            🤝 Value-Centered Education
+          </p>
+          <p
+            style="
+              background: #0369a1;
+              color: #fff;
+              padding: 10px;
+              border-radius: 12px;
+              margin: 8px 0;
+            "
+          >
+            💡 Critical Thinking
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Row: 2 Shapes -->
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 40px;
+          flex-wrap: wrap;
+          max-width: 900px;
+        "
+      >
+        <!-- Box 3 -->
+        <div
+          data-aos="fade-up"
+          data-aos-delay="300"
+          style="
+            background: #fde68a;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            width: 280px;
+          "
+        >
+          <h4 style="color: #0f766e; margin-bottom: 15px">Beyond Academics</h4>
+          <p
+            style="
+              background: #d97706;
+              color: #fff;
+              padding: 10px;
+              border-radius: 10px;
+              margin: 8px 0;
+            "
+          >
+            🎨 Arts & Creativity
+          </p>
+          <p
+            style="
+              background: #d97706;
+              color: #fff;
+              padding: 10px;
+              border-radius: 10px;
+              margin: 8px 0;
+            "
+          >
+            🌱 Life Skills Training
+          </p>
+          <p
+            style="
+              background: #d97706;
+              color: #fff;
+              padding: 10px;
+              border-radius: 10px;
+              margin: 8px 0;
+            "
+          >
+            🌍 Community Engagement
+          </p>
+          <p
+            style="
+              background: #d97706;
+              color: #fff;
+              padding: 10px;
+              border-radius: 10px;
+              margin: 8px 0;
+            "
+          >
+            🏆 Sports & Fitness
+          </p>
+        </div>
+
+        <!-- Box 4 -->
+        <div
+          data-aos="fade-up"
+          data-aos-delay="400"
+          style="
+            background: #fcd34d;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            width: 280px;
+          "
+        >
+          <h4 style="color: #0f766e; margin-bottom: 15px">Vision & Mission</h4>
+          <p
+            style="
+              background: #b45309;
+              color: #fff;
+              padding: 10px;
+              border-radius: 10px;
+              margin: 10px 0;
+            "
+          >
+            🌟 Vision: To create a dynamic learning environment that inspires
+            innovation & leadership. Empowering students with values and skills
+            to thrive in a global society.
+          </p>
+          <p
+            style="
+              background: #b45309;
+              color: #fff;
+              padding: 10px;
+              border-radius: 10px;
+              margin: 10px 0;
+            "
+          >
+            🎯 Mission: To provide a safe, inclusive space blending knowledge,
+            values & skills for holistic growth.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <!-- Box 2 -->
-    <div style="background:#fef9c3; border-radius:20px; padding:25px; text-align:center; 
-                box-shadow:0 6px 15px rgba(0,0,0,0.15); width:280px;">
-      <h4 style="color:#0f766e; margin-bottom:15px;">Why ICSE?</h4>
-      <p style="background:#ca8a04; color:#fff; padding:12px; border-radius:12px; margin:10px 0;">
-        📘 Strong Language Skills<br>Focus on English fluency & communication
-      </p>
-      <p style="background:#ca8a04; color:#fff; padding:12px; border-radius:12px; margin:10px 0;">
-        🔬 Science & Research Focus<br>Hands-on experiments & projects
-      </p>
-      <p style="background:#ca8a04; color:#fff; padding:12px; border-radius:12px; margin:10px 0;">
-        🌍 Global Recognition<br>Accepted worldwide for higher studies
-      </p>
-    </div>
-  </div>
-
-  <!-- Circle -->
-  <div style="width:360px; height:360px; background:#e0f2fe; border-radius:50%; 
-              display:flex; align-items:center; justify-content:center; text-align:center; 
-              padding:30px; box-shadow:0 6px 15px rgba(0,0,0,0.15);">
-    <div>
-      <h4 style="color:#0f766e; margin-bottom:15px;">Our Approach</h4>
-      <p style="background:#0369a1; color:#fff; padding:10px; border-radius:12px; margin:8px 0;">🚀 Inquiry-Based Learning</p>
-      <p style="background:#0369a1; color:#fff; padding:10px; border-radius:12px; margin:8px 0;">🤝 Value-Centered Education</p>
-      <p style="background:#0369a1; color:#fff; padding:10px; border-radius:12px; margin:8px 0;">💡 Critical Thinking</p>
-    </div>
-  </div>
-
-
-<!-- Bottom Row: 2 Shapes -->
-<div style="display:flex; flex-direction:column; justify-content:center; gap:40px; flex-wrap:wrap; max-width:900px;">
-  
-  <!-- Box 3 -->
-  <div style="background:#fde68a; border-radius:20px; padding:25px; text-align:center; 
-              box-shadow:0 6px 15px rgba(0,0,0,0.15); width:280px;">
-    <h4 style="color:#0f766e; margin-bottom:15px;">Beyond Academics</h4>
-    <p style="background:#d97706; color:#fff; padding:10px; border-radius:10px; margin:8px 0;">🎨 Arts & Creativity</p>
-    <p style="background:#d97706; color:#fff; padding:10px; border-radius:10px; margin:8px 0;">🌱 Life Skills Training</p>
-    <p style="background:#d97706; color:#fff; padding:10px; border-radius:10px; margin:8px 0;">🌍 Community Engagement</p>
-  </div>
-
-  <!-- Box 4 -->
-  <div style="background:#fcd34d; border-radius:20px; padding:25px; text-align:center; 
-              box-shadow:0 6px 15px rgba(0,0,0,0.15); width:280px;">
-    <h4 style="color:#0f766e; margin-bottom:15px;">Vision & Mission</h4>
-    <p style="background:#b45309; color:#fff; padding:10px; border-radius:10px; margin:10px 0;">
-      🌟 Vision: To create a dynamic learning environment that inspires innovation & leadership.
-    </p>
-    <p style="background:#b45309; color:#fff; padding:10px; border-radius:10px; margin:10px 0;">
-      🎯 Mission: To provide a safe, inclusive space blending knowledge, values & skills for holistic growth.
-    </p>
-  </div>
-</div>
-</div>
-
-<!-- About Us Area End -->
+    <!-- About Us Area End -->
 
     <!--  end of why this school -->
 
@@ -726,7 +1097,7 @@
         </div>
 
         <div class="class-carousel carousel-style-one owl-carousel">
-          <div class="single-class">
+          <div class="single-class" data-aos="fade-up" data-aos-delay="100">
             <div class="single-class-image">
               <a href="#">
                 <img src="./img/keyboard.jpg" alt="" />
@@ -745,7 +1116,7 @@
             </div>
           </div>
 
-          <div class="single-class">
+          <div class="single-class" data-aos="fade-up" data-aos-delay="200">
             <div class="single-class-image">
               <a href="#">
                 <img src="./img/dance.jpg" alt="" />
@@ -764,7 +1135,7 @@
             </div>
           </div>
 
-          <div class="single-class">
+          <div class="single-class" data-aos="fade-up" data-aos-delay="300">
             <div class="single-class-image">
               <a href="#">
                 <img src="img/robotics.jpg" alt="" />
@@ -784,7 +1155,7 @@
             </div>
           </div>
 
-          <div class="single-class">
+          <div class="single-class" data-aos="fade-up" data-aos-delay="400">
             <div class="single-class-image">
               <a href="#">
                 <img src="./img/yoga.webp" alt="" />
@@ -800,13 +1171,6 @@
                   for both academic success and personal growth.
                 </p>
               </div>
-              <!-- <div class="class-schedule">
-                <span>AGE: 5 - 6 years</span>
-                <span>CLASS SIZE: 25</span>
-                <span class="arrow"
-                  ><a href="#"><i class="fa fa-angle-right"></i></a
-                ></span>
-              </div> -->
             </div>
           </div>
         </div>
@@ -827,9 +1191,14 @@
           </div>
         </div>
         <div class="row">
+          <!-- Left Column -->
           <div class="col-lg-4 col-md-4 col-12">
             <div class="single-service-item-wrapper">
-              <div class="single-service-item">
+              <div
+                class="single-service-item"
+                data-aos="fade-right"
+                data-aos-delay="100"
+              >
                 <div class="single-service-text">
                   <h4>School Infrastructure</h4>
                   <p>
@@ -840,7 +1209,12 @@
                   <i class="fa fa-building"></i>
                 </div>
               </div>
-              <div class="single-service-item">
+
+              <div
+                class="single-service-item"
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
                 <div class="single-service-text">
                   <h4>Language Lessons</h4>
                   <p>
@@ -852,7 +1226,12 @@
                   <i class="fa fa-language"></i>
                 </div>
               </div>
-              <div class="single-service-item">
+
+              <div
+                class="single-service-item"
+                data-aos="fade-right"
+                data-aos-delay="300"
+              >
                 <div class="single-service-text">
                   <h4>Transportation</h4>
                   <p>
@@ -866,14 +1245,26 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-12">
+
+          <!-- Middle Image Column -->
+          <div
+            class="col-lg-4 col-md-4 col-12"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          >
             <div class="service-image">
               <img src="img/schoolimages/student-4.webp" alt="" />
             </div>
           </div>
+
+          <!-- Right Column -->
           <div class="col-lg-4 col-md-4 col-12">
             <div class="single-service-item-wrapper">
-              <div class="single-service-item">
+              <div
+                class="single-service-item"
+                data-aos="fade-left"
+                data-aos-delay="100"
+              >
                 <div class="single-service-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </div>
@@ -886,7 +1277,11 @@
                 </div>
               </div>
 
-              <div class="single-service-item">
+              <div
+                class="single-service-item"
+                data-aos="fade-left"
+                data-aos-delay="200"
+              >
                 <div class="single-service-icon">
                   <i class="fa fa-puzzle-piece"></i>
                 </div>
@@ -894,11 +1289,16 @@
                   <h4>Custom Programs</h4>
                   <p>
                     Programs for children with unique learning needs, promoting
-                    inclusive education
+                    inclusive education.
                   </p>
                 </div>
               </div>
-              <div class="single-service-item">
+
+              <div
+                class="single-service-item"
+                data-aos="fade-left"
+                data-aos-delay="300"
+              >
                 <div class="single-service-icon">
                   <i class="fa fa-graduation-cap"></i>
                 </div>
@@ -935,7 +1335,7 @@
               <div class="fun-factor-icon">
                 <i class="fa fa-users"></i>
               </div>
-              <h2><span class="counter">25</span></h2>
+              <h2><span class="counter">30</span></h2>
               <span>Teacher</span>
             </div>
           </div>
@@ -1489,7 +1889,7 @@
 
     <!--End of Gallery Area-->
     <!--Newsletter Area Start-->
-    <div class="newsletter-area">
+    <!-- <div class="newsletter-area">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -1519,7 +1919,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--End of Newsletter Area-->
     <!--Google Map Area Start -->
     <div class="google-map-area">
@@ -1669,7 +2069,16 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="footer-container text-align">
-              <span>&copy; 2025 Palette Production. All rights reserved</span>
+              <span
+                >Copyright &copy; 2025 Mount Valley | Developed By
+                <a
+                  href="https://paletteproduction.com/"
+                  target="_blank"
+                  style="color: #eeac00; text-decoration: none"
+                >
+                  PALETTE PRODUCTION
+                </a></span
+              >
             </div>
           </div>
         </div>
@@ -1899,13 +2308,14 @@
     <script>
       AOS.init({
         duration: 1000, // animation duration in ms
-        once: true, // whether animation should happen only once - while scrolling down
       });
     </script>
 
     <!-- Gsap animations
 		============================================ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+    <script src="gsap.js"></script>
 
     <script>
       gsap.registerPlugin(ScrollTrigger);
@@ -1940,6 +2350,9 @@
         });
       });
     </script>
+
+    <!-- Bannners
+      		============================================ -->
 
     <script>
       // 1️⃣ Create floating pattern boxes
@@ -1996,6 +2409,179 @@
         attr: { d: "M0,220 C400,140 800,300 1440,220 L1440,320 L0,320 Z" },
         ease: "sine.inOut",
       });
+    </script>
+
+    <script>
+      // Slider Logic
+      const slides = document.querySelectorAll(".slide");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove("active");
+          if (i === index) {
+            slide.classList.add("active");
+          }
+        });
+      }
+
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      });
+
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      });
+    </script>
+    <!-- Enquiry form
+      		============================================ -->
+
+    <script>
+      // Entrance animations
+      // Register ScrollTrigger
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Entrance animations on scroll
+      gsap.from(".enquiry-form", {
+        x: -100,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".enquiry-form", // element to watch
+          start: "top 80%", // when top of element hits 80% of viewport
+          toggleActions: "play none none none", // play only once
+        },
+      });
+
+      gsap.from(".image1 img", {
+        y: -80,
+        opacity: 0,
+        duration: 1.2,
+        ease: "bounce.out",
+        scrollTrigger: {
+          trigger: ".image1",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      gsap.from(".image2 img", {
+        y: 80,
+        opacity: 0,
+        duration: 1.2,
+        delay: 0.3,
+        ease: "bounce.out",
+        scrollTrigger: {
+          trigger: ".image2",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      // Floating & rotation (optional: continuous, independent of scroll)
+      gsap.to(".circle", {
+        rotation: 360,
+        duration: 6,
+        repeat: -1,
+        ease: "linear",
+        scrollTrigger: {
+          trigger: ".circle",
+          start: "top 80%",
+          toggleActions: "play pause resume reset",
+        },
+      });
+
+      gsap.to(".curve", {
+        y: -15,
+        duration: 2,
+        yoyo: true,
+        repeat: -1,
+        ease: "sine.inOut",
+        scrollTrigger: {
+          trigger: ".curve",
+          start: "top 90%",
+          toggleActions: "play pause resume reset",
+        },
+      });
+
+      gsap.to(".arrow", {
+        x: 10,
+        duration: 1.5,
+        yoyo: true,
+        repeat: -1,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: ".arrow",
+          start: "top 90%",
+          toggleActions: "play pause resume reset",
+        },
+      });
+
+      // Rotating shapes
+      gsap.to(".shape1-form", {
+        rotation: 360,
+        duration: 8,
+        repeat: -1,
+        ease: "linear",
+        scrollTrigger: {
+          trigger: ".shape1-form",
+          start: "top 80%",
+          toggleActions: "play pause resume reset",
+        },
+      });
+
+      gsap.to(".shape2-form", {
+        rotation: -360,
+        duration: 10,
+        repeat: -1,
+        ease: "linear",
+        scrollTrigger: {
+          trigger: ".shape2-form",
+          start: "top 80%",
+          toggleActions: "play pause resume reset",
+        },
+      });
+    </script>
+    <!-- enquiry form api connection -->
+
+    <script>
+      document
+        .querySelector("form")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const formData = {
+            name: e.target[0].value,
+            mobile: e.target[1].value,
+            email: e.target[2].value,
+            className: e.target[3].value,
+            message: e.target[4].value,
+          };
+
+          try {
+            const res = await fetch("send-enquiry.php", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: new URLSearchParams(formData),
+            });
+
+            const data = await res.json();
+            alert(data.message);
+
+            if (data.success) {
+              e.target.reset();
+            }
+          } catch (err) {
+            console.error(err);
+            alert("Error sending message.");
+          }
+        });
     </script>
 
     <!-- main JS
