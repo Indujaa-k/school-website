@@ -212,10 +212,10 @@ body {
   max-width: 1200px;
 }
 .section-margin {
-  margin: 60px 0 60px 0;
+  margin: 0px 0 0px 0;
 }
 .section-padding {
-  padding: 0px 0 60px 0;
+  padding: 0px 0 0px 0;
 }
 .section-padding-bottom {
   padding-bottom: 65px;
@@ -229,6 +229,13 @@ body {
   position: relative;
 }
 .section-title {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 60px;
+}
+.section-title-for-about{
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -255,7 +262,7 @@ body {
   width: 109px;
 }
 .section-title-wrapper:after {
-  background: #ffffff none repeat scroll 0 0;
+  background: transparent none repeat scroll 0 0;
   bottom: -6px;
   color: #00a3b0;
   content: "";
@@ -448,6 +455,10 @@ body {
     order: unset;
   }
 }
+/* Teacher container */
+/* .containerbg-color{
+  width: 60px;
+} */
 
 /*----------------------------------------*/
 /*  2. Header CSS
@@ -1070,8 +1081,6 @@ nav#dropdown {
 .single-activity > p {
   margin-bottom: 0;
 }
-
-/*----------------------------------------*/
 /*  5. Enquiry form
 /*----------------------------------------*/
 .enquiry-section {
@@ -1274,7 +1283,6 @@ nav#dropdown {
     right: 10%;
   }
 }
-
 /*----------------------------------------*/
 /*  6. Class Area
 /*----------------------------------------*/
@@ -1288,9 +1296,10 @@ nav#dropdown {
 .carousel-style-one.owl-carousel .owl-nav div,
 .blog-style-three .blog-carousel.carousel-style-one.owl-carousel .owl-nav div {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-  border: 1px solid #eaeaea;
+  border: 1px solid #fff;
   border-radius: 50%;
-  color: #d4d4d4;
+  color: #fff;
+  background-color: #EEAC00;
   display: inline-block;
   font-size: 20px;
   opacity: 1;
@@ -2041,8 +2050,8 @@ li.filter.active {
   margin-bottom: 18px;
 }
 .gallery-row .row {
-  margin-left: -9px;
-  margin-right: -9px;
+  /* margin-left: -9px;
+  margin-right: -9px; */
 }
 .gallery-row .row div[class^="col-"] {
   padding-left: 9px !important;
@@ -2230,7 +2239,6 @@ span.gallery-text {
   background: radial-gradient(circle at 50% 100%, #0a1931 75%, transparent 76%)
     repeat-x;
   background-size: 89px 172px; /* tighter circle size */
-  opacity: 0.9;
   animation: waveMove1 8s linear infinite;
   z-index: 2;
 }
@@ -2246,7 +2254,6 @@ span.gallery-text {
   background: radial-gradient(circle at 50% 100%, #0a1931 75%, transparent 76%)
     repeat-x;
   background-size: 89px 172px; /* slightly bigger */
-  opacity: 0.6;
   animation: waveMove2 12s linear infinite reverse;
   z-index: 1;
 }
@@ -3955,24 +3962,7 @@ header.header-five {
 .register-style-two .register-info {
   float: right;
 }
-/*----------------------------------------*/
-/*  19.7 Home Five Teachers Area
-/*----------------------------------------*/
-.teachers-area-two .testimonial-text-slider {
-  margin-bottom: 13px;
-  margin-top: 73px;
-}
-.teachers-area-two .teacher-links > a:hover {
-  background: #eeac00 none repeat scroll 0 0;
-  border-color: #eeac00;
-}
-/*----------------------------------------*/
-/*  19.8 Home Five Blog Area
-/*----------------------------------------*/
-.blog-two.boder-none {
-  border-bottom: 0 none !important;
-  padding: 60px 0 10px;
-}
+
 /*----------------------------------------*/
 /*  20. Class Grid Page
 /*----------------------------------------*/
@@ -5524,7 +5514,7 @@ span.schedule-time {
   background: #eeac00 none repeat scroll 0 0 padding-box;
   border: 3px solid rgba(245, 177, 32, 0.85);
   border-radius: 50%;
-  bottom: 100px;
+  bottom: 180px;
   color: #ffffff;
   cursor: pointer;
   display: none;
@@ -5545,82 +5535,123 @@ span.schedule-time {
 /*----------------------------------------*/
 /*  31. fixed contact  area
 /*----------------------------------------*/
+/* Parent container (vertical stack) */
+/* WhatsApp fixed button */
 .whatsapp-fixed-button {
-  position: fixed; /* This is the key property */
-  bottom: 45px; /* Adjust the distance from the bottom */
-  right: 16px; /* Adjust the distance from the right */
-  z-index: 9999; /* Ensures the button is on top of other content */
-}
-
-/* Optional: style the button image/icon */
-.whatsapp-fixed-button img {
-  width: 50px; /* Adjust the size of the icon */
-  height: auto;
-  border-radius: 50%; /* Makes the icon circular */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-}
-/* Styling for the fixed call button */
-.call-icon {
-  width: 24px; /* reduced size like mail */
-  height: 24px;
-}
-
-.call-us-container {
   position: fixed;
-  bottom: 45px;
-  right: 50%;
-  display: flex;
-  align-items: center;
-  gap: 8px; /* smaller spacing */
-  background: #007bff;
-  padding: 6px 12px; /* smaller padding */
-  border-radius: 25px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
+  bottom: 120px; /* placed above email + call */
+  right: 16px;
   z-index: 9999;
 }
 
-.call-text {
-  color: white;
-  font-size: 14px; /* reduced text size */
-  font-weight: 600;
-  white-space: nowrap;
+.whatsapp-fixed-button img {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
-/* Styling for the fixed email button */
+
+.whatsapp-fixed-button:hover img {
+  transform: scale(1.1);
+}
+
+/* Email fixed button */
 .email-fixed-button {
   position: fixed;
-  bottom: 45px; /* Position it above the call button */
-  left: 16px;
+  bottom: 70px; /* above call */
+  right: 16px;
   z-index: 9999;
 }
 
 /* Common styles for all fixed buttons for consistent appearance */
 
 .email-fixed-button img {
-  width: 48px; /* Set a consistent size for all icons */
+  width: 48px;
   height: auto;
   border-radius: 26%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 
-.call-fixed-button:hover img,
 .email-fixed-button:hover img {
-  transform: scale(1.1); /* Hover effect */
+  transform: scale(1.1);
 }
 
-/* RESPONSIVE FOR DISPLAY CONTACT ITEMS */
-/* Responsive Styles */
+/* Call fixed button */
+.call-us-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centers icon horizontally */
+  background: #007bff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 9999;
+  overflow: hidden;
+  transition: width 0.4s ease, border-radius 0.4s ease, padding 0.4s ease;
+}
 
-/* Medium Devices (Tablets, up to 991px wide) */
+.call-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;   /* take full circle width */
+  height: 100%;  /* take full circle height */
+  margin-right: -45px;
+}
+
+.call-icon svg {
+  width: 22px;   /* icon size */
+  height: 22px;
+  fill: white;   /* ensure visibility */
+}
+
+.call-text {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: transform 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+  margin-left: 0;
+}
+
+/* Expanded pill state */
+.show-call-text {
+  width: 150px;
+  border-radius: 50px;
+  justify-content: flex-start;
+  padding: 0 12px;
+}
+
+.show-call-text .call-icon {
+  width: auto;
+  height: auto;
+}
+
+.show-call-text .call-text {
+  opacity: 1;
+  transform: translateX(0);
+  margin-left: 70px;
+}
+
+/* ---------------- Responsive ---------------- */
+
+/* Tablets (max-width: 991px) */
 @media (max-width: 991px) {
   .whatsapp-fixed-button img,
   .email-fixed-button img {
-    width: 42px; /* slightly smaller */
+    width: 42px;
   }
 
   .call-us-container {
-    bottom: 90px; /* push it up so it won’t overlap */
     padding: 5px 10px;
   }
 
@@ -5634,17 +5665,17 @@ span.schedule-time {
   }
 }
 
-/* Small Devices (Mobiles, up to 576px wide) */
+/* Mobiles (max-width: 576px) */
 @media (max-width: 576px) {
   .whatsapp-fixed-button img,
   .email-fixed-button img {
-    width: 38px; /* smaller icons for phones */
+    width: 38px;
   }
 
   .call-us-container {
-    bottom: 100px; /* higher to avoid keyboard overlap */
-    right: 50%;
-    transform: translateX(50%); /* keep it centered */
+    bottom: 20px;   /* same spacing like desktop */
+    right: 16px;    /* stick to right side */
+    transform: none; /* remove centering */
     padding: 4px 8px;
   }
 
@@ -5654,7 +5685,7 @@ span.schedule-time {
   }
 
   .call-text {
-    font-size: 12px; /* smaller text */
+    font-size: 12px;
     font-weight: 500;
   }
 }
