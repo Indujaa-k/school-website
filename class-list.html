@@ -631,15 +631,17 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="footer-container text-align">
-            <span
-                >Copyright &copy; 2025 Mount Valley | Developed By
+              <span
+                >Copyright &copy; <span id="current-year"></span> Mount Valley |
+                Developed By
                 <a
                   href="https://paletteproduction.com/"
                   target="_blank"
-                  style="color: #EEAC00; text-decoration: none"
+                  style="color: #eeac00; text-decoration: none"
                 >
                   PALETTE PRODUCTION
-                </a></span>
+                </a></span
+              >
             </div>
           </div>
         </div>
@@ -711,6 +713,14 @@
     <!-- plugins JS
 		============================================ -->
     <script src="js/plugins.js"></script>
+
+    <!-- current year
+		============================================ -->
+
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
 
     <!-- main JS
 		============================================ -->

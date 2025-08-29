@@ -652,7 +652,7 @@
           <div class="col-lg-12">
             <div class="footer-container text-align">
             <span
-                >Copyright &copy; 2025 Mount Valley | Developed By
+                >Copyright &copy;  <span id="current-year"></span> Mount Valley | Developed By
                 <a
                   href="https://paletteproduction.com/"
                   target="_blank"
@@ -729,6 +729,14 @@
 		<!-- Venubox JS
 		============================================ -->		
         <script src="js/venobox.min.js"></script>
+
+         <!-- current year
+		============================================ -->
+
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
         
 		<!-- plugins JS
 		============================================ -->		

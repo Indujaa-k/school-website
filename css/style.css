@@ -201,7 +201,7 @@ ul {
 body {
   color: #666;
   /* font-family: "Poppins", sans-serif; */
-    font-family: "Merienda", cursive;
+  font-family: "Merienda", cursive;
   font-size: 14px;
   line-height: 24px;
   text-align: left;
@@ -311,99 +311,99 @@ body {
 
 /* time line of about page */
 .timeline {
-      position: relative;
-      margin: 0 auto;
-      padding: 20px 0;
-      width: 90%;
-    }
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 90%;
+}
 
-    /* Vertical line that grows on scroll */
-    .timeline-line {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 4px;
-      height: 0;
-      background: #1bb4b9;
-      margin-left: -2px;
-      border-radius: 2px;
-      z-index: 0;
-      transition: height 0.2s ease-out;
-    }
+/* Vertical line that grows on scroll */
+.timeline-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 0;
+  background: #1bb4b9;
+  margin-left: -2px;
+  border-radius: 2px;
+  z-index: 0;
+  transition: height 0.2s ease-out;
+}
 
-    /* Timeline items */
-    .timeline-item {
-      position: relative;
-      display: flex;
-      width: 100%;
-      margin-bottom: 40px;
-    }
+/* Timeline items */
+.timeline-item {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-bottom: 40px;
+}
 
-    .timeline-content,
-    .timeline-img {
-      width: 50%;
-      padding: 20px;
-    }
+.timeline-content,
+.timeline-img {
+  width: 50%;
+  padding: 20px;
+}
 
-    .timeline-item.left .timeline-content {
-      text-align: right;
-      padding-right: 40px;
-      margin-left: -10px;
-    }
+.timeline-item.left .timeline-content {
+  text-align: right;
+  padding-right: 40px;
+  margin-left: -10px;
+}
 
-    .timeline-item.left .timeline-img {
-      text-align: left;
-    }
+.timeline-item.left .timeline-img {
+  text-align: left;
+}
 
-    .timeline-item.right .timeline-content {
-      order: 2;
-      text-align: left;
-      padding-left: 40px;
-      margin-left: 23px;
-    }
+.timeline-item.right .timeline-content {
+  order: 2;
+  text-align: left;
+  padding-left: 40px;
+  margin-left: 23px;
+}
 
-    .timeline-item.right .timeline-img {
-      order: 1;
-      text-align: right;
-      padding-right: 1px;
-    }
+.timeline-item.right .timeline-img {
+  order: 1;
+  text-align: right;
+  padding-right: 1px;
+}
 
-    /* Dot markers */
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      top: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #00a3b0;
-      border: 3px solid white;
-      z-index: 1;
-    }
+/* Dot markers */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #00a3b0;
+  border: 3px solid white;
+  z-index: 1;
+}
 
-    /* Content box */
-    .timeline-content {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      height: fit-content;
-    }
+/* Content box */
+.timeline-content {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
 
-    .timeline h5 {
-      color: #eeac00;
-    }
+.timeline h5 {
+  color: #eeac00;
+}
 
-    /* Images */
-    .timeline-img img {
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    }
+/* Images */
+.timeline-img img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
 
-    /* Mobile responsiveness */
-    @media screen and (max-width: 768px) {
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
   .timeline-line {
     left: 10px; /* keep line at far left */
     margin-left: 0;
@@ -988,13 +988,13 @@ nav#dropdown {
 /* Mobile view */
 @media (max-width: 768px) {
   #nivoslider .nivo-main-image {
-    height: 250px !important;  /* override inline height */
-    width: 100% !important;    /* keep it responsive */
+    height: 250px !important; /* override inline height */
+    width: 100% !important; /* keep it responsive */
     object-fit: cover;
   }
   #nivoslider img:not(.nivo-main-image) {
-  display: none !important;
-}
+    display: none !important;
+  }
 }
 /*----------------------------------------*/
 /*  4. Activity Area
@@ -1096,7 +1096,7 @@ nav#dropdown {
   background: #fff;
   padding: 30px;
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .enquiry-form h2 {
   margin-bottom: 20px;
@@ -1106,7 +1106,9 @@ nav#dropdown {
   flex-direction: column;
   gap: 15px;
 }
-.enquiry-form input, .enquiry-form select, .enquiry-form textarea {
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea {
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -1114,7 +1116,7 @@ nav#dropdown {
 .enquiry-form button {
   padding: 12px;
   border: none;
-  background: #00A3B0; /* changed */
+  background: #00a3b0; /* changed */
   color: white;
   font-weight: bold;
   border-radius: 8px;
@@ -1122,7 +1124,7 @@ nav#dropdown {
   transition: 0.3s;
 }
 .enquiry-form button:hover {
-  background: #008C99; /* darker hover */
+  background: #008c99; /* darker hover */
 }
 
 /* Images */
@@ -1148,7 +1150,7 @@ nav#dropdown {
 .image-box img {
   width: 250px;
   border-radius: 20px;
-  border: 4px solid #00A3B0; /* changed */
+  border: 4px solid #00a3b0; /* changed */
   position: relative;
   z-index: 2;
 }
@@ -1161,7 +1163,7 @@ nav#dropdown {
 .circle {
   width: 80px;
   height: 80px;
-  border: 3px dashed #00A3B0; /* changed */
+  border: 3px dashed #00a3b0; /* changed */
   border-radius: 50%;
   top: -20px;
   left: -20px;
@@ -1201,7 +1203,6 @@ nav#dropdown {
   transform: translate(-50%, 50%);
 }
 
-
 /* ====== Responsive ====== */
 
 /* Tablet (up to 992px) */
@@ -1230,9 +1231,9 @@ nav#dropdown {
   .shape1-form,
   .shape2-form {
     transform: none; /* reset so they don’t overflow weirdly */
-  }   
+  }
 
-    .shape1-form {
+  .shape1-form {
     bottom: 0%;
     left: 10%;
   }
@@ -1240,7 +1241,6 @@ nav#dropdown {
     top: 0%;
     right: 10%;
   }
-  
 }
 
 /* Mobile (up to 600px) */
@@ -1274,7 +1274,6 @@ nav#dropdown {
     right: 10%;
   }
 }
-
 
 /*----------------------------------------*/
 /*  6. Class Area
@@ -1908,126 +1907,87 @@ span.arrow > a:after {
   right: 0;
   content: "\f105";
 } */
-.teachers-area {
-  border-bottom: 1px solid #f0f0f0;
-  padding: 50px 0;
-}
 
-/* Sidebar Wrapper */
-.teacher-list-sidebar-wrapper {
+.teacher-list-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
-.teacher-list-sidebar {
+.arrow {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  padding: 5px;
+  transition: 0.3s;
+}
+.arrow:hover {
+  color: #00a3b0;
+}
+
+.teacher-list {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-height: 400px; /* enough for 4 images + gaps */
-  /* overflow: hidden; */
-  scroll-behavior: smooth;
-  margin: 10px 0;
-}
-.teacher-image-item {
-  width: 60px; /* bigger circle */
-  height: 60px;
-  border-radius: 50%;
-  overflow: hidden;
-  cursor: pointer;
-  border: 3px solid transparent; /* thicker for visibility */
-  transition: all 0.3s ease;
+  max-height: 350px; /* limit height */
+  overflow: hidden; /* hide extra avatars */
 }
 
-.teacher-image-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.teacher-avatar img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.teacher-image-item.active {
-  border-color: #00a3b0;
-  transform: scale(1.2);
+.teacher-avatar.active img {
+  border: 3px solid #00a3b0;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
-/* Scroll buttons */
-/* Scroll buttons */
-.scroll-up,
-.scroll-down {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  background: #fff;
-  color: #00a3b0;
-  cursor: pointer;
-  font-size: 22px;
+
+.teacher-detail {
   display: flex;
+  justify-content: center; /* center horizontally */
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+  gap: 20px;
+  flex-wrap: wrap;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-.scroll-up:hover,
-.scroll-down:hover {
-  background: #00a3b0;
-  color: #fff;
+.teacher-detail-img img {
+  width: 200px;
+  border-radius: 10px;
 }
 
-/* Teacher Details */
-.teacher-details .teacher-detail-item {
-  display: none;
+.teacher-detail-info {
+  max-width: 400px; /* limit width */
+  text-align: left;
 }
 
-.teacher-details .teacher-detail-item.active {
-  display: block;
-}
-
-.teacher-wrapper {
-  gap: 20px; /* spacing between image and details */
-}
-
-.teacher-active-image img {
-  width: 100%;
-  max-width: 300px; /* adjust based on your design */
-  border-radius: 8px;
-}
-
-.teacher-details {
-  flex: 1; /* take remaining space */
-}
-
-.teacher-detail-item {
-  margin-bottom: 20px;
-}
-
-/* Tablet/Small Screens: Horizontal scroll */
-@media (max-width: 992px) {
-  .teacher-list-sidebar-wrapper {
-    flex-direction: row;
-    justify-content: center;
+@media (max-width: 768px) {
+  .teacher-detail {
+    flex-direction: column;
+    text-align: center;
     align-items: center;
   }
-
-  .teacher-image-item {
-    width: 70px; /* bigger circle */
-    height: 60px;
-  }
-  .teacher-list-sidebar {
+  .teacher-list-wrapper {
     flex-direction: row;
+  }
+  .teacher-list {
+    flex-direction: row;
+    overflow-x: auto;
     max-height: none;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    gap: 15px;
   }
 
-  .scroll-up {
-    transform: rotate(-90deg);
-  }
+  .marginclass {   
 
-  .scroll-down {
-    transform: rotate(90deg);
+    margin-top: 30px;
   }
 }
 
@@ -2267,7 +2227,8 @@ span.gallery-text {
   left: 0;
   width: 100%;
   height: 100px;
-  background: radial-gradient(circle at 50% 100%, #0a1931 75%, transparent 76%) repeat-x;
+  background: radial-gradient(circle at 50% 100%, #0a1931 75%, transparent 76%)
+    repeat-x;
   background-size: 89px 172px; /* tighter circle size */
   opacity: 0.9;
   animation: waveMove1 8s linear infinite;
@@ -2282,7 +2243,8 @@ span.gallery-text {
   left: 0;
   width: 100%;
   height: 120px;
-  background: radial-gradient(circle at 50% 100%, #0a1931 75%, transparent 76%) repeat-x;
+  background: radial-gradient(circle at 50% 100%, #0a1931 75%, transparent 76%)
+    repeat-x;
   background-size: 89px 172px; /* slightly bigger */
   opacity: 0.6;
   animation: waveMove2 12s linear infinite reverse;
@@ -2291,13 +2253,21 @@ span.gallery-text {
 
 /* Wave Animations */
 @keyframes waveMove1 {
-  0% { background-position: 0 0; }
-  100% { background-position: -150px 0; }
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -150px 0;
+  }
 }
 
 @keyframes waveMove2 {
-  0% { background-position: 0 0; }
-  100% { background-position: -180px 0; }
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -180px 0;
+  }
 }
 .footer-info {
   line-height: 15px;
@@ -4792,7 +4762,7 @@ textarea {
 }
 .feature-text {
   flex: 1;
-  background-color: #EEAC00;
+  background-color: #eeac00;
   color: #fff;
   padding: 25px;
   border-radius: 10px;
@@ -4824,26 +4794,53 @@ textarea {
   opacity: 0.6;
 }
 
-.shape1 { top: 20%; left: 10%; }
-.shape2 { top: 50%; right: 15%; }
-.shape3 { bottom: 20%; left: 30%; }
+.shape1 {
+  top: 20%;
+  left: 10%;
+}
+.shape2 {
+  top: 50%;
+  right: 15%;
+}
+.shape3 {
+  bottom: 20%;
+  left: 30%;
+}
 
 /* Responsive */
 @media (max-width: 992px) {
-  .feature-row { flex-direction: column; text-align: center; }
-  .feature-row.reverse { flex-direction: column; }
-  .feature-text { margin-top: 20px; }
-  .feature-image img { max-width: 100%; }
+  .feature-row {
+    flex-direction: column;
+    text-align: center;
+  }
+  .feature-row.reverse {
+    flex-direction: column;
+  }
+  .feature-text {
+    margin-top: 20px;
+  }
+  .feature-image img {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 576px) {
-  .section-title h3 { font-size: 2rem; }
-  .section-title p { font-size: 1rem; }
-  .feature-text h5 { font-size: 1.3rem; }
-  .feature-text p { font-size: 0.95rem; }
-  .features-zigzag { padding: 50px 15px; }
+  .section-title h3 {
+    font-size: 2rem;
+  }
+  .section-title p {
+    font-size: 1rem;
+  }
+  .feature-text h5 {
+    font-size: 1.3rem;
+  }
+  .feature-text p {
+    font-size: 0.95rem;
+  }
+  .features-zigzag {
+    padding: 50px 15px;
+  }
 }
-
 
 /* -admission section */
 
@@ -4944,7 +4941,7 @@ textarea {
     font-size: 0.95rem;
   }
 }
-
+/* 
 .admission-form {
   max-width: 900px;
   margin: 20px auto;
@@ -5018,78 +5015,179 @@ textarea {
   .admission-form .form-inline {
     flex-direction: column;
   }
+} */
+
+/* ---------------- Container ---------------- */
+.admission-form {
+  max-width: 900px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ---------------- Media Queries ---------------- */
+/* Heading */
+.admission-form h2 {
+  text-align: center;
+  background: #00a3b0;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
 
-/* Tablets */
-@media (max-width: 992px) {
-  .admission-process .container {
-    width: 90%;
-  }
+/* Form Groups */
+.admission-form .form-group {
+  margin-bottom: 18px;
+}
 
-  .admission-process .main-title {
-    font-size: 1.8rem;
-  }
+.admission-form .form-group label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
 
-  .admission-step h5 {
-    font-size: 1.2rem;
-  }
+/* Inputs, Textareas, Selects */
+.admission-form .form-group input,
+.admission-form .form-group select,
+.admission-form .form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
 
-  .admission-step p {
+.admission-form .form-group input:focus,
+.admission-form .form-group textarea:focus,
+.admission-form .form-group select:focus {
+  border-color: #00a3b0;
+  box-shadow: 0 0 6px rgba(0, 163, 176, 0.3);
+  outline: none;
+}
+
+/* ---------------- Form Inline (Combined Inputs) ---------------- */
+.admission-form .form-inline {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* Desktop: Inline Inputs */
+@media (min-width: 769px) {
+  .admission-form .form-inline .form-group {
+    flex: 1; /* distribute evenly */
+    min-width: 150px;
   }
 }
 
-/* Mobile */
+/* Tablet & Mobile: Stack Inputs */
 @media (max-width: 768px) {
-  .admission-process {
-    padding: 40px 15px;
+  .admission-form .form-inline {
+    flex-direction: column;
   }
 
-  .admission-process .container {
-    width: 95%;
-  }
-
-  .admission-process .main-title {
-    font-size: 1.6rem;
-    margin-bottom: 30px;
-  }
-
-  .admission-step h5 {
-    font-size: 1.1rem;
-  }
-
-  .admission-step p {
-    line-height: 1.6;
-  }
-
-  .btn-download {
-    padding: 10px 20px;
+  .admission-form .form-inline .form-group {
+    flex: 1 1 100%; /* full width */
   }
 }
 
-/* Small Mobile / Portrait Phones */
+/* Gender & Transport Options */
+.admission-form .gender-options {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.admission-form .gender-options label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Notes & Declaration */
+.admission-form .note {
+  font-size: 13px;
+  color: #e74c3c;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.admission-form .declaration {
+  margin-top: 25px;
+  font-weight: 700;
+  color: #2c3e91;
+  text-align: center;
+}
+
+/* Button */
+.admission-form .btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: #00a3b0;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.admission-form .btn:hover {
+  background: #00838f;
+}
+
+/* ---------------- Responsive General ---------------- */
+@media (max-width: 1024px) {
+  .admission-form {
+    padding: 20px 15px;
+  }
+}
+
 @media (max-width: 480px) {
-  .admission-process {
-    padding: 30px 10px;
+  .admission-form h2 {
+    font-size: 20px;
+    padding: 10px;
   }
 
-  .admission-process .main-title {
-    font-size: 1.4rem;
+  .admission-form .btn {
+    font-size: 15px;
+    padding: 12px;
   }
 
-  .admission-step h5 {
-    font-size: 1rem;
+  /* Reduce gap in stacked form-inline for small screens */
+  .admission-form .form-inline {
+    gap: 10px;
   }
 
-  .admission-step p {
-    line-height: 1.5;
+  .admission-form .gender-options {
+    gap: 10px;
   }
+}
 
-  .btn-download {
-    padding: 8px 18px;
-    font-size: 0.9rem;
+/* ---------------- Optional Extra Responsive Adjustments ---------------- */
+@media (max-width: 992px) {
+  .admission-form .form-inline .form-group {
+    min-width: 100px;
   }
+}
+
+/* Preview for Uploaded Photo */
+#admissionForm input[type="file"] + #photoPreview {
+  display: block;
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 /*----------------------------------------*/
@@ -5463,7 +5561,7 @@ span.schedule-time {
 }
 /* Styling for the fixed call button */
 .call-icon {
-  width: 24px;   /* reduced size like mail */
+  width: 24px; /* reduced size like mail */
   height: 24px;
 }
 
@@ -5473,7 +5571,7 @@ span.schedule-time {
   right: 50%;
   display: flex;
   align-items: center;
-  gap: 8px;  /* smaller spacing */
+  gap: 8px; /* smaller spacing */
   background: #007bff;
   padding: 6px 12px; /* smaller padding */
   border-radius: 25px;
@@ -5484,7 +5582,7 @@ span.schedule-time {
 
 .call-text {
   color: white;
-  font-size: 14px;  /* reduced text size */
+  font-size: 14px; /* reduced text size */
   font-weight: 600;
   white-space: nowrap;
 }
@@ -5497,7 +5595,6 @@ span.schedule-time {
 }
 
 /* Common styles for all fixed buttons for consistent appearance */
-
 
 .email-fixed-button img {
   width: 48px; /* Set a consistent size for all icons */
