@@ -308,8 +308,7 @@
           <h5>1. Registration</h5>
           <p>
             Parents may collect the Application Form from the school office or
-            download it from the school website. The duly filled form must be
-            submitted along with the required documents.
+            fill it directly on the school website.
           </p>
         </div>
 
@@ -367,47 +366,41 @@
             Certificate will be issued only after clearance of all dues.
           </p>
         </div>
-
-        <!-- Download Link -->
-        <div class="download-form">
-          <a href="./img/form/form.pdf" download="form.pdf" class="btn-download"
-            >Download Application Form</a
-          >
-        </div>
       </div>
     </section>
 
     <!-- End of the admission process -->
-
-    <!-- admission form -->
-
-    <!-- Admission Form Section -->
     <!-- Admission Form Section -->
     <div class="admission-form">
       <h2>Admission Form - Mount Valley Public School</h2>
 
-      <form id="admissionForm">
+      <form
+        id="admissionForm"
+        action="submit_admission_mail.php"
+        method="POST"
+        enctype="multipart/form-data"
+      >
         <div class="form-inline">
           <div class="form-group">
             <label>Admission No</label>
-            <input type="text" />
+            <input type="text" name="admission_no" required />
           </div>
           <div class="form-group">
             <label>Admission Seeking For Grade</label>
-            <input type="text" />
+            <input type="text" name="grade" required />
           </div>
           <div class="form-group">
             <label>EMIS No</label>
-            <input type="text" />
+            <input type="text" name="emis_no" required />
           </div>
         </div>
 
-        <!-- 📸 Upload Photo -->
+        <!-- Upload Photo -->
         <div class="form-group">
           <label>Upload Student Photo</label>
           <input
             type="file"
-            id="studentPhoto"
+            name="student_photo"
             accept="image/png, image/jpeg"
             required
           />
@@ -417,111 +410,123 @@
 
         <div class="form-group">
           <label>Name of the Student</label>
-          <input type="text" />
+          <input type="text" name="student_name" required />
         </div>
 
         <div class="form-inline">
           <div class="form-group">
             <label>Date of Birth</label>
-            <input type="date" />
+            <input type="date" name="dob" required />
           </div>
           <div class="form-group">
             <label>Age</label>
-            <input type="number" />
+            <input type="number" name="age" required />
           </div>
         </div>
 
         <div class="form-group">
           <label>Gender</label>
           <div class="gender-options">
-            <label><input type="radio" name="gender" /> Male</label>
-            <label><input type="radio" name="gender" /> Female</label>
+            <label
+              ><input type="radio" name="gender" value="Male" required />
+              Male</label
+            >
+            <label
+              ><input type="radio" name="gender" value="Female" required />
+              Female</label
+            >
           </div>
         </div>
 
         <div class="form-inline">
           <div class="form-group">
             <label>Nationality</label>
-            <input type="text" />
+            <input type="text" name="nationality" required />
           </div>
           <div class="form-group">
             <label>Religion</label>
-            <input type="text" />
+            <input type="text" name="religion" required />
           </div>
         </div>
 
         <div class="form-group">
           <label>AADHAR Card No</label>
-          <input type="text" />
+          <input type="text" name="aadhar_no" required />
         </div>
 
         <div class="form-group">
           <label>Community (BC/ MBC/ SC/ ST/ FC)</label>
-          <input type="text" />
+          <input type="text" name="community" required />
         </div>
 
         <div class="form-group">
           <label>Name of the Father / Guardian</label>
-          <input type="text" />
+          <input type="text" name="father_name" required />
         </div>
 
         <div class="form-group">
           <label>Occupation of the Father</label>
-          <input type="text" />
+          <input type="text" name="father_occupation" required />
         </div>
 
         <div class="form-group">
           <label>Monthly Income of Father</label>
-          <input type="text" />
+          <input type="text" name="father_income" required />
         </div>
 
         <div class="form-group">
           <label>Educational Qualification of Father</label>
-          <input type="text" />
+          <input type="text" name="father_education" required />
         </div>
 
         <div class="form-group">
           <label>Address for Communication</label>
-          <textarea rows="3"></textarea>
+          <textarea name="address" rows="3" required></textarea>
         </div>
 
         <div class="form-inline">
           <div class="form-group">
             <label>Contact Number</label>
-            <input type="tel" />
+            <input type="tel" name="contact" required />
           </div>
           <div class="form-group">
             <label>Email ID</label>
-            <input type="email" />
+            <input type="email" name="email" required />
           </div>
         </div>
 
         <div class="form-group">
           <label>Previous School Studied</label>
-          <input type="text" />
+          <input type="text" name="previous_school" required />
         </div>
 
         <div class="form-group">
           <label>Blood Group</label>
-          <input type="text" />
+          <input type="text" name="blood_group" required />
         </div>
 
         <div class="form-group">
           <label>Sibling Details</label>
-          <textarea rows="2"></textarea>
+          <textarea name="siblings" rows="2" required></textarea>
         </div>
 
         <div class="form-group">
           <label>Transport Facility</label>
           <div class="gender-options">
-            <label><input type="radio" name="transport" /> Yes</label>
-            <label><input type="radio" name="transport" /> No</label>
+            <label
+              ><input type="radio" name="transport" value="Yes" required />
+              Yes</label
+            >
+            <label
+              ><input type="radio" name="transport" value="No" required />
+              No</label
+            >
           </div>
         </div>
 
         <div class="form-group">
           <label>Any Medical History</label>
-          <textarea rows="2"></textarea>
+          <textarea name="medical_history" rows="2" required></textarea>
         </div>
 
         <p class="note">
@@ -539,36 +544,6 @@
 
     <!-- admission form -->
 
-    <!-- Enquiry Form -->
-    <div class="newsletter-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <form class="newsletter-container">
-              <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-12">
-                  <h4>Enquiry Form</h4>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                  <input type="text" name="subject" placeholder="Subject*" />
-                  <input type="text" name="name" placeholder="Your Name*" />
-                  <input type="email" name="email" placeholder="Your Email*" />
-                </div>
-                <div class="col-lg-6 col-md-4 col-sm-6">
-                  <textarea
-                    name="message"
-                    id="newsletter-msg"
-                    placeholder="Your Message"
-                  ></textarea>
-                  <button class="button-default">Send</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--End of Enquiry Form-->
     <!-- whatsapp contact -->
     <a
       href="https://wa.me/9952258987"
@@ -681,15 +656,17 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="footer-container text-align">
-            <span
-                >Copyright &copy; 2025 Mount Valley | Developed By
+              <span
+                >Copyright &copy; <span id="current-year"></span> Mount Valley |
+                Developed By
                 <a
                   href="https://paletteproduction.com/"
                   target="_blank"
-                  style="color: #EEAC00; text-decoration: none"
+                  style="color: #eeac00; text-decoration: none"
                 >
                   PALETTE PRODUCTION
-                </a></span>
+                </a></span
+              >
             </div>
           </div>
         </div>
@@ -760,6 +737,13 @@
     <!-- plugins JS
 		============================================ -->
     <script src="js/plugins.js"></script>
+    <!-- current year
+		============================================ -->
+
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
 
     <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -812,6 +796,16 @@
           reader.readAsDataURL(file);
         }
       });
+    </script>
+
+    <!-- adission from sending style -->
+
+    <script>
+      document
+        .getElementById("admissionForm")
+        .addEventListener("submit", function () {
+          alert("Sending your application...");
+        });
     </script>
 
     <!-- main JS
