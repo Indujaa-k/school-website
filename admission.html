@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-   <!-- favicon
+    <!-- favicon
 		============================================ -->
     <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" />
     <!-- font Awesome 6
@@ -300,246 +300,251 @@
     <!--End of Breadcrumb Banner Area-->
 
     <!-- Admission Prosses -->
-    <section class="admission-process container">
-      <div class="container">
-        <h4 class="main-title">Admission Process</h4>
+    <div
+      style="background: linear-gradient(to bottom, #ffffff 0%, #b3e0e6 100%);
+"
+    >
+      <section class="admission-process container">
+        <div class="container">
+          <h4 class="main-title">Admission Process</h4>
 
-        <div class="admission-step">
-          <h5>1. Registration</h5>
-          <p>
-            Parents may collect the Application Form from the school office or
-            fill it directly on the school website.
-          </p>
-        </div>
+          <div class="admission-step">
+            <h5>1. Registration</h5>
+            <p>
+              Parents may collect the Application Form from the school office or
+              fill it directly on the school website.
+            </p>
+          </div>
 
-        <div class="admission-step">
-          <h5>2. Documents Required</h5>
+          <div class="admission-step">
+            <h5>2. Documents Required</h5>
 
-          <!-- Birth Certificate (attested copy), recent passport-size photographs
+            <!-- Birth Certificate (attested copy), recent passport-size photographs
             of the student, previous school’s Transfer Certificate (if
             applicable), previous class Report Card / Progress Record, address
             proof of parents, and Aadhaar Card copy (if applicable). -->
 
-          <ul>
-            <li>Birth Certificate (attested copy)</li>
-            <li>Recent passport-size photographs of the student</li>
-            <li>Previous school’s Transfer Certificate (if applicable)</li>
-            <li>Previous class Report Card / Progress Record</li>
-            <li>Address proof of parents</li>
-            <li>Aadhaar Card copy (if applicable)</li>
-          </ul>
-        </div>
+            <ul>
+              <li>Birth Certificate (attested copy)</li>
+              <li>Recent passport-size photographs of the student</li>
+              <li>Previous school’s Transfer Certificate (if applicable)</li>
+              <li>Previous class Report Card / Progress Record</li>
+              <li>Address proof of parents</li>
+              <li>Aadhaar Card copy (if applicable)</li>
+            </ul>
+          </div>
 
-        <div class="admission-step">
-          <h5>3. Eligibility</h5>
-          <p>
-            Nursery/LKG/UKG: Admission based on age criteria as per CISCE
-            guidelines. Class I onwards: Admission is subject to availability of
-            seats and an entrance assessment.
-          </p>
-        </div>
+          <div class="admission-step">
+            <h5>3. Eligibility</h5>
+            <p>
+              Nursery/LKG/UKG: Admission based on age criteria as per CISCE
+              guidelines. Class I onwards: Admission is subject to availability
+              of seats and an entrance assessment.
+            </p>
+          </div>
 
-        <div class="admission-step">
-          <h5>4. Interaction / Entrance Assessment</h5>
-          <p>
-            For Kindergarten: Child and parents may be called for an informal
-            interaction. For Classes I upwards: Students may be required to take
-            an entrance assessment in English, Mathematics, and General
-            Knowledge to evaluate grade readiness.
-          </p>
-        </div>
+          <div class="admission-step">
+            <h5>4. Interaction / Entrance Assessment</h5>
+            <p>
+              For Kindergarten: Child and parents may be called for an informal
+              interaction. For Classes I upwards: Students may be required to
+              take an entrance assessment in English, Mathematics, and General
+              Knowledge to evaluate grade readiness.
+            </p>
+          </div>
 
-        <div class="admission-step">
-          <h5>5. Confirmation of Admission</h5>
-          <p>
-            Admission will be confirmed after successful assessment,
-            verification of documents, and payment of admission/term fees.
-            Parents will receive an Admission Confirmation Letter along with
-            details of uniform, books, and school calendar.
-          </p>
-        </div>
+          <div class="admission-step">
+            <h5>5. Confirmation of Admission</h5>
+            <p>
+              Admission will be confirmed after successful assessment,
+              verification of documents, and payment of admission/term fees.
+              Parents will receive an Admission Confirmation Letter along with
+              details of uniform, books, and school calendar.
+            </p>
+          </div>
 
-        <div class="admission-step">
-          <h5>6. Withdrawal</h5>
-          <p>
-            One month’s written notice is required for withdrawal. Transfer
-            Certificate will be issued only after clearance of all dues.
-          </p>
+          <div class="admission-step">
+            <h5>6. Withdrawal</h5>
+            <p>
+              One month’s written notice is required for withdrawal. Transfer
+              Certificate will be issued only after clearance of all dues.
+            </p>
+          </div>
         </div>
+      </section>
+
+      <!-- End of the admission process -->
+      <!-- Admission Form Section -->
+      <div class="admission-form">
+        <h2>Admission Form - Mount Valley Public School</h2>
+
+        <form
+          id="admissionForm"
+          action="submit_admission_mail.php"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div class="form-inline">
+            <div class="form-group">
+              <label>Admission No</label>
+              <input type="text" name="admission_no" required />
+            </div>
+            <div class="form-group">
+              <label>Admission Seeking For Grade</label>
+              <input type="text" name="grade" required />
+            </div>
+            <div class="form-group">
+              <label>EMIS No</label>
+              <input type="text" name="emis_no" required />
+            </div>
+          </div>
+
+          <!-- Upload Photo -->
+          <div class="form-group">
+            <label>Upload Student Photo</label>
+            <input
+              type="file"
+              name="student_photo"
+              accept="image/png, image/jpeg"
+              required
+            />
+            <small class="note">* Only JPG/PNG allowed. Max size: 2MB</small>
+            <div id="photoPreview" style="margin-top: 10px"></div>
+          </div>
+
+          <div class="form-group">
+            <label>Name of the Student</label>
+            <input type="text" name="student_name" required />
+          </div>
+
+          <div class="form-inline">
+            <div class="form-group">
+              <label>Date of Birth</label>
+              <input type="date" name="dob" required />
+            </div>
+            <div class="form-group">
+              <label>Age</label>
+              <input type="number" name="age" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Gender</label>
+            <div class="gender-options">
+              <label
+                ><input type="radio" name="gender" value="Male" required />
+                Male</label
+              >
+              <label
+                ><input type="radio" name="gender" value="Female" required />
+                Female</label
+              >
+            </div>
+          </div>
+
+          <div class="form-inline">
+            <div class="form-group">
+              <label>Nationality</label>
+              <input type="text" name="nationality" required />
+            </div>
+            <div class="form-group">
+              <label>Religion</label>
+              <input type="text" name="religion" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>AADHAR Card No</label>
+            <input type="text" name="aadhar_no" required />
+          </div>
+
+          <div class="form-group">
+            <label>Community (BC/ MBC/ SC/ ST/ FC)</label>
+            <input type="text" name="community" required />
+          </div>
+
+          <div class="form-group">
+            <label>Name of the Father / Guardian</label>
+            <input type="text" name="father_name" required />
+          </div>
+
+          <div class="form-group">
+            <label>Occupation of the Father</label>
+            <input type="text" name="father_occupation" required />
+          </div>
+
+          <div class="form-group">
+            <label>Monthly Income of Father</label>
+            <input type="text" name="father_income" required />
+          </div>
+
+          <div class="form-group">
+            <label>Educational Qualification of Father</label>
+            <input type="text" name="father_education" required />
+          </div>
+
+          <div class="form-group">
+            <label>Address for Communication</label>
+            <textarea name="address" rows="3" required></textarea>
+          </div>
+
+          <div class="form-inline">
+            <div class="form-group">
+              <label>Contact Number</label>
+              <input type="tel" name="contact" required />
+            </div>
+            <div class="form-group">
+              <label>Email ID</label>
+              <input type="email" name="email" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Previous School Studied</label>
+            <input type="text" name="previous_school" required />
+          </div>
+
+          <div class="form-group">
+            <label>Blood Group</label>
+            <input type="text" name="blood_group" required />
+          </div>
+
+          <div class="form-group">
+            <label>Sibling Details</label>
+            <textarea name="siblings" rows="2" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Transport Facility</label>
+            <div class="gender-options">
+              <label
+                ><input type="radio" name="transport" value="Yes" required />
+                Yes</label
+              >
+              <label
+                ><input type="radio" name="transport" value="No" required />
+                No</label
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Any Medical History</label>
+            <textarea name="medical_history" rows="2" required></textarea>
+          </div>
+
+          <p class="note">
+            * Note: The fee is non-refundable in any circumstances
+          </p>
+          <p class="declaration">DECLARATION BY THE PARENT OR GUARDIAN</p>
+          <p>
+            All the information in the given application are true to the best of
+            my knowledge.
+          </p>
+
+          <button type="submit" class="btn">Submit Application</button>
+        </form>
       </div>
-    </section>
-
-    <!-- End of the admission process -->
-    <!-- Admission Form Section -->
-    <div class="admission-form">
-      <h2>Admission Form - Mount Valley Public School</h2>
-
-      <form
-        id="admissionForm"
-        action="submit_admission_mail.php"
-        method="POST"
-        enctype="multipart/form-data"
-      >
-        <div class="form-inline">
-          <div class="form-group">
-            <label>Admission No</label>
-            <input type="text" name="admission_no" required />
-          </div>
-          <div class="form-group">
-            <label>Admission Seeking For Grade</label>
-            <input type="text" name="grade" required />
-          </div>
-          <div class="form-group">
-            <label>EMIS No</label>
-            <input type="text" name="emis_no" required />
-          </div>
-        </div>
-
-        <!-- Upload Photo -->
-        <div class="form-group">
-          <label>Upload Student Photo</label>
-          <input
-            type="file"
-            name="student_photo"
-            accept="image/png, image/jpeg"
-            required
-          />
-          <small class="note">* Only JPG/PNG allowed. Max size: 2MB</small>
-          <div id="photoPreview" style="margin-top: 10px"></div>
-        </div>
-
-        <div class="form-group">
-          <label>Name of the Student</label>
-          <input type="text" name="student_name" required />
-        </div>
-
-        <div class="form-inline">
-          <div class="form-group">
-            <label>Date of Birth</label>
-            <input type="date" name="dob" required />
-          </div>
-          <div class="form-group">
-            <label>Age</label>
-            <input type="number" name="age" required />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Gender</label>
-          <div class="gender-options">
-            <label
-              ><input type="radio" name="gender" value="Male" required />
-              Male</label
-            >
-            <label
-              ><input type="radio" name="gender" value="Female" required />
-              Female</label
-            >
-          </div>
-        </div>
-
-        <div class="form-inline">
-          <div class="form-group">
-            <label>Nationality</label>
-            <input type="text" name="nationality" required />
-          </div>
-          <div class="form-group">
-            <label>Religion</label>
-            <input type="text" name="religion" required />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>AADHAR Card No</label>
-          <input type="text" name="aadhar_no" required />
-        </div>
-
-        <div class="form-group">
-          <label>Community (BC/ MBC/ SC/ ST/ FC)</label>
-          <input type="text" name="community" required />
-        </div>
-
-        <div class="form-group">
-          <label>Name of the Father / Guardian</label>
-          <input type="text" name="father_name" required />
-        </div>
-
-        <div class="form-group">
-          <label>Occupation of the Father</label>
-          <input type="text" name="father_occupation" required />
-        </div>
-
-        <div class="form-group">
-          <label>Monthly Income of Father</label>
-          <input type="text" name="father_income" required />
-        </div>
-
-        <div class="form-group">
-          <label>Educational Qualification of Father</label>
-          <input type="text" name="father_education" required />
-        </div>
-
-        <div class="form-group">
-          <label>Address for Communication</label>
-          <textarea name="address" rows="3" required></textarea>
-        </div>
-
-        <div class="form-inline">
-          <div class="form-group">
-            <label>Contact Number</label>
-            <input type="tel" name="contact" required />
-          </div>
-          <div class="form-group">
-            <label>Email ID</label>
-            <input type="email" name="email" required />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Previous School Studied</label>
-          <input type="text" name="previous_school" required />
-        </div>
-
-        <div class="form-group">
-          <label>Blood Group</label>
-          <input type="text" name="blood_group" required />
-        </div>
-
-        <div class="form-group">
-          <label>Sibling Details</label>
-          <textarea name="siblings" rows="2" required></textarea>
-        </div>
-
-        <div class="form-group">
-          <label>Transport Facility</label>
-          <div class="gender-options">
-            <label
-              ><input type="radio" name="transport" value="Yes" required />
-              Yes</label
-            >
-            <label
-              ><input type="radio" name="transport" value="No" required />
-              No</label
-            >
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Any Medical History</label>
-          <textarea name="medical_history" rows="2" required></textarea>
-        </div>
-
-        <p class="note">
-          * Note: The fee is non-refundable in any circumstances
-        </p>
-        <p class="declaration">DECLARATION BY THE PARENT OR GUARDIAN</p>
-        <p>
-          All the information in the given application are true to the best of
-          my knowledge.
-        </p>
-
-        <button type="submit" class="btn">Submit Application</button>
-      </form>
     </div>
 
     <!-- admission form -->
