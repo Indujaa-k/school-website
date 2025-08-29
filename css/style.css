@@ -215,7 +215,7 @@ body {
   margin: 0px 0 0px 0;
 }
 .section-padding {
-  padding: 0px 0 0px 0;
+  padding: 27px 0 0px 0;
 }
 .section-padding-bottom {
   padding-bottom: 65px;
@@ -1693,6 +1693,10 @@ span.arrow > a:after {
   padding-left: 112px;
   text-align: left;
 }
+.service-image img{
+  margin-bottom: 30px;
+  border-radius: 20px;
+}
 
 @media (min-width: 768px) {
   /* md and up */
@@ -1959,9 +1963,8 @@ span.arrow > a:after {
 
 .teacher-detail {
   display: flex;
-  justify-content: center; /* center horizontally */
+  justify-content: space-between; /* center horizontally */
   align-items: center;
-  gap: 20px;
   flex-wrap: wrap;
   background: #fff;
   padding: 30px;
@@ -5222,7 +5225,7 @@ textarea {
 /*  24. Teachers Page
 /*----------------------------------------*/
 .breadcrumb-banner-area.teachers {
-  background: rgba(0, 0, 0, 0) url("../img/banner/12.jpg") no-repeat scroll
+  background: rgba(0, 0, 0, 0) url("../img/banner/staff-banner.jpeg") no-repeat scroll
     center top / cover;
 }
 .teacher-fullwidth-area .teachers-image-column {
@@ -5381,6 +5384,22 @@ span.schedule-time {
   font-weight: 500;
   line-height: 24px;
 }
+.introbox {
+  background:rgba(255, 255, 255, 0.5); /* semi-transparent white */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* light border */
+  border-radius: 14px; /* smooth corners */
+  padding: 25px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* soft shadow */
+  backdrop-filter: blur(8px); /* glass effect */
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+
 .highlight {
   color: #333333;
   font-weight: 500;
