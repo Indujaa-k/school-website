@@ -9,7 +9,30 @@
 
     <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" />
+     <!-- <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" /> -->
+    <!-- Standard favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/logo/32x32.png"
+    />
+
+    <!-- Higher resolution for retina displays -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/logo/16x16.png"
+    />
+
+    <!-- Shortcut icon (older browsers) -->
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="img/logo/logo-white.png"
+    />
+
     <!-- font Awesome 6
 		============================================ -->
     <link
@@ -70,12 +93,6 @@
       * {
         box-sizing: border-box;
       }
-      /* body{
-    margin:0;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Ubuntu,Inter,"Noto Sans",sans-serif;
-    background:var(--bg);
-    color:var(--text);
-  } */
       .wrap {
         max-width: 1100px;
         margin: 24px auto;
@@ -361,11 +378,10 @@
                   <a
                     href="https://www.facebook.com/p/Mount-Valley-public-School-100090996410532/"
                   >
-                    <i class="fab fa-facebook-f"></i
-                  ></a>
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
                   <a href="#"><i class="fab fa-google"></i></a>
-                  <!-- <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="#"><i class="fab fa-pinterest-p"></i></a> -->
+
                   <a
                     href="https://www.instagram.com/mount_valley_public_school?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                   >
@@ -374,81 +390,6 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="col-lg-5 col-md-4">
-              <div class="header-login-register">
-                <ul class="login">
-                  <li>
-                    <a href="#"><i class="fa fa-key"></i>Login</a>
-                    <div class="login-form">
-                      <h4>Login</h4>
-                      <form action="#" method="post">
-                        <div class="form-box">
-                          <i class="fa fa-user"></i>
-                          <input
-                            type="text"
-                            name="user-name"
-                            placeholder="Username"
-                          />
-                        </div>
-                        <div class="form-box">
-                          <i class="fa fa-lock"></i>
-                          <input
-                            type="password"
-                            name="user-password"
-                            placeholder="Password"
-                          />
-                        </div>
-                        <div class="button-box">
-                          <button type="submit" class="login-btn">Login</button>
-                        </div>
-                      </form>
-                    </div>
-                  </li>
-                </ul>
-                <ul class="register">
-                  <li>
-                    <a href="#"><i class="fa fa-lock"></i>Sign Up</a>
-                    <div class="register-form">
-                      <h4>Sign Up</h4>
-                      <span>Please sign up using account detail bellow.</span>
-                      <form action="#" method="post">
-                        <div class="form-box">
-                          <i class="fa fa-user"></i>
-                          <input
-                            type="text"
-                            name="user-name"
-                            placeholder="Username"
-                          />
-                        </div>
-                        <div class="form-box">
-                          <i class="fa fa-lock"></i>
-                          <input
-                            type="password"
-                            name="user-password"
-                            placeholder="Password"
-                          />
-                        </div>
-                        <div class="form-box">
-                          <i class="fa fa-envelope"></i>
-                          <input
-                            type="email"
-                            name="user-email"
-                            placeholder="Email"
-                          />
-                        </div>
-                        <div class="button-box">
-                          <input checked data-toggle="toggle" type="checkbox" />
-                          <span>Remember me</span>
-                          <button type="submit" class="register-btn">
-                            Register
-                          </button>
-                        </div>
-                      </form>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div> -->
           </div>
         </div>
       </div>
@@ -470,7 +411,7 @@
                     <nav>
                       <ul id="nav">
                         <li class="current">
-                          <a href="index.html">Home</a>
+                          <a href="index.html">Home </a>
                         </li>
                         <li>
                           <a href="about.html"
@@ -484,6 +425,7 @@
                             </li>
                           </ul>
                         </li>
+                        <li><a href="academics.html">Academics</a></li>
                         <li><a href="admission.html">Admission</a></li>
                         <li>
                           <a href="class-list.html"
@@ -503,27 +445,6 @@
                       </ul>
                     </nav>
                   </div>
-                  <!-- <ul class="header-search">
-                    <li class="search-menu">
-                      <i id="toggle-search" class="fa fa-search"></i>
-                    </li>
-                  </ul> -->
-                  <!--Search Form-->
-                  <!-- <div class="search">
-                    <div class="search-form">
-                      <form id="search-form" action="#">
-                        <input
-                          type="search"
-                          placeholder="Search here..."
-                          name="search"
-                        />
-                        <button type="submit">
-                          <span><i class="fa fa-search"></i></span>
-                        </button>
-                      </form>
-                    </div>
-                  </div> -->
-                  <!--End of Search Form-->
                 </div>
               </div>
             </div>
@@ -552,12 +473,11 @@
                       <a href="about.html">About us</a>
                       <ul class="sub-menu">
                         <li>
-                          <a href="about.html#calendarrow"
-                            >Academic Calender
-                          </a>
+                          <a href="about.html#calendarrow">Academic Calendar</a>
                         </li>
                       </ul>
-                    </li>
+                    </li> x
+                    <li><a href="academics.html">Academics</a></li>
                     <li><a href="admission.html">Admission</a></li>
                     <li>
                       <a href="class-list.html">Classes</a>
@@ -570,7 +490,7 @@
                     <li><a href="teacher.html">Teachers Page</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <!-- <li><a href="blog.html">Blog Page</a></li> -->
-                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                   </ul>
                 </nav>
               </div>
@@ -1273,8 +1193,9 @@
                 <ul class="footer-widget-list">
                   <li><a href="#">Home</a></li>
                   <li><a href="about.html">About</a></li>
+                  <li><a href="academics.html">Academics</a></li>
                   <li><a href="admission.html">Admission</a></li>
-                  <li><a href="contact.html">contact</a></li>
+                  <!-- <li><a href="contact.html">contact</a></li> -->
                 </ul>
               </div>
             </div>

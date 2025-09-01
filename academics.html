@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Classes - Mount Valley School</title>
+    <title>Admissions - Mount Valley School</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-   <!-- favicon
+    <!-- favicon
 		============================================ -->
-     <!-- <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" /> -->
+    <!-- <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" /> -->
     <!-- Standard favicon -->
     <link
       rel="icon"
@@ -44,8 +44,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
 
-    <!-- Google Fonts
-		============================================ -->
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700"
       rel="stylesheet"
@@ -56,8 +55,25 @@
 		============================================ -->
     <link rel="stylesheet" href="style.css" />
 
+    <!-- Font Awesome 6 -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <!-- AOS CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Modernizr JS
 		============================================ -->
+
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
   </head>
   <body>
@@ -181,7 +197,7 @@
                     <nav>
                       <ul id="nav">
                         <li class="current">
-                          <a href="index.html">Home</a>
+                          <a href="index.html">Home </a>
                         </li>
                         <li>
                           <a href="about.html"
@@ -294,11 +310,11 @@
         <div class="row">
           <div class="col-md-12">
             <div class="breadcrumb-text">
-              <h3 class="text-center">Classes</h3>
+              <h1 class="text-center">Academics</h1>
               <div class="breadcrumb-bar">
                 <ul class="breadcrumb">
                   <li><a href="index.html">Home</a></li>
-                  <li>Class Details</li>
+                  <li>Academics</li>
                 </ul>
               </div>
             </div>
@@ -307,155 +323,385 @@
       </div>
     </div>
     <!--End of Breadcrumb Banner Area-->
-    <!--Class Details Area Start-->
-    <div class="class-details-area section-padding-top" style="background: linear-gradient(to bottom, #ffffff 0%, #d6eaff 100%);
-">
-      <div class="container">
-        <div class="row">
-          <!-- Left Content: Main Class Details -->
-          <div class="col-xl-9 col-lg-8">
-            <div class="class-details-container">
-              <!-- Carousel (same for all classes) -->
-              <div
-                class="class-details-carousel carousel-style-one owl-carousel"
-              >
-                <img src="img/class/13.jpg" alt="" />
-                <img src="img/class/14.jpg" alt="" />
-                <img src="img/class/15.jpg" alt="" />
-              </div>
-            </div>
 
-            <!-- Dynamic Class Info -->
-            <div class="container class-container">
-              <h3 id="classTitle">Class Details</h3>
-              <div id="classContent"></div>
-            </div>
+    <style>
+      .academics {
+        background: linear-gradient(to bottom, #e0f7fa, #f3e5f5);
+      }
+      .school-text-section {
+        padding: 100px 20px 0 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+
+      .school-text-section .container-academic {
+        max-width: 1000px;
+        width: 100%; /* make it responsive */
+        background-color: #ffffff;
+
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        text-align: center;
+      }
+
+      .academic-detail {
+        padding: 60px 40px 0px 40px;
+      }
+
+      .school-text-section h2 {
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      .school-text-section h3 {
+        color: #00a3b0;
+        margin-bottom: 25px;
+      }
+
+      .school-text-section p {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .school-text-section .btn {
+        padding: 12px 30px;
+        background-color: #00a3b0;
+        color: #fff;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      .school-text-section .btn:hover {
+        background-color: #eeac00;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .school-text-section h2 {
+          font-size: 2rem;
+        }
+
+        .school-text-section h3 {
+          font-size: 1.4rem;
+        }
+
+        .school-text-section p {
+          font-size: 1rem;
+        }
+      }
+      .icse-advantages-section {
+        padding: 80px 20px;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-header h3 {
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      .section-header p {
+        color: #555;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Include previous icse-card styles */
+      .icse-section-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .icse-card {
+        flex: 1 1 300px;
+        max-width: 350px;
+        border-radius: 15px;
+        padding: 30px 20px;
+        color: #333;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .icse-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .icse-card h3 {
+        margin-bottom: 15px;
+      }
+
+      .icse-card p {
+        line-height: 1.6;
+      }
+      /* Future Section */
+      .icse-future-section {
+        position: relative;
+        padding: 0px 20px 0;
+        overflow: hidden;
+      }
+
+      /* Two-column layout */
+      .future-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 60px;
+        flex-wrap: wrap;
+      }
+
+      .future-image img {
+        width: 100%;
+        max-width: 450px;
+        border-radius: 20px;
+        object-fit: cover;
+      }
+
+      .future-content {
+        flex: 1;
+        min-width: 300px;
+        margin-bottom: 120px;
+      }
+
+      /* Points */
+      .future-points {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .future-item {
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+      }
+
+      .future-icon {
+        flex-shrink: 0;
+      }
+
+      .wave-section {
+        position: relative;
+        width: 100%;
+        height: 200px; /* adjust wave height */
+        overflow: hidden;
+      }
+
+      .wave {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+
+    <div class="academics">
+      <!-- School ICSE Section -->
+      <section class="school-text-section">
+        <div class="container-academic">
+          <div class="academic-detail">
+            <h2>Our School - Mount Valley Public School</h2>
+            <h3>Provides ICSE Curriculum</h3>
+            <p>
+              At Mount Valley Public School, we focus on holistic learning that
+              balances academics, extracurricular activities, and character
+              development. Our ICSE curriculum ensures a strong foundation in
+              core subjects while nurturing creativity and critical thinking.
+            </p>
+            <p>
+              Join us to experience an environment where every child is
+              encouraged to explore, learn, and excel in all aspects of life.
+            </p>
+            <a href="admission.html" class="btn">Enrol Now</a>
+          </div>
+          <section class="wave-section">
+            <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none">
+              <path
+                d="M0,160 C360,240 1080,80 1440,160 L1440,320 L0,320 Z"
+                fill="#a8edea"
+              ></path>
+            </svg>
+          </section>
+        </div>
+      </section>
+      <!-- <section class="wave-section">
+        <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path
+            d="M0,160 C360,240 1080,80 1440,160 L1440,320 L0,320 Z"
+            fill="#a8edea"
+          ></path>
+        </svg>
+      </section> -->
+
+      <section class="icse-advantages-section">
+        <div class="section-header" data-aos="fade-down">
+          <h3>Why Choose ICSE Curriculum?</h3>
+          <p>
+            Discover the key advantages that make ICSE a great choice for your
+            child's holistic development.
+          </p>
+        </div>
+
+        <div class="icse-section-wrapper">
+          <!-- Your animated cards go here -->
+          <div
+            class="icse-card"
+            style="background: #f9c2c2"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <h3>Strong Focus on English</h3>
+            <p>
+              ICSE gives more importance to English language skills, which helps
+              in higher studies in India and abroad.
+            </p>
           </div>
 
-          <!-- Right Sidebar: Info & Teachers -->
-          <div class="col-xl-3 col-lg-4">
-            <!-- Dynamic Info Section -->
-            <div class="single-widget-item">
-              <div class="single-title">
-                <h3>Info Classes</h3>
-              </div>
-              <div class="single-widget-container">
-                <ul class="class-infos">
-                  <!-- JS will dynamically fill this -->
-                </ul>
-              </div>
-            </div>
+          <div
+            class="icse-card"
+            style="background: #c2f6e0"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
+            <h3>Balanced Curriculum</h3>
+            <p>
+              Equal importance to sciences, mathematics, humanities, and
+              languages.
+            </p>
+          </div>
 
-            <!-- Teachers Section (static) -->
-            <div class="single-widget-item">
-              <div class="single-title">
-                <h3>Teachers</h3>
-              </div>
-              <div class="single-widget-container">
-                <div class="teacher-info-widget">
-                  <div class="widget-image">
-                    <a href="#"><img src="img/teacher/img-1.jpg" alt="" /></a>
-                  </div>
-                  <div class="widget-infos">
-                    <h4><a href="#">Graves</a></h4>
-                    <p>Professor, Harvard College</p>
-                  </div>
+          <div
+            class="icse-card"
+            style="background: #f9e2c2"
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
+            <h3>Practical Learning</h3>
+            <p>
+              Encourages projects, lab work, and field activities over rote
+              learning.
+            </p>
+          </div>
+
+          <div
+            class="icse-card"
+            style="background: #c2d9f6"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          >
+            <h3>Wide Subject Choice</h3>
+            <p>
+              Offers subjects like arts, computer science, environmental
+              education, commerce, and more.
+            </p>
+          </div>
+
+          <div
+            class="icse-card"
+            style="background: #f6c2f6"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <h3>Global Recognition</h3>
+            <p>
+              Accepted by universities in India and abroad (especially for
+              English proficiency).
+            </p>
+          </div>
+
+          <div
+            class="icse-card"
+            style="background: #c2f6f0"
+            data-aos="fade-right"
+            data-aos-delay="600"
+          >
+            <h3>Skill Development</h3>
+            <p>Builds analytical, problem-solving, and research skills.</p>
+          </div>
+
+          <div
+            class="icse-card"
+            style="background: #f6f3c2"
+            data-aos="fade-left"
+            data-aos-delay="700"
+          >
+            <h3>Focus on Overall Growth</h3>
+            <p>
+              Supports extracurricular activities such as sports, music, drama,
+              and arts.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ICSE Future Section -->
+      <!-- ICSE Future Section -->
+      <section class="icse-future-section">
+        <div class="future-container">
+          <!-- Left Image -->
+          <div class="future-image" data-aos="fade-right">
+            <img src="img/gallery/e5.png" alt="Future Ready" />
+          </div>
+
+          <!-- Right Content -->
+          <div class="future-content" data-aos="fade-left">
+            <h3>How ICSE Prepares Your Child for the Future</h3>
+            <p>
+              Beyond academics, ICSE nurtures skills and values that help
+              students succeed in higher education and real-world challenges.
+            </p>
+
+            <div class="future-points">
+              <div class="future-item" data-aos="fade-up" data-aos-delay="100">
+                <span class="future-icon">🎓</span>
+                <div>
+                  <h4>Higher Education Ready</h4>
+                  <p>
+                    The curriculum equips students with the foundation needed
+                    for competitive exams and university studies worldwide.
+                  </p>
                 </div>
-                <div class="teacher-info-widget">
-                  <div class="widget-image">
-                    <a href="#"><img src="img/teacher/img-2.jpg" alt="" /></a>
-                  </div>
-                  <div class="widget-infos">
-                    <h4><a href="#">Poppy</a></h4>
-                    <p>Professor, Harvard College</p>
-                  </div>
+              </div>
+
+              <div class="future-item" data-aos="fade-up" data-aos-delay="200">
+                <span class="future-icon">💼</span>
+                <div>
+                  <h4>Career Opportunities</h4>
+                  <p>
+                    Strong communication skills and analytical thinking open
+                    doors to a wide range of career paths in science, commerce,
+                    and arts.
+                  </p>
+                </div>
+              </div>
+
+              <div class="future-item" data-aos="fade-up" data-aos-delay="300">
+                <span class="future-icon">🌍</span>
+                <div>
+                  <h4>Global Perspective</h4>
+                  <p>
+                    With a balanced approach to academics and extracurriculars,
+                    ICSE students are better prepared to adapt to global
+                    standards.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
-
-    <div class="btn-section">
-      <button onclick="goBack()" class="back-btn">← Back</button>
-    </div>
-
-    <style>
-      .class-container {
-        margin-bottom: 30px;
-      }
-      .text-center {
-        color: #fff;
-      }
-      .btn-section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 60px;
-        background: linear-gradient(to bottom, #d6eaff 0%, #a8c9f0 100%);
-
-      }
-      .back-btn {
-        background: #00a3b0;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 6px;
-        font-size: 16px;
-        cursor: pointer;
-        margin-bottom: 20px;
-        transition: background 0.3s ease;
-      }
-
-      .back-btn:hover {
-        background: #eeac00;
-      }
-      .subjects-container {
-        display: flex;
-        flex-wrap: wrap; /* allow wrapping */
-        gap: 10px;
-        margin-top: 10px;
-        width: 100%; /* ensure it doesn’t overflow parent */
-        box-sizing: border-box;
-      }
-
-      @media (min-width: 992px) {
-        .subjects-container {
-          width: 70%;
-        }
-      }
-      .subject-box {
-        background: #eeac00;
-        color: white;
-        padding: 8px 12px;
-        border-radius: 6px;
-        font-size: 14px;
-        text-align: center;
-        flex: 1 1 calc(33.33% - 10px); /* 3 boxes per row, adjust gap */
-        box-sizing: border-box;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s;
-        max-width: 280px; /* prevent too small on mobile */
-      }
-
-      .subject-box:hover {
-        transform: translateY(-3px);
-      }
-
-      /* Responsive */
-      @media (max-width: 992px) {
-        .subject-box {
-          flex: 1 1 calc(50% - 10px); /* 2 per row on medium screens */
-        }
-      }
-
-      @media (max-width: 600px) {
-        .subject-box {
-          flex: 1 1 100%; /* 1 per row on mobile */
-        }
-      }
-    </style>
     <!-- whatsapp contact -->
     <a
       href="https://wa.me/9952258987"
@@ -493,6 +739,7 @@
     <a href="mailto:mountwally21@gmail.com" class="email-fixed-button">
       <img src="./img/pngwing.com (1).svg" alt="Email Us" />
     </a>
+
     <!--Footer Area Start-->
     <div class="footer-area">
       <div class="container">
@@ -602,9 +849,6 @@
         </div>
       </div>
     </div>
-
-    <!--End of Footer Area-->
-
     <!-- jquery
 		============================================ -->
     <script src="js/vendor/jquery-1.12.3.min.js"></script>
@@ -669,6 +913,30 @@
     <!-- plugins JS
 		============================================ -->
     <script src="js/plugins.js"></script>
+    <!-- current year
+		============================================ -->
+
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, // animation duration in ms
+        once: false, // animate every time you scroll up/down
+        offset: 120, // offset (px) from the original trigger point
+      });
+    </script>
+
     <!-- Fixed Contact Area
 		============================================ -->
     <script>
@@ -682,125 +950,21 @@
       });
     </script>
 
-    <!-- current year
-		============================================ -->
-
+    <!-- adission from sending style -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script>
-      document.getElementById("current-year").textContent =
-        new Date().getFullYear();
-    </script>
+      const wave = document.querySelector(".wave path");
 
-    <!--class list
-		============================================ -->
-
-    <script>
-      // Get class from query params
-      const urlParams = new URLSearchParams(window.location.search);
-      const selectedClass = urlParams.get("class");
-
-      // Content for each class
-      const content = {
-        kindergarten: {
-          title: "Kindergarten (LKG, UKG, PreKG)",
-          subjects: [
-            "English Basics",
-            "Numbers & Counting",
-            "Drawing & Craft",
-            "Music & Rhymes",
-            "Storytelling",
-            "Physical Activities",
-          ],
-          description:
-            "Focus on early literacy, numeracy, and social development through fun activities.",
-          info: {
-            startDate: "June 10",
-            ageGroup: "2-6 Years",
-            classSize: "25",
-            duration: "8.45 am - 12:00 pm",
-            transportation: "Available",
-            staff: "2 Teachers",
-          },
+      // Animate the wave
+      gsap.to(wave, {
+        duration: 4,
+        repeat: -1,
+        yoyo: true,
+        attr: {
+          d: "M0,160 C360,80 1080,240 1440,160 L1440,320 L0,320 Z",
         },
-        "1-5": {
-          title: "Grades 1 to 5",
-          subjects: [
-            "English",
-            "Mathematics",
-            "Environmental Science",
-            "Social Studies",
-            "Computer Basics",
-            "Arts & Crafts",
-          ],
-          description:
-            "Primary education focusing on foundational knowledge, creativity, and critical thinking.",
-          info: {
-            startDate: "June 5",
-            ageGroup: "6-10 Years",
-            classSize: "30",
-            duration: "8:45 am - 3:45 pm",
-            transportation: "Available",
-            staff: "3 Teachers",
-          },
-        },
-        "6-9": {
-          title: "Grades 6 to 9",
-          subjects: [
-            "English Literature",
-            "Mathematics",
-            "Science (Physics, Chemistry, Biology)",
-            "History & Civics",
-            "Geography",
-            "Computer Science",
-          ],
-          description:
-            "Middle school curriculum to deepen understanding and analytical skills in core subjects.",
-          info: {
-            startDate: "June 10, 2025",
-            ageGroup: "11-15 Years",
-            classSize: "35",
-            duration: "8:45 am - 3:45 pm",
-            transportation: "Available",
-            staff: "4 Teachers",
-          },
-        },
-      };
-
-      if (selectedClass && content[selectedClass]) {
-        const data = content[selectedClass];
-
-        // Update main title and subjects
-        document.getElementById("classTitle").innerText = data.title;
-        const classContent = `
-  <p>${data.description}</p>
-  <h4>Subjects:</h4>
-  <div class="subjects-container">
-    ${data.subjects
-      .map((sub) => `<div class="subject-box">${sub}</div>`)
-      .join("")}
-  </div>
-`;
-        document.getElementById("classContent").innerHTML = classContent;
-
-        // Update Info Classes section
-        const infoHtml = `
-      <li><i class="fa fa-calendar"></i> Start Date: ${data.info.startDate}</li>
-      <li><i class="fa fa-birthday-cake"></i> Years Old: ${data.info.ageGroup}</li>
-      <li><i class="fa fa-bank"></i> Class Size: ${data.info.classSize}</li>
-      <li><i class="fa fa-clock-o"></i> Class Duration: ${data.info.duration}</li>
-      <li><i class="fa fa-bus"></i> Transportation: ${data.info.transportation}</li>
-      <li><i class="fa fa-users"></i> Class Staff: ${data.info.staff}</li>
-    `;
-        document.querySelector(".class-infos").innerHTML = infoHtml;
-      } else {
-        document.getElementById("classContent").innerHTML =
-          "<p>No class selected or invalid class.</p>";
-      }
-    </script>
-
-    <script>
-      function goBack() {
-        window.location.href = "class-list.html";
-      }
+        ease: "sine.inOut",
+      });
     </script>
 
     <!-- main JS
