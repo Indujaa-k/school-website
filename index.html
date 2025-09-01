@@ -2393,64 +2393,87 @@
 
     <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
     <script>
-      // Modal
-      const modal = document.getElementById("imageModal");
-      const modalImg = document.getElementById("modalImage");
-      const closeBtn = document.querySelector(".image-modal .close-btn");
+      // Wait until DOM is loaded
+      window.addEventListener("DOMContentLoaded", () => {
+        // Modal
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const closeBtn = document.querySelector(".image-modal .close-btn");
 
-      document.querySelectorAll(".eye-icon").forEach((icon) => {
-        icon.addEventListener("click", (e) => {
-          const imgSrc = e.currentTarget.getAttribute("data-img");
-          modalImg.src = imgSrc;
-          modal.style.display = "flex";
-          document.body.classList.add("modal-open");
+        document.querySelectorAll(".eye-icon").forEach((icon) => {
+          icon.addEventListener("click", (e) => {
+            const imgSrc = e.currentTarget.getAttribute("data-img");
+            modalImg.src = imgSrc;
+            modal.style.display = "flex";
+            document.body.classList.add("modal-open");
+          });
         });
-      });
 
-      function closeModal() {
-        modal.style.display = "none";
-        document.body.classList.remove("modal-open");
-      }
-      closeBtn.addEventListener("click", closeModal);
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) closeModal();
-      });
-
-      // Gallery scroll
-      const track = document.querySelector(".gallery-track");
-      const slideWidth = 320; // width + margin of one slide
-      let scrollAmount = 0;
-      let scrollSpeed = 1; // pixels per frame
-      let isPaused = false;
-
-      // Continuous scroll loop
-      function continuousScroll() {
-        if (!isPaused) {
-          scrollAmount += scrollSpeed;
-          if (scrollAmount >= track.scrollWidth / 2) {
-            scrollAmount = 0; // loop back
-          }
-          track.style.transform = `translateX(-${scrollAmount}px)`;
+        function closeModal() {
+          modal.style.display = "none";
+          document.body.classList.remove("modal-open");
         }
-        requestAnimationFrame(continuousScroll);
-      }
-      continuousScroll();
-
-      // Pause on hover
-      track.addEventListener("mouseenter", () => (isPaused = true));
-      track.addEventListener("mouseleave", () => (isPaused = false));
-
-      // Left/right arrow buttons
-      document
-        .querySelector(".gallery-arrow.left")
-        .addEventListener("click", () => {
-          scrollAmount -= slideWidth;
+        closeBtn.addEventListener("click", closeModal);
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) closeModal();
         });
-      document
-        .querySelector(".gallery-arrow.right")
-        .addEventListener("click", () => {
-          scrollAmount += slideWidth;
-        });
+
+        // Gallery scroll
+        const track = document.querySelector(".gallery-track");
+
+        if (!track) return; // safety check
+
+        const slides = track.innerHTML; // store original slides
+        track.innerHTML += slides; // duplicate slides for infinite loop
+
+        const slideWidth = 320; // width + margin of one slide
+        let scrollAmount = 0;
+        let scrollSpeed = 1; // pixels per frame
+        let isPaused = false;
+
+        // Continuous scroll loop
+        function continuousScroll() {
+          if (!isPaused) {
+            scrollAmount += scrollSpeed;
+
+            // Reset when half is scrolled (loop back)
+            if (scrollAmount >= track.scrollWidth / 2) {
+              scrollAmount = 0;
+            }
+
+            track.style.transform = `translateX(-${scrollAmount}px)`;
+          }
+          requestAnimationFrame(continuousScroll);
+        }
+
+        // Start loop only after images loaded
+        window.onload = () => {
+          continuousScroll();
+        };
+
+        // Pause on hover
+        track.addEventListener("mouseenter", () => (isPaused = true));
+        track.addEventListener("mouseleave", () => (isPaused = false));
+
+        // Left/right arrow buttons
+        document
+          .querySelector(".gallery-arrow.left")
+          ?.addEventListener("click", () => {
+            scrollAmount -= slideWidth;
+            if (scrollAmount < 0) {
+              scrollAmount = track.scrollWidth / 2 - slideWidth; // loop back
+            }
+          });
+
+        document
+          .querySelector(".gallery-arrow.right")
+          ?.addEventListener("click", () => {
+            scrollAmount += slideWidth;
+            if (scrollAmount >= track.scrollWidth / 2) {
+              scrollAmount = 0; // reset loop
+            }
+          });
+      });
     </script>
 
     <!-- teacher
