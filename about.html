@@ -9,29 +9,15 @@
 
     <!-- favicon
 		============================================ -->
-     <!-- <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" /> -->
+    <!-- <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" /> -->
     <!-- Standard favicon -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="img/logo/32x32.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo/32x32.png" />
 
     <!-- Higher resolution for retina displays -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="img/logo/16x16.png"
-    />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo/16x16.png" />
 
     <!-- Shortcut icon (older browsers) -->
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="img/logo/logo-white.png"
-    />
+    <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" />
 
     <!-- font Awesome 6
 		============================================ -->
@@ -95,7 +81,7 @@
       }
       .wrap {
         max-width: 1100px;
-        margin: 24px auto;
+        margin: 0 auto 24px auto;
         padding: 16px;
       }
 
@@ -110,9 +96,10 @@
       /* Header */
       .header {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        gap: 12px;
+        justify-content: center;
+        gap: 10px;
         margin-bottom: 12px;
       }
       .nav {
@@ -330,6 +317,9 @@
         }
       }
       @media (max-width: 768px) {
+        .header {
+          flex-direction: column;
+        }
         .pill {
           width: 12px;
           height: 12px;
@@ -476,7 +466,8 @@
                           <a href="about.html#calendarrow">Academic Calendar</a>
                         </li>
                       </ul>
-                    </li> x
+                    </li>
+                    x
                     <li><a href="academics.html">Academics</a></li>
                     <li><a href="admission.html">Admission</a></li>
                     <li>
@@ -583,7 +574,6 @@
       style="
         background: linear-gradient(to bottom, #a8c9f0 0%, #6fa8dc 100%);
         color: black;
-        padding: 80px 20px;
       "
     >
       <div class="container">
@@ -644,7 +634,11 @@
             class="col-lg-5 d-flex justify-content-center align-items-center"
           >
             <div class="skill-image">
-              <img src="img/schoolimages/student-3.jpg" alt="" style="border-radius: 10px;" />
+              <img
+                src="img/schoolimages/student-3.jpg"
+                alt=""
+                style="border-radius: 10px"
+              />
             </div>
           </div>
         </div>
@@ -658,7 +652,6 @@
       style="
         background: linear-gradient(to bottom, #6fa8dc 0%, #80d0c7 100%);
         color: #000;
-        padding: 80px 20px;
       "
     >
       <div class="section-title-wrapper">
@@ -666,7 +659,7 @@
           <h3 class="mb-4 mt-1">Founder and Principal Message</h3>
         </div>
       </div>
-      <section class="leaders-section py-5">
+      <section class="leaders-section">
         <div class="container">
           <div class="row align-items-center mb-4">
             <!-- Photos side by side -->
@@ -799,15 +792,21 @@
       </div>
       <div class="wrap" id="calendarrow">
         <div class="header">
-          <div>
-           <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;;margin-left:100px">
-  <div id="headTitle" style="font-weight:bold;">Academic Calendar</div>
-  <div>
-    Navigate months • Tap colors to filter • Items appear inside date cells
-  </div>
-</div>
-
-
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <div id="headTitle" style="font-weight: bold">
+              Academic Calendar
+            </div>
+            <div>
+              Navigate months • Tap colors to filter • Items appear inside date
+              cells.
+            </div>
           </div>
           <div class="controls">
             <button class="btn icon" id="prevBtn" aria-label="Previous month">
