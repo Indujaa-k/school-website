@@ -325,83 +325,425 @@
     <!--End of Breadcrumb Banner Area-->
 
     <!-- Admission Prosses -->
-    <div
-      style="background: linear-gradient(to bottom, #ffffff 0%, #b3e0e6 100%);
-"
-    >
-      <section class="admission-process container">
-        <div class="container">
-          <h4 class="main-title">Admission Process</h4>
 
-          <div class="admission-step">
-            <h5>1. Registration</h5>
-            <p>
-              Parents may collect the Application Form from the school office or
-              fill it directly on the school website.
-            </p>
+    <!-- Admission Process (replace your old block with this) -->
+    <style>
+      /* 🎨 Colors for Admission Section */
+      .admission-section {
+        --primary: #1e88e5; /* Blue */
+        --secondary: #00bfa5; /* Teal */
+        --card-bg: #ffffff;
+        background: linear-gradient(
+          135deg,
+          #ffffff,
+          var(--primary),
+          var(--secondary)
+        );
+        padding: 80px 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .admission-section::before {
+        content: "";
+        position: absolute;
+        bottom: -150px;
+        right: -150px;
+        width: 400px;
+        height: 400px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        z-index: 0;
+      }
+
+      .admission-section h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+        color: #0d47a1;
+        font-weight: bold;
+        letter-spacing: 1px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .steps-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        max-width: 1100px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .step-card {
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: 14px;
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+        transition: all 0.35s ease;
+        border-top: 4px solid var(--primary);
+        position: relative;
+        overflow: hidden;
+        /* DO NOT set opacity:0 or transform here — GSAP will animate from these values */
+      }
+
+      .step-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom right,
+          rgba(30, 136, 229, 0.03),
+          rgba(0, 191, 165, 0.03)
+        );
+        border-radius: 14px;
+        pointer-events: none;
+      }
+
+      .step-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+        border-top: 4px solid var(--secondary);
+      }
+
+      .step-icon {
+        display: block;
+        width: 44px;
+        height: 44px;
+        margin-bottom: 18px;
+        color: var(--primary);
+      }
+      .step-icon svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+        fill: currentColor;
+      }
+
+      .step-card h3 {
+        margin: 0;
+        font-size: 1.3rem;
+        color: var(--primary);
+      }
+
+      .point-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 15px;
+      }
+      .point-list li {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        color: #333;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .point-list li .point-icon {
+        width: 20px;
+        min-width: 20px;
+        height: 20px;
+        display: inline-block;
+        flex: 0 0 20px;
+        line-height: 18px;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      /* small responsive tweak */
+      @media (max-width: 420px) {
+        .admission-section {
+          padding: 40px 12px;
+        }
+        .admission-section h2 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+    <div class="admission-section">
+    <section>
+      <h2>Admission Process</h2>
+      <div class="steps-container">
+        <!-- Registration -->
+        <div class="step-card">
+          <div class="step-icon" aria-hidden="true">
+            <!-- document icon (SVG) -->
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                d="M6 2h7l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"
+              ></path>
+              <path d="M13 2v6h6"></path>
+            </svg>
           </div>
+          <h3>Registration</h3>
+          <ul class="point-list">
+            <li>
+              <span class="point-icon">✍️</span> Collect the application form
+              from the school office
+            </li>
+            <li>
+              <span class="point-icon">🌐</span> Or complete the application
+              directly on the school website
+            </li>
+          </ul>
+        </div>
 
-          <div class="admission-step">
-            <h5>2. Documents Required</h5>
-
-            <!-- Birth Certificate (attested copy), recent passport-size photographs
-            of the student, previous school’s Transfer Certificate (if
-            applicable), previous class Report Card / Progress Record, address
-            proof of parents, and Aadhaar Card copy (if applicable). -->
-
-            <ul>
-              <li>Birth Certificate (attested copy)</li>
-              <li>Recent passport-size photographs of the student</li>
-              <li>Previous school’s Transfer Certificate (if applicable)</li>
-              <li>Previous class Report Card / Progress Record</li>
-              <li>Address proof of parents</li>
-              <li>Aadhaar Card copy (if applicable)</li>
-            </ul>
+        <!-- Documents Required -->
+        <div class="step-card">
+          <div class="step-icon" aria-hidden="true">
+            <!-- folder icon -->
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"
+              />
+            </svg>
           </div>
+          <h3>Documents Required</h3>
+          <ul class="point-list">
+            <li>
+              <span class="point-icon">📄</span> Birth Certificate (attested
+              copy)
+            </li>
+            <li>
+              <span class="point-icon">🖼️</span> Recent passport-size
+              photographs of the student
+            </li>
+            <li>
+              <span class="point-icon">🏫</span> Transfer Certificate (if
+              applicable)
+            </li>
+            <li>
+              <span class="point-icon">📚</span> Report Card / Progress Record
+            </li>
+            <li><span class="point-icon">🏠</span> Address proof of parents</li>
+            <li>
+              <span class="point-icon">🆔</span> Aadhaar Card copy (if
+              applicable)
+            </li>
+          </ul>
+        </div>
 
-          <div class="admission-step">
-            <h5>3. Eligibility</h5>
-            <p>
-              Nursery/LKG/UKG: Admission based on age criteria as per CISCE
-              guidelines. Class I onwards: Admission is subject to availability
-              of seats and an entrance assessment.
-            </p>
+        <!-- Eligibility -->
+        <div class="step-card">
+          <div class="step-icon" aria-hidden="true">
+            <!-- user icon -->
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="8" r="3"></circle>
+              <path d="M6 20c0-3 4-5 6-5s6 2 6 5"></path>
+            </svg>
           </div>
+          <h3>Eligibility</h3>
+          <ul class="point-list">
+            <li>
+              <span class="point-icon">👶</span> Nursery / LKG / UKG: Based on
+              CISCE age criteria
+            </li>
+            <li>
+              <span class="point-icon">👥</span> Class I onwards: Subject to
+              seat availability
+            </li>
+            <li>
+              <span class="point-icon">📋</span> Entrance assessment may be
+              required for higher classes
+            </li>
+          </ul>
+        </div>
 
-          <div class="admission-step">
-            <h5>4. Interaction / Entrance Assessment</h5>
-            <p>
-              For Kindergarten: Child and parents may be called for an informal
-              interaction. For Classes I upwards: Students may be required to
-              take an entrance assessment in English, Mathematics, and General
-              Knowledge to evaluate grade readiness.
-            </p>
+        <!-- Interaction / Assessment -->
+        <div class="step-card">
+          <div class="step-icon" aria-hidden="true">
+            <!-- clipboard icon -->
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                d="M9 2h6l1 2h2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4h2l1-2z"
+              ></path>
+            </svg>
           </div>
+          <h3>Interaction / Entrance Assessment</h3>
+          <ul class="point-list">
+            <li>
+              <span class="point-icon">💬</span> Kindergarten: Informal
+              interaction with parents & child
+            </li>
+            <li>
+              <span class="point-icon">📝</span> Classes I & above: English test
+            </li>
+            <li><span class="point-icon">➗</span> Mathematics test</li>
+            <li><span class="point-icon">🧠</span> General Knowledge test</li>
+          </ul>
+        </div>
 
-          <div class="admission-step">
-            <h5>5. Confirmation of Admission</h5>
-            <p>
-              Admission will be confirmed after successful assessment,
-              verification of documents, and payment of admission/term fees.
-              Parents will receive an Admission Confirmation Letter along with
-              details of uniform, books, and school calendar.
-            </p>
+        <!-- Confirmation -->
+        <div class="step-card">
+          <div class="step-icon" aria-hidden="true">
+            <!-- check-circle icon -->
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <path
+                d="M8 12l2.5 3L16 9"
+                fill="none"
+                stroke="white"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
           </div>
+          <h3>Confirmation of Admission</h3>
+          <ul class="point-list">
+            <li>
+              <span class="point-icon">✅</span> Successful completion of
+              assessment
+            </li>
+            <li>
+              <span class="point-icon">📑</span> Verification of submitted
+              documents
+            </li>
+            <li>
+              <span class="point-icon">💳</span> Payment of admission and term
+              fees
+            </li>
+            <li>
+              <span class="point-icon">✉️</span> Admission Confirmation Letter
+              issued
+            </li>
+          </ul>
+        </div>
 
-          <div class="admission-step">
-            <h5>6. Withdrawal</h5>
-            <p>
-              One month’s written notice is required for withdrawal. Transfer
-              Certificate will be issued only after clearance of all dues.
-            </p>
+        <!-- Withdrawal -->
+        <div class="step-card">
+          <div class="step-icon" aria-hidden="true">
+            <!-- sign-out icon -->
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-hidden="true"
+            >
+              <path d="M16 17l5-5-5-5"></path>
+              <path d="M21 12H9"></path>
+              <path d="M9 19H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3"></path>
+            </svg>
           </div>
+          <h3>Withdrawal</h3>
+          <ul class="point-list">
+            <li>
+              <span class="point-icon">📝</span> One month written notice
+              required
+            </li>
+            <li><span class="point-icon">💰</span> All dues must be cleared</li>
+            <li>
+              <span class="point-icon">📜</span> Transfer Certificate issued
+              after clearance
+            </li>
+          </ul>
         </div>
       </section>
 
       <!-- End of the admission process -->
       <!-- Admission Form Section -->
+      
+    </section>
+
+    <!-- GSAP Animations (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+      // register ScrollTrigger plugin
+      if (window.gsap && window.gsap.registerPlugin) {
+        gsap.registerPlugin(ScrollTrigger);
+      }
+
+      // animate each card when it enters viewport
+      gsap.utils.toArray(".step-card").forEach((card, i) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+          opacity: 0,
+          y: 60,
+          duration: 0.9,
+          delay: i * 0.12,
+          ease: "power3.out",
+        });
+      });
+
+      // heading animation
+      gsap.from(".admission-section h2", {
+        scrollTrigger: {
+          trigger: ".admission-section h2",
+          start: "top 90%",
+        },
+        opacity: 0,
+        y: -40,
+        duration: 0.9,
+        ease: "power3.out",
+      });
+    </script>
+
+    <!-- End of the admission process -->
+    
+    <!-- Admission Form Section -->
+     <style>
+  :root {
+    --primary: #1e88e5;   /* Blue */
+    --secondary: #00bfa5; /* Teal */
+    --card-bg: #ffffff;   /* White form background */
+  }
+
+  /* Outer Section Background */
+  .admission-form-section {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding: 80px 20px;
+    margin-top: 50px;
+  }
+
+  /* White Form Card */
+  .admission-form {
+    background: var(--card-bg);
+    padding: 50px 40px;
+    border-radius: 16px;
+    max-width: 1100px;
+      margin-top: 70px;
+    box-shadow: 0 10px 28px rgba(1, 1, 1, 0.15);
+  }
+</style>
       <div class="admission-form">
-        <h2>Admission Form - Mount Valley Public School</h2>
+        <h2 style="color:#ffffff; text-align:center; margin-bottom:20px;">
+  Admission Form - Mount Valley Public School
+</h2>
+
+
+        <!-- Form starts -->
 
         <form
           id="admissionForm"
@@ -571,8 +913,7 @@
         </form>
       </div>
     </div>
-
-    <!-- admission form -->
+  </div>
 
     <!-- whatsapp contact -->
     <a

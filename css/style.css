@@ -5015,7 +5015,7 @@ textarea {
 .admission-form {
   max-width: 900px;
   margin: 20px auto;
-  background: #fff;
+  background: linear-gradient(135deg, #ffffff, #e3f2fd, #e0f7fa);
   padding: 25px 20px;
   border-radius: 10px;
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
