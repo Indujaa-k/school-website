@@ -7,31 +7,17 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-   <!-- favicon
+    <!-- favicon
 		============================================ -->
-     <!-- <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" /> -->
+    <!-- <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" /> -->
     <!-- Standard favicon -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="img/logo/32x32.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo/32x32.png" />
 
     <!-- Higher resolution for retina displays -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="img/logo/16x16.png"
-    />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo/16x16.png" />
 
     <!-- Shortcut icon (older browsers) -->
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="img/logo/logo-white.png"
-    />
+    <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" />
 
     <!-- font Awesome 6
 		============================================ -->
@@ -359,14 +345,16 @@
           <div class="col-lg-6">
             <div class="contact-area-container">
               <div class="single-title">
-                <h3 style="margin-top:20px; font-weight:bold;">Contact Info</h3>
-
+                <h3 style="margin-top: 20px; font-weight: bold">
+                  Contact Info
+                </h3>
               </div>
               <p>
                 For admissions, programs, or general enquiries, please feel free
                 to contact <strong>Mount Valley Public School</strong>. You can
                 reach us by phone, email, or visit our campus directly. Our team
-                is always happy to assist you with the information you need.
+                is always happy to assist you with the information you need.We
+                look forward to welcoming you to our school community.
               </p>
               <div class="contact-address-container">
                 <div class="contact-address-info">
@@ -408,46 +396,56 @@
           <div class="col-lg-6">
             <div class="contact-form">
               <div class="single-title">
-                <h3 style="margin-top:20px; font-weight:bold;">Send A Message</h3>
-
+                <h3 style="margin-top: 20px; font-weight: bold">
+                  Send A Message
+                </h3>
               </div>
               <div class="contact-form-container">
-                <form
-                  id="contact-form"
-                  action="http://whizthemes.com/mail-php/contact/mail.php"
-                  method="post"
-                >
+                <form id="contact-form" method="post">
                   <div class="row">
                     <div class="col-md-6">
                       <input
                         type="text"
-                        name="name"
+                        name="studentName"
                         placeholder="Student Name *"
+                        required
                       />
                     </div>
                     <div class="col-md-6">
                       <input
                         type="text"
-                        name="name"
+                        name="yourName"
                         placeholder="Your Name *"
+                        required
                       />
                     </div>
                   </div>
-                  <input type="email" name="email" placeholder="Your Email*" />
-                  <input type="text" name="subject" placeholder="Subject *" />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email *"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="Subject *"
+                    required
+                  />
                   <textarea
                     name="message"
                     class="yourmessage"
                     placeholder="Your message"
+                    required
                   ></textarea>
                   <button
                     type="submit"
                     class="button-default button-yellow submit"
                   >
-                    <i class="fa fa-send"></i>Submit
+                    <i class="fa fa-send"></i> Submit
                   </button>
                 </form>
-                <p class="form-messege"></p>
+                <p class="form-message"></p>
               </div>
             </div>
           </div>
@@ -738,6 +736,34 @@
     <script>
       document.getElementById("current-year").textContent =
         new Date().getFullYear();
+    </script>
+    <!-- Form js
+		============================================ -->
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Stop default form submit
+
+          let formData = new FormData(this);
+
+          fetch("mail.php", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                alert("✅ Message sent successfully!");
+                document.getElementById("contact-form").reset(); // clear form
+              } else {
+                alert("❌ " + data.message);
+              }
+            })
+            .catch((error) => {
+              alert("❌ Something went wrong: " + error);
+            });
+        });
     </script>
 
     <!-- Google Map js

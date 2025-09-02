@@ -11,27 +11,13 @@
 		============================================ -->
     <!-- <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" /> -->
     <!-- Standard favicon -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="img/logo/32x32.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo/32x32.png" />
 
     <!-- Higher resolution for retina displays -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="img/logo/16x16.png"
-    />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo/16x16.png" />
 
     <!-- Shortcut icon (older browsers) -->
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="img/logo/logo-white.png"
-    />
+    <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" />
 
     <!-- font Awesome 6
 		============================================ -->
@@ -810,311 +796,197 @@
       </div>
 
       <!-- About Us Area Start -->
-      <!-- Parent Flex: Top Row + Circle -->
-      <!-- Top Row: 2 Shapes -->
-      <div
-        style="
+     >
+
+      <section class="why-mount-valley-section">
+        <div class="flex-container">
+          <!-- Left Column: Box 1 & Box 2 -->
+          <div class="flex-left">
+            <!-- Box 1 -->
+            <div class="box" style="background: #fff3e0" data-aos="fade-up">
+              <h4>Why Mount Valley?</h4>
+              <p class="box-item" style="background: #ea580c">
+                🏫 Safe & Modern Campus
+              </p>
+              <p class="box-item" style="background: #ea580c">
+                🎓 Academic Excellence
+              </p>
+              <p class="box-item" style="background: #ea580c">
+                ⚽ Sports & Activities
+              </p>
+              <p class="box-item" style="background: #ea580c">
+                👩‍🏫 Dedicated Faculty
+              </p>
+            </div>
+
+            <!-- Box 2 -->
+            <div
+              class="box"
+              style="background: #fef9c3"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <h4>Why ICSE?</h4>
+              <p class="box-item" style="background: #ca8a04">
+                📘 Strong Language Skills<br />Focus on English fluency &
+                communication
+              </p>
+              <p class="box-item" style="background: #ca8a04">
+                🔬 Science & Research Focus<br />Hands-on experiments & projects
+              </p>
+              <p class="box-item" style="background: #ca8a04">
+                🌍 Global Recognition<br />Accepted worldwide for higher studies
+              </p>
+            </div>
+          </div>
+
+          <!-- Center Circle -->
+          <div class="center-circle" data-aos="zoom-in" data-aos-delay="200">
+            <div>
+              <h4>Our Approach</h4>
+              <p class="box-item" style="background: #0369a1">
+                🚀 Inquiry-Based Learning
+              </p>
+              <p class="box-item" style="background: #0369a1">
+                🤝 Value-Centered Education
+              </p>
+              <p class="box-item" style="background: #0369a1">
+                💡 Critical Thinking
+              </p>
+            </div>
+          </div>
+
+          <!-- Bottom Column: Box 3 & Box 4 -->
+          <div class="flex-bottom">
+            <!-- Box 3 -->
+            <div
+              class="box"
+              style="background: #fde68a"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <h4>Beyond Academics</h4>
+              <p class="box-item" style="background: #d97706">
+                🎨 Arts & Creativity
+              </p>
+              <p class="box-item" style="background: #d97706">
+                🌱 Life Skills Training
+              </p>
+              <p class="box-item" style="background: #d97706">
+                🌍 Community Engagement
+              </p>
+              <p class="box-item" style="background: #d97706">
+                🏆 Sports & Fitness
+              </p>
+            </div>
+
+            <!-- Box 4 -->
+            <div
+              class="box"
+              style="background: #fcd34d"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <h4>Vision & Mission</h4>
+              <p class="box-item" style="background: #b45309">
+                🌟 Vision: To create a dynamic learning environment that
+                inspires innovation & leadership. Empowering students with
+                values and skills to thrive in a global society.
+              </p>
+              <p class="box-item" style="background: #b45309">
+                🎯 Mission: To provide a safe, inclusive space blending
+                knowledge, values & skills for holistic growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <style>
+        /* Container for all boxes and circle */
+        .flex-container {
           display: flex;
           justify-content: center;
           align-items: center;
           gap: 40px;
           flex-wrap: wrap;
           max-width: 1200px;
-          margin: 0px auto;
-        "
-      >
-        <div
-          style="
-            display: flex;
+          margin: 0 auto;
+        }
+
+        /* Left column with Box 1 & 2 */
+        .flex-left {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+        }
+
+        /* Bottom row with Box 3 & 4 */
+        .flex-bottom {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 40px;
+          flex-wrap: wrap;
+          max-width: 900px;
+        }
+
+        /* Individual boxes */
+        .box {
+          border-radius: 20px;
+          padding: 25px;
+          text-align: center;
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+          width: 280px;
+        }
+
+        /* Box items (paragraphs inside boxes) */
+        .box-item {
+          color: #fff;
+          padding: 10px;
+          border-radius: 10px;
+          margin: 8px 0;
+        }
+
+        /* Center Circle */
+        .center-circle {
+          width: 360px;
+          height: 360px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding: 30px;
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+          background: #e0f2fe;
+        }
+
+        /* Responsive for tablets and smaller devices */
+        @media (max-width: 992px) {
+          .flex-container {
             flex-direction: column;
-            gap: 40px;
-            flex-wrap: wrap;
-          "
-        >
-          <!-- Box 1 -->
-          <div
-            data-aos="fade-up"
-            style="
-              background: #fff3e0;
-              border-radius: 20px;
-              padding: 25px;
-              text-align: center;
-              box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-              width: 280px;
-            "
-          >
-            <h4 style="color: #0f766e; margin-bottom: 15px">
-              Why Mount Valley?
-            </h4>
-            <p
-              style="
-                background: #ea580c;
-                color: #fff;
-                padding: 10px;
-                border-radius: 10px;
-                margin: 8px 0;
-              "
-            >
-              🏫 Safe & Modern Campus
-            </p>
-            <p
-              style="
-                background: #ea580c;
-                color: #fff;
-                padding: 10px;
-                border-radius: 10px;
-                margin: 8px 0;
-              "
-            >
-              🎓 Academic Excellence
-            </p>
-            <p
-              style="
-                background: #ea580c;
-                color: #fff;
-                padding: 10px;
-                border-radius: 10px;
-                margin: 8px 0;
-              "
-            >
-              ⚽ Sports & Activities
-            </p>
-            <p
-              style="
-                background: #ea580c;
-                color: #fff;
-                padding: 10px;
-                border-radius: 10px;
-                margin: 8px 0;
-              "
-            >
-              👩‍🏫 Dedicated Faculty
-            </p>
-          </div>
-
-          <!-- Box 2 -->
-          <div
-            data-aos="fade-up"
-            data-aos-delay="100"
-            style="
-              background: #fef9c3;
-              border-radius: 20px;
-              padding: 25px;
-              text-align: center;
-              box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-              width: 280px;
-            "
-          >
-            <h4 style="color: #0f766e; margin-bottom: 15px">Why ICSE?</h4>
-            <p
-              style="
-                background: #ca8a04;
-                color: #fff;
-                padding: 12px;
-                border-radius: 12px;
-                margin: 10px 0;
-              "
-            >
-              📘 Strong Language Skills<br />Focus on English fluency &
-              communication
-            </p>
-            <p
-              style="
-                background: #ca8a04;
-                color: #fff;
-                padding: 12px;
-                border-radius: 12px;
-                margin: 10px 0;
-              "
-            >
-              🔬 Science & Research Focus<br />Hands-on experiments & projects
-            </p>
-            <p
-              style="
-                background: #ca8a04;
-                color: #fff;
-                padding: 12px;
-                border-radius: 12px;
-                margin: 10px 0;
-              "
-            >
-              🌍 Global Recognition<br />Accepted worldwide for higher studies
-            </p>
-          </div>
-        </div>
-
-        <!-- Circle -->
-        <div
-          data-aos="zoom-in"
-          data-aos-delay="200"
-          style="
-            width: 360px;
-            height: 360px;
-            background: #e0f2fe;
-            border-radius: 50%;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 30px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-          "
-        >
-          <div>
-            <h4 style="color: #0f766e; margin-bottom: 15px">Our Approach</h4>
-            <p
-              style="
-                background: #0369a1;
-                color: #fff;
-                padding: 10px;
-                border-radius: 12px;
-                margin: 8px 0;
-              "
-            >
-              🚀 Inquiry-Based Learning
-            </p>
-            <p
-              style="
-                background: #0369a1;
-                color: #fff;
-                padding: 10px;
-                border-radius: 12px;
-                margin: 8px 0;
-              "
-            >
-              🤝 Value-Centered Education
-            </p>
-            <p
-              style="
-                background: #0369a1;
-                color: #fff;
-                padding: 10px;
-                border-radius: 12px;
-                margin: 8px 0;
-              "
-            >
-              💡 Critical Thinking
-            </p>
-          </div>
-        </div>
+          }
 
-        <!-- Bottom Row: 2 Shapes -->
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            max-width: 900px;
-          "
-        >
-          <!-- Box 3 -->
-          <div
-            data-aos="fade-up"
-            data-aos-delay="300"
-            style="
-              background: #fde68a;
-              border-radius: 20px;
-              padding: 25px;
-              text-align: center;
-              box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-              width: 280px;
-            "
-          >
-            <h4 style="color: #0f766e; margin-bottom: 15px">
-              Beyond Academics
-            </h4>
-            <p
-              style="
-                background: #d97706;
-                color: #fff;
-                padding: 10px;
-                border-radius: 10px;
-                margin: 8px 0;
-              "
-            >
-              🎨 Arts & Creativity
-            </p>
-            <p
-              style="
-                background: #d97706;
-                color: #fff;
-                padding: 10px;
-                border-radius: 10px;
-                margin: 8px 0;
-              "
-            >
-              🌱 Life Skills Training
-            </p>
-            <p
-              style="
-                background: #d97706;
-                color: #fff;
-                padding: 10px;
-                border-radius: 10px;
-                margin: 8px 0;
-              "
-            >
-              🌍 Community Engagement
-            </p>
-            <p
-              style="
-                background: #d97706;
-                color: #fff;
-                padding: 10px;
-                border-radius: 10px;
-                margin: 8px 0;
-              "
-            >
-              🏆 Sports & Fitness
-            </p>
-          </div>
+          .flex-left,
+          .flex-bottom {
+          
+            width: 80%;
+          }
 
-          <!-- Box 4 -->
-          <div
-            data-aos="fade-up"
-            data-aos-delay="400"
-            style="
-              background: #fcd34d;
-              border-radius: 20px;
-              padding: 25px;
-              text-align: center;
-              box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-              width: 280px;
-            "
-          >
-            <h4 style="color: #0f766e; margin-bottom: 15px">
-              Vision & Mission
-            </h4>
-            <p
-              style="
-                background: #b45309;
-                color: #fff;
-                padding: 10px;
-                border-radius: 10px;
-                margin: 10px 0;
-              "
-            >
-              🌟 Vision: To create a dynamic learning environment that inspires
-              innovation & leadership. Empowering students with values and
-              skills to thrive in a global society.
-            </p>
-            <p
-              style="
-                background: #b45309;
-                color: #fff;
-                padding: 10px;
-                border-radius: 10px;
-                margin: 10px 0;
-              "
-            >
-              🎯 Mission: To provide a safe, inclusive space blending knowledge,
-              values & skills for holistic growth.
-            </p>
-          </div>
-        </div>
-      </div>
+          .center-circle {
+            width: 380px;
+            height: 380px;
+            padding: 20px;
+          }
+
+          .box {
+            width: 90%;
+            margin: 0 auto;
+          }
+        }
+      </style>
     </div>
 
     <!-- ✅ Responsive CSS -->
