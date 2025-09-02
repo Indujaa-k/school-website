@@ -1372,6 +1372,13 @@ nav#dropdown {
     margin: 0 auto;
   }
 }
+@media (max-width: 768px) {
+  .center-circle {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+  }
+}
 /*----------------------------------------*/
 /*  6. Class Area
 /*----------------------------------------*/
