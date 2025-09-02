@@ -671,7 +671,8 @@ ul.login li:hover .login-form {
 
 .mainmenu-area {
   float: right;
-  /* padding: 24px 0 0; */
+   /* padding: 24px 0 0;  */
+   margin-left: 80px;
 }
 .header-logo-menu.stick .mainmenu-area {
   padding: 0;
@@ -688,7 +689,7 @@ ul.login li:hover .login-form {
 .mainmenu ul#nav > li > a {
   color: #444444;
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 99px;
   text-decoration: none;

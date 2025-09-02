@@ -455,7 +455,7 @@
                             </li> -->
                           </ul>
                         </li>
-                        <li><a href="teacher.html">Teachers</a></li>
+                        <!-- <li><a href="teacher.html">Teachers</a></li> -->
                         <li><a href="gallery.html">Gallery</a></li>
                         <!-- <li><a href="blog-details.html">Blog</a></li> -->
                         <li><a href="contact.html">Contact</a></li>
@@ -504,7 +504,7 @@
                         <!-- <li><a href="class-details.html">Class Details</a></li> -->
                       </ul>
                     </li>
-                    <li><a href="teacher.html">Teachers Page</a></li>
+                    <!-- <li><a href="teacher.html">Teachers Page</a></li> -->
                     <li><a href="gallery.html">Gallery</a></li>
                     <!-- <li><a href="blog.html">Blog Page</a></li> -->
                     <li><a href="contact.html">Contact</a></li>
@@ -1230,7 +1230,7 @@
 
     <!--End of Fun Factor Area-->
 
-    <!-- test -->
+    <!--teacher test -->
     <div
       class="teachers-area section-margin"
       style="background: linear-gradient(to bottom, #eaf3fb 0%, #c2e0f4 100%)"
@@ -1238,24 +1238,90 @@
       <div class="col-md-12">
         <div class="section-title-wrapper">
           <div class="section-title">
-            <h3>Our Teachers</h3>
-            <p>Guided by passionate teachers nurturing every child’s growth</p>
+            <h3>Curriculum</h3>
+            <p>Indian Certificate of Secondary Education(ISCE)</p>
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- Left Section: Teacher Avatars -->
+      <section style="max-width:1200px; margin:0px auto; padding:50px 30px; font-family:Arial, sans-serif; display:flex; gap:20px; align-items:flex-start;  border-radius:25px; flex-wrap:wrap;">
+  
+  <!-- Left side: ICSE content -->
+  <div style="flex:1 1 600px;">
+    <h2 style="font-size:2.8rem; color:#2c3e50; margin-bottom:30px; font-weight:bold; position:relative; display:inline-block;">
+      ICSE Overview
+      <span style="display:block; width:160px; height:5px; background:linear-gradient(90deg,#4facfe,#00f2fe); margin:15px 0 0; border-radius:3px;"></span>
+    </h2>
+
+    <!-- What ICSE is -->
+    <div style="background:#fff; border-radius:20px; padding:25px; margin-bottom:20px; box-shadow:0 10px 25px rgba(0,0,0,0.1); min-width:100%;">
+      <h3 style="margin-bottom:15px; font-size:1.5rem; color:#2c3e50; font-weight:600;">What ICSE is</h3>
+      <p style="font-size:1rem; line-height:1.6; color:#333;">
+        The Indian Certificate of Secondary Education (ICSE) is a rigorous curriculum that provides a balanced education focusing on languages, sciences, and practical learning, preparing students for higher studies globally.
+      </p>
+    </div>
+
+    <!-- Why choose ICSE -->
+    <div style="background:#fff; border-radius:20px; padding:25px; margin-bottom:20px; box-shadow:0 10px 25px rgba(0,0,0,0.1); min-width:100%;">
+      <h3 style="margin-bottom:15px; font-size:1.5rem; color:#2c3e50; font-weight:600;">Why Choose ICSE</h3>
+      <p style="font-size:1rem; line-height:1.6; color:#333;">
+        ICSE emphasizes strong English communication, analytical thinking, and project-based learning. Its globally recognized curriculum provides students with a competitive edge for higher education and career opportunities.
+      </p>
+    </div>
+
+    <!-- Benefits / Highlights -->
+    <div style="background:#fff; border-radius:20px; padding:25px; box-shadow:0 10px 25px rgba(0,0,0,0.1); min-width:100%;">
+      <h3 style="margin-bottom:15px; font-size:1.5rem; color:#2c3e50; font-weight:600;">Benefits / Highlights</h3>
+      <ul style="text-align:left; padding-left:20px; color:#333; font-size:1rem; line-height:1.6;">
+        <li>Balanced and comprehensive curriculum</li>
+        <li>Strong foundation in English and languages</li>
+        <li>Promotes analytical and practical learning</li>
+        <li>Wide range of subjects for diverse interests</li>
+        <li>International recognition for higher studies</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Right side: decorative shapes with animation -->
+  <div class="shapes-container" style="flex:1 1 350px; position:relative; height:650px; margin-top:20px;">
+
+    <style>
+      @keyframes float1 { 0%,100%{ transform: translateY(0) rotate(15deg); } 50%{ transform: translateY(-20px) rotate(15deg); } }
+      @keyframes float2 { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-25px); } }
+      @keyframes float3 { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-15px); } }
+      @keyframes float4 { 0%,100%{ transform: translateY(0) rotate(-10deg); } 50%{ transform: translateY(-20px) rotate(-10deg); } }
+
+      /* Hide shapes on mobile and iPads */
+      @media (max-width:1112px){ /* Covers iPad Air, iPad Pro, and smaller devices */
+        .shapes-container { display:none; }
+      }
+    </style>
+
+    <!-- Square -->
+    <div style="width:180px; height:180px; background:#4facfe; position:absolute; top:30px; right:0px; border-radius:15px; box-shadow:0 15px 35px rgba(0,0,0,0.1); animation: float1 4s ease-in-out infinite;"></div>
+
+    <!-- Rounded circle -->
+    <div style="width:200px; height:200px; background:#00f2fe; position:absolute; bottom:30px; right:10px; border-radius:50%; box-shadow:0 15px 35px rgba(0,0,0,0.1); animation: float2 5s ease-in-out infinite;"></div>
+
+    <!-- Small circle -->
+    <div style="width:120px; height:120px; background:#ff6a00; position:absolute; top:220px; right:20px; border-radius:50%; box-shadow:0 10px 25px rgba(0,0,0,0.1); animation: float3 4.5s ease-in-out infinite;"></div>
+
+    <!-- Rounded square -->
+    <div style="width:150px; height:150px; background:#fda085; position:absolute; bottom:220px; right:0px; border-radius:25px; box-shadow:0 15px 35px rgba(0,0,0,0.1); transform:rotate(-10deg); animation: float4 5s ease-in-out infinite;"></div>
+
+  </div>
+</section>
+
+          <!-- Left Section: Teacher Avatars
           <div class="col-lg-3 col-md-2 text-center" data-aos="fade-up">
             <div class="teacher-list-wrapper">
               <!-- Up Arrow -->
-              <div class="arrow up-arrow">
+              <!-- <div class="arrow up-arrow">
                 <i class="fa fa-chevron-up"></i>
-              </div>
+              </div> -->
 
               <!-- Teacher Avatars -->
               <!-- Teacher Avatars -->
-              <div class="teacher-list">
+              <!-- <div class="teacher-list">
                 <div
                   class="teacher-avatar active"
                   data-name="Chowchilla Madera"
@@ -1307,29 +1373,29 @@
                 >
                   <img src="img/teacher/5.jpg" alt="teacher 4" />
                 </div>
-              </div>
+              </div> -->
 
               <!-- Down Arrow -->
-              <div class="arrow down-arrow">
-                <i class="fa fa-chevron-down"></i>
-              </div>
-            </div>
-          </div>
+              <!-- <div class="arrow down-arrow">
+                <i class="fa fa-chevron-down"></i> -->
+              <!-- </div> -->
+            <!-- </div>
+          </div> -->
 
           <!-- Right Section: Teacher Detail -->
-          <div class="col-lg-8 col-md-10 marginclass" data-aos="fade-down">
+          <!-- <div class="col-lg-8 col-md-10 marginclass" data-aos="fade-down">
             <div class="teacher-detail d-flex">
               <!-- Teacher Image -->
-              <div class="teacher-detail-img">
+              <!-- <div class="teacher-detail-img">
                 <img
                   id="teacher-img"
                   src="img/teacher/staff.jpeg"
                   alt="Selected Teacher"
                 />
-              </div>
+              </div> --> 
 
               <!-- Teacher Info -->
-              <div class="teacher-detail-info">
+              <!-- <div class="teacher-detail-info">
                 <h2 id="teacher-name">Chowchilla Madera</h2>
                 <span class="language" id="teacher-language"
                   >Spanish Teacher</span
@@ -1351,20 +1417,20 @@
                 <p id="teacher-bio">
                   In omnesque menandri urbanitas est, et ipsum quidam noster
                   mei. Commodo ocurrer adversarium cu mei.
-                </p>
+                </p> -->
                 <!-- <div class="teacher-links">
                   <a href="#"><i class="fa fa-facebook"></i></a>
                   <a href="#"><i class="fa fa-google-plus"></i></a>
                   <a href="#"><i class="fa fa-twitter"></i></a>
                   <a href="#"><i class="fa fa-instagram"></i></a>
                 </div> -->
-                <a href="#" class="button-default">View Profile</a>
+                <!-- <a href="#" class="button-default">View Profile</a>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div> -->
+    </div> 
     <!--Teachers Area Start-->
     <!-- <div class="teachers-area section-margin">
       <div class="container">
