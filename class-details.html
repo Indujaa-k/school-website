@@ -7,31 +7,17 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-   <!-- favicon
+    <!-- favicon
 		============================================ -->
-     <!-- <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" /> -->
+    <!-- <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" /> -->
     <!-- Standard favicon -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="img/logo/32x32.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo/32x32.png" />
 
     <!-- Higher resolution for retina displays -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="img/logo/16x16.png"
-    />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo/16x16.png" />
 
     <!-- Shortcut icon (older browsers) -->
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="img/logo/logo-white.png"
-    />
+    <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" />
 
     <!-- font Awesome 6
 		============================================ -->
@@ -308,32 +294,38 @@
     </div>
     <!--End of Breadcrumb Banner Area-->
     <!--Class Details Area Start-->
-    <div class="class-details-area section-padding-top" style="background: linear-gradient(to bottom, #ffffff 0%, #d6eaff 100%);
-">
+    <div
+      class="class-details-area section-padding-top"
+      style="background: linear-gradient(to bottom, #ffffff 0%, #d6eaff 100%)"
+    >
       <div class="container">
-        <div class="row">
-          <!-- Left Content: Main Class Details -->
-          <div class="col-xl-9 col-lg-8">
-            <div class="class-details-container">
-              <!-- Carousel (same for all classes) -->
-              <div
-                class="class-details-carousel carousel-style-one owl-carousel"
-              >
-                <img src="img/class/13.jpg" alt="" />
-                <img src="img/class/14.jpg" alt="" />
-                <img src="img/class/15.jpg" alt="" />
-              </div>
-            </div>
+        <!-- Image section: Main Class Details -->
+        <div class="class-details-container">
+          <!-- Carousel (same for all classes) -->
+          <div class="class-details-carousel carousel-style-one owl-carousel">
+            <img src="img/class/13.jpg" alt="" />
+            <img src="img/class/14.jpg" alt="" />
+            <img src="img/class/15.jpg" alt="" />
+          </div>
 
-            <!-- Dynamic Class Info -->
+          <!-- Dynamic Class Info -->
+        </div>
+
+        <!-- Class Description (Separate) -->
+        <div class="class-section">
+          <div>
+            <h3 id="classTitle">Class Details</h3>
+          </div>
+          <div id="classDescription" class="class-description"></div>
+        </div>
+        <div class="row">
+          <!-- Right Sidebar: Info & Teachers -->
+          <div class="col-xl-9 col-lg-9">
             <div class="container class-container">
-              <h3 id="classTitle">Class Details</h3>
               <div id="classContent"></div>
             </div>
           </div>
-
-          <!-- Right Sidebar: Info & Teachers -->
-          <div class="col-xl-3 col-lg-4">
+          <div class="col-xl-3 col-lg-3">
             <!-- Dynamic Info Section -->
             <div class="single-widget-item">
               <div class="single-title">
@@ -345,40 +337,14 @@
                 </ul>
               </div>
             </div>
-
-            <!-- Teachers Section (static) -->
-            <div class="single-widget-item">
-              <div class="single-title">
-                <h3>Teachers</h3>
-              </div>
-              <div class="single-widget-container">
-                <div class="teacher-info-widget">
-                  <div class="widget-image">
-                    <a href="#"><img src="img/teacher/img-1.jpg" alt="" /></a>
-                  </div>
-                  <div class="widget-infos">
-                    <h4><a href="#">Graves</a></h4>
-                    <p>Professor, Harvard College</p>
-                  </div>
-                </div>
-                <div class="teacher-info-widget">
-                  <div class="widget-image">
-                    <a href="#"><img src="img/teacher/img-2.jpg" alt="" /></a>
-                  </div>
-                  <div class="widget-infos">
-                    <h4><a href="#">Poppy</a></h4>
-                    <p>Professor, Harvard College</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="btn-section">
-      <button onclick="goBack()" class="back-btn">← Back</button>
+      <button id="backBtn" class="back-btn">← Back</button>
+      <button id="nextBtn" class="next-btn">Next →</button>
     </div>
 
     <style>
@@ -392,11 +358,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-bottom: 60px;
+        gap: 60px;
+        padding: 60px 0;
         background: linear-gradient(to bottom, #d6eaff 0%, #a8c9f0 100%);
-
       }
-      .back-btn {
+      .back-btn,
+      .next-btn {
         background: #00a3b0;
         color: #fff;
         border: none;
@@ -408,16 +375,23 @@
         transition: background 0.3s ease;
       }
 
-      .back-btn:hover {
+      .back-btn:hover,
+      .next-btn:hover {
         background: #eeac00;
       }
       .subjects-container {
         display: flex;
         flex-wrap: wrap; /* allow wrapping */
         gap: 10px;
-        margin-top: 10px;
+        margin-top: 40px;
         width: 100%; /* ensure it doesn’t overflow parent */
         box-sizing: border-box;
+      }
+      .class-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
       }
 
       @media (min-width: 992px) {
@@ -425,24 +399,59 @@
           width: 70%;
         }
       }
-      .subject-box {
-        background: #eeac00;
-        color: white;
-        padding: 8px 12px;
-        border-radius: 6px;
-        font-size: 14px;
+      .subjects-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center; /* center everything */
+      }
+
+      .subject-row {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .subject-title {
+        background: #00a3b0;
+        color: #ffffff !important;
+        padding: 15px;
+        border-radius: 8px;
+        font-weight: bold;
         text-align: center;
-        flex: 1 1 calc(33.33% - 10px); /* 3 boxes per row, adjust gap */
-        box-sizing: border-box;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s;
-        max-width: 280px; /* prevent too small on mobile */
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        width: 30%;
+      }
+      .subject-points-box {
+        flex: 1; /* equal width */
+        background: #eeac00;
+        color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        max-width: 600px; /* optional: limit size */
+      }
+
+      .subject-points-box ul {
+        margin: 0;
+        padding-left: 20px;
       }
 
       .subject-box:hover {
         transform: translateY(-3px);
       }
 
+      .subjects h3 {
+        border-bottom: 1px solid #eeac00;
+        bottom: -1px;
+        display: inline-block;
+        font-size: 20px;
+        line-height: 17px;
+        padding-bottom: 13px;
+        position: relative;
+      }
       /* Responsive */
       @media (max-width: 992px) {
         .subject-box {
@@ -453,6 +462,14 @@
       @media (max-width: 600px) {
         .subject-box {
           flex: 1 1 100%; /* 1 per row on mobile */
+        }
+        .subject-row {
+          flex-direction: column;
+          justify-content: center;
+          /* align-items: center; */
+        }
+        .subject-title {
+          width: 100%;
         }
       }
     </style>
@@ -703,12 +720,48 @@
         kindergarten: {
           title: "Kindergarten (LKG, UKG, PreKG)",
           subjects: [
-            "English Basics",
-            "Numbers & Counting",
-            "Drawing & Craft",
-            "Music & Rhymes",
-            "Storytelling",
-            "Physical Activities",
+            {
+              title: "English Basics",
+              points: [
+                "Introduce letters through phonics and playful sounds.",
+                "Spark word recognition using songs and picture cards.",
+              ],
+            },
+            {
+              title: "Numbers & Counting",
+              points: [
+                "Explore numbers with beads, blocks, and everyday objects.",
+                "Discover shapes, sizes, and simple patterns in fun ways.",
+              ],
+            },
+            {
+              title: "Drawing & Craft",
+              points: [
+                "Express imagination with colors, lines, and doodles.",
+                "Build creativity through cutting, folding, and pasting.",
+              ],
+            },
+            {
+              title: "Music & Rhymes",
+              points: [
+                "Enjoy cheerful rhymes with rhythm and hand movements.",
+                "Experience melodies that nurture listening and memory skills.",
+              ],
+            },
+            {
+              title: "Storytelling",
+              points: [
+                "Travel into tales that inspire curiosity and values.",
+                "Engage in role-play and voice expressions for characters.",
+              ],
+            },
+            {
+              title: "Physical Activities",
+              points: [
+                "Strengthen balance and energy through playful exercises.",
+                "Develop teamwork with group games and outdoor fun.",
+              ],
+            },
           ],
           description:
             "Focus on early literacy, numeracy, and social development through fun activities.",
@@ -724,12 +777,48 @@
         "1-5": {
           title: "Grades 1 to 5",
           subjects: [
-            "English",
-            "Mathematics",
-            "Environmental Science",
-            "Social Studies",
-            "Computer Basics",
-            "Arts & Crafts",
+            {
+              title: "English",
+              points: [
+                "Strengthen reading and writing with grammar and vocabulary.",
+                "Encourage communication through stories, poems, and simple dialogues.",
+              ],
+            },
+            {
+              title: "Mathematics",
+              points: [
+                "Build number sense with addition, subtraction, multiplication, and division.",
+                "Explore problem-solving through puzzles, patterns, and logical reasoning.",
+              ],
+            },
+            {
+              title: "Environmental Science (EVS)",
+              points: [
+                "Understand nature, plants, animals, and the environment around us.",
+                "Develop awareness of healthy habits and caring for the planet.",
+              ],
+            },
+            {
+              title: "Social Studies",
+              points: [
+                "Learn about family, community, and cultural heritage.",
+                "Discover early concepts of history, geography, and civic values.",
+              ],
+            },
+            {
+              title: "Computer Basics",
+              points: [
+                "Get introduced to typing, basic tools, and digital awareness.",
+                "Foster safe and smart use of technology from an early age.",
+              ],
+            },
+            {
+              title: "Arts & Crafts",
+              points: [
+                "Encourage imagination through drawing, painting, and craftwork.",
+                "Develop fine motor skills with creative, hands-on activities.",
+              ],
+            },
           ],
           description:
             "Primary education focusing on foundational knowledge, creativity, and critical thinking.",
@@ -745,12 +834,48 @@
         "6-9": {
           title: "Grades 6 to 9",
           subjects: [
-            "English Literature",
-            "Mathematics",
-            "Science (Physics, Chemistry, Biology)",
-            "History & Civics",
-            "Geography",
-            "Computer Science",
+            {
+              title: "English Literature",
+              points: [
+                "Explore prose, poetry, and drama to develop deeper reading skills.",
+                "Enhance expression through essays, debates, and creative writing.",
+              ],
+            },
+            {
+              title: "Mathematics",
+              points: [
+                "Strengthen concepts in algebra, geometry, and data handling.",
+                "Apply logical reasoning to solve real-world problems.",
+              ],
+            },
+            {
+              title: "Science (Physics, Chemistry, Biology)",
+              points: [
+                "Discover the principles of energy, matter, and life.",
+                "Cultivate inquiry through experiments and hands-on learning.",
+              ],
+            },
+            {
+              title: "History & Civics",
+              points: [
+                "Understand civilizations, revolutions, and cultural milestones.",
+                "Develop civic sense, rights, and responsibilities as future citizens.",
+              ],
+            },
+            {
+              title: "Geography",
+              points: [
+                "Study landforms, climate, and resources of the world.",
+                "Connect human activities with environmental balance.",
+              ],
+            },
+            {
+              title: "Computer Science",
+              points: [
+                "Learn coding basics, logic building, and digital tools.",
+                "Gain awareness of technology’s role in innovation and society.",
+              ],
+            },
           ],
           description:
             "Middle school curriculum to deepen understanding and analytical skills in core subjects.",
@@ -765,20 +890,48 @@
         },
       };
 
-      if (selectedClass && content[selectedClass]) {
-        const data = content[selectedClass];
+      // List of classes in order
+      const classOrder = ["kindergarten", "1-5", "6-9"];
 
-        // Update main title and subjects
+      // Current index
+      let currentIndex = selectedClass ? classOrder.indexOf(selectedClass) : 0;
+
+      // Function to update the class details
+      function updateClassDetails(index) {
+        const classKey = classOrder[index];
+        const data = content[classKey];
+
+        // Update main title
         document.getElementById("classTitle").innerText = data.title;
+        // Update title
+
+        // Update description separately
+        document.getElementById(
+          "classDescription"
+        ).innerHTML = `<p>${data.description}</p>`;
+        // Separate subject name box and points box
         const classContent = `
-  <p>${data.description}</p>
-  <h4>Subjects:</h4>
-  <div class="subjects-container">
-    ${data.subjects
-      .map((sub) => `<div class="subject-box">${sub}</div>`)
-      .join("")}
-  </div>
-`;
+      <h3 class="subjects">Subjects & Highlights:</h3>
+      <div class="subjects-container">
+        ${data.subjects
+          .map(
+            (sub) => `
+              <div class="subject-row">
+                <div class="subject-title">
+                  <h5>${sub.title}</h5>
+                </div>
+                <div class="subject-points-box">
+                  <ul>
+                    ${sub.points.map((pt) => `<li>${pt}</li>`).join("")}
+                  </ul>
+                </div>
+              </div>
+            `
+          )
+          .join("")}
+      </div>
+    `;
+
         document.getElementById("classContent").innerHTML = classContent;
 
         // Update Info Classes section
@@ -791,17 +944,29 @@
       <li><i class="fa fa-users"></i> Class Staff: ${data.info.staff}</li>
     `;
         document.querySelector(".class-infos").innerHTML = infoHtml;
-      } else {
-        document.getElementById("classContent").innerHTML =
-          "<p>No class selected or invalid class.</p>";
       }
+
+      // Initialize page with current class
+      updateClassDetails(currentIndex);
+
+      // Button event listeners
+      document.getElementById("backBtn").addEventListener("click", () => {
+        currentIndex =
+          (currentIndex - 1 + classOrder.length) % classOrder.length;
+        updateClassDetails(currentIndex);
+      });
+
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % classOrder.length;
+        updateClassDetails(currentIndex);
+      });
     </script>
 
-    <script>
+    <!-- <script>
       function goBack() {
         window.location.href = "class-list.html";
       }
-    </script>
+    </script> -->
 
     <!-- main JS
 		============================================ -->

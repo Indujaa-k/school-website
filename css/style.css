@@ -1284,6 +1284,103 @@ nav#dropdown {
     right: 10%;
   }
 }
+<<<<<<< Updated upstream
+=======
+
+/*----------------------------------------*/
+/* About section
+/*----------------------------------------*/
+
+/* Container for all boxes and circle */
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left column with Box 1 & 2 */
+.flex-left {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Bottom row with Box 3 & 4 */
+.flex-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 900px;
+}
+
+/* Individual boxes */
+.box {
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  width: 280px;
+}
+
+/* Box items (paragraphs inside boxes) */
+.box-item {
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 8px 0;
+}
+
+/* Center Circle */
+.center-circle {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  background: #e0f2fe;
+}
+
+/* Responsive for tablets and smaller devices */
+@media (max-width: 992px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flex-left,
+  .flex-bottom {
+    width: 80%;
+  }
+
+  .center-circle {
+    width: 380px;
+    height: 380px;
+    padding: 20px;
+  }
+
+  .box {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 768px) {
+  .center-circle {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+  }
+}
+>>>>>>> Stashed changes
 /*----------------------------------------*/
 /*  6. Class Area
 /*----------------------------------------*/
