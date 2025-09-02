@@ -199,7 +199,8 @@ ul {
   filter: alpha(opacity=100);
 }
 
-html,body {
+html,
+body {
   color: #666;
   /* font-family: "Poppins", sans-serif; */
   font-family: "Merienda", cursive !important;
@@ -236,7 +237,7 @@ html,body {
   margin-top: 0px;
   padding-top: 60px;
 }
-.section-title-for-about{
+.section-title-for-about {
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -1394,7 +1395,7 @@ nav#dropdown {
   border: 1px solid #fff;
   border-radius: 50%;
   color: #fff;
-  background-color: #EEAC00;
+  background-color: #eeac00;
   display: inline-block;
   font-size: 20px;
   opacity: 1;
@@ -1788,7 +1789,7 @@ span.arrow > a:after {
   padding-left: 112px;
   text-align: left;
 }
-.service-image img{
+.service-image img {
   margin-bottom: 30px;
   border-radius: 20px;
 }
@@ -2092,8 +2093,7 @@ span.arrow > a:after {
     max-height: none;
   }
 
-  .marginclass {   
-
+  .marginclass {
     margin-top: 30px;
   }
 }
@@ -3355,7 +3355,7 @@ header.header-five {
   padding: 19px 0;
 }
 .header-four .mainmenu-area {
-  padding: 10px 0 0; 
+  padding: 10px 0 0;
 }
 .header-four .mainmenu ul#nav > li:hover > a,
 .header-four .mainmenu ul#nav li ul.sub-menu > li a:hover,
@@ -5319,8 +5319,8 @@ textarea {
 /*  24. Teachers Page
 /*----------------------------------------*/
 .breadcrumb-banner-area.teachers {
-  background: rgba(0, 0, 0, 0) url("../img/banner/staff-banner.jpeg") no-repeat scroll
-    center top / cover;
+  background: rgba(0, 0, 0, 0) url("../img/banner/staff-banner.jpeg") no-repeat
+    scroll center top / cover;
 }
 .teacher-fullwidth-area .teachers-image-column {
   margin-top: 0;
@@ -5479,7 +5479,7 @@ span.schedule-time {
   line-height: 24px;
 }
 .introbox {
-  background:rgba(255, 255, 255, 0.5); /* semi-transparent white */
+  background: rgba(255, 255, 255, 0.5); /* semi-transparent white */
   border: 1px solid rgba(255, 255, 255, 0.3); /* light border */
   border-radius: 14px; /* smooth corners */
   padding: 25px;
@@ -5492,7 +5492,6 @@ span.schedule-time {
 .box:hover {
   transform: translateY(-5px);
 }
-
 
 .highlight {
   color: #333333;
@@ -5714,15 +5713,15 @@ span.schedule-time {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;   /* take full circle width */
-  height: 100%;  /* take full circle height */
+  width: 100%; /* take full circle width */
+  height: 100%; /* take full circle height */
   margin-right: -45px;
 }
 
 .call-icon svg {
-  width: 22px;   /* icon size */
+  width: 22px; /* icon size */
   height: 22px;
-  fill: white;   /* ensure visibility */
+  fill: white; /* ensure visibility */
 }
 
 .call-text {
@@ -5786,8 +5785,8 @@ span.schedule-time {
   }
 
   .call-us-container {
-    bottom: 20px;   /* same spacing like desktop */
-    right: 16px;    /* stick to right side */
+    bottom: 20px; /* same spacing like desktop */
+    right: 16px; /* stick to right side */
     transform: none; /* remove centering */
     padding: 4px 8px;
   }
