@@ -327,7 +327,10 @@
           </div>
           <div class="col-xl-3 col-lg-3">
             <!-- Dynamic Info Section -->
-            <div class="single-widget-item">
+            <div
+              class="single-widget-item"
+              style="position: sticky; top: 120px"
+            >
               <div class="single-title">
                 <h3>Info Classes</h3>
               </div>
@@ -344,7 +347,9 @@
 
     <div class="btn-section">
       <button id="backBtn" class="back-btn">← Back</button>
-      <button id="nextBtn" class="next-btn">Next →</button>
+      <a href="#class-section"
+        ><button id="nextBtn" class="next-btn">Next →</button></a
+      >
     </div>
 
     <style>
@@ -954,11 +959,27 @@
         currentIndex =
           (currentIndex - 1 + classOrder.length) % classOrder.length;
         updateClassDetails(currentIndex);
+        const target = document.querySelector(".active");
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
       });
 
       document.getElementById("nextBtn").addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % classOrder.length;
         updateClassDetails(currentIndex);
+
+        // 👇 scroll to the section after updating
+        const target = document.querySelector(".active");
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
       });
     </script>
 
