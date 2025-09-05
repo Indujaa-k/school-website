@@ -251,7 +251,7 @@
       .slide img {
         width: 100%;
         display: block;
-        height: 500px;
+        height: 600px;
         object-fit: cover;
       }
 
@@ -358,7 +358,13 @@
         z-index: 1;
         opacity: 0.3;
       }
-
+      /* Tablet view */
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .slide img {
+        height: 500px;
+        object-fit:fill;
+      }
+      }
       /* Mobile screens (768px and below) */
       @media (max-width: 768px) {
         .text-wave .content {
@@ -366,7 +372,8 @@
         }
 
         .slide img {
-          height: 400px;
+          height: 250px;
+            object-fit:fill;
         }
       }
 
@@ -524,10 +531,10 @@
       <div class="slider-container">
         <!-- Images -->
         <div class="slide active">
-          <img src="img/banner/1.jpg" alt="School Image 1" />
+          <img src="img/school-img/Front gate -crop.JPG" alt="School Image 1" />
         </div>
         <div class="slide">
-          <img src="img/banner/5.jpg" alt="School Image 2" />
+          <img src="img/school-img/main-building.jpg" alt="School Image 2" />
         </div>
         <!-- Navigation Arrows -->
         <button class="prev">&#10094;</button>
@@ -719,7 +726,7 @@
         <!-- Left Form -->
         <div class="enquiry-form">
           <h2>Enquiry Form</h2>
-          <form>
+          <form id="enquiryForm">
             <input type="text" name="name" placeholder="Full Name" required />
             <input
               type="tel"
@@ -739,11 +746,9 @@
               <option>Class II</option>
               <option>Class III</option>
               <option>Class IV</option>
-              <option>Class IV</option>
               <option>Class V</option>
               <option>Class VI</option>
               <option>Class VII</option>
-              <option>Class VIII</option>
               <option>Class VIII</option>
               <option>Class IX</option>
             </select>
@@ -760,13 +765,16 @@
         <!-- Right Images -->
         <div class="enquiry-images">
           <div class="image-box image1">
-            <img src="img/schoolimages/student-3.jpg" alt="School Image 1" />
+            <img src="img/school-img/Chemistry lab2.JPG" alt="School Image 1" />
             <div class="shape circle"></div>
             <div class="shape arrow">➔</div>
           </div>
 
           <div class="image-box image2">
-            <img src="img/schoolimages/student-4.webp" alt="School Image 2" />
+            <img
+              src="img/school-img/Classroom with students.JPG"
+              alt="School Image 2"
+            />
             <div class="shape curve"></div>
             <div class="shape arrow">➔</div>
           </div>
@@ -2890,35 +2898,26 @@
 
     <script>
       document
-        .querySelector("form")
-        .addEventListener("submit", async function (e) {
-          e.preventDefault();
+        .getElementById("enquiryForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Prevent default form submission
 
-          const formData = {
-            name: e.target[0].value,
-            mobile: e.target[1].value,
-            email: e.target[2].value,
-            className: e.target[3].value,
-            message: e.target[4].value,
-          };
+          const formData = new FormData(this);
 
-          try {
-            const res = await fetch("send-enquiry.php", {
-              method: "POST",
-              headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: new URLSearchParams(formData),
+          fetch("sendEnquiry.php", {
+            // Make sure sendEnquiry.php is in the same folder
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.text())
+            .then((data) => {
+              alert(data); // Show success/failure message
+              this.reset(); // Optional: Reset the form after submission
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("Something went wrong. Please try again.");
             });
-
-            const data = await res.json();
-            alert(data.message);
-
-            if (data.success) {
-              e.target.reset();
-            }
-          } catch (err) {
-            console.error(err);
-            alert("Error sending message.");
-          }
         });
     </script>
 

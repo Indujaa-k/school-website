@@ -1,65 +1,95 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-// Load PHPMailer
-require 'PHPMailer/Exception.php';
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/SMTP.php';
+    // Collect all form fields
+    $admission_no = $_POST['admission_no'] ?? '';
+    $grade = $_POST['grade'] ?? '';
+    $emis_no = $_POST['emis_no'] ?? '';
+    $student_name = $_POST['student_name'] ?? '';
+    $dob = $_POST['dob'] ?? '';
+    $age = $_POST['age'] ?? '';
+    $gender = $_POST['gender'] ?? '';
+    $nationality = $_POST['nationality'] ?? '';
+    $religion = $_POST['religion'] ?? '';
+    $aadhar_no = $_POST['aadhar_no'] ?? '';
+    $community = $_POST['community'] ?? '';
+    $father_name = $_POST['father_name'] ?? '';
+    $father_occupation = $_POST['father_occupation'] ?? '';
+    $father_income = $_POST['father_income'] ?? '';
+    $father_education = $_POST['father_education'] ?? '';
+    $address = $_POST['address'] ?? '';
+    $contact = $_POST['contact'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $previous_school = $_POST['previous_school'] ?? '';
+    $blood_group = $_POST['blood_group'] ?? '';
+    $siblings = $_POST['siblings'] ?? '';
+    $transport = $_POST['transport'] ?? '';
+    $medical_history = $_POST['medical_history'] ?? '';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $mail = new PHPMailer(true);
+    // Recipient email
+    $to = "mountwally21@gmail.com"; // <-- Replace with your email
+    $subject = "New Admission Form Submission";
 
-    try {
-        // SMTP settings
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-        $mail->Username = 'yourgmail@gmail.com';      // 🔹 your Gmail
-        $mail->Password = 'your_app_password';        // 🔹 Gmail App Password
-        $mail->SMTPSecure = 'tls';
-        $mail->Port = 587;
+    // Prepare email body
+    $body = "Admission No: $admission_no\n";
+    $body .= "Grade: $grade\n";
+    $body .= "EMIS No: $emis_no\n";
+    $body .= "Student Name: $student_name\n";
+    $body .= "DOB: $dob\n";
+    $body .= "Age: $age\n";
+    $body .= "Gender: $gender\n";
+    $body .= "Nationality: $nationality\n";
+    $body .= "Religion: $religion\n";
+    $body .= "Aadhar No: $aadhar_no\n";
+    $body .= "Community: $community\n";
+    $body .= "Father Name: $father_name\n";
+    $body .= "Father Occupation: $father_occupation\n";
+    $body .= "Father Income: $father_income\n";
+    $body .= "Father Education: $father_education\n";
+    $body .= "Address: $address\n";
+    $body .= "Contact: $contact\n";
+    $body .= "Email: $email\n";
+    $body .= "Previous School: $previous_school\n";
+    $body .= "Blood Group: $blood_group\n";
+    $body .= "Siblings: $siblings\n";
+    $body .= "Transport: $transport\n";
+    $body .= "Medical History: $medical_history\n";
 
-        // Sender & Receiver
-        $mail->setFrom('yourgmail@gmail.com', 'Mount Valley Public School');
-        $mail->addAddress('schooladmin@gmail.com', 'School Admin');
-        $mail->addReplyTo($_POST['email'], $_POST['student_name']);
+    // Prepare headers
+    $headers = "From: info@yourdomain.com"; // <-- Must be valid email on your domain
 
-        // Attach photo if uploaded
-        if (isset($_FILES['student_photo']) && $_FILES['student_photo']['error'] == 0) {
-            $mail->addAttachment($_FILES['student_photo']['tmp_name'], $_FILES['student_photo']['name']);
-        }
+    // Check if file is uploaded
+    if(isset($_FILES['student_photo']) && $_FILES['student_photo']['error'] == 0){
+        $file_tmp = $_FILES['student_photo']['tmp_name'];
+        $file_name = $_FILES['student_photo']['name'];
+        $file_type = $_FILES['student_photo']['type'];
+        $file_content = chunk_split(base64_encode(file_get_contents($file_tmp)));
 
-        // Email content
-        $mail->isHTML(true);
-        $mail->Subject = " New Admission Application - " . $_POST['student_name'];
+        $boundary = md5(time());
+        $headers .= "\r\nMIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: multipart/mixed; boundary=\"".$boundary."\"\r\n";
 
-        $body  = "<h2>New Admission Application</h2>";
-        $body .= "<table border='1' cellspacing='0' cellpadding='8' style='border-collapse: collapse; width: 100%;'>";
-        foreach ($_POST as $key => $value) {
-            $keyFormatted = ucwords(str_replace("_", " ", $key));
-            $body .= "<tr>
-                        <td style='background:#f4f4f4; width:30%;'><strong>$keyFormatted</strong></td>
-                        <td>$value</td>
-                      </tr>";
-        }
-        $body .= "</table>";
-        $mail->Body = $body;
+        // Message
+        $message = "--".$boundary."\r\n";
+        $message .= "Content-Type: text/plain; charset=ISO-8859-1\r\n";
+        $message .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
+        $message .= $body . "\r\n";
 
-        // Send email
-        $mail->send();
+        // Attachment
+        $message .= "--".$boundary."\r\n";
+        $message .= "Content-Type: $file_type; name=\"".$file_name."\"\r\n";
+        $message .= "Content-Disposition: attachment; filename=\"".$file_name."\"\r\n";
+        $message .= "Content-Transfer-Encoding: base64\r\n\r\n";
+        $message .= $file_content . "\r\n";
+        $message .= "--".$boundary."--";
 
-        // ✅ Show alert and redirect back to form
-        echo "<script>
-                alert('Form sent successfully!');
-                window.location.href='admission.html';
-              </script>";
+        $sent = mail($to, $subject, $message, $headers);
 
-    } catch (Exception $e) {
-        echo "<script>
-                alert('Error sending form: {$mail->ErrorInfo}');
-                window.location.href='admission.html';
-              </script>";
+    } else {
+        // No file uploaded
+        $sent = mail($to, $subject, $body, $headers);
     }
+
+    echo $sent ? "Admission form submitted successfully!" : "Failed to send. Please try again.";
 }
 ?>

@@ -9,29 +9,15 @@
 
     <!-- favicon
 		============================================ -->
-     <!-- <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" /> -->
+    <!-- <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" /> -->
     <!-- Standard favicon -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="img/logo/32x32.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo/32x32.png" />
 
     <!-- Higher resolution for retina displays -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="img/logo/16x16.png"
-    />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo/16x16.png" />
 
     <!-- Shortcut icon (older browsers) -->
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="img/logo/logo-white.png"
-    />
+    <link rel="shortcut icon" type="image/png" href="img/logo/logo-white.png" />
 
     <!-- font Awesome 6
 		============================================ -->
@@ -45,10 +31,9 @@
     />
 
     <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700"
+     <link
+      href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap"
       rel="stylesheet"
-      type="text/css"
     />
 
     <!-- Style CSS
@@ -75,6 +60,163 @@
 		============================================ -->
 
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style>
+      :root {
+        --primary: #1e88e5; /* Blue */
+        --secondary: #00bfa5; /* Teal */
+        --card-bg: #ffffff; /* White form background */
+      }
+
+      /* Outer Section Background */
+      .admission-form-section {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        padding: 80px 20px;
+        margin-top: 50px;
+      }
+
+      /* White Form Card */
+      .admission-form {
+        background: var(--card-bg);
+        padding: 50px 40px;
+        border-radius: 16px;
+        max-width: 1100px;
+        margin-top: 70px;
+        box-shadow: 0 10px 28px rgba(1, 1, 1, 0.15);
+      }
+      /* 🎨 Colors for Admission Section */
+      .admission-section {
+        --primary: #1e88e5; /* Blue */
+        --secondary: #00bfa5; /* Teal */
+        --card-bg: #ffffff;
+        background: linear-gradient(
+          135deg,
+          #ffffff,
+          var(--primary),
+          var(--secondary)
+        );
+        padding: 80px 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .admission-section::before {
+        content: "";
+        position: absolute;
+        bottom: -150px;
+        right: -150px;
+        width: 400px;
+        height: 400px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        z-index: 0;
+      }
+
+      .admission-section h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+        color: #0d47a1;
+        font-weight: bold;
+        letter-spacing: 1px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .steps-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        max-width: 1100px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .step-card {
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: 14px;
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+        transition: all 0.35s ease;
+        border-top: 4px solid var(--primary);
+        position: relative;
+        overflow: hidden;
+        /* DO NOT set opacity:0 or transform here — GSAP will animate from these values */
+      }
+
+      .step-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom right,
+          rgba(30, 136, 229, 0.03),
+          rgba(0, 191, 165, 0.03)
+        );
+        border-radius: 14px;
+        pointer-events: none;
+      }
+
+      .step-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+        border-top: 4px solid var(--secondary);
+      }
+
+      .step-icon {
+        display: block;
+        width: 44px;
+        height: 44px;
+        margin-bottom: 18px;
+        color: var(--primary);
+      }
+      .step-icon svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+        fill: currentColor;
+      }
+
+      .step-card h3 {
+        margin: 0;
+        font-size: 1.3rem;
+        color: var(--primary);
+      }
+
+      .point-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 15px;
+      }
+      .point-list li {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        color: #333;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .point-list li .point-icon {
+        width: 20px;
+        min-width: 20px;
+        height: 20px;
+        display: inline-block;
+        flex: 0 0 20px;
+        line-height: 18px;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      /* small responsive tweak */
+      @media (max-width: 420px) {
+        .admission-section {
+          padding: 40px 12px;
+        }
+        .admission-section h2 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <!--Header Area Start-->
@@ -210,7 +352,7 @@
                               </a>
                             </li>
                           </ul>
-                        </li> 
+                        </li>
                         <li><a href="academics.html">Academics</a></li>
                         <li><a href="admission.html">Admission</a></li>
                         <li>
@@ -290,7 +432,6 @@
                         <!-- <li><a href="class-details.html">Class Details</a></li> -->
                       </ul>
                     </li>
-                    <li><a href="teacher.html">Teachers Page</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <!-- <li><a href="blog.html">Blog Page</a></li> -->
                     <li><a href="contact.html">Contact</a></li>
@@ -327,593 +468,439 @@
     <!-- Admission Prosses -->
 
     <!-- Admission Process (replace your old block with this) -->
-    <style>
-      /* 🎨 Colors for Admission Section */
-      .admission-section {
-        --primary: #1e88e5; /* Blue */
-        --secondary: #00bfa5; /* Teal */
-        --card-bg: #ffffff;
-        background: linear-gradient(
-          135deg,
-          #ffffff,
-          var(--primary),
-          var(--secondary)
-        );
-        padding: 80px 20px;
-        position: relative;
-        overflow: hidden;
-      }
 
-      .admission-section::before {
-        content: "";
-        position: absolute;
-        bottom: -150px;
-        right: -150px;
-        width: 400px;
-        height: 400px;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        z-index: 0;
-      }
-
-      .admission-section h2 {
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 50px;
-        color: #0d47a1;
-        font-weight: bold;
-        letter-spacing: 1px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .steps-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 30px;
-        max-width: 1100px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-      }
-
-      .step-card {
-        background: var(--card-bg);
-        padding: 30px;
-        border-radius: 14px;
-        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
-        transition: all 0.35s ease;
-        border-top: 4px solid var(--primary);
-        position: relative;
-        overflow: hidden;
-        /* DO NOT set opacity:0 or transform here — GSAP will animate from these values */
-      }
-
-      .step-card::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          to bottom right,
-          rgba(30, 136, 229, 0.03),
-          rgba(0, 191, 165, 0.03)
-        );
-        border-radius: 14px;
-        pointer-events: none;
-      }
-
-      .step-card:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
-        border-top: 4px solid var(--secondary);
-      }
-
-      .step-icon {
-        display: block;
-        width: 44px;
-        height: 44px;
-        margin-bottom: 18px;
-        color: var(--primary);
-      }
-      .step-icon svg {
-        width: 100%;
-        height: 100%;
-        display: block;
-        fill: currentColor;
-      }
-
-      .step-card h3 {
-        margin: 0;
-        font-size: 1.3rem;
-        color: var(--primary);
-      }
-
-      .point-list {
-        list-style: none;
-        padding: 0;
-        margin-top: 15px;
-      }
-      .point-list li {
-        font-size: 1rem;
-        margin-bottom: 10px;
-        color: #333;
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-      }
-      .point-list li .point-icon {
-        width: 20px;
-        min-width: 20px;
-        height: 20px;
-        display: inline-block;
-        flex: 0 0 20px;
-        line-height: 18px;
-        text-align: center;
-        font-size: 14px;
-      }
-
-      /* small responsive tweak */
-      @media (max-width: 420px) {
-        .admission-section {
-          padding: 40px 12px;
-        }
-        .admission-section h2 {
-          font-size: 1.8rem;
-        }
-      }
-    </style>
     <div class="admission-section">
-    <section>
-      <h2>Admission Process</h2>
-      <div class="steps-container">
-        <!-- Registration -->
-        <div class="step-card">
-          <div class="step-icon" aria-hidden="true">
-            <!-- document icon (SVG) -->
-            <svg
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-hidden="true"
-            >
-              <path
-                d="M6 2h7l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"
-              ></path>
-              <path d="M13 2v6h6"></path>
-            </svg>
+      <section>
+        <h2>Admission Process</h2>
+        <div class="steps-container">
+          <!-- Registration -->
+          <div class="step-card">
+            <div class="step-icon" aria-hidden="true">
+              <!-- document icon (SVG) -->
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-hidden="true"
+              >
+                <path
+                  d="M6 2h7l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"
+                ></path>
+                <path d="M13 2v6h6"></path>
+              </svg>
+            </div>
+            <h3>Registration</h3>
+            <ul class="point-list">
+              <li>
+                <span class="point-icon">✍️</span> Collect the application form
+                from the school office
+              </li>
+              <li>
+                <span class="point-icon">🌐</span> Or complete the application
+                directly on the school website
+              </li>
+            </ul>
           </div>
-          <h3>Registration</h3>
-          <ul class="point-list">
-            <li>
-              <span class="point-icon">✍️</span> Collect the application form
-              from the school office
-            </li>
-            <li>
-              <span class="point-icon">🌐</span> Or complete the application
-              directly on the school website
-            </li>
-          </ul>
-        </div>
 
-        <!-- Documents Required -->
-        <div class="step-card">
-          <div class="step-icon" aria-hidden="true">
-            <!-- folder icon -->
-            <svg
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-hidden="true"
-            >
-              <path
-                d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"
-              />
-            </svg>
+          <!-- Documents Required -->
+          <div class="step-card">
+            <div class="step-icon" aria-hidden="true">
+              <!-- folder icon -->
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"
+                />
+              </svg>
+            </div>
+            <h3>Documents Required</h3>
+            <ul class="point-list">
+              <li>
+                <span class="point-icon">📄</span> Birth Certificate (attested
+                copy)
+              </li>
+              <li>
+                <span class="point-icon">🖼️</span> Recent passport-size
+                photographs of the student
+              </li>
+              <li>
+                <span class="point-icon">🏫</span> Transfer Certificate (if
+                applicable)
+              </li>
+              <li>
+                <span class="point-icon">📚</span> Report Card / Progress Record
+              </li>
+              <li>
+                <span class="point-icon">🏠</span> Address proof of parents
+              </li>
+              <li>
+                <span class="point-icon">🆔</span> Aadhaar Card copy (if
+                applicable)
+              </li>
+            </ul>
           </div>
-          <h3>Documents Required</h3>
-          <ul class="point-list">
-            <li>
-              <span class="point-icon">📄</span> Birth Certificate (attested
-              copy)
-            </li>
-            <li>
-              <span class="point-icon">🖼️</span> Recent passport-size
-              photographs of the student
-            </li>
-            <li>
-              <span class="point-icon">🏫</span> Transfer Certificate (if
-              applicable)
-            </li>
-            <li>
-              <span class="point-icon">📚</span> Report Card / Progress Record
-            </li>
-            <li><span class="point-icon">🏠</span> Address proof of parents</li>
-            <li>
-              <span class="point-icon">🆔</span> Aadhaar Card copy (if
-              applicable)
-            </li>
-          </ul>
-        </div>
 
-        <!-- Eligibility -->
-        <div class="step-card">
-          <div class="step-icon" aria-hidden="true">
-            <!-- user icon -->
-            <svg
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-hidden="true"
-            >
-              <circle cx="12" cy="8" r="3"></circle>
-              <path d="M6 20c0-3 4-5 6-5s6 2 6 5"></path>
-            </svg>
+          <!-- Eligibility -->
+          <div class="step-card">
+            <div class="step-icon" aria-hidden="true">
+              <!-- user icon -->
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="8" r="3"></circle>
+                <path d="M6 20c0-3 4-5 6-5s6 2 6 5"></path>
+              </svg>
+            </div>
+            <h3>Eligibility</h3>
+            <ul class="point-list">
+              <li>
+                <span class="point-icon">👶</span> Nursery / LKG / UKG: Based on
+                CISCE age criteria
+              </li>
+              <li>
+                <span class="point-icon">👥</span> Class I onwards: Subject to
+                seat availability
+              </li>
+              <li>
+                <span class="point-icon">📋</span> Entrance assessment may be
+                required for higher classes
+              </li>
+            </ul>
           </div>
-          <h3>Eligibility</h3>
-          <ul class="point-list">
-            <li>
-              <span class="point-icon">👶</span> Nursery / LKG / UKG: Based on
-              CISCE age criteria
-            </li>
-            <li>
-              <span class="point-icon">👥</span> Class I onwards: Subject to
-              seat availability
-            </li>
-            <li>
-              <span class="point-icon">📋</span> Entrance assessment may be
-              required for higher classes
-            </li>
-          </ul>
-        </div>
 
-        <!-- Interaction / Assessment -->
-        <div class="step-card">
-          <div class="step-icon" aria-hidden="true">
-            <!-- clipboard icon -->
-            <svg
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-hidden="true"
-            >
-              <path
-                d="M9 2h6l1 2h2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4h2l1-2z"
-              ></path>
-            </svg>
+          <!-- Interaction / Assessment -->
+          <div class="step-card">
+            <div class="step-icon" aria-hidden="true">
+              <!-- clipboard icon -->
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-hidden="true"
+              >
+                <path
+                  d="M9 2h6l1 2h2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4h2l1-2z"
+                ></path>
+              </svg>
+            </div>
+            <h3>Interaction / Entrance Assessment</h3>
+            <ul class="point-list">
+              <li>
+                <span class="point-icon">💬</span> Kindergarten: Informal
+                interaction with parents & child
+              </li>
+              <li>
+                <span class="point-icon">📝</span> Classes I & above: English
+                test
+              </li>
+              <li><span class="point-icon">➗</span> Mathematics test</li>
+              <li><span class="point-icon">🧠</span> General Knowledge test</li>
+            </ul>
           </div>
-          <h3>Interaction / Entrance Assessment</h3>
-          <ul class="point-list">
-            <li>
-              <span class="point-icon">💬</span> Kindergarten: Informal
-              interaction with parents & child
-            </li>
-            <li>
-              <span class="point-icon">📝</span> Classes I & above: English test
-            </li>
-            <li><span class="point-icon">➗</span> Mathematics test</li>
-            <li><span class="point-icon">🧠</span> General Knowledge test</li>
-          </ul>
-        </div>
 
-        <!-- Confirmation -->
-        <div class="step-card">
-          <div class="step-icon" aria-hidden="true">
-            <!-- check-circle icon -->
-            <svg
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-hidden="true"
-            >
-              <circle cx="12" cy="12" r="10"></circle>
-              <path
-                d="M8 12l2.5 3L16 9"
-                fill="none"
-                stroke="white"
-                stroke-width="1.6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
+          <!-- Confirmation -->
+          <div class="step-card">
+            <div class="step-icon" aria-hidden="true">
+              <!-- check-circle icon -->
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <path
+                  d="M8 12l2.5 3L16 9"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <h3>Confirmation of Admission</h3>
+            <ul class="point-list">
+              <li>
+                <span class="point-icon">✅</span> Successful completion of
+                assessment
+              </li>
+              <li>
+                <span class="point-icon">📑</span> Verification of submitted
+                documents
+              </li>
+              <li>
+                <span class="point-icon">💳</span> Payment of admission and term
+                fees
+              </li>
+              <li>
+                <span class="point-icon">✉️</span> Admission Confirmation Letter
+                issued
+              </li>
+            </ul>
           </div>
-          <h3>Confirmation of Admission</h3>
-          <ul class="point-list">
-            <li>
-              <span class="point-icon">✅</span> Successful completion of
-              assessment
-            </li>
-            <li>
-              <span class="point-icon">📑</span> Verification of submitted
-              documents
-            </li>
-            <li>
-              <span class="point-icon">💳</span> Payment of admission and term
-              fees
-            </li>
-            <li>
-              <span class="point-icon">✉️</span> Admission Confirmation Letter
-              issued
-            </li>
-          </ul>
-        </div>
 
-        <!-- Withdrawal -->
-        <div class="step-card">
-          <div class="step-icon" aria-hidden="true">
-            <!-- sign-out icon -->
-            <svg
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-hidden="true"
-            >
-              <path d="M16 17l5-5-5-5"></path>
-              <path d="M21 12H9"></path>
-              <path d="M9 19H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3"></path>
-            </svg>
+          <!-- Withdrawal -->
+          <div class="step-card">
+            <div class="step-icon" aria-hidden="true">
+              <!-- sign-out icon -->
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-hidden="true"
+              >
+                <path d="M16 17l5-5-5-5"></path>
+                <path d="M21 12H9"></path>
+                <path d="M9 19H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3"></path>
+              </svg>
+            </div>
+            <h3>Withdrawal</h3>
+            <ul class="point-list">
+              <li>
+                <span class="point-icon">📝</span> One month written notice
+                required
+              </li>
+              <li>
+                <span class="point-icon">💰</span> All dues must be cleared
+              </li>
+              <li>
+                <span class="point-icon">📜</span> Transfer Certificate issued
+                after clearance
+              </li>
+            </ul>
           </div>
-          <h3>Withdrawal</h3>
-          <ul class="point-list">
-            <li>
-              <span class="point-icon">📝</span> One month written notice
-              required
-            </li>
-            <li><span class="point-icon">💰</span> All dues must be cleared</li>
-            <li>
-              <span class="point-icon">📜</span> Transfer Certificate issued
-              after clearance
-            </li>
-          </ul>
+
+          <!-- End of the admission process -->
+          <!-- Admission Form Section -->
         </div>
       </section>
 
-      <!-- End of the admission process -->
-      <!-- Admission Form Section -->
-      
-    </section>
+      <!-- GSAP Animations (CDN) -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+      <script>
+        // register ScrollTrigger plugin
+        if (window.gsap && window.gsap.registerPlugin) {
+          gsap.registerPlugin(ScrollTrigger);
+        }
 
-    <!-- GSAP Animations (CDN) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script>
-      // register ScrollTrigger plugin
-      if (window.gsap && window.gsap.registerPlugin) {
-        gsap.registerPlugin(ScrollTrigger);
-      }
+        // animate each card when it enters viewport
+        gsap.utils.toArray(".step-card").forEach((card, i) => {
+          gsap.from(card, {
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              toggleActions: "play none none none",
+            },
+            opacity: 0,
+            y: 60,
+            duration: 0.9,
+            delay: i * 0.12,
+            ease: "power3.out",
+          });
+        });
 
-      // animate each card when it enters viewport
-      gsap.utils.toArray(".step-card").forEach((card, i) => {
-        gsap.from(card, {
+        // heading animation
+        gsap.from(".admission-section h2", {
           scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-            toggleActions: "play none none none",
+            trigger: ".admission-section h2",
+            start: "top 90%",
           },
           opacity: 0,
-          y: 60,
+          y: -40,
           duration: 0.9,
-          delay: i * 0.12,
           ease: "power3.out",
         });
-      });
+      </script>
 
-      // heading animation
-      gsap.from(".admission-section h2", {
-        scrollTrigger: {
-          trigger: ".admission-section h2",
-          start: "top 90%",
-        },
-        opacity: 0,
-        y: -40,
-        duration: 0.9,
-        ease: "power3.out",
-      });
-    </script>
+      <!-- End of the admission process -->
 
-    <!-- End of the admission process -->
-    
-    <!-- Admission Form Section -->
-     <style>
-  :root {
-    --primary: #1e88e5;   /* Blue */
-    --secondary: #00bfa5; /* Teal */
-    --card-bg: #ffffff;   /* White form background */
-  }
+      <!-- Admission Form Section -->
+      <section>
+        <div class="admission-form">
+          <h2 style="color: #ffffff; text-align: center; margin-bottom: 20px">
+            Admission Form - Mount Valley Public School
+          </h2>
 
-  /* Outer Section Background */
-  .admission-form-section {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    padding: 80px 20px;
-    margin-top: 50px;
-  }
+          <!-- Form starts -->
 
-  /* White Form Card */
-  .admission-form {
-    background: var(--card-bg);
-    padding: 50px 40px;
-    border-radius: 16px;
-    max-width: 1100px;
-      margin-top: 70px;
-    box-shadow: 0 10px 28px rgba(1, 1, 1, 0.15);
-  }
-</style>
-      <div class="admission-form">
-        <h2 style="color:#ffffff; text-align:center; margin-bottom:20px;">
-  Admission Form - Mount Valley Public School
-</h2>
+          <form
+            id="admissionForm"
+            action="submit_admission_mail.php"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <div class="form-inline">
+              <div class="form-group">
+                <label>Admission No</label>
+                <input type="text" name="admission_no" required />
+              </div>
+              <div class="form-group">
+                <label>Admission Seeking For Grade</label>
+                <input type="text" name="grade" required />
+              </div>
+              <div class="form-group">
+                <label>EMIS No</label>
+                <input type="text" name="emis_no" required />
+              </div>
+            </div>
 
-
-        <!-- Form starts -->
-
-        <form
-          id="admissionForm"
-          action="submit_admission_mail.php"
-          method="POST"
-          enctype="multipart/form-data"
-        >
-          <div class="form-inline">
+            <!-- Upload Photo -->
             <div class="form-group">
-              <label>Admission No</label>
-              <input type="text" name="admission_no" required />
+              <label>Upload Student Photo</label>
+              <input
+                type="file"
+                name="student_photo"
+                accept="image/png, image/jpeg"
+                required
+              />
+              <small class="note">* Only JPG/PNG allowed. Max size: 2MB</small>
+              <div id="photoPreview" style="margin-top: 10px"></div>
             </div>
+
             <div class="form-group">
-              <label>Admission Seeking For Grade</label>
-              <input type="text" name="grade" required />
+              <label>Name of the Student</label>
+              <input type="text" name="student_name" required />
             </div>
+
+            <div class="form-inline">
+              <div class="form-group">
+                <label>Date of Birth</label>
+                <input type="date" name="dob" required />
+              </div>
+              <div class="form-group">
+                <label>Age</label>
+                <input type="number" name="age" required />
+              </div>
+            </div>
+
             <div class="form-group">
-              <label>EMIS No</label>
-              <input type="text" name="emis_no" required />
+              <label>Gender</label>
+              <div class="gender-options">
+                <label
+                  ><input type="radio" name="gender" value="Male" required />
+                  Male</label
+                >
+                <label
+                  ><input type="radio" name="gender" value="Female" required />
+                  Female</label
+                >
+              </div>
             </div>
-          </div>
 
-          <!-- Upload Photo -->
-          <div class="form-group">
-            <label>Upload Student Photo</label>
-            <input
-              type="file"
-              name="student_photo"
-              accept="image/png, image/jpeg"
-              required
-            />
-            <small class="note">* Only JPG/PNG allowed. Max size: 2MB</small>
-            <div id="photoPreview" style="margin-top: 10px"></div>
-          </div>
+            <div class="form-inline">
+              <div class="form-group">
+                <label>Nationality</label>
+                <input type="text" name="nationality" required />
+              </div>
+              <div class="form-group">
+                <label>Religion</label>
+                <input type="text" name="religion" required />
+              </div>
+            </div>
 
-          <div class="form-group">
-            <label>Name of the Student</label>
-            <input type="text" name="student_name" required />
-          </div>
-
-          <div class="form-inline">
             <div class="form-group">
-              <label>Date of Birth</label>
-              <input type="date" name="dob" required />
+              <label>AADHAR Card No</label>
+              <input type="text" name="aadhar_no" required />
             </div>
+
             <div class="form-group">
-              <label>Age</label>
-              <input type="number" name="age" required />
+              <label>Community (BC/ MBC/ SC/ ST/ FC)</label>
+              <input type="text" name="community" required />
             </div>
-          </div>
 
-          <div class="form-group">
-            <label>Gender</label>
-            <div class="gender-options">
-              <label
-                ><input type="radio" name="gender" value="Male" required />
-                Male</label
-              >
-              <label
-                ><input type="radio" name="gender" value="Female" required />
-                Female</label
-              >
-            </div>
-          </div>
-
-          <div class="form-inline">
             <div class="form-group">
-              <label>Nationality</label>
-              <input type="text" name="nationality" required />
+              <label>Name of the Father / Guardian</label>
+              <input type="text" name="father_name" required />
             </div>
+
             <div class="form-group">
-              <label>Religion</label>
-              <input type="text" name="religion" required />
+              <label>Occupation of the Father</label>
+              <input type="text" name="father_occupation" required />
             </div>
-          </div>
 
-          <div class="form-group">
-            <label>AADHAR Card No</label>
-            <input type="text" name="aadhar_no" required />
-          </div>
-
-          <div class="form-group">
-            <label>Community (BC/ MBC/ SC/ ST/ FC)</label>
-            <input type="text" name="community" required />
-          </div>
-
-          <div class="form-group">
-            <label>Name of the Father / Guardian</label>
-            <input type="text" name="father_name" required />
-          </div>
-
-          <div class="form-group">
-            <label>Occupation of the Father</label>
-            <input type="text" name="father_occupation" required />
-          </div>
-
-          <div class="form-group">
-            <label>Monthly Income of Father</label>
-            <input type="text" name="father_income" required />
-          </div>
-
-          <div class="form-group">
-            <label>Educational Qualification of Father</label>
-            <input type="text" name="father_education" required />
-          </div>
-
-          <div class="form-group">
-            <label>Address for Communication</label>
-            <textarea name="address" rows="3" required></textarea>
-          </div>
-
-          <div class="form-inline">
             <div class="form-group">
-              <label>Contact Number</label>
-              <input type="tel" name="contact" required />
+              <label>Monthly Income of Father</label>
+              <input type="text" name="father_income" required />
             </div>
+
             <div class="form-group">
-              <label>Email ID</label>
-              <input type="email" name="email" required />
+              <label>Educational Qualification of Father</label>
+              <input type="text" name="father_education" required />
             </div>
-          </div>
 
-          <div class="form-group">
-            <label>Previous School Studied</label>
-            <input type="text" name="previous_school" required />
-          </div>
-
-          <div class="form-group">
-            <label>Blood Group</label>
-            <input type="text" name="blood_group" required />
-          </div>
-
-          <div class="form-group">
-            <label>Sibling Details</label>
-            <textarea name="siblings" rows="2" required></textarea>
-          </div>
-
-          <div class="form-group">
-            <label>Transport Facility</label>
-            <div class="gender-options">
-              <label
-                ><input type="radio" name="transport" value="Yes" required />
-                Yes</label
-              >
-              <label
-                ><input type="radio" name="transport" value="No" required />
-                No</label
-              >
+            <div class="form-group">
+              <label>Address for Communication</label>
+              <textarea name="address" rows="3" required></textarea>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label>Any Medical History</label>
-            <textarea name="medical_history" rows="2" required></textarea>
-          </div>
+            <div class="form-inline">
+              <div class="form-group">
+                <label>Contact Number</label>
+                <input type="tel" name="contact" required />
+              </div>
+              <div class="form-group">
+                <label>Email ID</label>
+                <input type="email" name="email" required />
+              </div>
+            </div>
 
-          <p class="note">
-            * Note: The fee is non-refundable in any circumstances
-          </p>
-          <p class="declaration">DECLARATION BY THE PARENT OR GUARDIAN</p>
-          <p>
-            All the information in the given application are true to the best of
-            my knowledge.
-          </p>
+            <div class="form-group">
+              <label>Previous School Studied</label>
+              <input type="text" name="previous_school" required />
+            </div>
 
-          <button type="submit" class="btn">Submit Application</button>
-        </form>
-      </div>
+            <div class="form-group">
+              <label>Blood Group</label>
+              <input type="text" name="blood_group" required />
+            </div>
+
+            <div class="form-group">
+              <label>Sibling Details</label>
+              <textarea name="siblings" rows="2" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Transport Facility</label>
+              <div class="gender-options">
+                <label
+                  ><input type="radio" name="transport" value="Yes" required />
+                  Yes</label
+                >
+                <label
+                  ><input type="radio" name="transport" value="No" required />
+                  No</label
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Any Medical History</label>
+              <textarea name="medical_history" rows="2" required></textarea>
+            </div>
+
+            <p class="note">
+              * Note: The fee is non-refundable in any circumstances
+            </p>
+            <p class="declaration">DECLARATION BY THE PARENT OR GUARDIAN</p>
+            <p>
+              All the information in the given application are true to the best
+              of my knowledge.
+            </p>
+
+            <button type="submit" class="btn">Submit Application</button>
+          </form>
+        </div>
+      </section>
     </div>
-  </div>
 
     <!-- whatsapp contact -->
     <a
@@ -1187,6 +1174,33 @@
         }
       });
     </script>
+
+    <script>
+      document
+        .getElementById("admissionForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Prevent default form submission
+
+          const form = this;
+          const formData = new FormData(form); // Includes all inputs + file
+
+          fetch("submit_admission_mail.php", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.text())
+            .then((data) => {
+              alert(data); // Show success/failure message
+              form.reset(); // Optional: Reset form after submission
+              document.getElementById("photoPreview").innerHTML = ""; // Clear photo preview
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("Something went wrong. Please try again.");
+            });
+        });
+    </script>
+
     <!-- Fixed Contact Area
 		============================================ -->
     <script>
