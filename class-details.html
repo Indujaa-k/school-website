@@ -344,29 +344,36 @@
     </div>
 
     <div class="btn-section">
-      <button id="backBtn" class="back-btn">← Back</button>
-      <a href="#class-section"
-        ><button id="nextBtn" class="next-btn">Next →</button></a
-      >
-    </div>
 
-    <style>
-      .class-container {
+    <a href="./class-list.html">
+        <button id="Btn" class="btn">← Back</button>
+    </a>
+
+    <a href="#class-section"><button id="backBtn" class="back-btn">← previous</button></a>
+
+    <a href="#class-section">
+        <button id="nextBtn" class="next-btn">Next →</button>
+    </a>
+
+</div>
+
+<style>
+    .class-container {
         margin-bottom: 30px;
-      }
-      .text-center {
+    }
+    .text-center {
         color: #fff;
-      }
-      .btn-section {
+    }
+    .btn-section {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 60px;
         padding: 60px 0;
         background: linear-gradient(to bottom, #d6eaff 0%, #a8c9f0 100%);
-      }
-      .back-btn,
-      .next-btn {
+    }
+    .back-btn,
+    .btn,.next-btn {
         background: #00a3b0;
         color: #fff;
         border: none;
@@ -376,47 +383,43 @@
         cursor: pointer;
         margin-bottom: 20px;
         transition: background 0.3s ease;
-      }
-
-      .back-btn:hover,
-      .next-btn:hover {
+    }
+    .back-btn:hover,
+    .next-btn:hover {
         background: #eeac00;
-      }
-      .subjects-container {
+    }
+    .subjects-container {
         display: flex;
-        flex-wrap: wrap; /* allow wrapping */
+        flex-wrap: wrap;
         gap: 10px;
         margin-top: 40px;
-        width: 100%; /* ensure it doesn’t overflow parent */
+        width: 100%;
         box-sizing: border-box;
-      }
-      .class-section {
+    }
+    .class-section {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-bottom: 40px;
-      }
-
-      @media (min-width: 992px) {
+    }
+    @media (min-width: 992px) {
         .subjects-container {
-          width: 70%;
+            width: 70%;
         }
-      }
-      .subjects-container {
+    }
+    .subjects-container {
         display: flex;
         flex-direction: column;
         gap: 15px;
-        align-items: center; /* center everything */
-      }
-
-      .subject-row {
+        align-items: center;
+    }
+    .subject-row {
         display: flex;
         gap: 20px;
         justify-content: center;
         width: 100%;
-      }
-
-      .subject-title {
+    }
+    .subject-title {
         background: #00a3b0;
         color: #ffffff !important;
         padding: 15px;
@@ -425,28 +428,25 @@
         text-align: center;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         width: 30%;
-      }
-      .subject-points-box {
-        flex: 1; /* equal width */
+    }
+    .subject-points-box {
+        flex: 1;
         background: #eeac00;
         color: #fff;
         padding: 15px;
         border-radius: 8px;
         text-align: center;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        max-width: 600px; /* optional: limit size */
-      }
-
-      .subject-points-box ul {
+        max-width: 600px;
+    }
+    .subject-points-box ul {
         margin: 0;
         padding-left: 20px;
-      }
-
-      .subject-box:hover {
+    }
+    .subject-box:hover {
         transform: translateY(-3px);
-      }
-
-      .subjects h3 {
+    }
+    .subjects h3 {
         border-bottom: 1px solid #eeac00;
         bottom: -1px;
         display: inline-block;
@@ -454,28 +454,26 @@
         line-height: 17px;
         padding-bottom: 13px;
         position: relative;
-      }
-      /* Responsive */
-      @media (max-width: 992px) {
+    }
+    @media (max-width: 992px) {
         .subject-box {
-          flex: 1 1 calc(50% - 10px); /* 2 per row on medium screens */
+            flex: 1 1 calc(50% - 10px);
         }
-      }
-
-      @media (max-width: 600px) {
+    }
+    @media (max-width: 600px) {
         .subject-box {
-          flex: 1 1 100%; /* 1 per row on mobile */
+            flex: 1 1 100%;
         }
         .subject-row {
-          flex-direction: column;
-          justify-content: center;
-          /* align-items: center; */
+            flex-direction: column;
+            justify-content: center;
         }
         .subject-title {
-          width: 100%;
+            width: 100%;
         }
-      }
-    </style>
+    }
+</style>
+
     <!-- whatsapp contact -->
     <a
       href="https://wa.me/9952258987"
