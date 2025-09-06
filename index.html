@@ -361,9 +361,9 @@
       /* Tablet view */
       @media (min-width: 768px) and (max-width: 1024px) {
         .slide img {
-        height: 500px;
-        object-fit:fill;
-      }
+          height: 500px;
+          object-fit: fill;
+        }
       }
       /* Mobile screens (768px and below) */
       @media (max-width: 768px) {
@@ -373,7 +373,7 @@
 
         .slide img {
           height: 250px;
-            object-fit:fill;
+          object-fit: fill;
         }
       }
 
@@ -2130,10 +2130,6 @@
             ></span>
           </div>
         </div>
-
-        <!-- Side arrows -->
-        <button class="gallery-arrow left">‹</button>
-        <button class="gallery-arrow right">›</button>
       </div>
 
       <!-- Modal -->
@@ -2444,87 +2440,67 @@
 
     <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
     <script>
-      // Wait until DOM is loaded
-      window.addEventListener("DOMContentLoaded", () => {
-        // Modal
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("modalImage");
-        const closeBtn = document.querySelector(".image-modal .close-btn");
+      // Modal
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      const closeBtn = document.querySelector(".image-modal .close-btn");
 
-        document.querySelectorAll(".eye-icon").forEach((icon) => {
-          icon.addEventListener("click", (e) => {
-            const imgSrc = e.currentTarget.getAttribute("data-img");
-            modalImg.src = imgSrc;
-            modal.style.display = "flex";
-            document.body.classList.add("modal-open");
-          });
+      document.querySelectorAll(".eye-icon").forEach((icon) => {
+        icon.addEventListener("click", (e) => {
+          const imgSrc = e.currentTarget.getAttribute("data-img");
+          modalImg.src = imgSrc;
+          modal.style.display = "flex";
+          document.body.classList.add("modal-open");
         });
-
-        function closeModal() {
-          modal.style.display = "none";
-          document.body.classList.remove("modal-open");
-        }
-        closeBtn.addEventListener("click", closeModal);
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) closeModal();
-        });
-
-        // Gallery scroll
-        const track = document.querySelector(".gallery-track");
-
-        if (!track) return; // safety check
-
-        const slides = track.innerHTML; // store original slides
-        track.innerHTML += slides; // duplicate slides for infinite loop
-
-        const slideWidth = 320; // width + margin of one slide
-        let scrollAmount = 0;
-        let scrollSpeed = 1; // pixels per frame
-        let isPaused = false;
-
-        // Continuous scroll loop
-        function continuousScroll() {
-          if (!isPaused) {
-            scrollAmount += scrollSpeed;
-
-            // Reset when half is scrolled (loop back)
-            if (scrollAmount >= track.scrollWidth / 2) {
-              scrollAmount = 0;
-            }
-
-            track.style.transform = `translateX(-${scrollAmount}px)`;
-          }
-          requestAnimationFrame(continuousScroll);
-        }
-
-        // Start loop only after images loaded
-        window.onload = () => {
-          continuousScroll();
-        };
-
-        // Pause on hover
-        track.addEventListener("mouseenter", () => (isPaused = true));
-        track.addEventListener("mouseleave", () => (isPaused = false));
-
-        // Left/right arrow buttons
-        document
-          .querySelector(".gallery-arrow.left")
-          ?.addEventListener("click", () => {
-            scrollAmount -= slideWidth;
-            if (scrollAmount < 0) {
-              scrollAmount = track.scrollWidth / 2 - slideWidth; // loop back
-            }
-          });
-
-        document
-          .querySelector(".gallery-arrow.right")
-          ?.addEventListener("click", () => {
-            scrollAmount += slideWidth;
-            if (scrollAmount >= track.scrollWidth / 2) {
-              scrollAmount = 0; // reset loop
-            }
-          });
       });
+
+      function closeModal() {
+        modal.style.display = "none";
+        document.body.classList.remove("modal-open");
+      }
+      closeBtn.addEventListener("click", closeModal);
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      // Gallery scroll
+      const track = document.querySelector(".gallery-track");
+      const allSlides = Array.from(track.children);
+
+      // duplicate all slides
+      allSlides.forEach((slide) => {
+        const clone = slide.cloneNode(true);
+        track.appendChild(clone);
+      });
+
+      const slideWidth = 320; // width + margin of one slide
+      let scrollAmount = 0;
+      let scrollSpeed = 1; // pixels per frame
+      let isPaused = false;
+
+      // Continuous scroll loop
+      function continuousScroll() {
+        if (!isPaused) {
+          scrollAmount += scrollSpeed;
+
+          // Reset when fully scrolled one set
+          if (scrollAmount >= track.scrollWidth / 2) {
+            scrollAmount = 0;
+          }
+
+          track.style.transform = `translateX(-${scrollAmount}px)`;
+        }
+        requestAnimationFrame(continuousScroll);
+      }
+
+      // Start loop only after images loaded
+      window.onload = () => {
+        continuousScroll();
+      };
+
+      // Pause on hover
+      track.addEventListener("mouseenter", () => (isPaused = true));
+      track.addEventListener("mouseleave", () => (isPaused = false));
     </script>
 
     <!-- teacher
