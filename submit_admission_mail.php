@@ -55,40 +55,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $body .= "Transport: $transport\n";
     $body .= "Medical History: $medical_history\n";
 
-    // Prepare headers
+    // Email headers
     $headers = "From: info@yourdomain.com"; // <-- Must be valid email on your domain
 
-    // Check if file is uploaded
-    if(isset($_FILES['student_photo']) && $_FILES['student_photo']['error'] == 0){
-        $file_tmp = $_FILES['student_photo']['tmp_name'];
-        $file_name = $_FILES['student_photo']['name'];
-        $file_type = $_FILES['student_photo']['type'];
-        $file_content = chunk_split(base64_encode(file_get_contents($file_tmp)));
+    // Create boundary for attachments
+    $boundary = md5(time());
+    $headers .= "\r\nMIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: multipart/mixed; boundary=\"".$boundary."\"\r\n";
 
-        $boundary = md5(time());
-        $headers .= "\r\nMIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: multipart/mixed; boundary=\"".$boundary."\"\r\n";
+    // Start message
+    $message = "--".$boundary."\r\n";
+    $message .= "Content-Type: text/plain; charset=ISO-8859-1\r\n";
+    $message .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
+    $message .= $body . "\r\n";
 
-        // Message
-        $message = "--".$boundary."\r\n";
-        $message .= "Content-Type: text/plain; charset=ISO-8859-1\r\n";
-        $message .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
-        $message .= $body . "\r\n";
+    // Function to attach files
+    function attachFile($fileField, &$message, $boundary) {
+        if (isset($_FILES[$fileField]) && $_FILES[$fileField]['error'] == 0) {
+            if ($_FILES[$fileField]['size'] > 2097152) { // 2MB limit
+                return; // Skip if too large
+            }
+            $file_tmp = $_FILES[$fileField]['tmp_name'];
+            $file_name = $_FILES[$fileField]['name'];
+            $file_type = $_FILES[$fileField]['type'];
+            $file_content = chunk_split(base64_encode(file_get_contents($file_tmp)));
 
-        // Attachment
-        $message .= "--".$boundary."\r\n";
-        $message .= "Content-Type: $file_type; name=\"".$file_name."\"\r\n";
-        $message .= "Content-Disposition: attachment; filename=\"".$file_name."\"\r\n";
-        $message .= "Content-Transfer-Encoding: base64\r\n\r\n";
-        $message .= $file_content . "\r\n";
-        $message .= "--".$boundary."--";
-
-        $sent = mail($to, $subject, $message, $headers);
-
-    } else {
-        // No file uploaded
-        $sent = mail($to, $subject, $body, $headers);
+            $message .= "--".$boundary."\r\n";
+            $message .= "Content-Type: $file_type; name=\"".$file_name."\"\r\n";
+            $message .= "Content-Disposition: attachment; filename=\"".$file_name."\"\r\n";
+            $message .= "Content-Transfer-Encoding: base64\r\n\r\n";
+            $message .= $file_content . "\r\n";
+        }
     }
+
+    // Attach student photo
+    attachFile('student_photo', $message, $boundary);
+
+    // Attach birth certificate
+    attachFile('birth_certificate', $message, $boundary);
+
+    // End boundary
+    $message .= "--".$boundary."--";
+
+    // Send email
+    $sent = mail($to, $subject, $message, $headers);
 
     echo $sent ? "Admission form submitted successfully!" : "Failed to send. Please try again.";
 }

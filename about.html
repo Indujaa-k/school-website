@@ -55,304 +55,6 @@
     <!-- Modernizr JS
 		============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-
-    <!-- calender -->
-
-    <style>
-      :root {
-        --bg: #f6f8fb;
-        --card: #ffffff;
-        --text: #1f2937;
-        --muted: #6b7280;
-        --primary: #2563eb;
-        /* category colors */
-        --holiday: #8be28b; /* green */
-        --event: #ffb454; /* orange */
-        --exam: #90c9ff; /* blue  */
-        --special: #f3da4f; /* yellow */
-        --festival: #ff7a7a; /* red */
-        --today: #e6f0ff;
-        --border: #e5e7eb;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-      .wrap {
-        max-width: 1100px;
-        margin: 0 auto 24px auto;
-        padding: 16px;
-      }
-
-      .app {
-        display: grid;
-        grid-template-columns: 1.4fr 0.8fr;
-        gap: 16px;
-        width: 100%;
-        max-width: 100%;
-      }
-
-      /* Header */
-      .header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 12px;
-      }
-      .nav {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .btn {
-        border: none;
-        background: var(--primary);
-        color: #fff;
-        padding: 8px 12px;
-        border-radius: 10px;
-        font-weight: 600;
-        cursor: pointer;
-      }
-      .btn.icon {
-        padding: 8px 10px;
-        width: 40px;
-        height: 40px;
-        border-radius: 10px;
-        display: grid;
-        place-items: center;
-      }
-      .btn:disabled {
-        opacity: 0.55;
-        cursor: not-allowed;
-      }
-
-      .title {
-        font-weight: 800;
-        font-size: 22px;
-        letter-spacing: 0.3px;
-      }
-      .sub {
-        color: var(--muted);
-        font-size: 14px;
-      }
-      .controls {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      select,
-      .year {
-        padding: 8px 10px;
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        background: #fff;
-        color: var(--text);
-        font-weight: 600;
-      }
-
-      /* Calendar Card */
-      .card {
-        background: var(--card);
-        border-radius: 16px;
-        padding: 14px;
-        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
-      }
-
-      .calendar-grid {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        gap: 8px;
-      }
-      .weekday {
-        text-align: center;
-        font-weight: 700;
-        color: var(--muted);
-        padding: 10px 0;
-      }
-
-      .day {
-        min-height: 88px;
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        background: #fff;
-        padding: 8px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-      .day.muted {
-        opacity: 0.45;
-        background: #fafafa;
-      }
-      .day .date {
-        font-weight: 800;
-        font-size: 14px;
-        color: #111827;
-      }
-      .day.today {
-        outline: 2px solid var(--primary);
-        background: var(--today);
-      }
-
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        width: 100%;
-        padding: 6px 8px;
-        border-radius: 10px;
-        color: #0b0f16;
-        font-size: 12px;
-        line-height: 1.2;
-        word-break: break-word;
-      }
-      .pill.small {
-        padding: 4px 6px;
-        font-size: 11px;
-      }
-      .pill.holiday {
-        background: var(--holiday);
-      }
-      .pill.event {
-        background: var(--event);
-      }
-      .pill.exam {
-        background: var(--exam);
-      }
-      .pill.special {
-        background: var(--special);
-      }
-      .pill.festival {
-        background: var(--festival);
-      }
-
-      /* Side panel */
-      .side {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-      .legend {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-      }
-      .legend .item {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        background: #fff;
-        border: 1px solid var(--border);
-        padding: 8px;
-        border-radius: 12px;
-        font-size: 14px;
-      }
-      .swatch {
-        width: 16px;
-        height: 16px;
-        border-radius: 6px;
-        border: 1px solid rgba(0, 0, 0, 0.12);
-      }
-
-      .filters {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-      }
-      .filter {
-        display: flex;
-        gap: 6px;
-        align-items: center;
-        background: #fff;
-        border: 1px solid var(--border);
-        padding: 6px 10px;
-        border-radius: 999px;
-        font-size: 13px;
-        cursor: pointer;
-      }
-      .filter input {
-        accent-color: var(--primary);
-      }
-
-      .month-list {
-        max-height: 420px;
-        overflow: auto;
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: 10px;
-        background: #fff;
-      }
-      .month-list h3 {
-        margin: 0 0 8px;
-        font-size: 16px;
-      }
-      .ml-item {
-        display: flex;
-        gap: 8px;
-        padding: 8px;
-        border-radius: 10px;
-        margin-bottom: 8px;
-        align-items: flex-start;
-      }
-      .ml-item .dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        margin-top: 4px;
-        flex: 0 0 12px;
-      }
-      .ml-item .when {
-        color: var(--muted);
-        font-size: 12px;
-      }
-
-      /* Responsive */
-      @media (max-width: 900px) {
-        .app {
-          grid-template-columns: 1fr;
-        }
-      }
-      @media (max-width: 768px) {
-        .header {
-          flex-direction: column;
-        }
-        .pill {
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-          padding: 0;
-          font-size: 0; /* hide text */
-          position: relative;
-          display: inline-block;
-        }
-
-        /* Tooltip effect */
-        .pill::after {
-          content: attr(data-name); /* event name */
-          position: absolute;
-          bottom: 120%; /* above dot */
-          left: 50%;
-          transform: translateX(-50%);
-          background: #333;
-          color: #fff;
-          font-size: 12px;
-          padding: 4px 8px;
-          border-radius: 6px;
-          white-space: nowrap;
-          opacity: 0;
-          pointer-events: none;
-          transition: opacity 0.2s ease;
-          z-index: 10;
-        }
-
-        .pill:hover::after {
-          opacity: 1;
-        }
-      }
-    </style>
   </head>
   <body>
     <!--Header Area Start-->
@@ -566,10 +268,112 @@
     </div>
     <!--End of Activity Area-->
     <!--About Area Start-->
+   <div
+      class="section-padding-bottom"
+      style="
+        background: linear-gradient(to bottom, #a8c9f0 0%, #80d0c7 100%);
+        color: #000;
+      "
+    >
+    <section class="mission-vision">
+      <div class="section-title-wrapper">
+        <div class="section-title">
+          <h3>Who we are</h3>
+          <p>Mount Valley Public School</p>
+        </div>
+      </div>
+      <div class="mv-container">
+        <!-- Mission -->
+        <div class="mv-card mission">
+          <h2>🎯 Mission</h2>
+          <p>
+            Our mission is to create a
+            <strong
+              >dynamic, inclusive, and engaging learning environment</strong
+            >
+            that inspires innovation, cultivates leadership, and equips students
+            to thrive in a rapidly changing world by fostering
+            <strong
+              >creativity, adaptability, collaboration, resilience, and critical
+              thinking</strong
+            >. We are committed to
+            <strong
+              >nurturing curiosity, embracing diversity, integrating modern
+              technology, and promoting lifelong values</strong
+            >
+            that prepare students to grow both academically and personally.
+          </p>
+        </div>
+
+        <!-- Vision -->
+        <div class="mv-card vision">
+          <h2>🌟 Vision</h2>
+          <p>
+            Our vision is to prepare students for both
+            <strong>academic excellence and real-life challenges</strong>,
+            empowering them to become
+            <strong
+              >lifelong learners, problem-solvers, innovators, and responsible
+              global citizens</strong
+            >. We aim to
+            <strong
+              >shape future leaders who embody integrity, empathy, and
+              courage</strong
+            >, while contributing positively to society. Through
+            <strong
+              >transformative education, cutting-edge practices, and holistic
+              development</strong
+            >, we strive to create individuals who can adapt, lead, and inspire
+            change in a rapidly evolving world.
+          </p>
+        </div>
+      </div>
+    </section>
+    </div>
+
+    <style>
+      .mv-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        max-width: 1200px;
+        margin: auto;
+      }
+      .mv-card {
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+      }
+      .mv-card:hover {
+        transform: translateY(-8px);
+      }
+      .mv-card h2 {
+        margin-bottom: 15px;
+      }
+      .mv-card p {
+        line-height: 1.7;
+        color: #333;
+      }
+      .mission {
+        background: #fff9e6;
+        border-left: 8px solid #eeac00;
+      }
+      .vision {
+        background: #eaf4ff;
+        border-left: 8px solid #0077cc;
+      }
+      @media (max-width: 768px) {
+        .mv-container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
     <div
       class="about-area section-padding-bottom"
       style="
-        background: linear-gradient(to bottom, #a8c9f0 0%, #6fa8dc 100%);
+        background: linear-gradient(to bottom, #80d0c7 0%, #6fa8dc 100%);
         color: black;
       "
     >
@@ -578,7 +382,7 @@
           <div class="col-md-12">
             <div class="section-title-wrapper">
               <div class="section-title">
-                <h3>Who we are</h3>
+                <h3>Empowering Every Student</h3>
                 <p>Mount Valley Public School</p>
               </div>
             </div>
@@ -600,31 +404,9 @@
                 team of dedicated teachers, modern infrastructure, science and
                 computer laboratories, a well-stocked library, and a spacious
                 playground, the school has become a center of learning and
-                growth.
+                growth.Today, Mount Valley Public School proudly serves [200 students ] students, offering a balanced curriculum that emphasizes academics, sports, arts, Robotics,spoken English and co-curricular activities. Rooted in strong values and inspired by our vision, the school continues to prepare students to face the challenges of tomorrow with confidence and integrity.
               </p>
 
-              <!-- Mission -->
-              <div class="d-flex flex-column p-2">
-                <h5 class="fw-bold mb-3">Mission</h5>
-                <p>
-                  Our mission is to create a dynamic and engaging learning
-                  environment that inspires innovation, cultivates leadership,
-                  and equips students to thrive in a rapidly changing world by
-                  fostering creativity, adaptability, and critical thinking.
-                </p>
-              </div>
-
-              <!-- Vision -->
-              <div class="d-flex flex-column p-2">
-                <h5 class="fw-bold mb-3">Vision</h5>
-                <p>
-                  Our vision is to prepare students for both academic excellence
-                  and real-life challenges, empowering them to become lifelong
-                  learners and responsible contributors to society, while
-                  shaping leaders and innovators who can make a positive impact
-                  in a rapidly evolving world.
-                </p>
-              </div>
             </div>
           </div>
           <div
@@ -634,7 +416,7 @@
               <img
                 src="img/school-img/Indoor play area.JPG"
                 alt=""
-                style="border-radius: 10px ;height: 500px;"
+                style="border-radius: 10px;"
               />
             </div>
           </div>
@@ -647,7 +429,7 @@
     <div
       class="section-padding-bottom"
       style="
-        background: linear-gradient(to bottom, #6fa8dc 0%, #80d0c7 100%);
+        background: linear-gradient(to bottom, #6fa8dc 0%, #c7b9f5 100%);
         color: #000;
       "
     >
@@ -890,123 +672,6 @@
           </style>
         </div>
       </section>
-    </div>
-
-    <!-- calender section -->
-
-    <div
-      class="section-padding-bottom text-center"
-      style="background: linear-gradient(to bottom, #80d0c7 0%, #c7b9f5 100%)"
-    >
-      <div class="section-title-wrapper">
-        <div class="section-title">
-          <h3 class="mb-4 mt-1">Calender</h3>
-        </div>
-      </div>
-      <div class="wrap" id="calendarrow">
-        <div class="header">
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-            "
-          >
-            <div id="headTitle" style="font-weight: bold">
-              Academic Calendar
-            </div>
-            <div>
-              Navigate months • Tap colors to filter • Items appear inside date
-              cells.
-            </div>
-          </div>
-          <div class="controls">
-            <button class="btn icon" id="prevBtn" aria-label="Previous month">
-              &#8249;
-            </button>
-            <div id="monthLabel" class="year">January 2025</div>
-            <button class="btn icon" id="nextBtn" aria-label="Next month">
-              &#8250;
-            </button>
-            <select id="yearSelect" class="year" title="Change year">
-              <option>2025</option>
-              <option>2026</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="app">
-          <!-- Calendar -->
-          <div class="card">
-            <div class="calendar-grid" id="weekdays"></div>
-            <div class="calendar-grid" id="calendar"></div>
-          </div>
-
-          <!-- Right panel -->
-          <div class="side">
-            <div class="card">
-              <strong>Legend</strong>
-              <div class="legend" style="margin-top: 8px">
-                <div class="item">
-                  <span class="swatch" style="background: var(--holiday)"></span
-                  >Holiday
-                </div>
-                <div class="item">
-                  <span class="swatch" style="background: var(--event)"></span
-                  >Event / Function
-                </div>
-                <div class="item">
-                  <span class="swatch" style="background: var(--exam)"></span
-                  >Exam
-                </div>
-                <div class="item">
-                  <span class="swatch" style="background: var(--special)"></span
-                  >Special Day
-                </div>
-                <div class="item">
-                  <span
-                    class="swatch"
-                    style="background: var(--festival)"
-                  ></span
-                  >Festival
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <strong>Filters</strong>
-              <div class="filters" style="margin-top: 8px">
-                <label class="filter"
-                  ><input type="checkbox" data-type="holiday" checked />
-                  Holiday</label
-                >
-                <label class="filter"
-                  ><input type="checkbox" data-type="event" checked />
-                  Event</label
-                >
-                <label class="filter"
-                  ><input type="checkbox" data-type="exam" checked />
-                  Exam</label
-                >
-                <label class="filter"
-                  ><input type="checkbox" data-type="special" checked />
-                  Special</label
-                >
-                <label class="filter"
-                  ><input type="checkbox" data-type="festival" checked />
-                  Festival</label
-                >
-              </div>
-            </div>
-
-            <div class="card month-list">
-              <h3 id="listTitle">January 2025</h3>
-              <div id="monthList"></div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- ICSE Curriculum Overview -->
@@ -1294,6 +959,10 @@
                     <i class="fa fa-phone" style="margin-right: 5px"></i>+91
                     99947 82792
                   </li>
+                  <li>
+                    <i class="fa fa-phone" style="margin-right: 5px"></i>
+                    +91 99947 82792
+                  </li>
                 </ul>
               </div>
             </div>
@@ -1307,6 +976,7 @@
                   <li><a href="about.html">About</a></li>
                   <li><a href="academics.html">Academics</a></li>
                   <li><a href="admission.html">Admission</a></li>
+                  <li><a href="contact.html">Contact</a></li>
                   <!-- <li><a href="contact.html">contact</a></li> -->
                 </ul>
               </div>
@@ -1469,284 +1139,6 @@
 
     <!-- logo definition -->
 
-    <!-- calender -->
-    <script>
-      const DEFAULT_YEAR = 2025;
-
-      const EVENTS = {
-        "2025-01-01": [{ name: "New Year", type: "holiday" }],
-        "2025-01-14": [{ name: "Pongal", type: "festival" }],
-        "2025-01-26": [{ name: "Republic Day Celebration", type: "special" }],
-        "2025-02-10": [{ name: "Unit Test 1 (Starts)", type: "exam" }],
-        "2025-02-14": [{ name: "Cultural Day", type: "event" }],
-        "2025-03-08": [{ name: "Science Exhibition", type: "event" }],
-        "2025-03-21": [{ name: "Annual Day", type: "special" }],
-        "2025-04-05": [{ name: "Parent–Teacher Meet", type: "event" }],
-        "2025-04-14": [{ name: "Ambedkar Jayanti", type: "special" }],
-        "2025-04-18": [{ name: "Good Friday", type: "holiday" }],
-        "2025-05-01": [{ name: "May Day", type: "holiday" }],
-        "2025-05-05": [{ name: "Summer Exams Begin", type: "exam" }],
-        "2025-05-20": [{ name: "Results & Open House", type: "event" }],
-        "2025-06-10": [{ name: "School Reopens", type: "special" }],
-        "2025-06-15": [{ name: "Father’s Day", type: "event" }],
-        "2025-06-27": [{ name: "Pink Day (KG)", type: "event" }],
-        "2025-07-06": [{ name: "Muharram ", type: "holiday" }],
-        "2025-08-02": [{ name: "Friendship Day Celebration", type: "event" }],
-        "2025-08-15": [{ name: "Independence Day", type: "special" }],
-        "2025-08-16": [{ name: "Krishna Jayanthi ", type: "holiday" }],
-        "2025-08-18": [{ name: "Red Day Celebration", type: "event" }],
-        "2025-08-20": [{ name: "Internal-I Exams Begin", type: "exam" }],
-        "2025-08-25": [{ name: "Onam Celebration", type: "festival" }],
-        "2025-08-27": [{ name: "Vinayagar Chaturthi", type: "holiday" }],
-        "2025-09-05": [
-          { name: "Teachers’ Day", type: "special" },
-          { name: "Onam Celebration", type: "festival" },
-        ],
-        "2025-09-12": [{ name: "Half-Yearly Exams Begin", type: "exam" }],
-        "2025-09-15": [{ name: "Semester-I Exams Begin", type: "exam" }],
-        "2025-10-02": [{ name: "Gandhi Jayanti", type: "holiday" }],
-        "2025-10-02": [{ name: "Dussehra Begins", type: "holiday" }],
-        "2025-10-03": [{ name: "Dussehra", type: "holiday" }],
-        "2025-10-04": [{ name: "Dussehra", type: "holiday" }],
-        "2025-10-05": [{ name: "Dussehra", type: "holiday" }],
-        "2025-10-06": [{ name: "Dussehra", type: "holiday" }],
-        "2025-10-07": [{ name: "Dussehra", type: "holiday" }],
-        "2025-10-08": [{ name: "Dussehra", type: "holiday" }],
-        "2025-10-09": [
-          { name: "School Reopens After Dussehra", type: "special" },
-        ],
-        "2025-10-10": [{ name: "National Post Day", type: "event" }],
-        "2025-10-18": [{ name: "Diwali ", type: "holiday" }],
-        "2025-10-19": [{ name: "Diwali ", type: "holiday" }],
-        "2025-10-20": [
-          { name: "Diwali", type: "holiday" },
-          { name: "Diwali Celebration", type: "festival" },
-        ],
-        "2025-10-21": [{ name: "Diwali ", type: "holiday" }],
-        "2025-10-22": [
-          { name: "School Reopens After Diwali", type: "special" },
-        ],
-        "2025-10-24": [{ name: "Yellow Day Celebration", type: "event" }],
-        "2025-11-01": [{ name: "School Sports Heats", type: "event" }],
-        "2025-11-03": [{ name: "Orange Day Celebration", type: "event" }],
-        "2025-11-14": [{ name: "Children’s Day Celebration", type: "special" }],
-        "2025-11-24": [{ name: "Internal-II Exams Begin", type: "exam" }],
-        "2025-12-15": [{ name: "Preboard Exams Begin", type: "exam" }],
-        "2025-12-24": [{ name: "Christmas Eve Program", type: "event" }],
-        "2025-12-25": [{ name: "Christmas ", type: "holiday" }],
-        "2026-01-11": [{ name: "Annual Day", type: "special" }],
-        "2026-01-12": [{ name: "Pongal Holidays Begin", type: "festival" }],
-        "2026-01-18": [{ name: "Pongal Holidays End", type: "festival" }],
-        "2026-01-26": [{ name: "Republic Day", type: "special" }],
-        "2026-02-01": [{ name: "Thai Poosam ", type: "holiday" }],
-        "2026-02-02": [{ name: "Internal-III Exams Begin", type: "exam" }],
-        "2026-02-19": [{ name: "E-DAC Day", type: "event" }],
-        "2026-03-18": [{ name: "E-DAC Day", type: "event" }],
-        "2026-04-02": [{ name: "Last Working Day for KG’s", type: "special" }],
-        "2026-04-03": [{ name: "Good Friday ", type: "holiday" }],
-        "2026-04-05": [{ name: "Easter", type: "holiday" }],
-        "2026-04-14": [{ name: "Tamil New Year", type: "festival" }],
-      };
-
-      const monthLabel = document.getElementById("monthLabel");
-      const yearSelect = document.getElementById("yearSelect");
-      const calendarEl = document.getElementById("calendar");
-      const weekdaysEl = document.getElementById("weekdays");
-      const listTitle = document.getElementById("listTitle");
-      const monthList = document.getElementById("monthList");
-
-      const filtersState = {
-        holiday: true,
-        event: true,
-        exam: true,
-        special: true,
-        festival: true,
-      };
-
-      const MONTHS = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-      ];
-      const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-      WEEKDAYS.forEach((d) => {
-        const w = document.createElement("div");
-        w.className = "weekday";
-        w.textContent = d;
-        weekdaysEl.appendChild(w);
-      });
-
-      let today = new Date();
-      let current = new Date(DEFAULT_YEAR, today.getMonth(), 1);
-      yearSelect.value = String(DEFAULT_YEAR);
-
-      function fmt(y, m, d) {
-        return `${y}-${String(m + 1).padStart(2, "0")}-${String(d).padStart(
-          2,
-          "0"
-        )}`;
-      }
-      function sameDay(a, b) {
-        return (
-          a.getFullYear() == b.getFullYear() &&
-          a.getMonth() == b.getMonth() &&
-          a.getDate() == b.getDate()
-        );
-      }
-
-      function render() {
-        const year = parseInt(yearSelect.value, 10);
-        const month = current.getMonth();
-        const firstDay = new Date(year, month, 1);
-        const startWeekday = firstDay.getDay();
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-        monthLabel.textContent = `${MONTHS[month]} ${year}`;
-        listTitle.textContent = `${MONTHS[month]} ${year}`;
-        calendarEl.innerHTML = "";
-        monthList.innerHTML = "";
-
-        const today = new Date();
-
-        // Leading blanks
-        const prevDays = startWeekday;
-        const prevMonthDays = new Date(year, month, 0).getDate();
-        for (let i = prevDays; i > 0; i--) {
-          const d = document.createElement("div");
-          d.className = "day muted";
-          d.innerHTML = `<div class="date">${prevMonthDays - i + 1}</div>`;
-          calendarEl.appendChild(d);
-        }
-
-        // Current month
-        for (let d = 1; d <= daysInMonth; d++) {
-          const cell = document.createElement("div");
-          cell.className = "day";
-          const dateStr = fmt(year, month, d);
-          const header = document.createElement("div");
-          header.className = "date";
-          header.textContent = d;
-          cell.appendChild(header);
-
-          // ✅ Highlight today
-          if (sameDay(today, new Date(year, month, d))) {
-            cell.classList.add("today");
-          }
-
-          const items = (EVENTS[dateStr] || []).filter(
-            (ev) => filtersState[ev.type]
-          );
-          items.forEach((ev) => {
-            const pill = document.createElement("div");
-            pill.className = `pill ${ev.type}`;
-            pill.textContent = ev.name;
-            pill.setAttribute("data-name", ev.name); // ✅ Added for tooltip
-
-            cell.appendChild(pill);
-
-            // Side list
-            const li = document.createElement("div");
-            li.className = "ml-item";
-            const dot = document.createElement("span");
-            dot.className = "dot";
-            dot.style.background = getColor(ev.type);
-            const body = document.createElement("div");
-            body.innerHTML = `<div><strong>${ev.name}</strong></div><div class="when">${MONTHS[month]} ${d}, ${year}</div>`;
-            li.appendChild(dot);
-            li.appendChild(body);
-            monthList.appendChild(li);
-          });
-
-          calendarEl.appendChild(cell);
-        }
-
-        // Trailing blanks
-        const totalCells = prevDays + daysInMonth;
-        const trailing = (7 - (totalCells % 7)) % 7;
-        for (let i = 0; i < trailing; i++) {
-          const d = document.createElement("div");
-          d.className = "day muted";
-          d.innerHTML = `<div class="date">${i + 1}</div>`;
-          calendarEl.appendChild(d);
-        }
-      }
-
-      function getColor(type) {
-        switch (type) {
-          case "holiday":
-            return getComputedStyle(document.documentElement).getPropertyValue(
-              "--holiday"
-            );
-          case "event":
-            return getComputedStyle(document.documentElement).getPropertyValue(
-              "--event"
-            );
-          case "exam":
-            return getComputedStyle(document.documentElement).getPropertyValue(
-              "--exam"
-            );
-          case "special":
-            return getComputedStyle(document.documentElement).getPropertyValue(
-              "--special"
-            );
-          case "festival":
-            return getComputedStyle(document.documentElement).getPropertyValue(
-              "--festival"
-            );
-          default:
-            return "#e5e7eb";
-        }
-      }
-
-      // Navigation
-      document.getElementById("prevBtn").addEventListener("click", () => {
-        const y = parseInt(yearSelect.value, 10);
-        if (current.getMonth() === 0) {
-          yearSelect.value = String(y - 1);
-          current = new Date(y - 1, 11, 1);
-        } else {
-          current = new Date(y, current.getMonth() - 1, 1);
-        }
-        render();
-      });
-      document.getElementById("nextBtn").addEventListener("click", () => {
-        const y = parseInt(yearSelect.value, 10);
-        if (current.getMonth() === 11) {
-          yearSelect.value = String(y + 1);
-          current = new Date(y + 1, 0, 1);
-        } else {
-          current = new Date(y, current.getMonth() + 1, 1);
-        }
-        render();
-      });
-      yearSelect.addEventListener("change", () => {
-        current = new Date(
-          parseInt(yearSelect.value, 10),
-          current.getMonth(),
-          1
-        );
-        render();
-      });
-
-      // Filters
-      document.querySelectorAll(".filter input").forEach((cb) => {
-        cb.addEventListener("change", (e) => {
-          filtersState[e.target.dataset.type] = e.target.checked;
-          render();
-        });
-      });
-
-      render();
-    </script>
     <!-- Fixed Contact Area
 		============================================ -->
     <script>
