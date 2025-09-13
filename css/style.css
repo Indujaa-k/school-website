@@ -4065,7 +4065,7 @@ header.header-five {
 /*  20. Class Grid Page
 /*----------------------------------------*/
 .breadcrumb-banner-area {
-  background: url("../img/schoolimages/aboutpageimg.jpg");
+  background: url("../img/banner/banner-5.jpg");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -4663,7 +4663,7 @@ textarea {
 /*  23. Admission Page
 /*----------------------------------------*/
 .breadcrumb-banner-area.admission {
-  background: rgba(0, 0, 0, 0) url("../img/schoolimages/adimission-3.jpg")
+  background: rgba(0, 0, 0, 0) url("../img/banner/banner-8.jpg")
     no-repeat scroll center top / cover;
 }
 /* General Section Styles
@@ -5801,3 +5801,14 @@ span.schedule-time {
     font-weight: 500;
   }
 }
+/*----------------------------------------*/
+/*  Academics Page
+/*----------------------------------------*/
+.breadcrumb-banner-area-academics{
+background: url("../img/banner/banner-6.jpg") rgba(0, 0, 0, 0) scroll center top / cover;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  padding: 151px 0 0;
+  position: relative;
+  z-index: 1;}

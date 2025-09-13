@@ -169,18 +169,20 @@
                           <a href="index.html">Home</a>
                         </li>
                         <li>
-                          <a href="about.html"
-                            >About us</a>
-                          
+                          <a href="about.html">About us</a>
                         </li>
-                        <li><a href="academics.html">Academics<i class="fa fa-angle-down"></i>
-                        </a><ul class="sub-menu">
+                        <li>
+                          <a href="academics.html"
+                            >Academics<i class="fa fa-angle-down"></i>
+                          </a>
+                          <ul class="sub-menu">
                             <li>
                               <a href="academics.html#calendarrow"
                                 >Academic Calendar
                               </a>
                             </li>
-                          </ul></li>
+                          </ul>
+                        </li>
                         <li><a href="admission.html">Admission</a></li>
                         <li>
                           <a href="class-list.html"
@@ -241,16 +243,17 @@
                     </li>
                     <li>
                       <a href="about.html">About us</a>
-                  
                     </li>
-                    <li><a href="academics.html">Academics</a>
-                    <ul class="sub-menu">
+                    <li>
+                      <a href="academics.html">Academics</a>
+                      <ul class="sub-menu">
                         <li>
                           <a href="academics.html#calendarrow"
                             >Academic Calendar
                           </a>
                         </li>
-                      </ul></li>
+                      </ul>
+                    </li>
                     <li><a href="admission.html">Admission</a></li>
                     <li>
                       <a href="class-list.html">Classes</a>
@@ -301,7 +304,9 @@
         <!-- Image section: Main Class Details -->
         <div class="class-details-container">
           <!-- Carousel (same for all classes) -->
-          <div class="class-details-carousel carousel-style-one owl-carousel">
+          <div
+            class="class-details-carousel carousel-style-one owl-carousel banner-img-size"
+          >
             <img src="img/school-img/Classroom with students.JPG" alt="" />
             <img src="img/school-img/Classroom with furniture.JPG" alt="" />
             <img src="img/school-img/Biology lab.JPG" alt="" />
@@ -345,12 +350,12 @@
     </div>
 
     <div class="btn-section">
-      <a href="./class-list.html">
+      <!-- <a href="./class-list.html">
         <button id="Btn" class="btn">← Back</button>
-      </a>
+      </a> -->
 
       <a href="#class-section"
-        ><button id="backBtn" class="back-btn">← previous</button></a
+        ><button id="backBtn" class="back-btn">← Previous</button></a
       >
 
       <a href="#class-section">
@@ -403,6 +408,12 @@
         flex-direction: column;
         align-items: center;
         margin-bottom: 40px;
+      }
+      .banner-img-size img {
+        width: 100%; /* full width of the container */
+        height: auto; /* maintain aspect ratio */
+        max-height: 600px; /* optional: limit height */
+        object-fit: cover; /* crop if necessary */
       }
       @media (min-width: 992px) {
         .subjects-container {
@@ -510,7 +521,7 @@
       </div>
     </a>
     <!-- for mail -->
-    <a href="mailto:mountwally21@gmail.com" class="email-fixed-button">
+    <a href="mailto:mountvalley21@gmail.com" class="email-fixed-button">
       <img src="./img/pngwing.com (1).svg" alt="Email Us" />
     </a>
     <!--Footer Area Start-->
@@ -545,16 +556,12 @@
                     >1/260 Arasamara Thottam, Arumuthampalayam, Tirupur 641664
                   </li>
                   <li>
-                    <i class="fa fa-envelope" style="margin-right: 5px"></i
-                    >mountwally21@gmail.com
-                  </li>
-                  <li>
-                    <i class="fa fa-phone" style="margin-right: 5px"></i>+91
-                    99947 82792
+                    <i class="fa fa-envelope" style="margin-right: 5px"></i>
+                    mountvalley21@gmail.com
                   </li>
                   <li>
                     <i class="fa fa-phone" style="margin-right: 5px"></i>
-                    +91 99947 82792
+                    +91 99522 58987
                   </li>
                 </ul>
               </div>
@@ -773,10 +780,10 @@
           description:
             "Focus on early literacy, numeracy, and social development through fun activities.",
           info: {
-            startDate: "June 10",
+            workingDays: "Mon-Sat",
             ageGroup: "2-6 Years",
             classSize: "25",
-            duration: "8.45 am - 12:00 pm",
+            duration: "8.45 am - 3:45 pm",
             transportation: "Available",
             staff: "2 Teachers",
           },
@@ -830,7 +837,7 @@
           description:
             "Primary education focusing on foundational knowledge, creativity, and critical thinking.",
           info: {
-            startDate: "June 5",
+            workingDays: "Mon-Sat",
             ageGroup: "6-10 Years",
             classSize: "30",
             duration: "8:45 am - 3:45 pm",
@@ -887,7 +894,7 @@
           description:
             "Middle school curriculum to deepen understanding and analytical skills in core subjects.",
           info: {
-            startDate: "June 10, 2025",
+            workingDays: "Mon-Sat",
             ageGroup: "11-15 Years",
             classSize: "35",
             duration: "8:45 am - 3:45 pm",
@@ -943,7 +950,7 @@
 
         // Update Info Classes section
         const infoHtml = `
-      <li><i class="fa fa-calendar"></i> Start Date: ${data.info.startDate}</li>
+      <li><i class="fa fa-calendar"></i> Working Days: ${data.info.workingDays}</li>
       <li><i class="fa fa-birthday-cake"></i> Years Old: ${data.info.ageGroup}</li>
       <li><i class="fa fa-bank"></i> Class Size: ${data.info.classSize}</li>
       <li><i class="fa fa-clock-o"></i> Class Duration: ${data.info.duration}</li>

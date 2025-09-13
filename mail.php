@@ -20,13 +20,13 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'indhujaakddeveloper@gmail.com';
+    $mail->Username   = 'mountvalley21@gmail.com';
     $mail->Password   = 'bqip rsgx bxqa fxik'; // App password
     $mail->SMTPSecure = 'tls';
     $mail->Port       = 587;
 
     $mail->setFrom($email, $yourName);
-    $mail->addAddress('indhujaakddeveloper@gmail.com', 'School Admin');
+    $mail->addAddress('mountvalley21@gmail.com', 'School Admin');
 
     $mail->isHTML(true);
     $mail->Subject = "School Enquiry: $subject";

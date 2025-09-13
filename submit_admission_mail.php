@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $medical_history = $_POST['medical_history'] ?? '';
 
     // Recipient email
-    $to = "mountwally21@gmail.com"; // <-- Replace with your email
+    $to = "mountvalley21@gmail.com"; // <-- Replace with your email
     $subject = "New Admission Form Submission";
 
     // Prepare email body
